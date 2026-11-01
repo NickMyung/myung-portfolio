@@ -28,8 +28,9 @@ afirmaciones profesionales o científicas mediante fuentes externas.
 
 ## Implementación
 
-- `ProjectVisual.tsx`: usa las tres primeras etapas del flujo como nodos; las
-  etapas adicionales aparecen en el pie del mapa. La categoría determina el acento.
+- `ProjectVisual.tsx`: muestra hasta tres nodos. En flujos de más de tres etapas,
+  usa la primera, intermedia y última e indica el total de etapas del caso.
+  Las capas transversales se identifican en el pie. La categoría determina el acento.
 - `ProjectCard.tsx`: muestra problema, aporte y resultado sin recortar texto.
   Si no existe `preview`, utiliza los campos originales del caso.
 - `Reveal.tsx`: animación de entrada con IntersectionObserver y CSS. El contenido
@@ -38,7 +39,7 @@ afirmaciones profesionales o científicas mediante fuentes externas.
   de hover; espaciado compartido de 4, 6 y 8 rem según el ancho disponible.
 - Portada: accesos equivalentes a las áreas y enlace real a contacto.
 
-## Comprobaciones realizadas
+## Comprobaciones de la presentación inicial
 
 - `npm run build` con `PORTFOLIO_BUILD_DIR=.next-review`: compilación, tipos y
   generación de la portada y los cuatro casos completadas correctamente.
@@ -54,3 +55,31 @@ afirmaciones profesionales o científicas mediante fuentes externas.
 Estas comprobaciones no constituyen una auditoría integral de accesibilidad.
 Los paquetes `output/portfolio-review-2026-11-01*` conservan la captura histórica
 de v2 y no se regeneraron como parte de este cambio.
+
+## Ampliación Data & Automation
+
+Se aplicó [el enfoque de datos y automatización](DATA_AUTOMATION_POSITIONING.md)
+en esta misma rama: tres casos de datos y seis casos en el catálogo completo.
+Se conserva un destacado por disciplina y se mantiene el contenido de los casos
+de software y robótica.
+
+`AreaOverview.tsx` presenta el propósito y las capacidades del área seleccionada.
+`BusinessContext.tsx` añade contexto, audiencia, dominios, decisiones y entregables
+antes de la arquitectura en los casos de datos. `crossCutting` separa gobierno y
+organización compartida de las etapas secuenciales.
+
+Validación de esta ampliación:
+
+- Compilación de producción y generación de los seis casos completadas.
+- Integridad de categorías y relaciones con experiencia/publicaciones; contenido
+  de software y robótica comparado con el commit anterior y conservado.
+- Filtros, contadores, acceso desde la portada y botón de explorar el área;
+  retorno desde los casos a la vista de los tres casos de datos.
+- Seis rutas consultables, 404 para un ID inexistente y contexto de negocio antes
+  de la arquitectura. Ilko muestra las tres familias funcionales y Thikathani las
+  cinco etapas de su flujo conceptual.
+- Sin desbordamiento horizontal en el área de datos y los dos casos nuevos a
+  320, 390, 768, 1024 y 1440 píxeles CSS. Capturas de escritorio y móvil revisadas.
+- Activación de filtros con teclado, foco visible y menú móvil con Escape y
+  devolución del foco. Movimiento reducido y contenido legible sin JavaScript.
+- Sin excepciones JavaScript no capturadas durante estas pruebas.

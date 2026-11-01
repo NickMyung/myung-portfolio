@@ -6,6 +6,7 @@ import { ContactFooter } from '@/components/ContactFooter';
 import { ProjectFlow } from '@/components/ProjectFlow';
 import { ProjectLinks } from '@/components/ProjectLinks';
 import { Reveal } from '@/components/Reveal';
+import { BusinessContext } from '@/components/BusinessContext';
 import { getProject, getCategoryLabel, portfolio } from '@/lib/portfolio';
 
 export function generateStaticParams() {
@@ -34,13 +35,14 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   return <>
     <Navbar />
     <main id="main-content" className="mx-auto max-w-7xl px-4 pb-20 pt-32 sm:px-6 sm:pt-40 lg:px-8">
-      <a href="/#projects" className="inline-flex items-center gap-2 rounded text-sm text-slate-400 hover:text-cyan-200"><ArrowLeft className="h-4 w-4" aria-hidden="true" />All projects</a>
+      <a href={project.business ? `/#projects-${project.category}` : '/#projects'} className="inline-flex items-center gap-2 rounded text-sm text-slate-400 hover:text-cyan-200"><ArrowLeft className="h-4 w-4" aria-hidden="true" />{project.business ? `${getCategoryLabel(project.category)} cases` : 'All projects'}</a>
       <Reveal className="mb-10 mt-9 max-w-4xl"><header>
         <p className="section-eyebrow">{getCategoryLabel(project.category)} / {project.period}</p>
         <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">{project.title}</h1>
         <p className="mt-5 text-lg leading-relaxed text-slate-400">{project.summary}</p>
         <dl className="mt-7 flex flex-wrap gap-x-10 gap-y-4 text-sm"><div><dt className="text-slate-500">Role</dt><dd className="mt-1 text-slate-200">{project.role}</dd></div><div><dt className="text-slate-500">Status</dt><dd className="mt-1 text-slate-200">{project.status}</dd></div></dl>
       </header></Reveal>
+      {project.business && <BusinessContext business={project.business} />}
       <ProjectFlow project={project} />
       <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px]">
         <article className="space-y-9">

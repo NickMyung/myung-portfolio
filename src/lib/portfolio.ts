@@ -9,6 +9,7 @@ export const projectCategories = portfolio.expertise.map((area) => ({
   label: area.shortTitle,
   title: area.title,
   description: area.focus,
+  overview: area.overview,
 }));
 
 const areaStyles: Record<string, { text: string; border: string; surface: string; rgb: string }> = {

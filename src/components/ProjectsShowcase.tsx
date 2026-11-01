@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { getProjectsForArea, getAreaStyle, projectCategories } from '@/lib/portfolio';
 import { ProjectCard } from '@/components/ProjectCard';
 import { Reveal } from '@/components/Reveal';
+import { AreaOverview } from '@/components/AreaOverview';
 
 export function ProjectsShowcase() {
   const [selection, setSelection] = useState('featured');
@@ -36,8 +37,8 @@ export function ProjectsShowcase() {
     }
   }, [selection]);
 
-  function selectArea(id: string) {
-    pendingAreaScroll.current = false;
+  function selectArea(id: string, scrollToArea = false) {
+    pendingAreaScroll.current = scrollToArea;
     setSelection(id);
     const hash = projectCategories.some((area) => area.id === id) ? `#projects-${id}` : '#projects';
     window.history.replaceState(null, '', hash);
@@ -57,7 +58,7 @@ export function ProjectsShowcase() {
         <Reveal className="max-w-2xl">
           <p className="section-eyebrow">01 / Selected work</p>
           <h2 className="section-title">Three disciplines. One engineering perspective.</h2>
-          <p className="section-description">Explore work in data, full-stack software, and robotics. Each area brings its own problems, methods, and evidence, connected by a mechatronics foundation.</p>
+          <p className="section-description">Explore data and business automation, full-stack software, and robotics. Each area brings its own problems, methods, and evidence, connected by a mechatronics foundation.</p>
         </Reveal>
         <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter projects">
           {tabs.map((tab) => <button type="button" key={tab.id} onClick={() => selectArea(tab.id)} aria-pressed={selection === tab.id} className={`rounded-full border px-4 py-2.5 text-xs transition-colors ${selection === tab.id ? 'border-cyan-400 bg-cyan-400 text-slate-950' : 'border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-600 hover:text-white'}`}>{tab.label}</button>)}
@@ -72,10 +73,11 @@ export function ProjectsShowcase() {
                 <h3 id={`area-title-${area.id}`} className="mt-2 text-lg font-semibold text-white">{area.title}</h3>
                 <p className="mt-3 text-xs text-slate-400">{area.available.length} {area.available.length === 1 ? 'case study' : 'case studies'}</p>
               </header>
+              {singleArea && area.overview && <AreaOverview overview={area.overview} projects={area.available} />}
               <div className={`mt-4 grid flex-1 gap-5 ${singleArea ? 'md:grid-cols-2 xl:grid-cols-3' : ''}`}>
                 {area.visible.map((project, index) => <Reveal key={project.id} delay={index * 70} className="h-full"><ProjectCard project={project} /></Reveal>)}
               </div>
-              {selection === 'featured' && <button type="button" onClick={() => selectArea(area.id)} className={`mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm hover:bg-slate-900 ${style.border} ${style.text}`}>Explore {area.label}<ArrowRight className="h-4 w-4" aria-hidden="true" /></button>}
+              {selection === 'featured' && <button type="button" onClick={() => selectArea(area.id, true)} className={`mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm hover:bg-slate-900 ${style.border} ${style.text}`}>Explore {area.label} ({area.available.length})<ArrowRight className="h-4 w-4" aria-hidden="true" /></button>}
             </section>;
           })}
         </div>

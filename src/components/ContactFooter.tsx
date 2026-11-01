@@ -27,7 +27,7 @@ export const ContactFooter: React.FC = () => {
               Get in Touch
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-light">
-              Let’s build across <strong>Big Data and data engineering</strong>, <strong>full-stack development</strong>, and <strong>robotics research</strong>. I welcome projects in each area and collaborations connecting data, software, and physical systems.
+              Let’s build across <strong>data engineering and business automation</strong>, <strong>full-stack development</strong>, and <strong>robotics research</strong>. I welcome projects in each area and collaborations connecting business processes, data, software, and physical systems.
             </p>
 
             <div className="flex flex-wrap gap-4 font-mono text-xs sm:text-sm">

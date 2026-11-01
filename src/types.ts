@@ -29,6 +29,22 @@ export interface ExpertiseItem {
   description: string;
   competencies: string[];
   technologies: string[];
+  overview?: {
+    headline: string;
+    description: string;
+    pillars: { title: string; description: string }[];
+  };
+}
+
+export interface ProjectBusinessContext {
+  organization: string;
+  industry: string;
+  audience: string;
+  context: string;
+  teams: string[];
+  decisions: string;
+  domainGroups?: { title: string; teams: string[] }[];
+  deliverables?: { title: string; description: string }[];
 }
 
 export interface ProjectItem {
@@ -65,6 +81,8 @@ export interface ProjectItem {
   experienceIds: string[];
   publicationIds: string[];
   flow: { label: string; detail: string }[];
+  business?: ProjectBusinessContext;
+  crossCutting?: { label: string; detail: string }[];
 }
 
 export interface AcademicProjectItem {

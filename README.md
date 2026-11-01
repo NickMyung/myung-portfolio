@@ -7,9 +7,9 @@ Las instrucciones del agente **Portfolio Architect & Evidence Curator** están e
 prompts, fichas de evidencia y mejoras concretas identificadas en el repositorio.
 
 > **Repository:** [https://github.com/NickMyung/myung-portfolio](https://github.com/NickMyung/myung-portfolio)  
-> **Positioning:** Mechatronics Engineer | Big Data & Data Engineering | Full-Stack Development | Robotics R&D
+> **Positioning:** Mechatronics Engineer | Data Engineering & Business Automation | Full-Stack Development | Robotics R&D
 
-Multidisciplinary portfolio of **Nick Soto Conde**, presenting Big Data and data engineering, full-stack development, and robotics research and development with equal visual emphasis, grounded in mechatronics engineering.
+Multidisciplinary portfolio of **Nick Soto Conde**, presenting data engineering and business automation, full-stack development, and robotics research and development with equal visual emphasis, grounded in mechatronics engineering.
 
 The homepage follows: **Projects → Experience → Capabilities → Research → Profile → Contact**. The default project view selects one featured case per area, in three equally sized columns. Experience shows all roles by default. Each case has a shareable page at `/projects/[id]`, with a conceptual architecture, personal contribution, outcome, and an explanation of available material. The 3D model loads only when opened in the research section.
 
@@ -21,7 +21,15 @@ The optional `projects[].preview` fields (`title`, `problem`, `contribution`, `o
 
 The files under `output/portfolio-review-2026-11-01/` and its ZIP archives preserve the **v2 review snapshot**; they do not represent the v3 interface.
 
-The three areas are defined in `portfolio_data.json` under `expertise`. Their stable category IDs are **`data`**, **`software`**, and **`robotics`**; these IDs are used by projects and experience. Titles, descriptions, filters, area links, and project counts derive from that shared definition. `featured` makes a case eligible for the balanced homepage selection, and `priority` orders projects within each area. Category filters and All projects show the full catalog. Virutex and Bioverse remain internal drafts in `../agents/portfolio/BORRADORES_CASOS.md` until supporting material is available.
+### Data & Automation
+
+The data category now includes three complementary cases: Santander financial data modernization and governance, the Thikathani / VE7 GCP-to-AWS analytical platform migration, and Virutex Ilko cross-functional analytics and process automation. The homepage still selects one case per discipline; the Data & Automation filter opens the three data cases and a business-oriented introduction.
+
+Optional `expertise[].overview` content supplies an area's headline and pillars. Optional `projects[].business` identifies the organization, industry, audience, business context, teams, decisions supported, and documented deliverables. Ilko also groups its business domains. Optional `crossCutting` entries describe lifecycle-wide concerns separately from sequential `flow` stages. Flow thumbnails show the first, middle, and last stages when there are more than three; complete stages remain on the case page. Business case links return to their area.
+
+The case narratives are based on the owner's CV and confirmations, with no newly invented numerical outcomes. They describe professional work; they do not publish client datasets or claim independently verified production architectures. See [the positioning and source record](docs/DATA_AUTOMATION_POSITIONING.md).
+
+The three areas are defined in `portfolio_data.json` under `expertise`. Their stable category IDs are **`data`**, **`software`**, and **`robotics`**; these IDs are used by projects and experience. Titles, descriptions, filters, area links, and project counts derive from that shared definition. `featured` makes a case eligible for the balanced homepage selection, and `priority` orders projects within each area. Category filters and All projects show the full catalog. The earlier Virutex draft in `../agents/portfolio/BORRADORES_CASOS.md` is superseded by the v3 case based on the supplied CV and owner confirmations. Bioverse remains a separate internal draft.
 
 To add a project, copy the full structure of an existing item in `projects`, assign a unique `id` and a valid `category`, and supply the content and available evidence. Related capability links update automatically; no `expertise.projectIds` list is needed. Run `npm run build` to generate its case page. See [the multidisciplinary content guide](../agents/portfolio/ENFOQUE_MULTIDISCIPLINARIO.md) for the editorial workflow.
 
@@ -31,16 +39,18 @@ To add a project, copy the full structure of an existing item in `projects`, ass
 
 The portfolio is structured according to rigorous engineering and scientific standards:
 
-1. **Home / Hero**: Mechatronics identity and three equal entry points into Big Data, full-stack development, and robotics R&D. Social and contact links remain in navigation and contact.
+1. **Home / Hero**: Mechatronics identity and three equal entry points into Data & Automation, full-stack development, and robotics R&D. Social and contact links remain in navigation and contact.
 2. **About**: Professional Background, First-Principles Engineering Approach, Research Interests, and Career Focus.
 3. **Expertise**: Three core domains:
-   - *Big Data & Data Engineering* (Apache Spark, Scala, AWS EMR/Glue/Athena, DataHub, SQL Server, Oracle).
+   - *Data Engineering & Business Automation* (cloud platforms, Big Data, governance, Python/SQL/JavaScript, RPA and BI).
    - *Full-Stack Development* (React, React Native, TypeScript, GraphQL, Docker, Python Flask).
    - *Robotics Research & Development* (Denavit–Hartenberg Kinematics, 3-DoF Hip Exoskeletons, Workspace Simulation).
 4. **Featured Projects (Technical Case Studies)**:
    - *3-DoF Hip Exoskeleton Kinematic Analysis & Workspace Simulation* (CMAAE 2021).
-   - *Financial Data Pipeline Modernization & Cloud Migration* (Santander Consumer Bank via IDM/SES).
-   - *Mobile & Web Platform with Integrated Predictive Recommendation* (VE7 / Bioverse).
+   - *Financial Data Modernization & Governance* (Santander Consumer Bank via IDM/SES).
+   - *Thikathani: End-to-End Data Platform Migration from GCP to AWS* (VE7 Agronegocios).
+   - *Virutex Ilko: Cross-Functional Analytics & Process Automation*.
+   - *Mobile & Web Platform with Integrated Predictive Recommendation* (VE7 Agronegocios).
    - *NASA Human Exploration Rover Mechanical & Telemetry Subsystems* (Grupo Tharsis UNI).
    - Dedicated case pages with context, objective, approach, architecture, contributions, challenges, outcomes, and available material. Descriptions of professional experience are distinguished from linked artifacts.
 5. **Interactive 3D Kinematics Simulator (Three.js / WebGL)**:
@@ -140,6 +150,8 @@ portfolio/
 │   │   ├── ProjectsShowcase.tsx # Selected work, category filters, and case-page links
 │   │   ├── ProjectCard.tsx    # Concise problem, contribution, and outcome previews
 │   │   ├── ProjectVisual.tsx  # Flow-based conceptual illustrations per discipline
+│   │   ├── AreaOverview.tsx   # Optional area introduction and business settings
+│   │   ├── BusinessContext.tsx # Industry, business domains, decisions and deliverables
 │   │   ├── Reveal.tsx         # Progressive viewport animation with motion preferences
 │   │   ├── ProjectFlow.tsx    # Responsive conceptual system diagrams
 │   │   ├── ResearchSection.tsx # Research overview and on-demand 3D model

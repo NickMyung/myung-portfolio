@@ -16,9 +16,9 @@ export const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <Reveal>
           {/* Professional Identity Badge */}
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-6 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span>{projectCategories.map((area) => area.label).join(' · ')}</span>
+          <div className="inline-flex max-w-full items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-left text-xs font-mono text-cyan-300 mb-6 backdrop-blur-md">
+            <span className="w-2 h-2 shrink-0 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="min-w-0 leading-relaxed">{projectCategories.map((area) => area.label).join(' · ')}</span>
           </div>
 
           {/* Name */}

@@ -13,7 +13,8 @@ const symbols = {
 export function ProjectVisual({ project }: { project: ProjectItem }) {
   const style = getAreaStyle(project.category);
   const icons = symbols[project.category as keyof typeof symbols] ?? symbols.data;
-  const steps = project.flow.slice(0, 3);
+  const indices = project.flow.length > 3 ? [0, Math.floor((project.flow.length - 1) / 2), project.flow.length - 1] : project.flow.map((_, index) => index);
+  const steps = indices.map((index) => ({ ...project.flow[index], index }));
   return <figure className={`project-visual ${style.text}`} style={{ '--area-rgb': style.rgb } as CSSProperties}>
     <div className="relative z-10 flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
       <span>{getCategoryLabel(project.category)}</span>
@@ -27,7 +28,7 @@ export function ProjectVisual({ project }: { project: ProjectItem }) {
       </svg>
       {steps.map((step, index) => {
         const Icon = icons[index];
-        return <div key={step.label} className="visual-node"><span className="visual-node-frame"><Icon strokeWidth={1.3} className="h-7 w-7" /></span><span className="visual-node-index">0{index + 1}</span></div>;
+        return <div key={step.label} className="visual-node"><span className="visual-node-frame"><Icon strokeWidth={1.3} className="h-7 w-7" /></span><span className="visual-node-index">{String(step.index + 1).padStart(2, '0')}</span></div>;
       })}
     </div>
     <ol className="relative z-10 grid min-h-[36px] grid-cols-3 gap-3 text-center">
@@ -35,7 +36,7 @@ export function ProjectVisual({ project }: { project: ProjectItem }) {
     </ol>
     <figcaption className="relative z-10 mt-5 flex items-start gap-2 border-t border-white/10 pt-3 text-[10px] leading-relaxed text-slate-400">
       <ArrowRight aria-hidden="true" className="mt-0.5 h-3 w-3 shrink-0" />
-      <span>Conceptual overview{project.flow.length > 3 ? ` · ${project.flow.slice(3).map((step) => step.label).join(' · ')}` : ''}</span>
+      <span>Conceptual overview{project.flow.length > 3 ? ` · ${project.flow.length} stages in the full case` : ''}{project.crossCutting?.length ? ` · ${project.crossCutting.map((item) => item.label).join(' · ')}` : ''}</span>
     </figcaption>
   </figure>;
 }

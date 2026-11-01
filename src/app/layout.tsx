@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     'Nick Soto Conde',
     'Mechatronics Engineer',
     'Data Engineer',
+    'Business Process Automation',
+    'Business Intelligence',
     'Software Engineer',
     'Full-Stack Developer',
     'Robotics Research',

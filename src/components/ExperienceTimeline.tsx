@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Briefcase, Calendar, Building2, MapPin, ChevronRight } from 'lucide-react';
 import portfolioData from '../../portfolio_data.json';
-import { portfolio } from '@/lib/portfolio';
+import { portfolio, getCategoryLabel } from '@/lib/portfolio';
 
 export const ExperienceTimeline: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'all' | 'data' | 'software' | 'robotics'>('all');
@@ -25,7 +25,7 @@ export const ExperienceTimeline: React.FC = () => {
             Professional Experience
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            A trajectory across data engineering, full-stack software, and robotics research. Explore every role or follow one area to see its progression.
+            A trajectory across data and business automation, full-stack software, and robotics research. Explore every role or follow one area to see its progression.
           </p>
 
           {/* Filter Pills */}
@@ -50,7 +50,7 @@ export const ExperienceTimeline: React.FC = () => {
                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
               }`}
             >
-              Big Data
+              {getCategoryLabel('data')}
             </button>
             <button
               onClick={() => setActiveFilter('software')}
@@ -61,7 +61,7 @@ export const ExperienceTimeline: React.FC = () => {
                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
               }`}
             >
-              Full-Stack
+              {getCategoryLabel('software')}
             </button>
             <button
               onClick={() => setActiveFilter('robotics')}
@@ -72,7 +72,7 @@ export const ExperienceTimeline: React.FC = () => {
                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
               }`}
             >
-              Robotics R&amp;D
+              {getCategoryLabel('robotics')}
             </button>
           </div>
         </div>

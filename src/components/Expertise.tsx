@@ -5,7 +5,7 @@ const icons: Record<string, typeof Database> = { data: Database, software: Code2
 export function Expertise() {
   return <section id="expertise" className="section-spacing border-t border-slate-800">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p className="section-eyebrow">03 / Capabilities</p><h2 className="section-title">Different methods. Connected thinking.</h2><p className="section-description max-w-2xl">Explore the technical practice behind all three areas: processing data, building software products, and modeling robotic systems.</p>
+      <p className="section-eyebrow">03 / Capabilities</p><h2 className="section-title">Different methods. Connected thinking.</h2><p className="section-description max-w-2xl">Explore the practice behind all three areas: connecting data with business workflows, building software products, and modeling robotic systems.</p>
       <div className="mt-10 grid gap-6 lg:grid-cols-3">
         {portfolio.expertise.map((item) => {
           const Icon = icons[item.categoryId] ?? Database;
