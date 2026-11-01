@@ -57,8 +57,8 @@ export function ProjectsShowcase() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-2xl">
           <p className="section-eyebrow">01 / Selected work</p>
-          <h2 className="section-title">Three disciplines. One engineering perspective.</h2>
-          <p className="section-description">Explore data and business automation, full-stack software, and robotics. Each area brings its own problems, methods, and evidence, connected by a mechatronics foundation.</p>
+          <h2 className="section-title">Engineering practice, grounded in research.</h2>
+          <p className="section-description">Explore data and business automation, full-stack software, and robotics. A research foundation connects how I frame problems, examine assumptions, and document decisions across these disciplines.</p>
         </Reveal>
         <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter projects">
           {tabs.map((tab) => <button type="button" key={tab.id} onClick={() => selectArea(tab.id)} aria-pressed={selection === tab.id} className={`rounded-full border px-4 py-2.5 text-xs transition-colors ${selection === tab.id ? 'border-cyan-400 bg-cyan-400 text-slate-950' : 'border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-600 hover:text-white'}`}>{tab.label}</button>)}

@@ -97,3 +97,15 @@ en el contenido de los casos, enlaces a la trayectoria conservados y sin
 desbordamientos ni excepciones JavaScript no capturadas. El historial laboral y
 los casos de software y robótica se compararon con la versión anterior y no
 cambiaron.
+
+## Cuarto pilar: contribución científica
+
+Por solicitud del propietario, la portada incorpora un cuarto acceso a
+**Scientific Contribution & Research Leadership** y destaca los dos roles
+científicos existentes. El bloque completo se trasladó del perfil a una sección
+anterior a experiencia profesional, sin duplicación. Los tres grupos técnicos
+de proyectos se conservan. La investigación se presenta como base transversal
+en presentación, capacidades, trayectoria, perfil y contacto.
+
+La fuente, alcance y validación de este cambio están en
+[SCIENTIFIC_CONTRIBUTION_POSITIONING.md](SCIENTIFIC_CONTRIBUTION_POSITIONING.md).

@@ -11,9 +11,11 @@ prompts, fichas de evidencia y mejoras concretas identificadas en el repositorio
 
 Multidisciplinary portfolio of **Nick Soto Conde**, presenting data engineering and business automation, full-stack development, and robotics research and development with equal visual emphasis, grounded in mechatronics engineering.
 
-The homepage follows: **Projects → Experience → Capabilities → Research → Profile → Contact**. The default project view selects one featured case per area, in three equally sized columns. Experience shows all roles by default. Each case has a shareable page at `/projects/[id]`, with a conceptual architecture, personal contribution, outcome, and an explanation of available material. The 3D model loads only when opened in the research section.
+The homepage follows: **Projects → Scientific Contribution → Experience → Capabilities → Robotics & Publications → Profile → Contact**. The hero presents four entry points: Data & Automation, Full-Stack, Robotics R&D, and Scientific Contribution & Research Leadership. The project catalog retains its three engineering categories and selects one featured case per area. Experience shows all roles by default. Each case has a shareable page at `/projects/[id]`, with a conceptual architecture, personal contribution, outcome, and an explanation of available material. The 3D model loads only when opened in the robotics section.
 
 ### V3 visual presentation
+
+Scientific contribution is a fourth pillar in the introduction. The hero highlights the existing Technical Program Committee / Scientific Reviewer and IEEE EMBS UNI Student Branch Director of Research roles. Their details appear once, at `#academic-service`, before professional experience; the Science navigation item and fourth hero card link there. `scientificContribution` supplies the editorial introduction, shared research methods, and their applications to the three engineering disciplines. Official roles, dates, affiliations, and publication metadata remain separate from this first-person narrative. See [the scientific positioning record](docs/SCIENTIFIC_CONTRIBUTION_POSITIONING.md).
 
 Project cards use conceptual system maps generated from each project's existing `flow`, with equal layouts and cyan, violet, and emerald accents for the three disciplines. These diagrams are editorial illustrations, not original project screenshots, CAD drawings, or proof of a production architecture. Full project context and evidence remain on the case pages.
 
@@ -39,7 +41,7 @@ To add a project, copy the full structure of an existing item in `projects`, ass
 
 The portfolio is structured according to rigorous engineering and scientific standards:
 
-1. **Home / Hero**: Mechatronics identity and three equal entry points into Data & Automation, full-stack development, and robotics R&D. Social and contact links remain in navigation and contact.
+1. **Home / Hero**: Mechatronics identity, scientific review and research leadership highlights, and four equal entry points into Data & Automation, full-stack development, robotics R&D, and scientific contribution. Social and contact links remain in navigation and contact.
 2. **About**: Professional Background, First-Principles Engineering Approach, Research Interests, and Career Focus.
 3. **Expertise**: Three core domains:
    - *Data Engineering & Business Automation* (cloud platforms, Big Data, governance, Python/SQL/JavaScript, RPA and BI).
@@ -65,7 +67,7 @@ The portfolio is structured according to rigorous engineering and scientific sta
    - *Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation* (CMAAE 2021).
    - *Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review* (RCAE 2021).
    - Full scientific metadata, official author order, and one-click citation copy buttons in **IEEE**, **APA**, and **BibTeX**.
-8. **Academic Service & Leadership**:
+8. **Scientific Contribution & Research Leadership** (before professional experience):
    - *Technical Program Committee (TPC) Member & Scientific Reviewer* at **ICCRE Japan** (2024, 2025, 2026).
    - *Director of Research* at **IEEE EMBS UNI** (2021).
    - The rover is presented as a team engineering project under Research; the hand prosthesis is listed under academic engineering projects.
@@ -158,7 +160,7 @@ portfolio/
 │   │   ├── ExoskeletonWorkspace3D.tsx # Interactive 3D D-H kinematics & workspace simulator
 │   │   ├── ExperienceTimeline.tsx # Career history (Action + Context + Contribution + Result)
 │   │   ├── ResearchPublications.tsx # Peer-reviewed papers with IEEE/APA/BibTeX citation copier
-│   │   ├── AcademicService.tsx  # ICCRE Japan TPC Reviewer and IEEE EMBS community service
+│   │   ├── AcademicService.tsx  # Prominent scientific contribution before experience
 │   │   ├── EducationSection.tsx # UNI B.Sc., UTEC Big Data, and functional skills matrix
 │   │   └── ContactFooter.tsx  # Contact methods, social links, location, languages
 │   ├── lib/portfolio.ts       # Typed data access, project taxonomy, and ordering

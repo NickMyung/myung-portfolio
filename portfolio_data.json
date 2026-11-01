@@ -2,7 +2,7 @@
   "profile": {
     "name": "Nick Soto Conde",
     "headline": "Mechatronics Engineer",
-    "professionalSummary": "I am a Mechatronics Engineer working across data engineering and business automation, full-stack development, and robotics research. My work connects data platforms and business processes, web and mobile applications, and kinematic modeling through an engineering perspective.",
+    "professionalSummary": "I am a Mechatronics Engineer working across data and business automation, full-stack development, and robotics. Research is a foundation of my professional practice: it shapes how I formulate problems, evaluate evidence, and connect models with working systems.",
     "location": "Lima, Peru (Jesús María) • Available for Remote & Hybrid",
     "email": "nicksc1911@gmail.com",
     "phone": "+51 942 002 064",
@@ -27,10 +27,10 @@
     },
     "resumeUrl": "#contact",
     "about": {
-      "professionalBackground": "My background combines Mechatronics Engineering at UNI and specialized Big Data studies at UTEC with professional experience in data engineering and business automation, full-stack development, and robotics research. In data, I work with the needs of finance, commercial, and operations teams alongside platform and workflow implementation.",
-      "engineeringApproach": "I solve technical problems using an engineering approach grounded in first principles: integrating mathematical kinematics, robust distributed data processing, and maintainable software architecture. I prioritize building reliable, well-tested, and maintainable systems over fragile complexity.",
+      "professionalBackground": "My professional formation combines Mechatronics Engineering at UNI and specialized Big Data studies at UTEC with research, scientific peer review, and research leadership. These experiences shape my practice across data platforms and business automation, full-stack development, and robotics.",
+      "engineeringApproach": "My research experience informs how I work: formulate the problem, examine prior work, make assumptions explicit, evaluate results, and document decisions. I apply this approach to business data definitions, software architecture, and mathematical models of robotic systems.",
       "researchInterests": "Robotics engineering, lower-limb rehabilitation exoskeletons, forward and inverse kinematic modeling via Denavit–Hartenberg conventions, workspace characterization, and biomedical engineering applications.",
-      "careerFocus": "Building across three engineering areas: data platforms and business automation, full-stack software systems, and robotics research and development. I am interested in projects within each area and in the connections between them."
+      "careerFocus": "Building across data platforms and business automation, full-stack software systems, and robotics research and development, while contributing through scientific review and research collaboration. Research remains a pillar connecting these areas of my professional practice."
     }
   },
   "expertise": [
@@ -882,7 +882,8 @@
       "category": "Conference Service",
       "period": "2024, 2025, 2026",
       "location": "Japan",
-      "description": "Appointed to the Technical Program Committee to perform peer reviews of scientific submissions in robot kinematics, control algorithms, autonomous systems, and bio-robotic applications."
+      "description": "Appointed to the Technical Program Committee to perform peer reviews of scientific submissions in robot kinematics, control algorithms, autonomous systems, and bio-robotic applications.",
+      "shortOrganization": "ICCRE · Japan"
     },
     {
       "id": "ieee-embs-uni",
@@ -891,7 +892,8 @@
       "category": "Student & Professional Organizations",
       "period": "2021",
       "location": "Lima, Peru",
-      "description": "Directed undergraduate research activities, coordinated study sessions on biomedical signals and medical instrumentation, and facilitated student involvement in bioengineering initiatives."
+      "description": "Directed undergraduate research activities, coordinated study sessions on biomedical signals and medical instrumentation, and facilitated student involvement in bioengineering initiatives.",
+      "shortOrganization": "IEEE EMBS · UNI Student Branch"
     }
   ],
   "education": [
@@ -975,5 +977,40 @@
       "location": "Lima, Peru",
       "description": "Designed and simulated a robotic hand prosthesis prototype presented at the FIM 2021-II Engineering Projects Fair (Advisor: Ing. Oliden Martinez)."
     }
-  ]
+  ],
+  "scientificContribution": {
+    "shortTitle": "Scientific Contribution",
+    "title": "Scientific Contribution & Research Leadership",
+    "focus": "Scientific peer review, research leadership, and the methods behind my engineering practice.",
+    "introduction": "Research has shaped how I approach engineering: asking clear questions, examining prior work, making assumptions explicit, and communicating technical decisions. My contribution includes scientific peer review and research leadership within a university research community.",
+    "foundation": "Research is a pillar of my professional formation and engineering practice.",
+    "methods": [
+      {
+        "title": "Frame the problem",
+        "description": "Turn an open question into a defined problem, with clear scope and explicit assumptions."
+      },
+      {
+        "title": "Evaluate the evidence",
+        "description": "Examine prior work, models, and results to compare approaches and understand their limitations."
+      },
+      {
+        "title": "Make the work reviewable",
+        "description": "Document reasoning, communicate findings, and explain the decisions behind a technical solution."
+      }
+    ],
+    "applications": [
+      {
+        "categoryId": "data",
+        "description": "Make business definitions explicit, examine transformation assumptions, and document how information reaches its users."
+      },
+      {
+        "categoryId": "software",
+        "description": "Compare implementation alternatives, structure problems, and explain architectural choices and trade-offs."
+      },
+      {
+        "categoryId": "robotics",
+        "description": "Connect literature review, mathematical models, and simulation while keeping model assumptions and limitations visible."
+      }
+    ]
+  }
 }

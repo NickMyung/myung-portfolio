@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     'CMAAE 2021',
     'RCAE 2021',
     'ICCRE Japan TPC',
+    'Scientific Peer Review',
+    'Research Leadership',
+    'IEEE EMBS UNI',
     'Universidad Nacional de Ingenieria',
     'UTEC Big Data'
   ],
