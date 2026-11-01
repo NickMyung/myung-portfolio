@@ -1,0 +1,3300 @@
+commit 90b0f04936f0d586262ea53ddd4bf87ad093a5bf
+Author: NickMyung <dev@biomecatronica.com>
+Date:   Sun Nov 1 02:04:40 2026 -0500
+
+    Fix structure design
+
+diff --git a/AGENTS.md b/AGENTS.md
+new file mode 100644
+index 0000000..66ae4c7
+--- /dev/null
++++ b/AGENTS.md
+@@ -0,0 +1,8 @@
++# Instrucciones del agente
++
++Lee y aplica `../agents/portfolio/AGENTS.md` antes de trabajar en este repositorio.
++La guía de uso está en `../agents/portfolio/portfolio-agent.md`.
++
++Los archivos del agente se mantienen en la carpeta compartida `../agents/`.
++Las rutas de código y los comandos de esas instrucciones se refieren a la raíz
++de esta aplicación (`portfolio/`).
+diff --git a/README.md b/README.md
+index 0fc9ba4..2c4968f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,161 @@
+-# myung-portfolio
+-Portafolio personal para mostrar proyectos, experiencia y contacto
++# Nick Soto Conde — Professional Engineering Portfolio ⚡
++
++## Agente del portafolio
++
++Las instrucciones del agente **Portfolio Architect & Evidence Curator** están en
++[../agents/portfolio/AGENTS.md](../agents/portfolio/AGENTS.md). Consulta la [guía de uso](../agents/portfolio/portfolio-agent.md) para
++prompts, fichas de evidencia y mejoras concretas identificadas en el repositorio.
++
++> **Repository:** [https://github.com/NickMyung/myung-portfolio](https://github.com/NickMyung/myung-portfolio)  
++> **Positioning:** Mechatronics Engineer | Data & Software Engineering | Robotics Research
++
++Professional engineering portfolio showcasing the multidisciplinary background of **Nick Soto Conde**: Mechatronics Engineer (Universidad Nacional de Ingeniería - UNI), Big Data Specialist (UTEC), Data Engineer at Santander Consumer Bank, Full-Stack Developer, and Rehabilitation Robotics Researcher (Technical Program Committee Reviewer at ICCRE Japan).
++
++---
++
++## 🏛️ Architecture & Content Structure
++
++The portfolio is structured according to rigorous engineering and scientific standards:
++
++1. **Home / Hero**: Clear professional positioning, verifiable summary, CV download, GitHub and LinkedIn links.
++2. **About**: Professional Background, First-Principles Engineering Approach, Research Interests, and Career Focus.
++3. **Expertise**: Three core domains:
++   - *Data Engineering & Cloud Platforms* (Apache Spark, Scala, AWS EMR/Glue/Athena, DataHub, SQL Server, Oracle).
++   - *Software Engineering & Application Development* (React, React Native, TypeScript, GraphQL, Docker, Python Flask).
++   - *Robotics & Biomedical Engineering* (Denavit–Hartenberg Kinematics, 3-DoF Hip Exoskeletons, Workspace Simulation).
++4. **Featured Projects (Technical Case Studies)**:
++   - *3-DoF Hip Exoskeleton Kinematic Analysis & Workspace Simulation* (CMAAE 2021).
++   - *Financial Data Pipeline Modernization & Cloud Migration* (Santander Consumer Bank via IDM/SES).
++   - *Mobile & Web Platform with Integrated Predictive Recommendation* (VE7 / Bioverse).
++   - *NASA Human Exploration Rover Mechanical & Telemetry Subsystems* (Grupo Tharsis UNI).
++   - Comprehensive case studies detailing: Problem, Objective, Methodology, Architecture, Contributions, Challenges, Results, and Evidence.
++5. **Interactive 3D Kinematics Simulator (Three.js / WebGL)**:
++   - Dynamic client-side simulation decoupling (`next/dynamic`, `ssr: false`).
++   - Forward kinematics computed live via Denavit–Hartenberg transformation matrices ($T_0^3$).
++   - 3D reachable workspace point-cloud envelope and gait cycle simulation.
++6. **Professional Experience**:
++   - Structured format: **Action + Technical Context + Contribution + Result**.
++   - Chronological roles spanning Santander Consumer Bank, Virutex Ilko, Bioverse, VE7 Agronegocios, and Medabots.
++7. **Research & Publications**:
++   - Strictly separated from committees and activities.
++   - *Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation* (CMAAE 2021).
++   - *Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review* (RCAE 2021).
++   - Full scientific metadata, official author order, and one-click citation copy buttons in **IEEE**, **APA**, and **BibTeX**.
++8. **Academic Service & Leadership**:
++   - *Technical Program Committee (TPC) Member & Scientific Reviewer* at **ICCRE Japan** (2024, 2025, 2026).
++   - *Director of Research* at **IEEE EMBS UNI** (2021).
++   - *Subsystem Team Member* at **Grupo Tharsis UNI** (NASA Human Exploration Rover Challenge).
++9. **Education & Technical Skills**:
++   - Formal university degree: B.Sc. in Mechatronics Engineering (UNI, 2017–2022).
++   - Specialized post-graduate training: Specialization in Big Data (UTEC, 2024).
++   - Functionally grouped skill matrix (no unverified percentage bars).
++10. **Contact**:
++    - Direct communication channels, email copy utility, location, and language proficiencies.
++
++---
++
++## 🛠️ Tech Stack & Dependencies
++
++- **Framework**: [Next.js 14](https://nextjs.org/) (App Router architecture)
++- **UI Library**: React 18
++- **Language**: TypeScript 5
++- **Styling**: Tailwind CSS 3 + PostCSS + Custom CSS Glow / Grid
++- **3D Graphics**: Three.js (WebGL, dynamic camera controls, buffer geometries)
++- **Icons**: Lucide React
++- **Fonts**: Inter & JetBrains Mono
++
++---
++
++## 💻 Getting Started (Local Development)
++
++### Prerequisites
++- Node.js >= 18.17.0
++- npm, pnpm, or yarn
++
++### Installation
++```bash
++# Navigate to the portfolio folder
++cd portfolio
++
++# Install dependencies
++npm install
++
++# Start development server
++npm run dev
++```
++
++Open your browser at:  
++👉 **`http://localhost:3000`**
++
++### Production Build
++```bash
++# Compile and statically generate pages
++npm run build
++
++# Start the production server locally
++npm run start
++```
++
++---
++
++## 🗂️ Project Structure
++
++```text
++portfolio/
++├── src/
++│   ├── app/
++│   │   ├── layout.tsx         # Root layout, OpenGraph, SEO metadata, fonts
++│   │   ├── page.tsx           # Main page assembling all 9 architectural sections
++│   │   └── globals.css        # Tailwind directives, grid background, scrollbars
++│   ├── components/
++│   │   ├── Navbar.tsx         # Accessible navigation bar with mobile responsive menu
++│   │   ├── Hero.tsx           # Normalized headline, verified summary, quick CTAs
++│   │   ├── About.tsx          # 4 structured domains (Background, Approach, Interests, Focus)
++│   │   ├── Expertise.tsx      # 3 core pillars with verified competencies & technologies
++│   │   ├── ProjectsShowcase.tsx # Case studies with modal details and filters
++│   │   ├── ExoskeletonWorkspace3D.tsx # Interactive 3D D-H kinematics & workspace simulator
++│   │   ├── ExperienceTimeline.tsx # Career history (Action + Context + Contribution + Result)
++│   │   ├── ResearchPublications.tsx # Peer-reviewed papers with IEEE/APA/BibTeX citation copier
++│   │   ├── AcademicService.tsx  # ICCRE Japan TPC Reviewer, IEEE EMBS, NASA Rover Tharsis
++│   │   ├── EducationSection.tsx # UNI B.Sc., UTEC Big Data, and functional skills matrix
++│   │   └── ContactFooter.tsx  # Contact methods, social links, location, languages
++│   └── types.ts               # Strict TypeScript interfaces matching portfolio_data.json
++├── portfolio_data.json        # Single Source of Truth for all content
++├── next.config.mjs            # Next.js configuration
++├── tailwind.config.js         # Tailwind theme & color definitions
++├── tsconfig.json              # TypeScript path aliases (@/*)
++└── package.json               # Scripts and production dependencies
++```
++
++---
++
++## 📝 Content Management
++
++All data is decoupled from the UI inside **`portfolio_data.json`**.  
++To add a new publication, update a role, or modify project metrics:
++
++1. Open `portfolio/portfolio_data.json`.
++2. Update the corresponding entity (`profile`, `projects`, `experience`, `publications`, `academicService`, or `education`).
++3. Run `npm run build` to verify type safety and static generation.
++
++---
++
++## ♿ Accessibility & Performance (WCAG 2.2 AA)
++
++- Semantic HTML tags (`<nav>`, `<main>`, `<section>`, `<header>`, `<footer>`, `<article>`).
++- Keyboard navigability with visible focus indicators (`focus:ring-2 focus:ring-cyan-400`).
++- Proper contrast ratios across text elements on cyber-dark backgrounds.
++- Client-side lazy evaluation of WebGL canvas (`next/dynamic` with `ssr: false`).
++- Zero external font fetch network failures during offline or sandboxed builds.
++
++---
++
++## 🌐 Deployment (Vercel)
++
++1. Push this repository to GitHub: `https://github.com/NickMyung/myung-portfolio`.
++2. Import the project into [Vercel](https://vercel.com).
++3. Vercel automatically detects Next.js 14 and sets:
++   - **Framework Preset**: Next.js
++   - **Root Directory**: `portfolio` (or root if configured)
++   - **Build Command**: `next build`
++   - **Output Directory**: `.next`
+diff --git a/portfolio_data.json b/portfolio_data.json
+index 2257365..94845b4 100644
+--- a/portfolio_data.json
++++ b/portfolio_data.json
+@@ -1,182 +1,401 @@
+ {
+-  "personal": {
++  "profile": {
+     "name": "Nick Soto Conde",
+-    "title": "Mechatronics Engineer | Data Engineer & Full Stack Developer | Robotics & Bioengineering Researcher",
+-    "headline": "Bridging Software Systems, Cloud Data Engineering, Physical Robotics, and Bioengineering Research",
+-    "location": "Lima, Perú",
++    "headline": "Mechatronics Engineer | Data & Software Engineering | Robotics Research",
++    "professionalSummary": "I am a Mechatronics Engineer with professional experience in data engineering and software development, complemented by research experience in robotics and biomedical engineering. My work spans distributed data processing, cloud-based systems, application development, and robotic system modeling. I am interested in building reliable, scalable, and technically grounded solutions that connect engineering, software, and data.",
++    "location": "Lima, Peru (Jesús María) • Available for Remote & Hybrid",
+     "email": "nicksc1911@gmail.com",
+-    "phone": "+51 942002064",
++    "phone": "+51 942 002 064",
+     "languages": [
+       { "language": "Spanish", "level": "Native" },
+-      { "language": "English", "level": "Advanced (C1/Professional)" },
+-      { "language": "Korean", "level": "Basic (A1)" }
++      { "language": "English", "level": "Advanced (Professional Working Proficiency)" },
++      { "language": "Korean", "level": "Basic" }
+     ],
+-    "education": [
+-      {
+-        "degree": "B.Sc. in Mechatronics Engineering (Bachiller en Ingeniería Mecatrónica)",
+-        "institution": "Universidad Nacional de Ingeniería (UNI)",
+-        "period": "2017 - 2022",
+-        "honors": "NASA Human Rover Challenge Team Member, Director of Research IEEE EMBS UNI"
+-      },
+-      {
+-        "degree": "Specialization in Big Data",
+-        "institution": "Universidad de Ingeniería y Tecnología (UTEC)",
+-        "period": "2024"
+-      }
+-    ]
+-  },
+-  "narrative": {
+-    "core_statement": "Ingeniero Mecatrónico egresado de la Universidad Nacional de Ingeniería (UNI) con una trayectoria multidisciplinaria que articula ingeniería de software full stack, arquitecturas modernas de datos en la nube (AWS/GCP), robótica aplicada a rehabilitación y liderazgo en investigación científica internacional.",
+-    "pillars": [
+-      {
+-        "id": "data-engineering",
+-        "title": "Ingeniería y Analítica de Datos",
+-        "summary": "Diseño de canalizaciones de datos masivos (Apache Spark, Scala, Python, AWS EMR/Glue), gobierno de datos corporativo (DataHub) y modelado analítico para el sector financiero (Santander Consumer Bank) e industrial."
+-      },
+-      {
+-        "id": "fullstack-software",
+-        "title": "Desarrollo Full Stack & Cloud",
+-        "summary": "Liderazgo técnico en desarrollo web y móvil (React, React Native, TypeScript, GraphQL, Next.js, FastAPI/Flask), arquitecturas serverless en AWS/GCP e integración de modelos de Machine Learning en producción."
+-      },
+-      {
+-        "id": "robotics-bioengineering",
+-        "title": "Robótica & Bioingeniería Médica",
+-        "summary": "Modelado cinemático (D-H, espacios de trabajo, simulación computacional), diseño de exoesqueletos para rehabilitación de cadera y extremidades inferiores, prótesis y robótica espacial (NASA Rover Challenge)."
+-      },
+-      {
+-        "id": "scientific-peer-review",
+-        "title": "Investigación Internacional & Comité Científico (TPC)",
+-        "summary": "Autor en conferencias indexadas internacionales y miembro activo del Comité Técnico de Revisión (Technical Program Committee / Reviewer) en congresos de robótica y automatización (ICCRE Japón 2024, 2025, 2026)."
+-      }
+-    ]
++    "socialLinks": {
++      "github": "https://github.com/NickMyung",
++      "linkedin": "https://www.linkedin.com/in/nick-soto-conde/",
++      "email": "mailto:nicksc1911@gmail.com"
++    },
++    "resumeUrl": "#contact",
++    "about": {
++      "professionalBackground": "Graduated with a Bachelor's degree in Mechatronics Engineering from the National University of Engineering (UNI) in Peru, followed by specialized studies in Big Data at UTEC. My professional trajectory has focused on enterprise data engineering, cloud-based architectures, and full-stack software development, built on a rigorous foundation of mechanical, electrical, and control engineering.",
++      "engineeringApproach": "I solve technical problems using an engineering approach grounded in first principles: integrating mathematical kinematics, robust distributed data processing, and maintainable software architecture. I prioritize building reliable, well-tested, and maintainable systems over fragile complexity.",
++      "researchInterests": "Robotics engineering, lower-limb rehabilitation exoskeletons, forward and inverse kinematic modeling via Denavit–Hartenberg conventions, workspace characterization, and biomedical engineering applications.",
++      "careerFocus": "Designing and operating resilient cloud data pipelines (AWS/GCP), distributed computing with Apache Spark, robust full-stack web and mobile systems, and participating in forward-looking engineering and robotics research."
++    }
+   },
+-  "publications": [
++  "expertise": [
+     {
+-      "id": "cmaae-2021",
+-      "title": "Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation",
+-      "conference": "CMAAE 2021 / International Conference",
+-      "authors": ["Deyby Huamanchahua", "Nick Soto Conde", "Jean Carlos Vasquez Frias", "Diego Lopez Meza", "Ángel E. Alvarez-Rodríguez"],
+-      "year": 2021,
+-      "links": {
+-        "utec_cris": "https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/"
+-      },
+-      "abstract": "Direct kinematic analysis of a 3-Degrees-of-Freedom (3-DoF) hip exoskeleton designed to assist human walking, utilizing Denavit-Hartenberg (D-H) convention and Euler angles for orientation modeling, paired with numerical simulation and workspace visual validation.",
+-      "keywords": ["Hip Exoskeleton", "Kinematics Analysis", "Denavit-Hartenberg", "Workspace Simulation", "Rehabilitation Robotics"]
++      "id": "data-engineering",
++      "title": "Data Engineering & Cloud Platforms",
++      "description": "Design, construction, and optimization of data pipelines, distributed data processing, and enterprise metadata governance.",
++      "competencies": [
++        "Data Pipelines",
++        "ETL/ELT Pipelines",
++        "Distributed Data Processing",
++        "Data Warehousing",
++        "Cloud Data Platforms",
++        "Metadata Management",
++        "Data Integration",
++        "Data Quality",
++        "Data Governance (DataHub)"
++      ],
++      "technologies": [
++        "Apache Spark",
++        "Scala",
++        "Python",
++        "AWS (EMR, Glue, Athena, S3, Step Functions)",
++        "DataHub",
++        "SQL Server",
++        "Oracle",
++        "PostgreSQL",
++        "GCP BigQuery"
++      ]
+     },
+     {
+-      "id": "rcae-2021",
+-      "title": "Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review",
+-      "conference": "RCAE 2021 / International Conference",
+-      "authors": ["Deyby Huamanchahua", "Jean Carlos Vasquez-Frias", "Nick Soto-Conde", "Diego Lopez-Meza", "Angel E. Alvarez-Rodriguez"],
+-      "year": 2021,
+-      "links": {
+-        "continental_cris": "https://cris.continental.edu.pe/es/publications/mechatronic-exoskeletons-for-hip-rehabilitation-a-schematic-revie/"
+-      },
+-      "abstract": "Schematic and structured review of mechatronic architectures, degrees of freedom, actuator typologies, and control strategies for hip and lower-limb rehabilitation exoskeletons.",
+-      "keywords": ["Mechatronic Design", "Exoskeletons", "Hip Rehabilitation", "Actuation Systems", "Biomedical Engineering"]
++      "id": "software-engineering",
++      "title": "Software Engineering & Application Development",
++      "description": "Full-stack web and mobile applications, REST & GraphQL API engineering, microservices, and technical development coordination.",
++      "competencies": [
++        "Full-Stack Development",
++        "Backend Engineering",
++        "Frontend Development",
++        "REST API Development",
++        "GraphQL API Integration",
++        "Software Architecture",
++        "Serverless Applications",
++        "System Integration",
++        "Technical Leadership (Scrum)"
++      ],
++      "technologies": [
++        "TypeScript",
++        "JavaScript",
++        "React",
++        "React Native",
++        "Next.js",
++        "Node.js",
++        "Python (Flask)",
++        "Docker",
++        "AWS AppSync",
++        "AWS Lambda",
++        "DynamoDB",
++        "Git / CI/CD"
++      ]
++    },
++    {
++      "id": "robotics-biomedical",
++      "title": "Robotics & Biomedical Engineering",
++      "description": "Kinematic modeling, numerical simulation, 3D workspace characterization, and mechatronic design for rehabilitation robotics.",
++      "competencies": [
++        "Robot Kinematics",
++        "Forward Kinematics",
++        "Kinematic Modeling",
++        "Workspace Analysis",
++        "Robotics Simulation",
++        "Control Systems",
++        "Mechanical Design",
++        "Rehabilitation Robotics",
++        "Biomedical Engineering Applications"
++      ],
++      "technologies": [
++        "Denavit–Hartenberg Convention",
++        "Wolfram Mathematica",
++        "Python / Jupyter",
++        "Euler Angles",
++        "SolidWorks",
++        "C / C++ (Embedded)",
++        "ESP32",
++        "Three.js / WebGL Simulation"
++      ]
+     }
+   ],
+-  "academic_service": [
++  "projects": [
+     {
+-      "role": "Technical Program Committee (TPC) Member & Scientific Reviewer",
+-      "event": "ICCRE - International Conference on Control, Robotics and Environment / Control, Automation and Robotics",
+-      "location": "Japón",
+-      "years": ["2024", "2025", "2026"],
+-      "description": "Evaluación por pares de artículos científicos sobre control avanzado, robótica autónoma, visión computacional y aplicaciones bio-robóticas."
++      "id": "hip-exoskeleton-kinematics",
++      "title": "3-DoF Hip Exoskeleton Kinematic Analysis & Workspace Simulation",
++      "category": "Robotics & Biomedical Engineering",
++      "summary": "Direct kinematic characterization and 3D reachable workspace evaluation of a three-degree-of-freedom wearable hip exoskeleton for gait rehabilitation.",
++      "problem": "Kinematic misalignments between wearable robotic devices and human anatomical hip joints can reduce gait assistance efficacy and cause user discomfort. Precise geometric formulation is essential prior to mechanical manufacturing.",
++      "objective": "Formulate the kinematic equations using Denavit–Hartenberg parameters and evaluate the 3D reachable workspace envelope to ensure full coverage of physiological walking ranges.",
++      "approach": "Applied the Denavit–Hartenberg convention to define joint reference frames across sagittal (flexion/extension), frontal (abduction/adduction), and transverse (internal/external rotation) axes. Computational verification was implemented in Python and Wolfram.",
++      "architecture": "Serial kinematic chain with 3 revolute joints: Joint 1 (Flexion/Extension: -20° to 90°), Joint 2 (Abduction/Adduction: -15° to 45°), and Joint 3 (Internal/External Rotation: -25° to 25°), computing transformation matrix T_0_3 to map the distal cuff.",
++      "technologies": ["Python", "Denavit–Hartenberg Convention", "Wolfram", "Jupyter", "Euler Angles", "Three.js / WebGL"],
++      "role": "Co-Author & Kinematics Modeler",
++      "contributions": "Formulated the D-H parameter tables, programmed transformation matrix scripts, generated workspace point clouds, and co-wrote the peer-reviewed conference paper.",
++      "challenges": "Modeling non-singular joint limits that accurately reflect natural hip ranges of motion without mechanical collisions between exoskeleton links.",
++      "results": "Demonstrated that the 3-DoF workspace envelope comprehensively encompasses human gait angles. Results were published and presented at CMAAE 2021.",
++      "evidence": "Conference paper indexed in scientific databases and UTEC CRIS repository; live interactive 3D WebGL simulator available in this portfolio.",
++      "links": {
++        "cris": "https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/"
++      },
++      "status": "Completed (Published Research Prototype)",
++      "period": "2021",
++      "featured": true
+     },
+     {
+-      "role": "Director of Research",
+-      "organization": "IEEE EMBS UNI (Engineering in Medicine and Biology Society)",
+-      "period": "2021",
+-      "description": "Liderazgo de proyectos estudiantiles y de investigación en bioingeniería, dispositivos médicos y señales biomédicas."
++      "id": "santander-data-platform",
++      "title": "Financial Data Pipeline Modernization & Cloud Migration",
++      "category": "Data Engineering",
++      "summary": "Migration and re-architecture of financial data processes from legacy on-premise infrastructure to AWS Cloud for Santander Consumer Bank.",
++      "problem": "Legacy on-premise financial workflows had performance bottlenecks, tight coupling to obsolete core systems, and lacked centralized metadata governance across banking domains.",
++      "objective": "Modernize data processes into domain/subdomain architectures in AWS, re-implement ETL workflows with Apache Spark, and introduce enterprise data governance with DataHub.",
++      "approach": "Mapped AS-IS processes, designed equivalence models between Core Bancario To-Be vs As-Is, built distributed Spark jobs, orchestrated tasks with AWS Step Functions, and modeled metadata entities in DataHub.",
++      "architecture": "Amazon S3 Ingestion Layer -> Distributed Data Processing with Apache Spark on AWS EMR & Glue -> Orquestation with AWS Step Functions -> Data Serving (Athena/Redshift) -> Data Governance Catalog in DataHub.",
++      "technologies": ["Apache Spark", "Scala", "Python", "AWS EMR", "AWS Glue", "AWS Step Functions", "Amazon S3", "DataHub", "Oracle", "SQL Server"],
++      "role": "Data Engineer (Squad Finanzas Data)",
++      "contributions": "Created Python/SQL scripts for structured requirement gathering, developed distributed Spark ETLs, established data dictionaries, and integrated metadata governance schemas into DataHub under corporate standards.",
++      "challenges": "Reconciling historical accounting definitions between disparate banking cores while maintaining strict data consistency and zero regression in financial metrics.",
++      "results": "Achieved consistent execution of financial data pipelines on AWS, established standardized squad workflows, and streamlined banking core equivalence mappings.",
++      "evidence": "Production deployment at Santander Consumer Bank via IDM Technology and SES.",
++      "links": {},
++      "status": "Completed & Operational",
++      "period": "2025 - 2026",
++      "featured": true
+     },
+     {
+-      "role": "Team Member - Mechanical & Telemetry System",
+-      "organization": "Grupo Tharsis - UNI (NASA Human Exploration Rover Challenge)",
+-      "period": "2019 - 2022",
+-      "description": "Diseño, simulación y manufactura de vehículo rover para la competencia global de exploración humana de la NASA."
++      "id": "ve7-fullstack-ml-platform",
++      "title": "Mobile & Web Platform with Integrated Predictive Recommendation",
++      "category": "Software Development",
++      "summary": "Full-stack mobile (Android) and web application integrating REST microservices and a machine learning decision-tree model for product recommendation.",
++      "problem": "Agricultural distributors and commercial teams needed a reliable, low-latency mobile tool to browse catalogs and receive data-driven category recommendations.",
++      "objective": "Develop a responsive cross-platform mobile and web application connected to containerized backend APIs serving real-time predictive models.",
++      "approach": "Built mobile/web clients with React Native / React + TypeScript; developed Flask REST microservices containerized in Docker; trained and embedded a decision tree model for product recommendations.",
++      "architecture": "React & React Native Client -> REST API Gateway -> Flask Python Microservices -> Scikit-Learn Inference Engine -> Cloud Storage & Database Services on AWS / GCP.",
++      "technologies": ["React", "React Native", "TypeScript", "Python (Flask)", "Scikit-Learn", "Docker", "AWS", "GCP", "Tailwind CSS"],
++      "role": "Full-Stack Software Developer & Technical Lead",
++      "contributions": "Planned module routing and component architecture in TypeScript, developed Flask REST APIs, integrated the ML prediction pipeline, coordinated tasks using Scrum, and published the app to Google Play Store.",
++      "challenges": "Ensuring lightweight API response times when executing inference calls over mobile network latencies and managing cross-platform UI parity.",
++      "results": "Delivered production mobile app on Google Play Store and web dashboard on AWS, enabling real-time product classification and catalog access.",
++      "evidence": "Google Play Store app release and cloud-deployed web application.",
++      "links": {},
++      "status": "Completed",
++      "period": "2023 - 2024",
++      "featured": true
+     },
+     {
+-      "role": "Investigador / Diseñador",
+-      "event": "Feria de Proyectos FIM UNI 2021-II",
+-      "project": "Diseño y simulación de prototipo de prótesis de mano",
+-      "advisor": "Ing. Oliden Martinez"
++      "id": "nasa-rover-tharsis",
++      "title": "NASA Human Exploration Rover Mechanical & Telemetry Subsystems",
++      "category": "Robotics & Engineering",
++      "summary": "Engineering design, kinematic drivetrain evaluation, and telemetry integration for an extraterrestrial exploration rover prototype.",
++      "problem": "Designing a human-powered roving vehicle capable of traversing simulated planetary obstacles and collecting scientific samples under strict mass and dimensional constraints.",
++      "objective": "Develop mechanical drive, suspension, and telemetry subsystems complying with NASA competition guidelines and challenging obstacle courses.",
++      "approach": "Performed 3D CAD modeling, structural stress evaluations, kinematic drivetrain calculations, and onboard sensor telemetry prototyping within Grupo Tharsis UNI.",
++      "architecture": "Custom dual-human drivetrain, articulated suspension geometry, quick-folding chassis mechanism, and onboard sensor telemetry module.",
++      "technologies": ["SolidWorks CAD", "Kinematic Analysis", "Structural Simulation", "Telemetry Sensors", "ESP32 / Embedded Systems"],
++      "role": "Team Member — Mechanical & Telemetry Subsystems",
++      "contributions": "Collaborated on drivetrain mechanics, suspension clearance calculations, physical fabrication, and team telemetry integration for Grupo Tharsis UNI.",
++      "challenges": "Balancing structural rigidity against vehicle weight limits to prevent mechanical deformation on irregular terrain obstacles.",
++      "results": "Qualified and represented Peru and UNI in the international NASA Human Exploration Rover Challenge (Huntsville, Alabama).",
++      "evidence": "Official participation record with Grupo Tharsis UNI in the NASA HERC competition.",
++      "links": {},
++      "status": "Completed (Competition Entry)",
++      "period": "2019 - 2022",
++      "featured": true
+     }
+   ],
+   "experience": [
+     {
+-      "company": "IDM Technology",
++      "id": "idm-santander",
++      "organization": "IDM Technology",
+       "client": "Santander Consumer Bank",
+-      "role": "Ingeniero de Datos",
+-      "period": "Agosto 2026 – Presente",
+-      "stack": ["Python", "Spark", "Scala", "AWS (EMR, Glue, Athena, S3, Step Functions)", "DataHub", "SQL Server", "Oracle"],
+-      "achievements": [
+-        "Relevamiento y migración de flujos AS-IS (On-Premise CrediScotia) hacia arquitectura To-Be en AWS Cloud.",
+-        "Desarrollo de ETL distribuidos en Apache Spark y optimización de tiempos de procesamiento en el Squad Finanzas Data.",
+-        "Implementación de gobierno de datos corporativo con DataHub, modelando dominios y subdominios de Gestión de Información (GI)."
+-      ]
++      "role": "Data Engineer",
++      "period": "August 2026 – Present",
++      "location": "Lima, Peru",
++      "scope": "Data migration, distributed ETL development, and metadata governance for finance and information management domains.",
++      "contributions": [
++        "Analyzed on-premise AS-IS data flows to establish domain and subdomain boundaries for cloud migration to AWS.",
++        "Created parameterized Python and SQL scripts to map data inputs to data products systematically.",
++        "Developed distributed ETL workflows using Apache Spark on AWS to replicate financial business logic in the target cloud stack.",
++        "Formulated core banking data equivalence mappings between target (To-Be) and legacy (As-Is) systems.",
++        "Collaborated with data governance teams to implement DataHub, defining metadata dictionaries and schema standards."
++      ],
++      "technologies": ["Python", "Apache Spark", "Scala", "AWS (EMR, Glue, Athena, S3, Step Functions)", "DataHub", "SQL Server", "Oracle"]
+     },
+     {
+-      "company": "SES",
++      "id": "ses-santander",
++      "organization": "SES",
+       "client": "Santander Consumer Bank",
+-      "role": "Ingeniero de Datos",
+-      "period": "Agosto 2025 – Julio 2026",
+-      "stack": ["Python", "Spark", "Scala", "AWS", "SQL Server", "Oracle", "DataHub"],
+-      "achievements": [
+-        "Definición de estándares de desarrollo y arquitectura de subdominios financieros bajo el modelo corporativo internacional.",
+-        "Gestión de equivalencias entre el Core Bancario To-Be vs As-Is, acelerando la homologación de sistemas satélites."
+-      ]
++      "role": "Data Engineer",
++      "period": "August 2025 – July 2026",
++      "location": "Lima, Peru",
++      "scope": "Cloud ETL modernization and data engineering standardization for the Finanzas Data squad.",
++      "contributions": [
++        "Defined development standards and project structures for the Information Management subdomain aligned with corporate guidelines.",
++        "Optimized data transformation queries in Spark, resulting in more maintainable and efficient cloud data pipelines.",
++        "Participated in sprint planning, requirements breakdown, and delivery scheduling under agile methodologies.",
++        "Authored data dictionaries and supported governance cataloging in DataHub for financial reporting models."
++      ],
++      "technologies": ["Python", "Apache Spark", "Scala", "AWS (EMR, S3, Athena, Glue)", "DataHub", "SQL Server", "Oracle"]
+     },
+     {
+-      "company": "Virutex Ilko",
+-      "role": "Analista de Datos y BI",
+-      "period": "Enero 2024 – Julio 2025",
+-      "stack": ["Python", "Pandas", "SQL Server", "PySpark", "Power BI", "Jenkins", "Automation Anywhere (RPA)", "Selenium"],
+-      "achievements": [
+-        "Diseño y administración de Data Warehouse para las áreas de ventas, inventarios y logística.",
+-        "Desarrollo de simulador interactivo de KPIs empresariales para evaluación de escenarios de negocio comerciales y financieros.",
+-        "Automatización de procesos mediante RPA y scripts de Python, eliminando cargas manuales críticas."
+-      ]
++      "id": "virutex-ilko",
++      "organization": "Virutex Ilko",
++      "role": "Data Analyst & Business Intelligence",
++      "period": "January 2024 – July 2025",
++      "location": "Lima, Peru",
++      "scope": "Data warehousing, ETL automation, and interactive KPI simulation tools for sales, inventory, and logistics.",
++      "contributions": [
++        "Designed and maintained the corporate Data Warehouse to support commercial, logistics, and inventory reporting.",
++        "Automated recurring data workflows using Python scripts and Automation Anywhere RPA bots, reducing manual administrative burdens.",
++        "Developed interactive KPI simulation applications enabling commercial and finance teams to test business projections.",
++        "Implemented web scraping scripts using Selenium and Python to collect public market data for reporting."
++      ],
++      "technologies": ["Python", "Pandas", "SQL Server", "PySpark", "Power BI", "Automation Anywhere (RPA)", "Selenium", "Jenkins"]
+     },
+     {
+-      "company": "Bioverse",
+-      "role": "Desarrollador Backend",
++      "id": "bioverse",
++      "organization": "Bioverse",
++      "role": "Backend Developer",
+       "period": "2024",
+-      "stack": ["Next.js", "Node.js", "GraphQL", "DynamoDB", "AWS AppSync", "Lambda", "Cognito", "Athena", "Glue"],
+-      "achievements": [
+-        "Estructuración de backend serverless sobre AWS con APIs GraphQL de alto rendimiento.",
+-        "Procesamiento y canalización ETL de eventos de usuario para monitorización y analítica de uso en tiempo real."
+-      ]
++      "location": "Remote",
++      "scope": "Serverless backend architecture on AWS and GraphQL API integration for Next.js web application.",
++      "contributions": [
++        "Structured serverless backend architecture utilizing AWS Lambda, DynamoDB, and AWS AppSync.",
++        "Engineered GraphQL APIs for efficient data consumption from the Next.js frontend client.",
++        "Developed serverless ETL pipelines to monitor user engagement metrics and platform activity centrally.",
++        "Implemented access control policies using AWS Cognito to secure media and premium platform content."
++      ],
++      "technologies": ["Next.js", "Node.js", "GraphQL", "DynamoDB", "AWS AppSync", "AWS Lambda", "Cognito", "AWS Athena", "AWS Glue"]
+     },
+     {
+-      "company": "VE7 Agronegocios S.A.C.",
+-      "role": "Desarrollador Web Full Stack - Líder de Equipo de Desarrollo",
+-      "period": "Enero 2023 – Enero 2024",
+-      "stack": ["React", "React Native", "TypeScript", "Flask", "Docker", "Tailwind CSS", "Scikit-Learn", "AWS", "GCP"],
+-      "achievements": [
+-        "Liderazgo del equipo de desarrollo bajo metodología Scrum y publicación de apps en Google Play y plataformas Web.",
+-        "Integración de modelos predictivos de Machine Learning (árboles de decisión) en APIs REST para recomendaciones de productos."
+-      ]
++      "id": "ve7-fullstack",
++      "organization": "VE7 Agronegocios S.A.C.",
++      "role": "Full-Stack Web Developer & Development Team Lead",
++      "period": "January 2023 – January 2024",
++      "location": "Lima, Peru",
++      "scope": "Technical leadership, cross-platform mobile/web development, and machine learning API integration.",
++      "contributions": [
++        "Led the software development team under Scrum methodology, coordinating sprints, architecture choices, and code reviews.",
++        "Built modular UI components in TypeScript using React and React Native for mobile and web platforms.",
++        "Developed REST APIs in Flask (Python) containerized with Docker, deployed across cloud instances on GCP and AWS.",
++        "Trained and integrated a decision-tree ML recommendation model directly into the API for mobile catalog features.",
++        "Managed successful application releases to Google Play Store and cloud production environments."
++      ],
++      "technologies": ["React", "React Native", "TypeScript", "Python (Flask)", "Scikit-Learn", "Docker", "Tailwind CSS", "AWS", "GCP"]
+     },
+     {
+-      "company": "VE7 Agronegocios S.A.C.",
+-      "role": "Ingeniero de Datos",
+-      "period": "Enero 2022 – Enero 2023",
+-      "stack": ["Apache Spark", "PySpark", "Apache Airflow", "Apache Beam", "Hadoop", "GCP BigQuery", "AWS"],
+-      "achievements": [
+-        "Migración completa de infraestructura y canalizaciones ETL desde GCP hacia AWS.",
+-        "Implementación de modelos analíticos de clustering y segmentación para marketing inteligente."
+-      ]
++      "id": "ve7-data",
++      "organization": "VE7 Agronegocios S.A.C.",
++      "role": "Data Engineer",
++      "period": "January 2022 – January 2023",
++      "location": "Lima, Peru",
++      "scope": "Big data pipeline development and cloud provider migration.",
++      "contributions": [
++        "Automated ETL pipelines using Apache Spark (with Scala) and PySpark for high-volume data transformation.",
++        "Successfully planned and executed the migration of data pipelines and storage from GCP to AWS.",
++        "Implemented segmentation and clustering models to provide behavioral insights for marketing initiatives.",
++        "Built interactive analytics dashboards to communicate operational KPIs across company departments."
++      ],
++      "technologies": ["Apache Spark", "PySpark", "Scala", "Apache Airflow", "Hadoop", "GCP BigQuery", "AWS", "Docker"]
+     },
+     {
+-      "company": "Medabots S.A.C.",
+-      "role": "Practicante de Ingeniería y Desarrollo",
+-      "period": "Abril 2021 – Septiembre 2021",
+-      "stack": ["Python", "Cinemática Robótica", "Simulación", "Redacción Científica"],
+-      "achievements": [
+-        "Desarrollo de software de cálculo cinemático y espacio de trabajo para robots de rehabilitación física.",
+-        "Publicación de 2 artículos científicos presentados en conferencias internacionales indexadas."
+-      ]
++      "id": "medabots",
++      "organization": "Medabots S.A.C.",
++      "role": "Engineering & Development Intern (R&D)",
++      "period": "April 2021 – September 2021",
++      "location": "Lima, Peru",
++      "scope": "Robotics research, state-of-the-art literature review, kinematic calculations, and scientific writing.",
++      "contributions": [
++        "Conducted literature reviews on robotic mechatronic devices for lower-limb joint rehabilitation.",
++        "Developed mathematical computation scripts for forward and inverse kinematics and 3D workspace simulation.",
++        "Designed simulation interfaces to visualize kinematic movement and reachable boundary behavior.",
++        "Co-authored 2 research papers presented and published at international conferences (CMAAE 2021 and RCAE 2021)."
++      ],
++      "technologies": ["Python", "Robot Kinematics", "Workspace Simulation", "Denavit–Hartenberg", "Scientific Writing"]
+     }
+-  ]
++  ],
++  "publications": [
++    {
++      "id": "cmaae-2021",
++      "title": "Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation",
++      "authors": ["Deyby Huamanchahua", "Nick Soto Conde", "Jean Carlos Vasquez Frias", "Diego Lopez Meza", "Ángel E. Alvarez-Rodríguez"],
++      "year": 2021,
++      "type": "Conference Paper",
++      "venue": "International Conference on Mechanical, Automotive and Aerospace Engineering (CMAAE 2021)",
++      "abstract": "Research focused on the kinematic analysis of a three-degree-of-freedom hip exoskeleton, including geometric modeling and workspace simulation for rehabilitation-oriented robotic applications.",
++      "keywords": ["Hip Exoskeleton", "Kinematics Analysis", "Denavit-Hartenberg", "Workspace Simulation", "Rehabilitation Robotics"],
++      "url": "https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/",
++      "citationIEEE": "D. Huamanchahua, N. Soto Conde, J. C. Vasquez Frias, D. Lopez Meza, and Á. E. Alvarez-Rodríguez, \"Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation,\" in Proceedings of CMAAE 2021, 2021.",
++      "citationAPA": "Huamanchahua, D., Soto Conde, N., Vasquez Frias, J. C., Lopez Meza, D., & Alvarez-Rodríguez, Á. E. (2021). Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation. In Proceedings of CMAAE 2021.",
++      "bibtex": "@inproceedings{sotoconde2021kinematics,\n  title={Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation},\n  author={Huamanchahua, Deyby and Soto Conde, Nick and Vasquez Frias, Jean Carlos and Lopez Meza, Diego and Alvarez-Rodr{\\'\\i}guez, {\\'A}ngel E.},\n  booktitle={Proceedings of CMAAE 2021},\n  year={2021}\n}"
++    },
++    {
++      "id": "rcae-2021",
++      "title": "Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review",
++      "authors": ["Deyby Huamanchahua", "Jean Carlos Vasquez-Frias", "Nick Soto-Conde", "Diego Lopez-Meza", "Angel E. Alvarez-Rodriguez"],
++      "year": 2021,
++      "type": "Review Paper",
++      "venue": "International Conference on Robotics, Control and Automation Engineering (RCAE 2021)",
++      "abstract": "A review of mechatronic architectures and engineering considerations for hip rehabilitation exoskeletons, examining mechanical configurations, degrees of freedom, actuation technologies, and control-related approaches.",
++      "keywords": ["Mechatronic Exoskeletons", "Hip Rehabilitation", "Schematic Review", "Actuator Systems", "Assistive Robotics"],
++      "url": "https://cris.continental.edu.pe/es/publications/mechatronic-exoskeletons-for-hip-rehabilitation-a-schematic-revie/",
++      "citationIEEE": "D. Huamanchahua, J. C. Vasquez-Frias, N. Soto-Conde, D. Lopez-Meza, and A. E. Alvarez-Rodriguez, \"Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review,\" in Proceedings of RCAE 2021, 2021.",
++      "citationAPA": "Huamanchahua, D., Vasquez-Frias, J. C., Soto-Conde, N., Lopez-Meza, D., & Alvarez-Rodriguez, A. E. (2021). Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review. In Proceedings of RCAE 2021.",
++      "bibtex": "@inproceedings{sotoconde2021mechatronic,\n  title={Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review},\n  author={Huamanchahua, Deyby and Vasquez-Frias, Jean Carlos and Soto-Conde, Nick and Lopez-Meza, Diego and Alvarez-Rodriguez, Angel E.},\n  booktitle={Proceedings of RCAE 2021},\n  year={2021}\n}"
++    }
++  ],
++  "academicService": [
++    {
++      "id": "iccre-japan-tpc",
++      "organization": "ICCRE — International Conference on Control, Robotics and Automation Engineering",
++      "role": "Technical Program Committee (TPC) Member & Scientific Reviewer",
++      "category": "Conference Service",
++      "period": "2024, 2025, 2026",
++      "location": "Japan",
++      "description": "Appointed to the Technical Program Committee to perform peer reviews of scientific submissions in robot kinematics, control algorithms, autonomous systems, and bio-robotic applications."
++    },
++    {
++      "id": "ieee-embs-uni",
++      "organization": "IEEE Engineering in Medicine and Biology Society (EMBS) — UNI Student Branch",
++      "role": "Director of Research",
++      "category": "Student & Professional Organizations",
++      "period": "2021",
++      "location": "Lima, Peru",
++      "description": "Directed undergraduate research activities, coordinated study sessions on biomedical signals and medical instrumentation, and facilitated student involvement in bioengineering initiatives."
++    },
++    {
++      "id": "grupo-tharsis-nasa",
++      "organization": "Grupo Tharsis — Universidad Nacional de Ingeniería (UNI)",
++      "role": "Team Member — Mechanical & Telemetry Subsystems",
++      "category": "Research Leadership & Competition",
++      "period": "2019 – 2022",
++      "location": "Lima, Peru / NASA Marshall Space Flight Center, USA",
++      "description": "Contributed to mechanical drivetrain design, geometric clearance evaluations, and telemetry instrumentation for the human-powered exploration rover in the NASA Human Exploration Rover Challenge (HERC)."
++    },
++    {
++      "id": "fim-uni-hand-prosthesis",
++      "organization": "Facultad de Ingeniería Mecánica — Universidad Nacional de Ingeniería (FIM UNI)",
++      "role": "Student Researcher & Designer",
++      "category": "Academic Engineering Project",
++      "period": "2021",
++      "location": "Lima, Peru",
++      "description": "Designed and simulated a robotic hand prosthesis prototype presented at the FIM 2021-II Engineering Projects Fair (Advisor: Ing. Oliden Martinez)."
++    }
++  ],
++  "education": [
++    {
++      "id": "uni-mechatronics",
++      "institution": "Universidad Nacional de Ingeniería (UNI)",
++      "degree": "Bachelor of Science in Mechatronics Engineering (Bachiller en Ingeniería Mecatrónica)",
++      "period": "2017 – 2022",
++      "location": "Lima, Peru",
++      "description": "Foundational and advanced training in control theory, robotics, mechanical design, microcontrollers, embedded programming, electronics, and digital signal processing."
++    },
++    {
++      "id": "utec-bigdata",
++      "institution": "Universidad de Ingeniería y Tecnología (UTEC)",
++      "degree": "Specialization in Big Data",
++      "period": "2024",
++      "location": "Lima, Peru",
++      "description": "Specialized curriculum covering distributed data architectures, scalable data processing, data warehousing, and cloud data platform operations."
++    }
++  ],
++  "technicalSkills": {
++    "programmingLanguages": ["Python", "TypeScript", "JavaScript", "SQL", "Scala", "C / C++"],
++    "dataEngineering": ["Apache Spark", "ETL/ELT Pipelines", "Data Pipelines", "AWS EMR", "AWS Glue", "AWS Athena", "DataHub (Governance)", "Data Warehousing", "Data Integration"],
++    "cloudAndInfrastructure": ["AWS (S3, EMR, Glue, Athena, Step Functions, Lambda, AppSync, Cognito)", "GCP (BigQuery, Cloud Storage)", "Docker", "Git", "Jenkins"],
++    "softwareDevelopment": ["React", "React Native", "Next.js", "Node.js", "Python (Flask)", "GraphQL", "REST APIs", "Tailwind CSS"],
++    "roboticsAndSimulation": ["Denavit–Hartenberg Convention", "Kinematic Modeling", "Workspace Analysis", "Wolfram Mathematica", "SolidWorks", "Three.js / WebGL Simulation"],
++    "researchMethods": ["Scientific Literature Review", "Peer Review Standards", "Conference Manuscript Evaluation", "Scientific Writing", "Biomechanical Modeling"]
++  }
+ }
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index fd9837d..49a304a 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -2,34 +2,58 @@ import type { Metadata } from 'next';
+ import './globals.css';
+ 
+ export const metadata: Metadata = {
+-  title: 'Nick Soto Conde | Mechatronics, Data Engineering & Bio-Robotics',
++  metadataBase: new URL('https://nicksotoconde.dev'),
++  title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering | Robotics Research',
+   description:
+-    'Portafolio profesional de Nick Soto Conde. Bachiller en Ingeniería Mecatrónica (UNI), Especialista en Big Data (UTEC), Ingeniero de Datos en Santander Consumer Bank, Full Stack & Investigador en Bio-Robótica (ICCRE Japón TPC Reviewer).',
++    'Professional portfolio of Nick Soto Conde. Mechatronics Engineer (UNI), Big Data Specialist (UTEC), Data Engineer at Santander Consumer Bank, Full-Stack Developer, and Robotics & Rehabilitation Researcher.',
+   keywords: [
+     'Nick Soto Conde',
+-    'Ingeniería Mecatrónica',
+-    'UNI',
+-    'UTEC Big Data',
+-    'Ingeniero de Datos',
++    'Mechatronics Engineer',
++    'Data Engineer',
++    'Software Engineer',
++    'Full-Stack Developer',
++    'Robotics Research',
++    'Rehabilitation Robotics',
++    '3DoF Hip Exoskeleton',
++    'Denavit-Hartenberg',
+     'Santander Consumer Bank',
+     'Apache Spark',
+-    'Exoesqueleto de Cadera',
+-    'Robótica de Rehabilitación',
++    'DataHub',
+     'CMAAE 2021',
+     'RCAE 2021',
+-    'ICCRE Japón',
++    'ICCRE Japan TPC',
++    'Universidad Nacional de Ingenieria',
++    'UTEC Big Data'
+   ],
+-  authors: [{ name: 'Nick Soto Conde' }],
++  authors: [{ name: 'Nick Soto Conde', url: 'https://github.com/NickMyung' }],
+   creator: 'Nick Soto Conde',
++  publisher: 'Nick Soto Conde',
++  robots: {
++    index: true,
++    follow: true,
++    googleBot: {
++      index: true,
++      follow: true,
++      'max-video-preview': -1,
++      'max-image-preview': 'large',
++      'max-snippet': -1,
++    },
++  },
+   openGraph: {
+     type: 'website',
+-    locale: 'es_PE',
++    locale: 'en_US',
+     url: 'https://nicksotoconde.dev',
+-    title: 'Nick Soto Conde | Mechatronics, Data Engineering & Bio-Robotics',
++    title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering | Robotics Research',
+     description:
+-      'Portafolio profesional de Nick Soto Conde. Ingeniero Mecatrónico (UNI), Ingeniero de Datos, Full Stack e Investigador en Robótica de Rehabilitación.',
++      'Professional engineering portfolio bridging distributed cloud data pipelines, full-stack application development, and peer-reviewed rehabilitation robotics research.',
+     siteName: 'Nick Soto Conde Portfolio',
+   },
++  twitter: {
++    card: 'summary_large_image',
++    title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering',
++    description:
++      'Data Engineering, Full-Stack Software Development, and Robotics & Rehabilitation Research.',
++  },
+ };
+ 
+ export default function RootLayout({
+@@ -38,7 +62,7 @@ export default function RootLayout({
+   children: React.ReactNode;
+ }) {
+   return (
+-    <html lang="es" className="dark">
++    <html lang="en" className="dark scroll-smooth">
+       <head>
+         <link rel="preconnect" href="https://fonts.googleapis.com" />
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 3acdf12..8cbc2e1 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -3,10 +3,13 @@
+ import dynamic from 'next/dynamic';
+ import { Navbar } from '@/components/Navbar';
+ import { Hero } from '@/components/Hero';
+-import { PillarsSection } from '@/components/PillarsSection';
++import { About } from '@/components/About';
++import { Expertise } from '@/components/Expertise';
+ import { ProjectsShowcase } from '@/components/ProjectsShowcase';
+-import { ScientificPublications } from '@/components/ScientificPublications';
+ import { ExperienceTimeline } from '@/components/ExperienceTimeline';
++import { ResearchPublications } from '@/components/ResearchPublications';
++import { AcademicService } from '@/components/AcademicService';
++import { EducationSection } from '@/components/EducationSection';
+ import { ContactFooter } from '@/components/ContactFooter';
+ import { Cpu, BookOpen, Loader2 } from 'lucide-react';
+ 
+@@ -22,7 +25,7 @@ const ExoskeletonWorkspace3D = dynamic(
+       <div className="w-full h-[460px] sm:h-[540px] rounded-2xl bg-[#0b1021] border border-cyan-500/20 flex flex-col items-center justify-center space-y-4">
+         <Loader2 className="w-8 h-8 text-cyan-400 animate-spin" />
+         <span className="font-mono text-xs text-cyan-300">
+-          Cargando Entorno 3D WebGL (Three.js)...
++          Loading 3D WebGL Kinematic Environment (Three.js)...
+         </span>
+       </div>
+     ),
+@@ -40,23 +43,32 @@ export default function Home() {
+       <Navbar />
+ 
+       <main className="flex-grow">
+-        {/* Hero Section */}
++        {/* 1. Home / Hero */}
+         <Hero />
+ 
+-        {/* 3D Interactive Kinematics & Workspace Simulator Section */}
+-        <section id="simulator" className="py-16 sm:py-24 bg-[#070a12] relative overflow-hidden">
++        {/* 2. About */}
++        <About />
++
++        {/* 3. Expertise */}
++        <Expertise />
++
++        {/* 4. Featured Projects */}
++        <ProjectsShowcase />
++
++        {/* Interactive 3D Kinematics & Workspace Simulator */}
++        <section id="simulator" className="py-16 sm:py-24 bg-[#070a12] relative overflow-hidden border-t border-slate-900">
+           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+               <div>
+                 <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800 text-xs font-mono text-cyan-300 mb-3">
+                   <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+-                  <span>Interactive Research Showcase</span>
++                  <span>Research Kinematic Prototype</span>
+                 </div>
+                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+-                  Simulador Cinemático 3D de Exoesqueleto de Cadera
++                  3D Hip Exoskeleton Kinematics &amp; Workspace Simulator
+                 </h2>
+                 <p className="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl font-light">
+-                  Implementación interactiva del modelo cinemático directo bajo convención Denavit-Hartenberg (D-H) y espacio de trabajo publicado en el artículo científico <em>CMAAE 2021</em>.
++                  Interactive WebGL implementation of the forward kinematic equations (Denavit–Hartenberg convention) and 3D reachable volume simulation published in <em>CMAAE 2021</em>.
+                 </p>
+               </div>
+ 
+@@ -66,7 +78,7 @@ export default function Home() {
+                   className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 text-xs font-mono transition-colors"
+                 >
+                   <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
+-                  <span>Ver Especificación en Papers</span>
++                  <span>View Conference Paper</span>
+                 </a>
+               </div>
+             </div>
+@@ -76,20 +88,20 @@ export default function Home() {
+           </div>
+         </section>
+ 
+-        {/* The 6 Pillars */}
+-        <PillarsSection />
++        {/* 5. Professional Experience */}
++        <ExperienceTimeline />
+ 
+-        {/* Featured Projects Showcase */}
+-        <ProjectsShowcase />
++        {/* 6. Research & Publications */}
++        <ResearchPublications />
+ 
+-        {/* Scientific Publications & TPC Reviewer Status */}
+-        <ScientificPublications />
++        {/* 7. Academic Service & Leadership */}
++        <AcademicService />
+ 
+-        {/* Experience & Academic Timeline */}
+-        <ExperienceTimeline />
++        {/* 8. Education & Technical Skills */}
++        <EducationSection />
+       </main>
+ 
+-      {/* Contact & Footer */}
++      {/* 9. Contact */}
+       <ContactFooter />
+     </div>
+   );
+diff --git a/src/components/About.tsx b/src/components/About.tsx
+new file mode 100644
+index 0000000..96ce843
+--- /dev/null
++++ b/src/components/About.tsx
+@@ -0,0 +1,100 @@
++'use client';
++
++import React from 'react';
++import { User, Cpu, Compass, Target, CheckCircle2 } from 'lucide-react';
++
++export const About: React.FC = () => {
++  return (
++    <section id="about" className="py-20 bg-[#070a12] border-t border-slate-900">
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
++        {/* Section Header */}
++        <div className="text-center max-w-3xl mx-auto mb-16">
++          <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
++            Profile Overview
++          </span>
++          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
++            About My Professional Journey
++          </h2>
++          <p className="text-slate-400 text-sm sm:text-base">
++            Bridging foundational mechatronics engineering with production data platforms, full-stack software development, and peer-reviewed robotics research.
++          </p>
++        </div>
++
++        {/* 4 Structured Areas Grid */}
++        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
++          {/* 1. Professional Background */}
++          <div className="p-6 sm:p-7 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-colors">
++            <div className="flex items-center space-x-3 mb-4">
++              <div className="w-10 h-10 rounded-xl bg-cyan-950/80 border border-cyan-800 flex items-center justify-center">
++                <User className="w-5 h-5 text-cyan-400" />
++              </div>
++              <h3 className="text-lg font-bold text-white">Professional Background</h3>
++            </div>
++            <p className="text-slate-300 text-sm leading-relaxed font-light mb-4">
++              Graduated with a Bachelor of Science in Mechatronics Engineering from the National University of Engineering (UNI) in Peru, complemented by a Specialization in Big Data from UTEC. My professional trajectory has centered on data engineering within the financial sector (Santander Consumer Bank via IDM/SES), cross-platform software engineering, and mechatronic systems.
++            </p>
++            <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• B.Sc. Mechatronics (UNI)</span>
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• Big Data (UTEC)</span>
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• Banking Data Platforms</span>
++            </div>
++          </div>
++
++          {/* 2. Engineering Approach */}
++          <div className="p-6 sm:p-7 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-colors">
++            <div className="flex items-center space-x-3 mb-4">
++              <div className="w-10 h-10 rounded-xl bg-indigo-950/80 border border-indigo-800 flex items-center justify-center">
++                <Compass className="w-5 h-5 text-indigo-400" />
++              </div>
++              <h3 className="text-lg font-bold text-white">Engineering Approach</h3>
++            </div>
++            <p className="text-slate-300 text-sm leading-relaxed font-light mb-4">
++              I approach complex engineering problems by integrating mathematical formulations, cloud architectures, and disciplined software patterns. My background in mechatronics enables me to reason about physical systems, while my software and data engineering experience ensures that pipelines and applications remain maintainable, testable, and robust.
++            </p>
++            <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• First-Principles Modeling</span>
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• Distributed Architecture</span>
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• Testable &amp; Clean Code</span>
++            </div>
++          </div>
++
++          {/* 3. Research Interests */}
++          <div className="p-6 sm:p-7 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-colors">
++            <div className="flex items-center space-x-3 mb-4">
++              <div className="w-10 h-10 rounded-xl bg-emerald-950/80 border border-emerald-800 flex items-center justify-center">
++                <Cpu className="w-5 h-5 text-emerald-400" />
++              </div>
++              <h3 className="text-lg font-bold text-white">Research Interests</h3>
++            </div>
++            <p className="text-slate-300 text-sm leading-relaxed font-light mb-4">
++              My scientific research centers on rehabilitation robotics, kinematic analysis of multi-DoF joint mechanisms (Denavit–Hartenberg convention), 3D workspace simulation, and assistive mechatronic devices. I also serve the international academic community as a Technical Program Committee (TPC) peer reviewer for international robotics conferences.
++            </p>
++            <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• 3-DoF Hip Exoskeletons</span>
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• Denavit–Hartenberg Kinematics</span>
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• TPC Peer Review</span>
++            </div>
++          </div>
++
++          {/* 4. Career Focus */}
++          <div className="p-6 sm:p-7 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-colors">
++            <div className="flex items-center space-x-3 mb-4">
++              <div className="w-10 h-10 rounded-xl bg-pink-950/80 border border-pink-800 flex items-center justify-center">
++                <Target className="w-5 h-5 text-pink-400" />
++              </div>
++              <h3 className="text-lg font-bold text-white">Career Focus</h3>
++            </div>
++            <p className="text-slate-300 text-sm leading-relaxed font-light mb-4">
++              Committed to architecting reliable, scalable data platforms in AWS and GCP, developing robust full-stack applications with TypeScript and Python, and collaborating on multidisciplinary engineering projects where physical systems, data intelligence, and reliable software converge.
++            </p>
++            <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• Cloud Data Engineering</span>
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• Full-Stack Systems</span>
++              <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">• Multidisciplinary R&amp;D</span>
++            </div>
++          </div>
++        </div>
++      </div>
++    </section>
++  );
++};
+diff --git a/src/components/AcademicService.tsx b/src/components/AcademicService.tsx
+new file mode 100644
+index 0000000..ac2fdb6
+--- /dev/null
++++ b/src/components/AcademicService.tsx
+@@ -0,0 +1,119 @@
++'use client';
++
++import React from 'react';
++import { ShieldCheck, Award, Users, Orbit, Building2, MapPin, Calendar } from 'lucide-react';
++import portfolioData from '../../portfolio_data.json';
++
++export const AcademicService: React.FC = () => {
++  const { academicService } = portfolioData;
++
++  const categoryIcons: Record<string, typeof ShieldCheck> = {
++    'Conference Service': ShieldCheck,
++    'Student & Professional Organizations': Users,
++    'Research Leadership & Competition': Orbit,
++    'Academic Engineering Project': Award,
++  };
++
++  return (
++    <section id="academic-service" className="py-20 bg-[#0b1021]/50 border-t border-slate-900">
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
++        {/* Section Header */}
++        <div className="text-center max-w-3xl mx-auto mb-16">
++          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-indigo-950/80 border border-indigo-800 text-xs font-mono text-indigo-300 mb-3">
++            <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
++            <span>Academic Community Contribution</span>
++          </div>
++          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
++            Academic Service &amp; Leadership
++          </h2>
++          <p className="text-slate-400 text-sm sm:text-base">
++            Peer review service for international conferences, leadership within IEEE student societies, and competitive university engineering teams.
++          </p>
++        </div>
++
++        {/* Highlight Banner: ICCRE Japan TPC Member */}
++        <div className="mb-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-indigo-950/70 via-slate-900 to-slate-950 border border-indigo-500/40 shadow-xl">
++          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
++            <div className="flex items-start space-x-4">
++              <div className="w-12 h-12 rounded-xl bg-indigo-900/60 border border-indigo-500/50 flex items-center justify-center shrink-0">
++                <ShieldCheck className="w-6 h-6 text-indigo-300" />
++              </div>
++              <div>
++                <div className="flex flex-wrap items-center gap-2 mb-1">
++                  <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-indigo-900 text-indigo-300 border border-indigo-700 font-semibold">
++                    ICCRE • Japan
++                  </span>
++                  <span className="font-mono text-xs px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
++                    2024 • 2025 • 2026
++                  </span>
++                </div>
++                <h3 className="text-xl sm:text-2xl font-bold text-white">
++                  Technical Program Committee (TPC) Member &amp; Scientific Reviewer
++                </h3>
++                <p className="text-xs font-mono text-slate-400 mt-1">
++                  International Conference on Control, Robotics and Automation Engineering
++                </p>
++                <p className="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed max-w-2xl font-light">
++                  Appointed to the Technical Program Committee to perform peer reviews of scientific submissions in robot kinematics, control algorithms, autonomous systems, and bio-robotic applications across three consecutive editions in Japan.
++                </p>
++              </div>
++            </div>
++
++            <div className="shrink-0 flex flex-col space-y-2 w-full md:w-auto font-mono text-xs">
++              <div className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 flex items-center justify-between gap-3">
++                <span className="text-slate-400">Official Function:</span>
++                <span className="text-cyan-400 font-bold">TPC Member &amp; Reviewer</span>
++              </div>
++              <div className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 flex items-center justify-between gap-3">
++                <span className="text-slate-400">Venue:</span>
++                <span className="text-indigo-300 font-bold">Japan</span>
++              </div>
++            </div>
++          </div>
++        </div>
++
++        {/* Academic Service Cards Grid */}
++        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
++          {academicService
++            .filter((item) => item.id !== 'iccre-japan-tpc')
++            .map((item) => {
++              const Icon = categoryIcons[item.category] || ShieldCheck;
++              return (
++                <div
++                  key={item.id}
++                  className="p-6 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between shadow-lg"
++                >
++                  <div>
++                    <div className="flex items-center justify-between gap-2 mb-3">
++                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">
++                        {item.category}
++                      </span>
++                      <span className="text-xs font-mono text-slate-500">{item.period}</span>
++                    </div>
++
++                    <h4 className="text-base font-bold text-white mb-1 leading-snug">
++                      {item.role}
++                    </h4>
++
++                    <p className="text-xs font-mono text-cyan-400 mb-3 flex items-center gap-1.5">
++                      <Building2 className="w-3 h-3" />
++                      <span>{item.organization}</span>
++                    </p>
++
++                    <p className="text-slate-300 text-xs leading-relaxed font-light mb-4">
++                      {item.description}
++                    </p>
++                  </div>
++
++                  <div className="pt-3 border-t border-slate-800/80 text-[11px] font-mono text-slate-500 flex items-center gap-1">
++                    <MapPin className="w-3 h-3" />
++                    <span>{item.location}</span>
++                  </div>
++                </div>
++              );
++            })}
++        </div>
++      </div>
++    </section>
++  );
++};
+diff --git a/src/components/ContactFooter.tsx b/src/components/ContactFooter.tsx
+index 71bc8a3..fb1db8b 100644
+--- a/src/components/ContactFooter.tsx
++++ b/src/components/ContactFooter.tsx
+@@ -1,14 +1,15 @@
+ 'use client';
+ 
+ import React, { useState } from 'react';
+-import { Mail, Phone, MapPin, Globe, Copy, Check, Download, ExternalLink, Linkedin, Github } from 'lucide-react';
++import { Mail, Phone, MapPin, Globe, Copy, Check, ExternalLink, Linkedin, Github, Send } from 'lucide-react';
++import portfolioData from '../../portfolio_data.json';
+ 
+ export const ContactFooter: React.FC = () => {
+   const [copied, setCopied] = useState(false);
+-  const email = 'nicksc1911@gmail.com';
++  const { profile } = portfolioData;
+ 
+   const handleCopyEmail = () => {
+-    navigator.clipboard.writeText(email);
++    navigator.clipboard.writeText(profile.email);
+     setCopied(true);
+     setTimeout(() => setCopied(false), 2500);
+   };
+@@ -19,33 +20,60 @@ export const ContactFooter: React.FC = () => {
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pb-16 border-b border-slate-800/80">
+           {/* Left Column: Intro & Headline */}
+           <div>
+-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-mono mb-4">
+-              <span>Contacto & Colaboración</span>
++            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-mono mb-4">
++              <span>Contact &amp; Collaboration</span>
+             </div>
+             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+-              ¿Listo para construir el futuro de los datos, el software y la robótica?
++              Get in Touch
+             </h2>
+             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-light">
+-              Estoy disponible para proyectos de alto impacto, roles como <strong>Staff / Senior Data Engineer</strong>, <strong>Tech Lead Full Stack</strong>, o iniciativas de <strong>I+D en Robótica y Bioingeniería</strong> a nivel nacional e internacional.
++              Available for technical inquiries, professional opportunities in <strong>Data Engineering</strong>, <strong>Full-Stack Software Engineering</strong>, and collaborative <strong>Robotics &amp; Biomedical Research</strong>.
+             </p>
+ 
+-            <div className="flex flex-wrap gap-4">
++            <div className="flex flex-wrap gap-4 font-mono text-xs sm:text-sm">
+               <a
+-                href={`mailto:${email}`}
+-                className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-mono text-sm font-bold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-lg shadow-cyan-500/20 active:scale-95"
++                href={profile.socialLinks.email}
++                className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-bold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-lg shadow-cyan-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+               >
+                 <Mail className="w-4 h-4" />
+-                <span>Escríbeme un Correo</span>
++                <span>Send Email</span>
+               </a>
+ 
+               <button
+                 onClick={handleCopyEmail}
+-                className="flex items-center space-x-2 px-5 py-3.5 rounded-xl font-mono text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 transition-all"
++                className="flex items-center space-x-2 px-5 py-3.5 rounded-xl font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
+               >
+                 {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-slate-400" />}
+-                <span>{copied ? '¡Correo Copiado!' : 'Copiar Correo'}</span>
++                <span>{copied ? 'Email Copied!' : 'Copy Email'}</span>
+               </button>
+             </div>
++
++            {/* Social Network Links */}
++            <div className="flex items-center space-x-4 mt-8 font-mono text-xs">
++              <a
++                href={profile.socialLinks.github}
++                target="_blank"
++                rel="noreferrer"
++                aria-label="GitHub Profile"
++                className="flex items-center space-x-2 text-slate-400 hover:text-white transition-colors"
++              >
++                <Github className="w-4 h-4" />
++                <span>github.com/NickMyung</span>
++              </a>
++
++              <span className="text-slate-700">•</span>
++
++              <a
++                href={profile.socialLinks.linkedin}
++                target="_blank"
++                rel="noreferrer"
++                aria-label="LinkedIn Profile"
++                className="flex items-center space-x-2 text-slate-400 hover:text-sky-400 transition-colors"
++              >
++                <Linkedin className="w-4 h-4" />
++                <span>linkedin.com/in/nick-soto-conde</span>
++              </a>
++            </div>
+           </div>
+ 
+           {/* Right Column: Contact Details Cards */}
+@@ -53,40 +81,45 @@ export const ContactFooter: React.FC = () => {
+             <div className="p-5 rounded-2xl bg-[#0b1021] border border-slate-800">
+               <div className="text-slate-400 mb-1 flex items-center space-x-2">
+                 <Mail className="w-4 h-4 text-cyan-400" />
+-                <span className="uppercase text-[10px] tracking-wide">Correo Electrónico</span>
++                <span className="uppercase text-[10px] tracking-wide">Direct Email</span>
+               </div>
+-              <a href={`mailto:${email}`} className="text-sm font-bold text-white hover:text-cyan-400 break-all transition-colors">
+-                {email}
++              <a
++                href={profile.socialLinks.email}
++                className="text-sm font-bold text-white hover:text-cyan-400 break-all transition-colors"
++              >
++                {profile.email}
+               </a>
+             </div>
+ 
+             <div className="p-5 rounded-2xl bg-[#0b1021] border border-slate-800">
+               <div className="text-slate-400 mb-1 flex items-center space-x-2">
+                 <Phone className="w-4 h-4 text-pink-400" />
+-                <span className="uppercase text-[10px] tracking-wide">Teléfono / WhatsApp</span>
++                <span className="uppercase text-[10px] tracking-wide">Telephone / WhatsApp</span>
+               </div>
+-              <p className="text-sm font-bold text-white">+51 942 002 064</p>
++              <p className="text-sm font-bold text-white">{profile.phone}</p>
+             </div>
+ 
+             <div className="p-5 rounded-2xl bg-[#0b1021] border border-slate-800">
+               <div className="text-slate-400 mb-1 flex items-center space-x-2">
+                 <MapPin className="w-4 h-4 text-emerald-400" />
+-                <span className="uppercase text-[10px] tracking-wide">Ubicación</span>
++                <span className="uppercase text-[10px] tracking-wide">Location</span>
+               </div>
+-              <p className="text-sm font-bold text-white">Jesús María, Lima, Perú</p>
+-              <p className="text-[11px] text-slate-400 mt-0.5">Disponible Remoto / Híbrido</p>
++              <p className="text-sm font-bold text-white">Jesús María, Lima, Peru</p>
++              <p className="text-[11px] text-slate-400 mt-0.5">Available for Remote / Hybrid</p>
+             </div>
+ 
+             <div className="p-5 rounded-2xl bg-[#0b1021] border border-slate-800">
+               <div className="text-slate-400 mb-1 flex items-center space-x-2">
+                 <Globe className="w-4 h-4 text-indigo-400" />
+-                <span className="uppercase text-[10px] tracking-wide">Idiomas</span>
++                <span className="uppercase text-[10px] tracking-wide">Languages</span>
++              </div>
++              <div className="space-y-1 text-slate-300">
++                {profile.languages.map((l, idx) => (
++                  <p key={idx} className="text-[11px]">
++                    • <strong>{l.language}:</strong> {l.level}
++                  </p>
++                ))}
+               </div>
+-              <p className="text-[11px] text-slate-200">
+-                • <strong>Español:</strong> Nativo<br />
+-                • <strong>Inglés:</strong> Avanzado (Profesional)<br />
+-                • <strong>Coreano:</strong> Básico
+-              </p>
+             </div>
+           </div>
+         </div>
+@@ -94,10 +127,10 @@ export const ContactFooter: React.FC = () => {
+         {/* Bottom Credits */}
+         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slate-500">
+           <div>
+-            © {new Date().getFullYear()} Nick Soto Conde. Bachiller en Ingeniería Mecatrónica (UNI).
++            © {new Date().getFullYear()} {profile.name}. Bachelor in Mechatronics Engineering (UNI).
+           </div>
+           <div className="flex items-center space-x-4">
+-            <span className="text-cyan-400">ICCRE Japón TPC (2024-2026)</span>
++            <span className="text-cyan-400">ICCRE Japan TPC Reviewer (2024–2026)</span>
+             <span>•</span>
+             <span className="text-indigo-400">UTEC Big Data</span>
+           </div>
+diff --git a/src/components/EducationSection.tsx b/src/components/EducationSection.tsx
+new file mode 100644
+index 0000000..1e5625f
+--- /dev/null
++++ b/src/components/EducationSection.tsx
+@@ -0,0 +1,111 @@
++'use client';
++
++import React from 'react';
++import { GraduationCap, Award, BookCheck, MapPin, CheckCircle2 } from 'lucide-react';
++import portfolioData from '../../portfolio_data.json';
++
++export const EducationSection: React.FC = () => {
++  const { education, technicalSkills } = portfolioData;
++
++  const skillCategories = [
++    { label: 'Programming Languages', skills: technicalSkills.programmingLanguages },
++    { label: 'Data Engineering', skills: technicalSkills.dataEngineering },
++    { label: 'Cloud & Infrastructure', skills: technicalSkills.cloudAndInfrastructure },
++    { label: 'Software Development', skills: technicalSkills.softwareDevelopment },
++    { label: 'Robotics & Simulation', skills: technicalSkills.roboticsAndSimulation },
++    { label: 'Research & Academic Methods', skills: technicalSkills.researchMethods },
++  ];
++
++  return (
++    <section id="education" className="py-20 bg-[#070a12] border-t border-slate-900">
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
++        {/* Section Header */}
++        <div className="text-center max-w-3xl mx-auto mb-16">
++          <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
++            Academic Background &amp; Skills
++          </span>
++          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
++            Education &amp; Technical Matrix
++          </h2>
++          <p className="text-slate-400 text-sm sm:text-base">
++            Formal university engineering degree, specialized post-graduate training, and functional categorization of technical proficiencies.
++          </p>
++        </div>
++
++        {/* Formal Education Cards */}
++        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
++          {education.map((edu) => (
++            <div
++              key={edu.id}
++              className="p-6 sm:p-7 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between shadow-lg"
++            >
++              <div>
++                <div className="flex items-center justify-between gap-2 mb-2 font-mono text-xs">
++                  <span className="text-cyan-400 font-bold uppercase tracking-wider">
++                    {edu.period}
++                  </span>
++                  <span className="text-slate-400 flex items-center gap-1">
++                    <MapPin className="w-3 h-3" />
++                    <span>{edu.location}</span>
++                  </span>
++                </div>
++
++                <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
++                  {edu.degree}
++                </h3>
++
++                <p className="text-xs font-mono text-indigo-300 mb-4 font-semibold">
++                  {edu.institution}
++                </p>
++
++                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
++                  {edu.description}
++                </p>
++              </div>
++
++              <div className="pt-4 border-t border-slate-800/80 mt-4 flex items-center space-x-2 text-xs font-mono text-emerald-400">
++                <CheckCircle2 className="w-3.5 h-3.5" />
++                <span>Verified Academic Credential</span>
++              </div>
++            </div>
++          ))}
++        </div>
++
++        {/* Technical Skills Categorization (No Arbitrary Percentages) */}
++        <div className="max-w-5xl mx-auto">
++          <div className="text-center mb-8">
++            <h3 className="text-xl font-bold text-white mb-2">
++              Functional Skill Distribution
++            </h3>
++            <p className="text-xs font-mono text-slate-400">
++              Categorized by real engineering function and evidenced across industry and academic projects.
++            </p>
++          </div>
++
++          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
++            {skillCategories.map((cat, idx) => (
++              <div
++                key={idx}
++                className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800/90"
++              >
++                <h4 className="text-xs font-mono text-cyan-400 uppercase tracking-wide font-semibold mb-3 pb-2 border-b border-slate-800">
++                  {cat.label}
++                </h4>
++                <div className="flex flex-wrap gap-1.5">
++                  {cat.skills.map((s, sIdx) => (
++                    <span
++                      key={sIdx}
++                      className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#0b1021] text-slate-300 border border-slate-800"
++                    >
++                      {s}
++                    </span>
++                  ))}
++                </div>
++              </div>
++            ))}
++          </div>
++        </div>
++      </div>
++    </section>
++  );
++};
+diff --git a/src/components/ExperienceTimeline.tsx b/src/components/ExperienceTimeline.tsx
+index 6a0412b..9d74b6c 100644
+--- a/src/components/ExperienceTimeline.tsx
++++ b/src/components/ExperienceTimeline.tsx
+@@ -1,196 +1,113 @@
+ 'use client';
+ 
+ import React, { useState } from 'react';
+-import { Briefcase, Calendar, Building2, CheckCircle2, GraduationCap, ChevronRight } from 'lucide-react';
++import { Briefcase, Calendar, Building2, MapPin, ChevronRight } from 'lucide-react';
++import portfolioData from '../../portfolio_data.json';
+ 
+ export const ExperienceTimeline: React.FC = () => {
+-  const [activeFilter, setActiveFilter] = useState<'all' | 'data' | 'fullstack' | 'robotics'>('all');
++  const [activeFilter, setActiveFilter] = useState<'all' | 'data' | 'software' | 'robotics'>('all');
++  const { experience } = portfolioData;
+ 
+-  const experiences = [
+-    {
+-      category: 'data',
+-      role: 'Ingeniero de Datos',
+-      company: 'IDM Technology',
+-      client: 'Santander Consumer Bank',
+-      period: 'Agosto 2026 – Actualidad',
+-      summary:
+-        'Relevamiento y migración de procesos financieros de Gestión de Información (GI) hacia AWS Cloud bajo el nuevo modelo internacional de Santander.',
+-      points: [
+-        'Desarrollo de pipelines ETL distribuidos con Apache Spark en AWS EMR y orquestación con Step Functions.',
+-        'Gestión de equivalencias entre el Core Bancario To-Be vs As-Is, acelerando la homologación con sistemas satélites.',
+-        'Implementación del marco de gobierno de datos corporativo con DataHub, definiendo esquemas, dominios y subdominios.',
+-      ],
+-      stack: ['Python', 'Spark', 'Scala', 'AWS EMR', 'AWS Glue', 'DataHub', 'SQL Server', 'Oracle'],
+-    },
+-    {
+-      category: 'data',
+-      role: 'Ingeniero de Datos',
+-      company: 'SES',
+-      client: 'Santander Consumer Bank',
+-      period: 'Agosto 2025 – Julio 2026',
+-      summary:
+-        'Estandarización y optimización de flujos de transformación de datos para el Squad Finanzas Data.',
+-      points: [
+-        'Definición de estructura y estándares de desarrollo de subdominios de GI según lineamientos de la casa matriz en España.',
+-        'Optimización de queries de transformación, reduciendo tiempos de ejecución y simplificando el mantenimiento.',
+-        'Elaboración de diccionarios de datos y modelamiento dimensional para analítica financiera.',
+-      ],
+-      stack: ['Python', 'SQL Server', 'Scala', 'Spark', 'Athena', 'EMR', 'S3', 'DataHub'],
+-    },
+-    {
+-      category: 'data',
+-      role: 'Analista de Datos y BI',
+-      company: 'Virutex Ilko',
+-      period: 'Enero 2024 – Julio 2025',
+-      summary:
+-        'Automatización integral de flujos ETL, desarrollo de Data Warehouse y simuladores predictivos de KPIs de negocio.',
+-      points: [
+-        'Diseño y gestión de Data Warehouse para analítica comercial, de inventarios y logística.',
+-        'Creación de aplicación interactiva para simulación de KPIs empresariales y escenarios de negocio comerciales.',
+-        'Desarrollo de bots de automatización de procesos (RPA con Automation Anywhere) y scripts de Web Scraping con Selenium.',
+-      ],
+-      stack: ['Python', 'Pandas', 'SQL Server', 'PySpark', 'Power BI', 'Automation Anywhere', 'Selenium', 'Jenkins'],
+-    },
+-    {
+-      category: 'fullstack',
+-      role: 'Desarrollador Backend',
+-      company: 'Bioverse',
+-      period: '2024',
+-      summary:
+-        'Arquitectura serverless en AWS y APIs GraphQL para consumo desde frontend desarrollado en Next.js.',
+-      points: [
+-        'Diseño y modelado de bases de datos NoSQL con Amazon DynamoDB optimizadas para consultas GraphQL con AppSync.',
+-        'Desarrollo de flujos ETL serverless para monitorización y análisis de comportamiento de usuarios en la plataforma web.',
+-        'Endurecimiento de seguridad en contenido multimedia protegido mediante políticas IAM y AWS Cognito.',
+-      ],
+-      stack: ['Next.js', 'Node.js', 'GraphQL', 'DynamoDB', 'AWS AppSync', 'Lambda', 'Cognito', 'Athena', 'Step Functions'],
+-    },
+-    {
+-      category: 'fullstack',
+-      role: 'Desarrollador Web Full Stack - Líder de Equipo',
+-      company: 'VE7 Agronegocios S.A.C.',
+-      period: 'Enero 2023 – Enero 2024',
+-      summary:
+-        'Liderazgo de equipo bajo metodología Scrum, desarrollo web y móvil e integración de modelos de Machine Learning.',
+-      points: [
+-        'Desarrollo de aplicaciones móviles con React Native y React + TypeScript; despliegue en Google Play Store y AWS.',
+-        'Entrenamiento e integración de modelos predictivos (árboles de decisión) en APIs REST de alto rendimiento con Flask/Python.',
+-        'Optimización de tiempo de respuesta mediante arquitectura de microservicios y contenedorización con Docker.',
+-      ],
+-      stack: ['React', 'React Native', 'TypeScript', 'Flask Python', 'Scikit-Learn', 'AWS', 'GCP', 'Docker', 'Tailwind CSS'],
+-    },
+-    {
+-      category: 'data',
+-      role: 'Ingeniero de Datos',
+-      company: 'VE7 Agronegocios S.A.C.',
+-      period: 'Enero 2022 – Enero 2023',
+-      summary:
+-        'Construcción de canalizaciones de Big Data y migración de nube entre proveedores.',
+-      points: [
+-        'Migración exitosa de toda la infraestructura y estructuras ETL desde Google Cloud Platform (GCP) hacia AWS.',
+-        'Procesamiento distribuido con Apache Spark, Hadoop, Airflow y Google BigQuery.',
+-        'Modelos analíticos de segmentación y clustering para optimización de campañas de marketing.',
+-      ],
+-      stack: ['Apache Spark', 'PySpark', 'Apache Airflow', 'Hadoop', 'GCP BigQuery', 'AWS Cloud', 'Scala'],
+-    },
+-    {
+-      category: 'robotics',
+-      role: 'Practicante de Ingeniería y Desarrollo R&D',
+-      company: 'Medabots S.A.C.',
+-      period: 'Abril 2021 – Septiembre 2021',
+-      summary:
+-        'Investigación y desarrollo de dispositivos robóticos para rehabilitación y cálculos cinemáticos.',
+-      points: [
+-        'Creación de software para asistencia de diseño de manipuladores robóticos y cálculos de cinemática directa/inversa.',
+-        'Análisis de espacios de trabajo tridimensionales y redacción de 2 artículos científicos para congresos internacionales.',
+-      ],
+-      stack: ['Python', 'Cinemática Robótica', 'Simulación Numérica', 'Redacción Científica'],
+-    },
+-  ];
++  const filterMapping: Record<string, 'data' | 'software' | 'robotics'> = {
++    'idm-santander': 'data',
++    'ses-santander': 'data',
++    'virutex-ilko': 'data',
++    'bioverse': 'software',
++    've7-fullstack': 'software',
++    've7-data': 'data',
++    'medabots': 'robotics',
++  };
+ 
+-  const filtered = experiences.filter(
+-    (exp) => activeFilter === 'all' || exp.category === activeFilter
++  const filtered = experience.filter(
++    (exp) => activeFilter === 'all' || filterMapping[exp.id] === activeFilter
+   );
+ 
+   return (
+     <section id="experience" className="py-20 bg-[#0b1021]/50 border-t border-slate-900">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+-        <div className="text-center max-w-3xl mx-auto mb-14">
++        {/* Section Header */}
++        <div className="text-center max-w-3xl mx-auto mb-12">
+           <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
+-            Trayectoria Profesional
++            Career Progression
+           </span>
+           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
+-            Experiencia Laboral & Formación
++            Professional Experience
+           </h2>
+           <p className="text-slate-400 text-sm sm:text-base">
+-            Progresión continua en el liderazgo de datos, desarrollo de software cloud y sistemas robóticos aplicados.
++            Documented engineering responsibilities, technical scopes, and personal contributions across enterprise banking platforms, cloud data systems, and full-stack applications.
+           </p>
+ 
+           {/* Filter Pills */}
+           <div className="flex flex-wrap items-center justify-center gap-2 mt-8 font-mono text-xs">
+             <button
+               onClick={() => setActiveFilter('all')}
+-              className={`px-4 py-2 rounded-xl transition-all ${
++              className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
+                 activeFilter === 'all'
+                   ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
+                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
+               }`}
+             >
+-              Todos los Roles
++              All Roles ({experience.length})
+             </button>
+             <button
+               onClick={() => setActiveFilter('data')}
+-              className={`px-4 py-2 rounded-xl transition-all ${
++              className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
+                 activeFilter === 'data'
+                   ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
+                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
+               }`}
+             >
+-              Ingeniería de Datos & BI
++              Data Engineering
+             </button>
+             <button
+-              onClick={() => setActiveFilter('fullstack')}
+-              className={`px-4 py-2 rounded-xl transition-all ${
+-                activeFilter === 'fullstack'
++              onClick={() => setActiveFilter('software')}
++              className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
++                activeFilter === 'software'
+                   ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
+                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
+               }`}
+             >
+-              Full Stack & Cloud
++              Software Development
+             </button>
+             <button
+               onClick={() => setActiveFilter('robotics')}
+-              className={`px-4 py-2 rounded-xl transition-all ${
++              className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
+                 activeFilter === 'robotics'
+                   ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
+                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
+               }`}
+             >
+-              Robótica & R&D
++              Robotics R&amp;D
+             </button>
+           </div>
+         </div>
+ 
+-        {/* Timeline Stream */}
++        {/* Experience Stream */}
+         <div className="space-y-6 max-w-4xl mx-auto">
+-          {filtered.map((exp, idx) => (
++          {filtered.map((exp) => (
+             <div
+-              key={idx}
++              key={exp.id}
+               className="p-6 sm:p-7 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-all shadow-md"
+             >
+               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                 <div>
+-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
++                  <h3 className="text-xl font-bold text-white flex flex-wrap items-center gap-2">
+                     <span>{exp.role}</span>
+                     {exp.client && (
+                       <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-pink-950 text-pink-300 border border-pink-800">
+-                        Cliente: {exp.client}
++                        Client: {exp.client}
+                       </span>
+                     )}
+                   </h3>
+-                  <div className="flex items-center space-x-2 text-xs font-mono text-cyan-400 mt-0.5">
+-                    <Building2 className="w-3.5 h-3.5" />
+-                    <span>{exp.company}</span>
++                  <div className="flex items-center space-x-3 text-xs font-mono text-cyan-400 mt-1">
++                    <span className="flex items-center space-x-1">
++                      <Building2 className="w-3.5 h-3.5" />
++                      <span>{exp.organization}</span>
++                    </span>
++                    <span className="flex items-center space-x-1 text-slate-400">
++                      <MapPin className="w-3.5 h-3.5" />
++                      <span>{exp.location}</span>
++                    </span>
+                   </div>
+                 </div>
+ 
+@@ -200,21 +117,25 @@ export const ExperienceTimeline: React.FC = () => {
+                 </div>
+               </div>
+ 
+-              <p className="text-slate-300 text-xs sm:text-sm mb-4 font-light leading-relaxed">
+-                {exp.summary}
+-              </p>
++              {/* Technical Scope */}
++              <div className="mb-4 text-xs font-mono text-indigo-300 bg-slate-950/60 px-3 py-1.5 rounded-lg border border-slate-800/80">
++                <span className="text-slate-500">Technical Scope: </span>
++                {exp.scope}
++              </div>
+ 
++              {/* Contributions */}
+               <div className="space-y-2 mb-5">
+-                {exp.points.map((pt, pIdx) => (
++                {exp.contributions.map((point, pIdx) => (
+                   <div key={pIdx} className="flex items-start space-x-2 text-xs sm:text-sm text-slate-300">
+                     <ChevronRight className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
+-                    <span>{pt}</span>
++                    <span className="font-light">{point}</span>
+                   </div>
+                 ))}
+               </div>
+ 
++              {/* Technologies */}
+               <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800">
+-                {exp.stack.map((stk, sIdx) => (
++                {exp.technologies.map((stk, sIdx) => (
+                   <span
+                     key={sIdx}
+                     className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800"
+@@ -226,45 +147,6 @@ export const ExperienceTimeline: React.FC = () => {
+             </div>
+           ))}
+         </div>
+-
+-        {/* Education & Academic Honors Sub-section */}
+-        <div className="max-w-4xl mx-auto mt-16 pt-12 border-t border-slate-800">
+-          <h3 className="text-xl font-bold text-white mb-6 flex items-center space-x-2">
+-            <GraduationCap className="w-6 h-6 text-cyan-400" />
+-            <span>Formación Académica & Proyectos Universitarios</span>
+-          </h3>
+-
+-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono text-xs">
+-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+-              <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider block mb-1">
+-                2017 – 2022
+-              </span>
+-              <h4 className="text-base font-bold text-white font-sans mb-1">
+-                Bachiller en Ingeniería Mecatrónica
+-              </h4>
+-              <p className="text-indigo-300 mb-3">Universidad Nacional de Ingeniería (UNI)</p>
+-              <ul className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+-                <li>• Miembro de Grupo Tharsis - UNI (NASA Human Exploration Rover Challenge).</li>
+-                <li>• Director de Investigación IEEE EMBS UNI (Engineering in Medicine and Biology).</li>
+-                <li>• Proyecto FIM UNI: Diseño y simulación de prótesis de mano (Asesor: Ing. Oliden Martinez).</li>
+-              </ul>
+-            </div>
+-
+-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+-              <span className="text-[10px] text-indigo-400 font-bold uppercase tracking-wider block mb-1">
+-                2024
+-              </span>
+-              <h4 className="text-base font-bold text-white font-sans mb-1">
+-                Especialización en Big Data
+-              </h4>
+-              <p className="text-indigo-300 mb-3">UTEC (Universidad de Ingeniería y Tecnología)</p>
+-              <ul className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+-                <li>• Arquitecturas analíticas modernas, procesamiento distribuido y Data Lakes.</li>
+-                <li>• Gobernanza, calidad y procesamiento de datos a gran escala.</li>
+-              </ul>
+-            </div>
+-          </div>
+-        </div>
+       </div>
+     </section>
+   );
+diff --git a/src/components/Expertise.tsx b/src/components/Expertise.tsx
+new file mode 100644
+index 0000000..2b6c514
+--- /dev/null
++++ b/src/components/Expertise.tsx
+@@ -0,0 +1,117 @@
++'use client';
++
++import React from 'react';
++import { Database, Layers, Bot, CheckCircle2 } from 'lucide-react';
++import portfolioData from '../../portfolio_data.json';
++
++export const Expertise: React.FC = () => {
++  const { expertise } = portfolioData;
++
++  const iconMap: Record<string, typeof Database> = {
++    'data-engineering': Database,
++    'software-engineering': Layers,
++    'robotics-biomedical': Bot,
++  };
++
++  const colorMap: Record<string, { badge: string; border: string; icon: string }> = {
++    'data-engineering': {
++      badge: 'bg-cyan-950/80 text-cyan-300 border-cyan-800/60',
++      border: 'hover:border-cyan-500/50',
++      icon: 'text-cyan-400',
++    },
++    'software-engineering': {
++      badge: 'bg-indigo-950/80 text-indigo-300 border-indigo-800/60',
++      border: 'hover:border-indigo-500/50',
++      icon: 'text-indigo-400',
++    },
++    'robotics-biomedical': {
++      badge: 'bg-emerald-950/80 text-emerald-300 border-emerald-800/60',
++      border: 'hover:border-emerald-500/50',
++      icon: 'text-emerald-400',
++    },
++  };
++
++  return (
++    <section id="expertise" className="py-20 bg-[#0b1021]/50 border-t border-slate-900">
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
++        {/* Section Header */}
++        <div className="text-center max-w-3xl mx-auto mb-16">
++          <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
++            Technical Competencies
++          </span>
++          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
++            Areas of Core Expertise
++          </h2>
++          <p className="text-slate-400 text-sm sm:text-base">
++            Structured into three verifiable domains: enterprise cloud data engineering, full-stack application development, and mechatronic robotics research.
++          </p>
++        </div>
++
++        {/* 3 Main Pillars Grid */}
++        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
++          {expertise.map((item) => {
++            const Icon = iconMap[item.id] || Database;
++            const colors = colorMap[item.id] || colorMap['data-engineering'];
++
++            return (
++              <div
++                key={item.id}
++                className={`p-7 rounded-2xl bg-[#0b1021] border border-slate-800 ${colors.border} transition-all duration-300 flex flex-col justify-between shadow-xl`}
++              >
++                <div>
++                  {/* Category Header */}
++                  <div className="flex items-center space-x-3 mb-5">
++                    <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
++                      <Icon className={`w-6 h-6 ${colors.icon}`} />
++                    </div>
++                    <div>
++                      <h3 className="text-lg font-bold text-white leading-tight">
++                        {item.title}
++                      </h3>
++                    </div>
++                  </div>
++
++                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light mb-6">
++                    {item.description}
++                  </p>
++
++                  {/* Core Competencies List */}
++                  <div className="mb-6">
++                    <span className="text-xs font-mono text-slate-400 uppercase tracking-wide block mb-3 font-semibold">
++                      Core Competencies
++                    </span>
++                    <div className="space-y-1.5">
++                      {item.competencies.map((comp, cIdx) => (
++                        <div key={cIdx} className="flex items-start space-x-2 text-xs text-slate-300">
++                          <CheckCircle2 className={`w-3.5 h-3.5 ${colors.icon} mt-0.5 shrink-0`} />
++                          <span>{comp}</span>
++                        </div>
++                      ))}
++                    </div>
++                  </div>
++                </div>
++
++                {/* Verified Technologies Tags */}
++                <div>
++                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wide block mb-2 font-semibold pt-4 border-t border-slate-800">
++                    Demonstrated Technologies
++                  </span>
++                  <div className="flex flex-wrap gap-1.5">
++                    {item.technologies.map((tech, tIdx) => (
++                      <span
++                        key={tIdx}
++                        className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800"
++                      >
++                        {tech}
++                      </span>
++                    ))}
++                  </div>
++                </div>
++              </div>
++            );
++          })}
++        </div>
++      </div>
++    </section>
++  );
++};
+diff --git a/src/components/Hero.tsx b/src/components/Hero.tsx
+index 3c6be10..63f86bb 100644
+--- a/src/components/Hero.tsx
++++ b/src/components/Hero.tsx
+@@ -1,5 +1,7 @@
++'use client';
++
+ import React from 'react';
+-import { ArrowDown, Cpu, Database, Award, ExternalLink, FileText, CheckCircle2 } from 'lucide-react';
++import { ArrowDown, Cpu, Database, Award, ExternalLink, FileText, Github, Linkedin, ArrowRight } from 'lucide-react';
+ 
+ export const Hero: React.FC = () => {
+   return (
+@@ -10,72 +12,96 @@ export const Hero: React.FC = () => {
+ 
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+         <div className="text-center max-w-4xl mx-auto">
+-          {/* Status Badge */}
+-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-6 backdrop-blur-md">
+-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+-            <span>Ingeniería Mecatrónica & Sistemas Ciber-Biológicos</span>
++          {/* Professional Identity Badge */}
++          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-6 backdrop-blur-md">
++            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
++            <span>National University of Engineering (UNI) • UTEC Big Data</span>
+           </div>
+ 
+-          {/* Main Headline */}
+-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
+-            Software, Datos & <br />
+-            <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
+-              Robótica en Bioingeniería
+-            </span>
++          {/* Name */}
++          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4">
++            Nick Soto Conde
+           </h1>
+ 
+-          {/* Subtitle / Value proposition */}
+-          <p className="text-base sm:text-lg lg:text-xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
+-            Soy <strong className="text-white font-semibold">Nick Soto Conde</strong>, Bachiller en Ingeniería Mecatrónica por la <strong className="text-cyan-400 font-semibold">Universidad Nacional de Ingeniería (UNI)</strong> con especialización en Big Data en <strong className="text-indigo-300 font-semibold">UTEC</strong>. Desarrollo soluciones escalables en la nube, pipelines de datos bancarios masivos, cinemática de exoesqueletos de rehabilitación e investigación científica internacional.
++          {/* Primary Position Headline */}
++          <p className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent mb-6">
++            Mechatronics Engineer | Data &amp; Software Engineering | Robotics Research
++          </p>
++
++          {/* Professional Summary */}
++          <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
++            I am a Mechatronics Engineer with professional experience in data engineering and software development, complemented by research experience in robotics and biomedical engineering. My work spans distributed data processing, cloud-based systems, application development, and robotic system modeling. I am interested in building reliable, scalable, and technically grounded solutions that connect engineering, software, and data.
+           </p>
+ 
+-          {/* Quick CTA Actions */}
+-          <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
++          {/* Action Buttons */}
++          <div className="flex flex-wrap items-center justify-center gap-4 mb-14 font-mono text-xs sm:text-sm">
+             <a
+-              href="#simulator"
+-              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-mono text-sm font-bold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-lg shadow-cyan-500/25 active:scale-95"
++              href="#projects"
++              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-bold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-lg shadow-cyan-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+             >
+-              <Cpu className="w-4 h-4" />
+-              <span>Probar Simulador 3D</span>
++              <span>View Projects</span>
++              <ArrowRight className="w-4 h-4" />
+             </a>
+ 
+             <a
+-              href="#publications"
+-              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-mono text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 transition-all hover:border-slate-500"
++              href="#contact"
++              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 transition-all hover:border-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+             >
+-              <Award className="w-4 h-4 text-cyan-400" />
+-              <span>Papers & TPC Reviewer</span>
++              <FileText className="w-4 h-4 text-cyan-400" />
++              <span>Download CV</span>
+             </a>
+ 
+             <a
+-              href="#projects"
+-              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-mono text-sm font-semibold bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-all"
++              href="https://github.com/NickMyung"
++              target="_blank"
++              rel="noreferrer"
++              className="flex items-center space-x-2 px-4 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
+             >
+-              <Database className="w-4 h-4 text-indigo-400" />
+-              <span>Casos de Estudio</span>
++              <Github className="w-4 h-4" />
++              <span>GitHub</span>
+             </a>
+-          </div>
+ 
+-          {/* Key Metrics Grid */}
+-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+-            <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm">
+-              <div className="text-2xl sm:text-3xl font-mono font-bold text-cyan-400 mb-1">UNI + UTEC</div>
+-              <p className="text-xs text-slate-400 font-mono">Ing. Mecatrónica & Big Data</p>
+-            </div>
++            <a
++              href="https://www.linkedin.com/in/nick-soto-conde/"
++              target="_blank"
++              rel="noreferrer"
++              className="flex items-center space-x-2 px-4 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
++            >
++              <Linkedin className="w-4 h-4 text-sky-400" />
++              <span>LinkedIn</span>
++            </a>
++          </div>
+ 
++          {/* Grounded Technical Pillars Preview */}
++          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+             <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm">
+-              <div className="text-2xl sm:text-3xl font-mono font-bold text-indigo-400 mb-1">2 Papers</div>
+-              <p className="text-xs text-slate-400 font-mono">CMAAE & RCAE Indexados</p>
++              <span className="font-mono text-xs text-cyan-400 uppercase tracking-wide block mb-1">
++                Data Platforms
++              </span>
++              <p className="text-sm font-semibold text-white">Data Engineering</p>
++              <p className="text-xs text-slate-400 font-mono mt-1">
++                Apache Spark, AWS EMR/Glue, DataHub, Distributed ETLs
++              </p>
+             </div>
+ 
+             <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm">
+-              <div className="text-2xl sm:text-3xl font-mono font-bold text-emerald-400 mb-1">TPC Reviewer</div>
+-              <p className="text-xs text-slate-400 font-mono">ICCRE Japón (2024-2026)</p>
++              <span className="font-mono text-xs text-indigo-400 uppercase tracking-wide block mb-1">
++                Software Engineering
++              </span>
++              <p className="text-sm font-semibold text-white">Full-Stack &amp; APIs</p>
++              <p className="text-xs text-slate-400 font-mono mt-1">
++                React, React Native, TypeScript, GraphQL, Docker, Cloud
++              </p>
+             </div>
+ 
+             <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm">
+-              <div className="text-2xl sm:text-3xl font-mono font-bold text-pink-400 mb-1">AWS & Spark</div>
+-              <p className="text-xs text-slate-400 font-mono">Core Santander Consumer</p>
++              <span className="font-mono text-xs text-emerald-400 uppercase tracking-wide block mb-1">
++                Research &amp; Systems
++              </span>
++              <p className="text-sm font-semibold text-white">Robotics &amp; Kinematics</p>
++              <p className="text-xs text-slate-400 font-mono mt-1">
++                Denavit–Hartenberg, Exoskeletons, TPC Reviewer ICCRE
++              </p>
+             </div>
+           </div>
+         </div>
+diff --git a/src/components/Navbar.tsx b/src/components/Navbar.tsx
+index d56b049..3ecd4fb 100644
+--- a/src/components/Navbar.tsx
++++ b/src/components/Navbar.tsx
+@@ -1,7 +1,7 @@
+ 'use client';
+ 
+ import React, { useState, useEffect } from 'react';
+-import { Cpu, Terminal, Database, BookOpen, Briefcase, Mail, Menu, X } from 'lucide-react';
++import { Terminal, Database, BookOpen, Briefcase, Mail, Menu, X, Award, GraduationCap, Github, Linkedin } from 'lucide-react';
+ 
+ export const Navbar: React.FC = () => {
+   const [scrolled, setScrolled] = useState(false);
+@@ -16,74 +16,94 @@ export const Navbar: React.FC = () => {
+   }, []);
+ 
+   const navLinks = [
+-    { name: 'Simulador 3D', href: '#simulator', icon: Cpu },
+-    { name: 'Pilares', href: '#pillars', icon: Terminal },
+-    { name: 'Proyectos', href: '#projects', icon: Database },
+-    { name: 'Investigación & TPC', href: '#publications', icon: BookOpen },
+-    { name: 'Experiencia', href: '#experience', icon: Briefcase },
++    { name: 'About', href: '#about' },
++    { name: 'Expertise', href: '#expertise' },
++    { name: 'Projects', href: '#projects' },
++    { name: 'Experience', href: '#experience' },
++    { name: 'Publications', href: '#publications' },
++    { name: 'Academic Service', href: '#academic-service' },
++    { name: 'Education', href: '#education' },
+   ];
+ 
+   return (
+     <nav
++      aria-label="Main Navigation"
+       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+         scrolled
+-          ? 'bg-[#070a12]/90 backdrop-blur-md border-b border-slate-800 shadow-xl'
++          ? 'bg-[#070a12]/95 backdrop-blur-md border-b border-slate-800 shadow-xl'
+           : 'bg-transparent border-b border-white/5'
+       }`}
+     >
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="flex items-center justify-between h-16 sm:h-20">
+           {/* Logo / Identity */}
+-          <a href="#" className="flex items-center space-x-3 group">
++          <a
++            href="#"
++            className="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-1"
++          >
+             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px] transition-transform group-hover:scale-105">
+               <div className="w-full h-full bg-[#070a12] rounded-[10px] flex items-center justify-center">
+-                <span className="font-mono font-bold text-cyan-400 text-base">NS</span>
++                <span className="font-mono font-bold text-cyan-400 text-sm">NS</span>
+               </div>
+             </div>
+             <div>
+               <div className="font-bold text-slate-100 tracking-tight text-sm sm:text-base flex items-center gap-2">
+                 <span>Nick Soto Conde</span>
+-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/60 hidden sm:inline-block">
+-                  UNI Mecatrónica
+-                </span>
+               </div>
+-              <p className="text-[11px] font-mono text-slate-400">Data Engineer & Bio-Robotics</p>
++              <p className="text-[11px] font-mono text-slate-400">Mechatronics • Data • Robotics</p>
+             </div>
+           </a>
+ 
+           {/* Desktop Nav Links */}
+-          <div className="hidden md:flex items-center space-x-1 lg:space-x-2 font-mono text-xs">
+-            {navLinks.map((link) => {
+-              const Icon = link.icon;
+-              return (
+-                <a
+-                  key={link.name}
+-                  href={link.href}
+-                  className="flex items-center space-x-1.5 px-3 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-900/60 transition-colors"
+-                >
+-                  <Icon className="w-3.5 h-3.5 text-cyan-400" />
+-                  <span>{link.name}</span>
+-                </a>
+-              );
+-            })}
++          <div className="hidden lg:flex items-center space-x-1 font-mono text-xs">
++            {navLinks.map((link) => (
++              <a
++                key={link.name}
++                href={link.href}
++                className="px-3 py-1.5 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-900/60 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
++              >
++                {link.name}
++              </a>
++            ))}
+           </div>
+ 
+-          {/* Right Action: Contact */}
+-          <div className="hidden sm:flex items-center space-x-3">
++          {/* Right Action: Social Icons & Contact */}
++          <div className="hidden sm:flex items-center space-x-3 font-mono text-xs">
++            <a
++              href="https://github.com/NickMyung"
++              target="_blank"
++              rel="noreferrer"
++              aria-label="GitHub Profile"
++              className="p-2 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
++            >
++              <Github className="w-4 h-4" />
++            </a>
++
++            <a
++              href="https://www.linkedin.com/in/nick-soto-conde/"
++              target="_blank"
++              rel="noreferrer"
++              aria-label="LinkedIn Profile"
++              className="p-2 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
++            >
++              <Linkedin className="w-4 h-4" />
++            </a>
++
+             <a
+               href="#contact"
+-              className="flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-lg shadow-cyan-500/20 active:scale-95"
++              className="flex items-center space-x-1.5 px-4 py-2 rounded-xl font-semibold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-md shadow-cyan-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+             >
+               <Mail className="w-3.5 h-3.5" />
+-              <span>Contactar</span>
++              <span>Contact</span>
+             </a>
+           </div>
+ 
+           {/* Mobile Menu Button */}
+-          <div className="md:hidden flex items-center">
++          <div className="lg:hidden flex items-center">
+             <button
+               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
++              aria-label="Toggle navigation menu"
++              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+             >
+               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+             </button>
+@@ -93,29 +113,44 @@ export const Navbar: React.FC = () => {
+ 
+       {/* Mobile Menu Dropdown */}
+       {mobileMenuOpen && (
+-        <div className="md:hidden px-4 pt-2 pb-6 bg-[#0b1021] border-b border-slate-800 space-y-1 font-mono text-xs">
+-          {navLinks.map((link) => {
+-            const Icon = link.icon;
+-            return (
++        <div className="lg:hidden px-4 pt-2 pb-6 bg-[#0b1021] border-b border-slate-800 space-y-1 font-mono text-xs">
++          {navLinks.map((link) => (
++            <a
++              key={link.name}
++              href={link.href}
++              onClick={() => setMobileMenuOpen(false)}
++              className="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-900 hover:text-cyan-400"
++            >
++              {link.name}
++            </a>
++          ))}
++          <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
++            <div className="flex space-x-2">
+               <a
+-                key={link.name}
+-                href={link.href}
+-                onClick={() => setMobileMenuOpen(false)}
+-                className="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-900 hover:text-cyan-400"
++                href="https://github.com/NickMyung"
++                target="_blank"
++                rel="noreferrer"
++                className="p-2 rounded-lg bg-slate-900 text-slate-300"
++                aria-label="GitHub"
+               >
+-                <Icon className="w-4 h-4 text-cyan-400" />
+-                <span>{link.name}</span>
++                <Github className="w-4 h-4" />
+               </a>
+-            );
+-          })}
+-          <div className="pt-3">
++              <a
++                href="https://www.linkedin.com/in/nick-soto-conde/"
++                target="_blank"
++                rel="noreferrer"
++                className="p-2 rounded-lg bg-slate-900 text-slate-300"
++                aria-label="LinkedIn"
++              >
++                <Linkedin className="w-4 h-4" />
++              </a>
++            </div>
+             <a
+               href="#contact"
+               onClick={() => setMobileMenuOpen(false)}
+-              className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl font-mono text-xs font-bold bg-cyan-500 text-black"
++              className="px-4 py-2 rounded-xl font-bold bg-cyan-500 text-black text-xs"
+             >
+-              <Mail className="w-4 h-4" />
+-              <span>Contactar</span>
++              Contact Me
+             </a>
+           </div>
+         </div>
+diff --git a/src/components/PillarsSection.tsx b/src/components/PillarsSection.tsx
+deleted file mode 100644
+index 6667ac8..0000000
+--- a/src/components/PillarsSection.tsx
++++ /dev/null
+@@ -1,119 +0,0 @@
+-import React from 'react';
+-import { Layers, Database, Bot, HeartPulse, BookOpen, ShieldCheck } from 'lucide-react';
+-
+-export const PillarsSection: React.FC = () => {
+-  const pillars = [
+-    {
+-      icon: Layers,
+-      color: 'cyan',
+-      title: 'Full Stack & Mobile Architecture',
+-      subtitle: 'Frontend reactivo, APIs distribuidas & Cloud',
+-      description:
+-        'Liderazgo en diseño de interfaces y aplicaciones móviles con React Native, React, TypeScript y Tailwind. Arquitectura backend con GraphQL, Flask, Node.js y despliegues en contenedores Docker sobre AWS y GCP.',
+-      skills: ['React / React Native', 'TypeScript', 'GraphQL & REST', 'Docker & CI/CD', 'AWS / GCP'],
+-    },
+-    {
+-      icon: Database,
+-      color: 'indigo',
+-      title: 'Ingeniería de Datos & Big Data',
+-      subtitle: 'Pipelines distribuidos, Lakehouses & Gobierno',
+-      description:
+-        'Construcción de arquitecturas de datos de misión crítica para el sector financiero e industrial. Procesamiento distribuido con Apache Spark (Scala/Python), orquestación con Step Functions/Airflow y gobierno con DataHub.',
+-      skills: ['Apache Spark & Scala', 'AWS EMR / Glue / Athena', 'DataHub Governance', 'SQL Server & Oracle', 'Data Warehousing'],
+-    },
+-    {
+-      icon: Bot,
+-      color: 'emerald',
+-      title: 'Robótica & Sistemas Embebidos',
+-      subtitle: 'Cinemática, control dinámico & espacio de trabajo',
+-      description:
+-        'Modelado matemático de manipuladores y cadenas cinemáticas abiertas/cerradas con convención Denavit-Hartenberg. Simulación de espacios de trabajo, telemetría y experiencia en el NASA Human Rover Challenge con Grupo Tharsis.',
+-      skills: ['Denavit-Hartenberg', 'Cinemática Directa/Inversa', 'ESP32 / PIC / C++', 'Simulación Numérica', 'NASA Rover UNI'],
+-    },
+-    {
+-      icon: HeartPulse,
+-      color: 'pink',
+-      title: 'Investigación en Bioingeniería',
+-      subtitle: 'Biomecatrónica, exoesqueletos & rehabilitación',
+-      description:
+-        'Diseño de dispositivos de asistencia para rehabilitación de miembros inferiores y superiores. Dirección de investigación en IEEE EMBS UNI y desarrollo de prótesis de mano biónica para recuperación funcional.',
+-      skills: ['Exoesqueletos de Cadera', 'Prótesis Biónicas', 'IEEE EMBS UNI', 'Bioseñales & Biomecánica', 'Medabots R&D'],
+-    },
+-    {
+-      icon: BookOpen,
+-      color: 'amber',
+-      title: 'Publicaciones Científicas Internacionales',
+-      subtitle: 'Investigación indexada y revisada por pares',
+-      description:
+-        'Autor de artículos científicos en conferencias internacionales indexadas sobre cinemática de exoesqueletos 3DoF y revisiones esquemáticas de tecnologías mecatrónicas para rehabilitación articular.',
+-      skills: ['CMAAE 2021', 'RCAE 2021', 'Denavit-Hartenberg', 'Workspace Simulation', 'Redacción Científica'],
+-    },
+-    {
+-      icon: ShieldCheck,
+-      color: 'purple',
+-      title: 'Miembro de Comité Técnico (TPC Reviewer)',
+-      subtitle: 'Evaluación y servicio a la comunidad científica',
+-      description:
+-        'Designado como Miembro del Comité Técnico de Revisión (Technical Program Committee / Peer Reviewer) en la prestigiosa conferencia ICCRE en Japón de manera continua para las ediciones 2024, 2025 y 2026.',
+-      skills: ['ICCRE Japón (2024-2026)', 'Peer-Review Rigor', 'Robotics & Automation', 'Control Systems', 'Criterio Académico'],
+-    },
+-  ];
+-
+-  return (
+-    <section id="pillars" className="py-20 bg-[#070a12] border-t border-slate-900">
+-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+-        <div className="text-center max-w-3xl mx-auto mb-16">
+-          <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
+-            Competencias de Alto Rendimiento
+-          </span>
+-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
+-            Los 6 Pilares de Mi Perfil Técnico
+-          </h2>
+-          <p className="text-slate-400 text-sm sm:text-base">
+-            Una sinergia multidisciplinaria diseñada para resolver problemas complejos donde el hardware, los datos masivos y el software de alto nivel interactúan.
+-          </p>
+-        </div>
+-
+-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+-          {pillars.map((pillar, idx) => {
+-            const Icon = pillar.icon;
+-            return (
+-              <div
+-                key={idx}
+-                className="group p-6 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/5 flex flex-col justify-between"
+-              >
+-                <div>
+-                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/60 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+-                    <Icon className="w-6 h-6 text-cyan-400" />
+-                  </div>
+-                  <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+-                    {pillar.title}
+-                  </h3>
+-                  <p className="text-xs font-mono text-indigo-400 mb-3 font-medium">
+-                    {pillar.subtitle}
+-                  </p>
+-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+-                    {pillar.description}
+-                  </p>
+-                </div>
+-
+-                <div>
+-                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80">
+-                    {pillar.skills.map((skill, sIdx) => (
+-                      <span
+-                        key={sIdx}
+-                        className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800"
+-                      >
+-                        {skill}
+-                      </span>
+-                    ))}
+-                  </div>
+-                </div>
+-              </div>
+-            );
+-          })}
+-        </div>
+-      </div>
+-    </section>
+-  );
+-};
+diff --git a/src/components/ProjectsShowcase.tsx b/src/components/ProjectsShowcase.tsx
+index 8556c92..c6cc468 100644
+--- a/src/components/ProjectsShowcase.tsx
++++ b/src/components/ProjectsShowcase.tsx
+@@ -1,124 +1,113 @@
+-import React from 'react';
+-import { ExternalLink, GitBranch, Layers, CheckCircle2, Cpu, Database, Smartphone, Orbit } from 'lucide-react';
++'use client';
++
++import React, { useState } from 'react';
++import { ExternalLink, CheckCircle2, ChevronDown, ChevronUp, Layers, Cpu, Database, Award, ShieldAlert, ArrowUpRight, X } from 'lucide-react';
++import portfolioData from '../../portfolio_data.json';
++import { ProjectItem } from '../types';
+ 
+ export const ProjectsShowcase: React.FC = () => {
+-  const projects = [
+-    {
+-      badge: 'Bioingeniería & Robótica',
+-      badgeColor: 'cyan',
+-      title: 'Exoesqueleto Robótico de Cadera 3DoF & Análisis de Espacio de Trabajo',
+-      role: 'Investigador & Modelador Cinemático',
+-      organization: 'Medabots & Publicación CMAAE / RCAE',
+-      description:
+-        'Modelado matemático y simulación cinemática directa e inversa de un exoesqueleto de cadera de 3 Grados de Libertad enfocado en asistencia de la marcha humana y rehabilitación de extremidades inferiores.',
+-      highlights: [
+-        'Formulación matemática con parámetros Denavit-Hartenberg (D-H) y orientación mediante ángulos de Euler.',
+-        'Simulación tridimensional del espacio de trabajo alcanzable en Wolfram y scripts computacionales en Jupyter/Python.',
+-        'Publicación y presentación de 2 artículos científicos indexados en conferencias internacionales.',
+-      ],
+-      techStack: ['Python', 'Denavit-Hartenberg', 'Wolfram', 'Euler Angles', 'Cinemática Robótica', 'Bioingeniería'],
+-      linkText: 'Ver Publicación en CRIS UTEC',
+-      linkUrl: 'https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/',
+-    },
+-    {
+-      badge: 'Ingeniería de Datos Corporativa',
+-      badgeColor: 'indigo',
+-      title: 'Modern Data Platform & Migración Cloud Core Bancario',
+-      role: 'Ingeniero de Datos (Squad Finanzas Data)',
+-      organization: 'Santander Consumer Bank (vía IDM / SES)',
+-      description:
+-        'Relevamiento, diseño y construcción de arquitecturas de datos de misión crítica para la migración del Core Bancario tradicional hacia una infraestructura moderna en AWS Cloud.',
+-      highlights: [
+-        'Desarrollo de pipelines ETL distribuidos con Apache Spark (Scala/Python) para procesamiento de grandes volúmenes.',
+-        'Implementación del catálogo y gobernanza de datos corporativo con DataHub, definiendo dominios y subdominios.',
+-        'Gestión de equivalencias entre Core Bancario To-Be vs As-Is, acelerando los tiempos de entrega del Squad.',
+-      ],
+-      techStack: ['Apache Spark', 'Scala', 'Python', 'AWS EMR', 'AWS Glue', 'DataHub', 'SQL Server', 'Oracle'],
+-      linkText: 'Arquitectura Cloud Santander',
+-      linkUrl: '#experience',
+-    },
+-    {
+-      badge: 'Full Stack & Machine Learning',
+-      badgeColor: 'emerald',
+-      title: 'Plataforma Mobile & Web con Recomendación Predictiva en Tiempo Real',
+-      role: 'Líder de Equipo de Desarrollo Full Stack',
+-      organization: 'VE7 Agronegocios & Bioverse',
+-      description:
+-        'Liderazgo en la creación de aplicaciones multiplataforma móviles y web con integración directa de microservicios y modelos de Machine Learning entrenados para predicción de categorías.',
+-      highlights: [
+-        'Desarrollo de la app móvil en React Native / React + TypeScript y publicación exitosa en Google Play Store.',
+-        'Integración de modelo predictivo (árbol de decisión) expuesto vía API REST en Flask y microservicios Docker.',
+-        'Arquitectura Backend Serverless en AWS con GraphQL (AppSync), DynamoDB y autenticación Cognito.',
+-      ],
+-      techStack: ['React Native', 'React', 'TypeScript', 'GraphQL', 'Flask Python', 'Scikit-Learn', 'AWS AppSync', 'Docker'],
+-      linkText: 'Ver Detalle en Experiencia',
+-      linkUrl: '#experience',
+-    },
+-    {
+-      badge: 'Sistemas Ciberfísicos & Espacio',
+-      badgeColor: 'purple',
+-      title: 'NASA Human Exploration Rover & Prótesis Biónica de Mano',
+-      role: 'Miembro de Equipo / Investigador',
+-      organization: 'Grupo Tharsis UNI & IEEE EMBS UNI',
+-      description:
+-        'Diseño y manufactura de sistemas mecánicos y telemetría para el vehículo de exploración espacial de la NASA, complementado con el diseño y simulación de una prótesis de mano en la UNI.',
+-      highlights: [
+-        'Participación en el equipo Tharsis de la UNI para la competencia mundial NASA Human Exploration Rover Challenge.',
+-        'Dirección del área de investigación en el capítulo estudiantil IEEE EMBS UNI (Engineering in Medicine and Biology).',
+-        'Diseño y simulación de prototipo de prótesis de mano biónica con evaluación cinemática en la Feria de Proyectos FIM.',
+-      ],
+-      techStack: ['NASA Rover Challenge', 'IEEE EMBS', 'SolidWorks', 'Cinemática', 'Prótesis Biónica', 'ESP32'],
+-      linkText: 'Ver Registro FIM UNI',
+-      linkUrl: '#experience',
+-    },
++  const { projects } = portfolioData;
++  const [selectedCategory, setSelectedCategory] = useState<string>('all');
++  const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
++
++  const categories = [
++    { id: 'all', label: 'All Projects' },
++    { id: 'Data Engineering', label: 'Data Engineering' },
++    { id: 'Software Development', label: 'Software Development' },
++    { id: 'Robotics & Biomedical Engineering', label: 'Robotics & Biomedical' },
++    { id: 'Robotics & Engineering', label: 'Space & Systems' },
+   ];
+ 
++  const filteredProjects = projects.filter(
++    (p) => selectedCategory === 'all' || p.category === selectedCategory
++  );
++
+   return (
+-    <section id="projects" className="py-20 bg-[#0b1021]/60 border-t border-slate-900">
++    <section id="projects" className="py-20 bg-[#070a12] border-t border-slate-900">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+-        <div className="text-center max-w-3xl mx-auto mb-16">
++        {/* Section Header */}
++        <div className="text-center max-w-3xl mx-auto mb-12">
+           <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
+-            Casos de Estudio Seleccionados
++            Technical Case Studies
+           </span>
+           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
+-            Proyectos Insignia de Ingeniería & R&D
++            Featured Engineering Projects
+           </h2>
+           <p className="text-slate-400 text-sm sm:text-base">
+-            Ejemplos concretos de impacto técnico cuantificado, desde la validación en laboratorio y papers internacionales hasta sistemas empresariales con millones de transacciones.
++            Detailed case studies documenting real technical problems, architectural approaches, personal contributions, and verifiable engineering outcomes.
+           </p>
++
++          {/* Filter Pills */}
++          <div className="flex flex-wrap items-center justify-center gap-2 mt-8 font-mono text-xs">
++            {categories.map((cat) => (
++              <button
++                key={cat.id}
++                onClick={() => setSelectedCategory(cat.id)}
++                className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
++                  selectedCategory === cat.id
++                    ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
++                    : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
++                }`}
++              >
++                {cat.label}
++              </button>
++            ))}
++          </div>
+         </div>
+ 
++        {/* Projects Grid */}
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+-          {projects.map((proj, idx) => (
++          {filteredProjects.map((project) => (
+             <div
+-              key={idx}
+-              className="p-6 sm:p-8 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between shadow-xl"
++              key={project.id}
++              className="p-6 sm:p-8 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between shadow-xl"
+             >
+               <div>
+-                <div className="flex items-center justify-between gap-2 mb-4">
+-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 font-semibold">
+-                    {proj.badge}
++                {/* Badges: Category & Status */}
++                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
++                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 font-medium">
++                    {project.category}
+                   </span>
+-                  <span className="text-xs font-mono text-slate-400">{proj.organization}</span>
++                  <div className="flex items-center space-x-2 text-xs font-mono text-slate-400">
++                    <span className="text-emerald-400">• {project.status}</span>
++                    <span>({project.period})</span>
++                  </div>
+                 </div>
+ 
+-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{proj.title}</h3>
+-                <p className="text-xs font-mono text-indigo-400 mb-4">{proj.role}</p>
+-                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-light">{proj.description}</p>
++                {/* Title & Role */}
++                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-tight">
++                  {project.title}
++                </h3>
++                <p className="text-xs font-mono text-indigo-400 mb-4 font-medium">
++                  Role: {project.role}
++                </p>
+ 
+-                <div className="space-y-2 mb-6">
+-                  {proj.highlights.map((item, hIdx) => (
+-                    <div key={hIdx} className="flex items-start space-x-2 text-xs sm:text-sm text-slate-300">
+-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
+-                      <span>{item}</span>
+-                    </div>
+-                  ))}
++                {/* Summary */}
++                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-light">
++                  {project.summary}
++                </p>
++
++                {/* Key Technical Highlights */}
++                <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2 mb-6 text-xs text-slate-300">
++                  <div>
++                    <span className="font-mono text-slate-400 font-semibold uppercase text-[10px] block">
++                      Problem Addressed:
++                    </span>
++                    <p className="font-light mt-0.5 line-clamp-2">{project.problem}</p>
++                  </div>
++                  <div className="pt-2 border-t border-slate-800">
++                    <span className="font-mono text-cyan-400 font-semibold uppercase text-[10px] block">
++                      Verifiable Results:
++                    </span>
++                    <p className="font-light mt-0.5">{project.results}</p>
++                  </div>
+                 </div>
+               </div>
+ 
+               <div>
++                {/* Tech Stack Pills */}
+                 <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800 mb-6">
+-                  {proj.techStack.map((tech, tIdx) => (
++                  {project.technologies.slice(0, 5).map((tech, tIdx) => (
+                     <span
+                       key={tIdx}
+                       className="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800"
+@@ -126,21 +115,211 @@ export const ProjectsShowcase: React.FC = () => {
+                       {tech}
+                     </span>
+                   ))}
++                  {project.technologies.length > 5 && (
++                    <span className="text-xs font-mono px-2 py-1 rounded-md bg-slate-900/50 text-slate-500">
++                      +{project.technologies.length - 5} more
++                    </span>
++                  )}
+                 </div>
+ 
+-                <a
+-                  href={proj.linkUrl}
+-                  target={proj.linkUrl.startsWith('http') ? '_blank' : '_self'}
+-                  rel="noreferrer"
+-                  className="inline-flex items-center space-x-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 font-semibold transition-colors"
+-                >
+-                  <span>{proj.linkText}</span>
+-                  <ExternalLink className="w-3.5 h-3.5" />
+-                </a>
++                {/* Actions: View Case Study Modal & Direct Links */}
++                <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
++                  <button
++                    onClick={() => setActiveModalProject(project as ProjectItem)}
++                    className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-800 transition-colors font-semibold focus:outline-none focus:ring-2 focus:ring-cyan-400"
++                  >
++                    <span>View Case Study</span>
++                    <ArrowUpRight className="w-3.5 h-3.5" />
++                  </button>
++
++                  {project.id === 'hip-exoskeleton-kinematics' && (
++                    <a
++                      href="#simulator"
++                      className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-cyan-950 text-cyan-300 border border-cyan-800/80 hover:bg-cyan-900 transition-colors"
++                    >
++                      <Cpu className="w-3.5 h-3.5 text-cyan-400" />
++                      <span>Launch 3D Simulator</span>
++                    </a>
++                  )}
++
++                  {project.links?.cris && (
++                    <a
++                      href={project.links.cris}
++                      target="_blank"
++                      rel="noreferrer"
++                      className="inline-flex items-center space-x-1 text-slate-400 hover:text-white transition-colors"
++                    >
++                      <span>CRIS Repository</span>
++                      <ExternalLink className="w-3 h-3" />
++                    </a>
++                  )}
++                </div>
+               </div>
+             </div>
+           ))}
+         </div>
++
++        {/* Detailed Technical Case Study Modal */}
++        {activeModalProject && (
++          <div
++            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm overflow-y-auto"
++            onClick={() => setActiveModalProject(null)}
++          >
++            <div
++              className="relative w-full max-w-3xl rounded-2xl bg-[#0b1021] border border-cyan-500/40 p-6 sm:p-8 shadow-2xl my-8 max-h-[90vh] overflow-y-auto"
++              onClick={(e) => e.stopPropagation()}
++            >
++              {/* Close Button */}
++              <button
++                onClick={() => setActiveModalProject(null)}
++                aria-label="Close Case Study"
++                className="absolute top-6 right-6 p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors"
++              >
++                <X className="w-5 h-5" />
++              </button>
++
++              {/* Header */}
++              <div className="pr-10 mb-6">
++                <div className="flex flex-wrap items-center gap-2 mb-2 font-mono text-xs">
++                  <span className="px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800">
++                    {activeModalProject.category}
++                  </span>
++                  <span className="text-emerald-400">• {activeModalProject.status}</span>
++                  <span className="text-slate-400">({activeModalProject.period})</span>
++                </div>
++                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
++                  {activeModalProject.title}
++                </h3>
++                <p className="text-xs font-mono text-indigo-400 mt-1">
++                  Role: {activeModalProject.role}
++                </p>
++              </div>
++
++              {/* Structured Case Study Sections */}
++              <div className="space-y-6 text-sm">
++                <div>
++                  <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold mb-1">
++                    1. Problem &amp; Context
++                  </h4>
++                  <p className="text-slate-300 leading-relaxed font-light">
++                    {activeModalProject.problem}
++                  </p>
++                </div>
++
++                <div>
++                  <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold mb-1">
++                    2. Objective
++                  </h4>
++                  <p className="text-slate-300 leading-relaxed font-light">
++                    {activeModalProject.objective}
++                  </p>
++                </div>
++
++                <div>
++                  <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold mb-1">
++                    3. Methodology &amp; Engineering Approach
++                  </h4>
++                  <p className="text-slate-300 leading-relaxed font-light">
++                    {activeModalProject.approach}
++                  </p>
++                </div>
++
++                {activeModalProject.architecture && (
++                  <div>
++                    <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold mb-1">
++                      4. System Architecture &amp; Design
++                    </h4>
++                    <p className="text-slate-300 leading-relaxed font-light">
++                      {activeModalProject.architecture}
++                    </p>
++                  </div>
++                )}
++
++                <div>
++                  <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold mb-1">
++                    5. Personal Contributions &amp; Implementation
++                  </h4>
++                  <p className="text-slate-300 leading-relaxed font-light">
++                    {activeModalProject.contributions}
++                  </p>
++                </div>
++
++                {activeModalProject.challenges && (
++                  <div>
++                    <h4 className="font-mono text-xs text-amber-400 uppercase tracking-wider font-semibold mb-1">
++                      6. Technical Challenges Overcome
++                    </h4>
++                    <p className="text-slate-300 leading-relaxed font-light">
++                      {activeModalProject.challenges}
++                    </p>
++                  </div>
++                )}
++
++                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800">
++                  <h4 className="font-mono text-xs text-emerald-400 uppercase tracking-wider font-semibold mb-1">
++                    7. Verifiable Results &amp; Evidence
++                  </h4>
++                  <p className="text-slate-300 leading-relaxed font-light mb-2">
++                    {activeModalProject.results}
++                  </p>
++                  <p className="text-xs font-mono text-slate-400">
++                    <span className="text-slate-500">Documented Evidence: </span>
++                    {activeModalProject.evidence}
++                  </p>
++                </div>
++
++                <div>
++                  <h4 className="font-mono text-xs text-slate-400 uppercase tracking-wider font-semibold mb-2">
++                    Technologies &amp; Methods Employed
++                  </h4>
++                  <div className="flex flex-wrap gap-1.5">
++                    {activeModalProject.technologies.map((t, idx) => (
++                      <span
++                        key={idx}
++                        className="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800"
++                      >
++                        {t}
++                      </span>
++                    ))}
++                  </div>
++                </div>
++              </div>
++
++              {/* Modal Footer Links */}
++              <div className="mt-8 pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
++                {activeModalProject.links?.cris && (
++                  <a
++                    href={activeModalProject.links.cris}
++                    target="_blank"
++                    rel="noreferrer"
++                    className="inline-flex items-center space-x-1.5 text-cyan-400 hover:text-cyan-300 font-semibold"
++                  >
++                    <span>View in CRIS Repository</span>
++                    <ExternalLink className="w-3.5 h-3.5" />
++                  </a>
++                )}
++
++                {activeModalProject.id === 'hip-exoskeleton-kinematics' && (
++                  <a
++                    href="#simulator"
++                    onClick={() => setActiveModalProject(null)}
++                    className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition-colors"
++                  >
++                    <Cpu className="w-4 h-4" />
++                    <span>Launch 3D WebGL Simulator</span>
++                  </a>
++                )}
++
++                <button
++                  onClick={() => setActiveModalProject(null)}
++                  className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 ml-auto transition-colors"
++                >
++                  Close Case Study
++                </button>
++              </div>
++            </div>
++          </div>
++        )}
+       </div>
+     </section>
+   );
+diff --git a/src/components/ResearchPublications.tsx b/src/components/ResearchPublications.tsx
+new file mode 100644
+index 0000000..732fe03
+--- /dev/null
++++ b/src/components/ResearchPublications.tsx
+@@ -0,0 +1,156 @@
++'use client';
++
++import React, { useState } from 'react';
++import { BookOpen, Copy, Check, ExternalLink, FileText, Quote } from 'lucide-react';
++import portfolioData from '../../portfolio_data.json';
++
++export const ResearchPublications: React.FC = () => {
++  const { publications } = portfolioData;
++  const [copiedFormat, setCopiedFormat] = useState<{ id: string; format: string } | null>(null);
++
++  const handleCopy = (id: string, format: string, text: string) => {
++    navigator.clipboard.writeText(text);
++    setCopiedFormat({ id, format });
++    setTimeout(() => setCopiedFormat(null), 2500);
++  };
++
++  return (
++    <section id="publications" className="py-20 bg-[#070a12] border-t border-slate-900">
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
++        {/* Section Header */}
++        <div className="text-center max-w-3xl mx-auto mb-16">
++          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-800 text-xs font-mono text-cyan-300 mb-3">
++            <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
++            <span>Peer-Reviewed Literature</span>
++          </div>
++          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
++            Research &amp; Publications
++          </h2>
++          <p className="text-slate-400 text-sm sm:text-base">
++            Peer-reviewed scientific conference papers and schematic reviews in wearable robotics, lower-limb exoskeletons, and kinematic workspace modeling.
++          </p>
++        </div>
++
++        {/* Publications Cards Grid */}
++        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
++          {publications.map((pub) => (
++            <div
++              key={pub.id}
++              className="p-6 sm:p-8 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between shadow-xl"
++            >
++              <div>
++                {/* Header: Type & Year */}
++                <div className="flex items-center justify-between gap-2 mb-3">
++                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold">
++                    {pub.type} • {pub.year}
++                  </span>
++                  <span className="text-xs font-mono text-slate-400">Peer-Reviewed</span>
++                </div>
++
++                {/* Title */}
++                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
++                  {pub.title}
++                </h3>
++
++                {/* Venue */}
++                <p className="text-xs font-mono text-indigo-300 mb-4 font-medium">
++                  {pub.venue}
++                </p>
++
++                {/* Authors in Official Order */}
++                <div className="text-xs text-slate-400 mb-4 font-mono bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
++                  <span className="text-slate-500 block text-[10px] uppercase tracking-wider mb-1">
++                    Authors (Official Order):
++                  </span>
++                  <span className="text-slate-300">{pub.authors.join(', ')}</span>
++                </div>
++
++                {/* Abstract */}
++                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-light">
++                  {pub.abstract}
++                </p>
++
++                {/* Keywords */}
++                <div className="flex flex-wrap gap-1.5 mb-6">
++                  {pub.keywords.map((kw, idx) => (
++                    <span
++                      key={idx}
++                      className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800"
++                    >
++                      {kw}
++                    </span>
++                  ))}
++                </div>
++              </div>
++
++              {/* Footer Actions: CRIS Link & Citation Copy Options */}
++              <div className="pt-6 border-t border-slate-800 space-y-4">
++                <div className="flex items-center justify-between">
++                  <a
++                    href={pub.url}
++                    target="_blank"
++                    rel="noreferrer"
++                    className="inline-flex items-center space-x-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 font-semibold"
++                  >
++                    <span>View in CRIS Repository</span>
++                    <ExternalLink className="w-3.5 h-3.5" />
++                  </a>
++
++                  {pub.id === 'cmaae-2021' && (
++                    <a
++                      href="#simulator"
++                      className="text-xs font-mono text-indigo-400 hover:text-indigo-300"
++                    >
++                      Interactive 3D Demo ↑
++                    </a>
++                  )}
++                </div>
++
++                {/* Citation Actions */}
++                <div className="flex flex-wrap items-center gap-2 font-mono text-xs pt-2">
++                  <span className="text-slate-500 text-[11px] flex items-center space-x-1 mr-1">
++                    <Quote className="w-3 h-3" />
++                    <span>Cite:</span>
++                  </span>
++
++                  <button
++                    onClick={() => handleCopy(pub.id, 'IEEE', pub.citationIEEE)}
++                    className="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700 transition-colors"
++                  >
++                    {copiedFormat?.id === pub.id && copiedFormat.format === 'IEEE' ? (
++                      <span className="text-emerald-400 font-bold">✓ IEEE Copied</span>
++                    ) : (
++                      'IEEE'
++                    )}
++                  </button>
++
++                  <button
++                    onClick={() => handleCopy(pub.id, 'APA', pub.citationAPA)}
++                    className="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700 transition-colors"
++                  >
++                    {copiedFormat?.id === pub.id && copiedFormat.format === 'APA' ? (
++                      <span className="text-emerald-400 font-bold">✓ APA Copied</span>
++                    ) : (
++                      'APA'
++                    )}
++                  </button>
++
++                  <button
++                    onClick={() => handleCopy(pub.id, 'BibTeX', pub.bibtex)}
++                    className="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700 transition-colors"
++                  >
++                    {copiedFormat?.id === pub.id && copiedFormat.format === 'BibTeX' ? (
++                      <span className="text-emerald-400 font-bold">✓ BibTeX Copied</span>
++                    ) : (
++                      'BibTeX'
++                    )}
++                  </button>
++                </div>
++              </div>
++            </div>
++          ))}
++        </div>
++      </div>
++    </section>
++  );
++};
+diff --git a/src/components/ScientificPublications.tsx b/src/components/ScientificPublications.tsx
+deleted file mode 100644
+index 9bf5289..0000000
+--- a/src/components/ScientificPublications.tsx
++++ /dev/null
+@@ -1,195 +0,0 @@
+-'use client';
+-
+-import React, { useState } from 'react';
+-import { BookOpen, Award, Copy, Check, ExternalLink, ShieldCheck, FileText, Globe } from 'lucide-react';
+-
+-export const ScientificPublications: React.FC = () => {
+-  const [copiedId, setCopiedId] = useState<string | null>(null);
+-
+-  const publications = [
+-    {
+-      id: 'cmaae-2021',
+-      title: 'Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation',
+-      conference: 'CMAAE 2021 (International Conference on Mechanical, Automotive and Aerospace Engineering)',
+-      authors: 'Deyby Huamanchahua, Nick Soto Conde, Jean Carlos Vasquez Frias, Diego Lopez Meza, Ángel E. Alvarez-Rodríguez',
+-      year: 2021,
+-      crisUrl: 'https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/',
+-      abstract:
+-        'Focuses on the direct kinematic analysis of a 3-Degrees-of-Freedom (3-DoF) hip exoskeleton designed to assist human walking. Utilizes the Denavit-Hartenberg (D-H) convention alongside Euler angles for orientation modeling. Incorporates open-source computational tools (Jupyter/Python) and Wolfram software for numerical workspace simulation and visual validation, establishing the mechanical and dynamic groundwork for lower-limb assistive devices.',
+-      keywords: ['Hip Exoskeleton', 'Kinematics Analysis', 'Denavit-Hartenberg', 'Workspace Simulation', 'Rehabilitation Robotics'],
+-      bibtex: `@inproceedings{sotoconde2021kinematics,
+-  title={Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation},
+-  author={Huamanchahua, Deyby and Soto Conde, Nick and Vasquez Frias, Jean Carlos and Lopez Meza, Diego and Alvarez-Rodr{\\'\\i}guez, {\\'A}ngel E.},
+-  booktitle={Proceedings of CMAAE 2021},
+-  year={2021}
+-}`,
+-    },
+-    {
+-      id: 'rcae-2021',
+-      title: 'Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review',
+-      conference: 'RCAE 2021 (International Conference on Robotics, Control and Automation Engineering)',
+-      authors: 'Deyby Huamanchahua, Jean Carlos Vasquez-Frias, Nick Soto-Conde, Diego Lopez-Meza, Angel E. Alvarez-Rodriguez',
+-      year: 2021,
+-      crisUrl: 'https://cris.continental.edu.pe/es/publications/mechatronic-exoskeletons-for-hip-rehabilitation-a-schematic-revie/',
+-      abstract:
+-        'A comprehensive schematic review of mechatronic architectures, degrees of freedom, actuator typologies (DC, pneumatic, series elastic), and control strategies for hip and lower-limb rehabilitation exoskeletons, evaluating mitigation of human-robot kinematic misalignments in clinical recovery protocols.',
+-      keywords: ['Mechatronic Exoskeletons', 'Hip Rehabilitation', 'Schematic Review', 'Actuator Systems', 'Assistive Devices'],
+-      bibtex: `@inproceedings{sotoconde2021mechatronic,
+-  title={Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review},
+-  author={Huamanchahua, Deyby and Vasquez-Frias, Jean Carlos and Soto-Conde, Nick and Lopez-Meza, Diego and Alvarez-Rodriguez, Angel E.},
+-  booktitle={Proceedings of RCAE 2021},
+-  year={2021}
+-}`,
+-    },
+-  ];
+-
+-  const handleCopyBibtex = (id: string, bibtex: string) => {
+-    navigator.clipboard.writeText(bibtex);
+-    setCopiedId(id);
+-    setTimeout(() => setCopiedId(null), 2500);
+-  };
+-
+-  return (
+-    <section id="publications" className="py-20 bg-[#070a12] border-t border-slate-900">
+-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+-        {/* Section Header */}
+-        <div className="text-center max-w-3xl mx-auto mb-16">
+-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/80 text-xs font-mono text-cyan-300 mb-3">
+-            <Award className="w-3.5 h-3.5 text-cyan-400" />
+-            <span>Academia & Comunidad Científica Internacional</span>
+-          </div>
+-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+-            Investigación Científica & Servicio TPC
+-          </h2>
+-          <p className="text-slate-400 text-sm sm:text-base">
+-            Producción científica indexada en robótica biomecánica y contribución continua a la revisión técnica de papers en conferencias internacionales en Asia.
+-          </p>
+-        </div>
+-
+-        {/* TPC Highlight Banner (ICCRE Japón) */}
+-        <div className="mb-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-indigo-950/70 via-slate-900 to-slate-950 border border-indigo-500/40 shadow-xl">
+-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+-            <div className="flex items-start space-x-4">
+-              <div className="w-12 h-12 rounded-xl bg-indigo-900/60 border border-indigo-500/50 flex items-center justify-center shrink-0">
+-                <ShieldCheck className="w-6 h-6 text-indigo-300" />
+-              </div>
+-              <div>
+-                <div className="flex flex-wrap items-center gap-2 mb-1">
+-                  <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-indigo-900 text-indigo-300 border border-indigo-700 font-semibold">
+-                    ICCRE • Japón
+-                  </span>
+-                  <span className="font-mono text-xs px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
+-                    2024 • 2025 • 2026
+-                  </span>
+-                </div>
+-                <h3 className="text-xl sm:text-2xl font-bold text-white">
+-                  Miembro del Comité Técnico de Revisión (TPC / Scientific Reviewer)
+-                </h3>
+-                <p className="text-xs font-mono text-slate-400 mt-1">
+-                  International Conference on Control, Robotics and Automation Engineering
+-                </p>
+-                <p className="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed max-w-2xl font-light">
+-                  Designado como evaluador técnico por pares de artículos científicos internacionales en robótica avanzada, cinemática de manipuladores, algoritmos de control y bioingeniería para tres ediciones consecutivas en Japón.
+-                </p>
+-              </div>
+-            </div>
+-
+-            <div className="shrink-0 flex flex-col space-y-2 w-full md:w-auto font-mono text-xs">
+-              <div className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 flex items-center justify-between gap-3">
+-                <span className="text-slate-400">Rol:</span>
+-                <span className="text-cyan-400 font-bold">Technical Program Committee</span>
+-              </div>
+-              <div className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 flex items-center justify-between gap-3">
+-                <span className="text-slate-400">Sede:</span>
+-                <span className="text-indigo-300 font-bold">Japón</span>
+-              </div>
+-            </div>
+-          </div>
+-        </div>
+-
+-        {/* Publications Cards Grid */}
+-        <div className="space-y-6">
+-          <h3 className="text-lg font-mono text-cyan-400 font-semibold flex items-center space-x-2">
+-            <BookOpen className="w-5 h-5 text-cyan-400" />
+-            <span>Artículos Publicados en Conferencias Internacionales</span>
+-          </h3>
+-
+-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+-            {publications.map((pub) => (
+-              <div
+-                key={pub.id}
+-                className="p-6 sm:p-7 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between shadow-lg"
+-              >
+-                <div>
+-                  <div className="flex items-center justify-between gap-2 mb-3">
+-                    <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold">
+-                      {pub.conference.split(' ')[0]} {pub.year}
+-                    </span>
+-                    <span className="text-xs font-mono text-slate-400">Peer-Reviewed Paper</span>
+-                  </div>
+-
+-                  <h4 className="text-lg sm:text-xl font-bold text-white mb-2 leading-snug">
+-                    {pub.title}
+-                  </h4>
+-
+-                  <p className="text-xs font-mono text-indigo-300 mb-3 font-medium">
+-                    {pub.conference}
+-                  </p>
+-
+-                  <div className="text-xs text-slate-400 mb-4 font-mono">
+-                    <span className="text-slate-500">Autores: </span>
+-                    {pub.authors}
+-                  </div>
+-
+-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+-                    {pub.abstract}
+-                  </p>
+-
+-                  <div className="flex flex-wrap gap-1.5 mb-6">
+-                    {pub.keywords.map((kw, idx) => (
+-                      <span
+-                        key={idx}
+-                        className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800"
+-                      >
+-                        {kw}
+-                      </span>
+-                    ))}
+-                  </div>
+-                </div>
+-
+-                <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800 font-mono text-xs">
+-                  <a
+-                    href={pub.crisUrl}
+-                    target="_blank"
+-                    rel="noreferrer"
+-                    className="inline-flex items-center space-x-1.5 text-cyan-400 hover:text-cyan-300 font-semibold"
+-                  >
+-                    <span>Ver en Repositorio CRIS</span>
+-                    <ExternalLink className="w-3.5 h-3.5" />
+-                  </a>
+-
+-                  <button
+-                    onClick={() => handleCopyBibtex(pub.id, pub.bibtex)}
+-                    className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 transition-colors"
+-                  >
+-                    {copiedId === pub.id ? (
+-                      <>
+-                        <Check className="w-3.5 h-3.5 text-emerald-400" />
+-                        <span className="text-emerald-400 font-bold">¡BibTeX Copiado!</span>
+-                      </>
+-                    ) : (
+-                      <>
+-                        <Copy className="w-3.5 h-3.5 text-slate-400" />
+-                        <span>Copiar BibTeX</span>
+-                      </>
+-                    )}
+-                  </button>
+-                </div>
+-              </div>
+-            ))}
+-          </div>
+-        </div>
+-      </div>
+-    </section>
+-  );
+-};
+diff --git a/src/types.ts b/src/types.ts
+index 4a44664..78adbcd 100644
+--- a/src/types.ts
++++ b/src/types.ts
+@@ -1,30 +1,120 @@
+-export interface Publication {
++export interface Profile {
++  name: string;
++  headline: string;
++  professionalSummary: string;
++  location: string;
++  email: string;
++  phone: string;
++  languages: { language: string; level: string }[];
++  socialLinks: {
++    github: string;
++    linkedin: string;
++    email: string;
++  };
++  resumeUrl: string;
++  about: {
++    professionalBackground: string;
++    engineeringApproach: string;
++    researchInterests: string;
++    careerFocus: string;
++  };
++}
++
++export interface ExpertiseItem {
++  id: string;
++  title: string;
++  description: string;
++  competencies: string[];
++  technologies: string[];
++}
++
++export interface ProjectItem {
++  id: string;
++  title: string;
++  category: string;
++  summary: string;
++  problem: string;
++  objective: string;
++  approach: string;
++  architecture: string;
++  technologies: string[];
++  role: string;
++  contributions: string;
++  challenges: string;
++  results: string;
++  evidence: string;
++  links: {
++    cris?: string;
++    github?: string;
++    demo?: string;
++  };
++  status: string;
++  period: string;
++  featured: boolean;
++}
++
++export interface ExperienceItem {
++  id: string;
++  organization: string;
++  client?: string;
++  role: string;
++  period: string;
++  location: string;
++  scope: string;
++  contributions: string[];
++  technologies: string[];
++}
++
++export interface PublicationItem {
+   id: string;
+   title: string;
+-  conference: string;
+   authors: string[];
+   year: number;
+-  crisUrl: string;
++  type: string;
++  venue: string;
+   abstract: string;
+   keywords: string[];
++  url: string;
++  citationIEEE: string;
++  citationAPA: string;
+   bibtex: string;
+ }
+ 
+-export interface ExperienceItem {
+-  company: string;
+-  client?: string;
++export interface AcademicServiceItem {
++  id: string;
++  organization: string;
+   role: string;
++  category: string;
+   period: string;
+-  stack: string[];
+-  achievements: string[];
++  location: string;
++  description: string;
+ }
+ 
+-export interface Pillar {
++export interface EducationItem {
+   id: string;
+-  iconName: string;
+-  title: string;
+-  subtitle: string;
++  institution: string;
++  degree: string;
++  period: string;
++  location: string;
+   description: string;
+-  technologies: string[];
+-  highlights: string[];
++}
++
++export interface TechnicalSkills {
++  programmingLanguages: string[];
++  dataEngineering: string[];
++  cloudAndInfrastructure: string[];
++  softwareDevelopment: string[];
++  roboticsAndSimulation: string[];
++  researchMethods: string[];
++}
++
++export interface PortfolioData {
++  profile: Profile;
++  expertise: ExpertiseItem[];
++  projects: ProjectItem[];
++  experience: ExperienceItem[];
++  publications: PublicationItem[];
++  academicService: AcademicServiceItem[];
++  education: EducationItem[];
++  technicalSkills: TechnicalSkills;
+ }
