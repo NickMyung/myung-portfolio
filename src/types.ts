@@ -37,7 +37,8 @@ export interface ExpertiseItem {
 }
 
 export interface ProjectBusinessContext {
-  organization: string;
+  focus: string;
+  keywords: string[];
   industry: string;
   audience: string;
   context: string;

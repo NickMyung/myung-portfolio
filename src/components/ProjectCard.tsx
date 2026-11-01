@@ -11,7 +11,7 @@ export function ProjectCard({ project }: { project: ProjectItem }) {
     <article className="project-card group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1021]" style={{ '--area-rgb': style.rgb } as CSSProperties}>
       <ProjectVisual project={project} />
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        {project.business && <p className={`mb-2 text-xs font-medium ${style.text}`}>{project.business.organization}</p>}
+        {project.business && <ul aria-label="Development keywords" className={`mb-3 flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-medium ${style.text}`}>{project.business.keywords.map((keyword) => <li key={keyword}>{keyword}</li>)}</ul>}
         <p className="font-mono text-[11px] text-slate-400">{project.period}</p>
         <h4 className="mt-3 text-xl font-semibold leading-snug tracking-tight text-white lg:min-h-[3.5rem]">
           <a href={`/projects/${project.id}`} className="rounded transition-colors hover:text-cyan-200">{preview?.title ?? project.title}</a>

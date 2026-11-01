@@ -23,9 +23,9 @@ The files under `output/portfolio-review-2026-11-01/` and its ZIP archives prese
 
 ### Data & Automation
 
-The data category now includes three complementary cases: Santander financial data modernization and governance, the Thikathani / VE7 GCP-to-AWS analytical platform migration, and Virutex Ilko cross-functional analytics and process automation. The homepage still selects one case per discipline; the Data & Automation filter opens the three data cases and a business-oriented introduction.
+The data category includes three complementary cases: financial data modernization and governance, end-to-end cloud data platform migration, and business analytics and process automation. Titles, summaries, and development keywords emphasize the work rather than company names. The homepage still selects one case per discipline; the Data & Automation filter opens the three data cases and a business-oriented introduction.
 
-Optional `expertise[].overview` content supplies an area's headline and pillars. Optional `projects[].business` identifies the organization, industry, audience, business context, teams, decisions supported, and documented deliverables. Ilko also groups its business domains. Optional `crossCutting` entries describe lifecycle-wide concerns separately from sequential `flow` stages. Flow thumbnails show the first, middle, and last stages when there are more than three; complete stages remain on the case page. Business case links return to their area.
+Optional `expertise[].overview` content supplies an area's headline and pillars. Optional `projects[].business` identifies the development `focus` and `keywords`, industry, audience, business context, teams, decisions supported, and documented deliverables. Process automation also groups its business domains. Employers remain in the career timeline; business cases link to that timeline without listing companies in their sidebar. Existing case IDs and experience relationships are preserved. Optional `crossCutting` entries describe lifecycle-wide concerns separately from sequential `flow` stages. Flow thumbnails show the first, middle, and last stages when there are more than three; complete stages remain on the case page. Business case links return to their area.
 
 The case narratives are based on the owner's CV and confirmations, with no newly invented numerical outcomes. They describe professional work; they do not publish client datasets or claim independently verified production architectures. See [the positioning and source record](docs/DATA_AUTOMATION_POSITIONING.md).
 
@@ -47,9 +47,9 @@ The portfolio is structured according to rigorous engineering and scientific sta
    - *Robotics Research & Development* (Denavit–Hartenberg Kinematics, 3-DoF Hip Exoskeletons, Workspace Simulation).
 4. **Featured Projects (Technical Case Studies)**:
    - *3-DoF Hip Exoskeleton Kinematic Analysis & Workspace Simulation* (CMAAE 2021).
-   - *Financial Data Modernization & Governance* (Santander Consumer Bank via IDM/SES).
-   - *Thikathani: End-to-End Data Platform Migration from GCP to AWS* (VE7 Agronegocios).
-   - *Virutex Ilko: Cross-Functional Analytics & Process Automation*.
+   - *Financial Data Modernization & Governance*.
+   - *End-to-End Data Platform & Cloud Migration*.
+   - *Business Analytics & Process Automation*.
    - *Mobile & Web Platform with Integrated Predictive Recommendation* (VE7 Agronegocios).
    - *NASA Human Exploration Rover Mechanical & Telemetry Subsystems* (Grupo Tharsis UNI).
    - Dedicated case pages with context, objective, approach, architecture, contributions, challenges, outcomes, and available material. Descriptions of professional experience are distinguished from linked artifacts.

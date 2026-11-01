@@ -83,3 +83,17 @@ Validación de esta ampliación:
 - Activación de filtros con teclado, foco visible y menú móvil con Escape y
   devolución del foco. Movimiento reducido y contenido legible sin JavaScript.
 - Sin excepciones JavaScript no capturadas durante estas pruebas.
+
+## Presentación mediante palabras clave
+
+Por preferencia posterior del propietario, los casos de datos muestran títulos
+de desarrollos y `business.focus` / `business.keywords` en lugar de empresas.
+Los nombres se mantienen en la trayectoria laboral y en la documentación interna.
+Los IDs y enlaces existentes se conservaron.
+
+Se completó la compilación de producción y se revisaron las tres tarjetas y sus
+páginas a 1440 y 390 píxeles CSS: palabras clave visibles, sin nombres de empresa
+en el contenido de los casos, enlaces a la trayectoria conservados y sin
+desbordamientos ni excepciones JavaScript no capturadas. El historial laboral y
+los casos de software y robótica se compararon con la versión anterior y no
+cambiaron.

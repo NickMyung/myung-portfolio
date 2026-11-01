@@ -52,7 +52,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         <aside className="space-y-7 self-start rounded-2xl border border-slate-800 bg-[#0b1021] p-6">
           <div><h2 className="text-sm font-semibold text-white">Technologies used</h2><ul className="mt-4 flex flex-wrap gap-2">{project.technologies.map((technology) => <li key={technology} className="rounded-md border border-slate-800 px-2.5 py-1 text-xs text-slate-400">{technology}</li>)}</ul></div>
           <div><h2 className="text-sm font-semibold text-white">Architecture notes</h2><p className="mt-3 text-xs leading-relaxed text-slate-400">{project.architecture}</p></div>
-          {experience.length > 0 && <div><h2 className="text-sm font-semibold text-white">Related experience</h2><ul className="mt-3 space-y-4">{experience.map((item) => <li key={item.id} className="text-xs"><p className="text-slate-200">{item.organization}{item.client ? ` · Client: ${item.client}` : ''}</p><p className="mt-1 text-slate-500">{item.period}</p></li>)}</ul><a href="/#experience" className="mt-4 inline-flex items-center gap-2 text-xs text-cyan-300">Career timeline<ArrowUpRight className="h-3 w-3" aria-hidden="true" /></a></div>}
+          {experience.length > 0 && <div>
+            <h2 className="text-sm font-semibold text-white">Related experience</h2>
+            {!project.business && <ul className="mt-3 space-y-4">{experience.map((item) => <li key={item.id} className="text-xs"><p className="text-slate-200">{item.organization}{item.client ? ` · Client: ${item.client}` : ''}</p><p className="mt-1 text-slate-500">{item.period}</p></li>)}</ul>}
+            <a href="/#experience" className="mt-4 inline-flex items-center gap-2 text-xs text-cyan-300">Career timeline<ArrowUpRight className="h-3 w-3" aria-hidden="true" /></a>
+          </div>}
           {publications.length > 0 && <div><h2 className="text-sm font-semibold text-white">Related publications</h2>{publications.map((publication) => <a key={publication.id} href={publication.url} target="_blank" rel="noreferrer" className="mt-3 block text-xs leading-relaxed text-cyan-300 hover:text-cyan-100">{publication.title} ({publication.year})<span className="sr-only"> (opens in a new tab)</span></a>)}</div>}
         </aside>
       </div>

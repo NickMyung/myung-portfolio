@@ -219,7 +219,7 @@
       },
       "title": "Financial Data Modernization & Governance",
       "category": "data",
-      "summary": "Modernization of financial information workflows for Santander Consumer Bank through IDM Technology and SES, connecting business definitions, banking core mappings, cloud ETL, and metadata governance.",
+      "summary": "Modernization of financial information workflows, connecting business definitions, banking core mappings, cloud ETL, and metadata governance.",
       "problem": "Legacy on-premise financial workflows had performance bottlenecks, tight coupling to obsolete core systems, and lacked centralized metadata governance across banking domains.",
       "objective": "Modernize data processes into domain/subdomain architectures in AWS, re-implement ETL workflows with Apache Spark, and support metadata governance with DataHub.",
       "approach": "Mapped AS-IS processes, designed equivalence models between Core Bancario To-Be vs As-Is, built distributed Spark jobs, orchestrated tasks with AWS Step Functions, and modeled metadata entities in DataHub.",
@@ -240,7 +240,7 @@
       "contributions": "Created Python/SQL scripts for structured requirement gathering, developed distributed Spark ETLs, established data dictionaries, and integrated metadata governance schemas into DataHub under corporate standards.",
       "challenges": "Reconciling financial definitions between banking cores and preserving consistent business logic across legacy and cloud workflows.",
       "results": "Achieved consistent execution of financial data pipelines on AWS, established standardized squad workflows, and streamlined banking core equivalence mappings.",
-      "evidence": "This case describes my professional experience with Santander Consumer Bank through IDM Technology and SES. Client code, datasets, and deployment records are not published in this portfolio.",
+      "evidence": "This case describes my professional experience in financial data modernization. Client code, datasets, and deployment records are not published in this portfolio.",
       "links": {},
       "status": "Completed & Operational",
       "period": "2025 - 2026",
@@ -267,7 +267,12 @@
         }
       ],
       "business": {
-        "organization": "Santander Consumer Bank",
+        "focus": "Financial workflows & metadata governance",
+        "keywords": [
+          "Cloud ETL",
+          "Core data mapping",
+          "Metadata governance"
+        ],
         "industry": "Financial services",
         "audience": "Finance & Information Management",
         "context": "Finance and Information Management (GI) processes depended on legacy on-premise flows. Moving those processes to AWS required understanding the financial logic, identifying equivalent information in the target banking core, and organizing data by business domain and subdomain.",
@@ -301,14 +306,14 @@
     {
       "id": "thikathani-cloud-data-platform",
       "preview": {
-        "title": "Thikathani: GCP to AWS",
+        "title": "Cloud migration & data platforms",
         "problem": "Move an end-to-end analytical data platform between cloud providers.",
         "contribution": "Odoo data extraction, orchestration, Spark processing, governance, and visualization.",
         "outcome": "Migrated ETL architectures to AWS and delivered business KPIs and dashboards."
       },
-      "title": "Thikathani: End-to-End Data Platform Migration from GCP to AWS",
+      "title": "End-to-End Data Platform & Cloud Migration",
       "category": "data",
-      "summary": "Data engineering for Thikathani, the VE7 Agronegocios brand/platform: migration of analytical ETL architectures from GCP to AWS, connecting Odoo data extraction with orchestration, processing, governance, and business visualization.",
+      "summary": "Migration of analytical ETL architectures from GCP to AWS, connecting Odoo data extraction with orchestration, processing, governance, and business visualization.",
       "problem": "A change of cloud provider required migrating the ETL architectures supporting the business, while management, operations, and marketing teams relied on transformed data and indicators.",
       "objective": "Migrate the analytical data platform from GCP to AWS and connect the extraction-to-visualization lifecycle with business KPI needs.",
       "approach": "Worked across Odoo data extraction, workflow orchestration, Spark/Scala/PySpark processing, data governance, and dashboard delivery. Migrated existing GCP ETL architectures to AWS and used transformed company data for KPIs and marketing analysis.",
@@ -326,11 +331,11 @@
         "Amazon S3",
         "Amazon QuickSight"
       ],
-      "role": "Data Engineer at VE7 Agronegocios S.A.C.",
+      "role": "Data Engineer",
       "contributions": "Implemented ETL automation and data processing, contributed to the GCP-to-AWS architecture migration, connected the lifecycle from Odoo extraction to visualization, and developed dashboards and business indicators. Transformed data also supported pattern analysis and segmentation for marketing.",
       "challenges": "Covering the extraction-to-visualization lifecycle across a change of cloud provider while keeping analytical outputs connected to management and operational needs.",
       "results": "Migrated ETL architectures from GCP to AWS. Delivered management and operations KPIs and interactive dashboards, with transformed data also supporting marketing analysis.",
-      "evidence": "This case is based on my Data Engineer role at VE7 Agronegocios S.A.C. and work on its Thikathani brand/platform. The flow is a conceptual reconstruction of the described work. Company code, datasets, and deployment records are not publicly included.",
+      "evidence": "This case is based on my professional experience in end-to-end data engineering and cloud migration. The flow is a conceptual reconstruction of the described work. Company code, datasets, and deployment records are not publicly included.",
       "links": {},
       "status": "Completed during the role",
       "period": "2022 - 2023",
@@ -370,10 +375,15 @@
         }
       ],
       "business": {
-        "organization": "Thikathani / VE7 Agronegocios",
+        "focus": "End-to-end data & cloud migration",
+        "keywords": [
+          "GCP to AWS",
+          "ERP integration",
+          "Data orchestration"
+        ],
         "industry": "Agribusiness",
         "audience": "Management, operations & marketing",
-        "context": "Thikathani is the brand/platform associated with my work at VE7 Agronegocios. The analytical platform connected operational information with management indicators, operational dashboards, and marketing analysis.",
+        "context": "The analytical platform connected operational information with management indicators, operational dashboards, and marketing analysis. Its migration covered the data lifecycle from ERP extraction to business visualization.",
         "teams": [
           "Management",
           "Operations",
@@ -399,14 +409,14 @@
     {
       "id": "virutex-ilko-business-automation",
       "preview": {
-        "title": "Ilko: analytics & automation",
+        "title": "Business analytics & automation",
         "problem": "Connect departmental information needs and automate recurring manual workflows.",
         "contribution": "Shared analytical data, Python/SQL/JavaScript workflows, RPA, and KPI tools.",
         "outcome": "Automated data delivery and interactive scenarios for commercial and finance teams."
       },
-      "title": "Virutex Ilko: Cross-Functional Analytics & Process Automation",
+      "title": "Business Analytics & Process Automation",
       "category": "data",
-      "summary": "Data warehousing, ETL and process automation, and BI solutions for financial, commercial, and operational teams at Virutex Ilko, including interactive tools for business KPI scenarios.",
+      "summary": "Data warehousing, ETL and process automation, and BI solutions for financial, commercial, and operational teams, including interactive tools for business KPI scenarios.",
       "problem": "Different business functions needed accessible information from sales, inventory, and logistics, while recurring manual tasks added work to information preparation and delivery.",
       "objective": "Make analytical data available across departments, automate recurring data and business workflows, and give commercial and finance teams tools to explore KPI scenarios.",
       "approach": "Designed and maintained shared analytical data structures and ETL workflows. Used Python, SQL, JavaScript, and Automation Anywhere for data and process solutions; developed BI dashboards and interactive KPI tools for commercial and finance users.",
@@ -423,11 +433,11 @@
         "Selenium",
         "SharePoint"
       ],
-      "role": "Data Analyst & Business Intelligence at Virutex Ilko",
+      "role": "Data Analyst & Business Intelligence",
       "contributions": "Built and maintained data warehouse and ETL solutions, automated manual tasks with scripts and RPA, optimized transformation queries, and developed dashboards and parameterized KPI scenario tools. Worked with needs across financial, commercial, and operational areas.",
       "challenges": "Making transformations more maintainable and reusable while supporting different departmental information needs and recurring administrative workflows.",
       "results": "Automated manual information preparation and delivery tasks, improved the maintainability of ETL workflows, and delivered tools that let commercial and finance teams visualize KPIs and explore alternative scenarios.",
-      "evidence": "This case is based on my Data Analyst & BI role at Virutex Ilko. The overview groups complementary work across departments; it does not imply that every solution was used by every area. Internal datasets, scripts, bots, and business dashboards are not publicly included.",
+      "evidence": "This case is based on my professional experience in data analysis, BI, and process automation. The overview groups complementary work across departments; it does not imply that every solution was used by every area. Internal datasets, scripts, bots, and business dashboards are not publicly included.",
       "links": {},
       "status": "Completed during the role",
       "period": "2024 - 2025",
@@ -459,7 +469,12 @@
         }
       ],
       "business": {
-        "organization": "Virutex Ilko",
+        "focus": "Cross-functional analytics & process automation",
+        "keywords": [
+          "Process automation",
+          "RPA",
+          "KPI scenarios"
+        ],
         "industry": "Consumer goods",
         "audience": "Finance, commercial & operations",
         "context": "The work served information and process needs across a consumer-goods business: from financial and commercial teams to supply chain, production, and distribution. Shared data and automation supported recurring work, while KPI tools enabled commercial and financial scenario exploration.",

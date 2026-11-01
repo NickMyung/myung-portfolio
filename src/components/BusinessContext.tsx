@@ -6,7 +6,8 @@ export function BusinessContext({ business }: { business: ProjectBusinessContext
     <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(260px,0.7fr)]">
       <div>
         <p className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-cyan-300"><Briefcase className="h-4 w-4" aria-hidden="true" />Business context</p>
-        <h2 id="business-context-title" className="text-xl font-semibold text-white sm:text-2xl">{business.organization}</h2>
+        <h2 id="business-context-title" className="text-xl font-semibold text-white sm:text-2xl">{business.focus}</h2>
+        <ul aria-label="Development keywords" className="mt-3 flex flex-wrap gap-2">{business.keywords.map((keyword) => <li key={keyword} className="rounded-full border border-cyan-900/60 px-3 py-1 text-xs text-cyan-200">{keyword}</li>)}</ul>
         <p className="mt-3 text-sm leading-relaxed text-slate-300">{business.context}</p>
         <dl className="mt-5 grid gap-4 text-xs sm:grid-cols-2"><div><dt className="text-slate-400">Industry</dt><dd className="mt-1 text-slate-200">{business.industry}</dd></div><div><dt className="text-slate-400">Business audience</dt><dd className="mt-1 text-slate-200">{business.audience}</dd></div></dl>
       </div>

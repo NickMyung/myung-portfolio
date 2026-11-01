@@ -4,6 +4,11 @@ Fecha de revisión: 1 de noviembre de 2026.
 Estado: enfoque aplicado en v3; casos basados en el CV y confirmaciones del propietario.
 Rama consultada: `myung-portafolio-v3`.
 
+Preferencia editorial posterior del propietario: presentar los casos públicos con
+títulos y palabras clave sobre los desarrollos, sin mencionar empresas. Los
+nombres de las empresas se conservan en la trayectoria laboral y en este registro
+interno de fuentes; las referencias históricas siguientes explican la procedencia.
+
 ## Posicionamiento recomendado
 
 Conservar Mechatronics Engineer como profesión principal y mantener tres áreas
@@ -168,3 +173,18 @@ permanecen vacíos cuando no se dispone de destinos compartibles.
 
 La compilación de producción y las pruebas de navegador de la implementación
 se completaron; el registro está en [V3_VISUAL_REVIEW.md](V3_VISUAL_REVIEW.md).
+
+## Presentación centrada en desarrollos
+
+Los tres casos públicos se presentan como **Financial Data Modernization &
+Governance**, **End-to-End Data Platform & Cloud Migration** y **Business Analytics
+& Process Automation**. Sus tarjetas y bloques de contexto utilizan `business.focus`
+y `business.keywords` para destacar Cloud ETL, Core data mapping, Metadata
+governance, GCP to AWS, ERP integration, Data orchestration, Process automation,
+RPA y KPI scenarios.
+
+Se retiraron las empresas de títulos, resúmenes, roles y textos de alcance de los
+casos de datos. La barra lateral conserva un acceso a la trayectoria sin repetir
+empleadores. Las experiencias laborales, IDs de casos, rutas y relaciones internas
+se mantienen para preservar la historia y los enlaces existentes. Esta preferencia
+es de presentación y no supone anonimización del repositorio o de sus URL.
