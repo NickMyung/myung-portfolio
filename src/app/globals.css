@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Original #070a12 blended with approximately 10% white. */
+    --portfolio-background: #20232a;
+  }
   body {
-    @apply bg-[#070a12] text-slate-100 antialiased overflow-x-hidden;
+    @apply text-slate-100 antialiased overflow-x-hidden;
+    background-color: var(--portfolio-background);
     position: relative;
     isolation: isolate;
   }
@@ -15,9 +20,9 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(ellipse at 8% 15%, rgba(196, 181, 253, 0.14), transparent 55%),
+      radial-gradient(ellipse at 8% 15%, rgba(253, 164, 175, 0.14), transparent 55%),
       radial-gradient(ellipse at 95% 48%, rgba(216, 180, 254, 0.11), transparent 55%),
-      radial-gradient(ellipse at 35% 100%, rgba(221, 214, 254, 0.08), transparent 50%);
+      radial-gradient(ellipse at 35% 100%, rgba(254, 202, 202, 0.08), transparent 50%);
   }
   section[id], footer[id], div[id="simulator"] {
     scroll-margin-top: 6.5rem;
@@ -116,7 +121,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070a12;
+  background: var(--portfolio-background);
 }
 ::-webkit-scrollbar-thumb {
   background: #1e293b;

@@ -74,7 +74,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#070a12] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black min-h-screen">
+      <body className="text-slate-100 font-sans selection:bg-cyan-500 selection:text-black min-h-screen">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-300 focus:px-5 focus:py-3 focus:text-slate-950">Skip to content</a>
         {children}
       </body>
