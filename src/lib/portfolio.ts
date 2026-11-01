@@ -11,10 +11,10 @@ export const projectCategories = portfolio.expertise.map((area) => ({
   description: area.focus,
 }));
 
-const areaStyles: Record<string, { text: string; border: string; surface: string }> = {
-  data: { text: 'text-cyan-300', border: 'border-cyan-900/70', surface: 'bg-cyan-950/20' },
-  software: { text: 'text-violet-300', border: 'border-violet-900/70', surface: 'bg-violet-950/20' },
-  robotics: { text: 'text-emerald-300', border: 'border-emerald-900/70', surface: 'bg-emerald-950/20' },
+const areaStyles: Record<string, { text: string; border: string; surface: string; rgb: string }> = {
+  data: { text: 'text-cyan-300', border: 'border-cyan-900/70', surface: 'bg-cyan-950/20', rgb: '103, 232, 249' },
+  software: { text: 'text-violet-300', border: 'border-violet-900/70', surface: 'bg-violet-950/20', rgb: '196, 181, 253' },
+  robotics: { text: 'text-emerald-300', border: 'border-emerald-900/70', surface: 'bg-emerald-950/20', rgb: '110, 231, 183' },
 };
 
 export function getAreaStyle(category: string) {

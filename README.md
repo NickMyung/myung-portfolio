@@ -13,6 +13,14 @@ Multidisciplinary portfolio of **Nick Soto Conde**, presenting Big Data and data
 
 The homepage follows: **Projects → Experience → Capabilities → Research → Profile → Contact**. The default project view selects one featured case per area, in three equally sized columns. Experience shows all roles by default. Each case has a shareable page at `/projects/[id]`, with a conceptual architecture, personal contribution, outcome, and an explanation of available material. The 3D model loads only when opened in the research section.
 
+### V3 visual presentation
+
+Project cards use conceptual system maps generated from each project's existing `flow`, with equal layouts and cyan, violet, and emerald accents for the three disciplines. These diagrams are editorial illustrations, not original project screenshots, CAD drawings, or proof of a production architecture. Full project context and evidence remain on the case pages.
+
+The optional `projects[].preview` fields (`title`, `problem`, `contribution`, `outcome`) provide concise card copy; projects without them fall back to the original case content. Keep summaries consistent with those fields. `ProjectVisual.tsx` renders the map, and `Reveal.tsx` provides a one-time viewport entrance. Content remains readable without JavaScript or IntersectionObserver; reduced-motion preferences disable entrances and hover movement. Major sections share responsive spacing through `.section-spacing`. No animation dependency is required.
+
+The files under `output/portfolio-review-2026-11-01/` and its ZIP archives preserve the **v2 review snapshot**; they do not represent the v3 interface.
+
 The three areas are defined in `portfolio_data.json` under `expertise`. Their stable category IDs are **`data`**, **`software`**, and **`robotics`**; these IDs are used by projects and experience. Titles, descriptions, filters, area links, and project counts derive from that shared definition. `featured` makes a case eligible for the balanced homepage selection, and `priority` orders projects within each area. Category filters and All projects show the full catalog. Virutex and Bioverse remain internal drafts in `../agents/portfolio/BORRADORES_CASOS.md` until supporting material is available.
 
 To add a project, copy the full structure of an existing item in `projects`, assign a unique `id` and a valid `category`, and supply the content and available evidence. Related capability links update automatically; no `expertise.projectIds` list is needed. Run `npm run build` to generate its case page. See [the multidisciplinary content guide](../agents/portfolio/ENFOQUE_MULTIDISCIPLINARIO.md) for the editorial workflow.
@@ -121,7 +129,7 @@ portfolio/
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx         # Root layout, OpenGraph, SEO metadata, fonts
-│   │   ├── page.tsx           # Projects-first homepage with data/cloud positioning
+│   │   ├── page.tsx           # Projects-first, multidisciplinary homepage
 │   │   └── projects/[id]/page.tsx # Shareable case pages generated from project data
 │   │   └── globals.css        # Tailwind directives, grid background, scrollbars
 │   ├── components/
@@ -130,6 +138,9 @@ portfolio/
 │   │   ├── About.tsx          # 4 structured domains (Background, Approach, Interests, Focus)
 │   │   ├── Expertise.tsx      # 3 core pillars with verified competencies & technologies
 │   │   ├── ProjectsShowcase.tsx # Selected work, category filters, and case-page links
+│   │   ├── ProjectCard.tsx    # Concise problem, contribution, and outcome previews
+│   │   ├── ProjectVisual.tsx  # Flow-based conceptual illustrations per discipline
+│   │   ├── Reveal.tsx         # Progressive viewport animation with motion preferences
 │   │   ├── ProjectFlow.tsx    # Responsive conceptual system diagrams
 │   │   ├── ResearchSection.tsx # Research overview and on-demand 3D model
 │   │   ├── ExoskeletonWorkspace3D.tsx # Interactive 3D D-H kinematics & workspace simulator

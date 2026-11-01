@@ -130,6 +130,12 @@
   "projects": [
     {
       "id": "hip-exoskeleton-kinematics",
+      "preview": {
+        "title": "Hip exoskeleton kinematics",
+        "problem": "Understand joint geometry before manufacturing a wearable robotic device.",
+        "contribution": "D-H formulations, transformation scripts and workspace point clouds; paper co-authorship.",
+        "outcome": "Kinematic analysis and workspace simulation documented in a CMAAE 2021 paper."
+      },
       "title": "3-DoF Hip Exoskeleton Kinematic Analysis & Workspace Simulation",
       "category": "robotics",
       "summary": "Direct kinematic characterization and 3D reachable workspace evaluation of a three-degree-of-freedom wearable hip exoskeleton for gait rehabilitation.",
@@ -181,6 +187,12 @@
     },
     {
       "id": "santander-data-platform",
+      "preview": {
+        "title": "Financial data modernization",
+        "problem": "Move legacy financial workflows to the cloud with consistent metadata governance.",
+        "contribution": "Python/SQL mappings, distributed Spark ETLs and DataHub metadata schemas.",
+        "outcome": "Financial pipelines on AWS with standardized workflows and banking core mappings."
+      },
       "title": "Financial Data Pipeline Modernization & Cloud Migration",
       "category": "data",
       "summary": "Migration and re-architecture of financial data processes from legacy on-premise infrastructure to AWS Cloud for Santander Consumer Bank.",
@@ -237,6 +249,12 @@
     },
     {
       "id": "ve7-fullstack-ml-platform",
+      "preview": {
+        "title": "Mobile & web recommendations",
+        "problem": "Connect agricultural catalogs with product recommendations for commercial teams.",
+        "contribution": "TypeScript components, Flask APIs, ML integration and Scrum coordination.",
+        "outcome": "Mobile app released on Google Play and a web dashboard deployed on AWS."
+      },
       "title": "Mobile & Web Platform with Integrated Predictive Recommendation",
       "category": "software",
       "summary": "Full-stack mobile (Android) and web application integrating REST microservices and a machine learning decision-tree model for product recommendation.",
@@ -287,6 +305,12 @@
     },
     {
       "id": "nasa-rover-tharsis",
+      "preview": {
+        "title": "Rover mechanics & telemetry",
+        "problem": "Traverse simulated planetary obstacles within vehicle mass and size constraints.",
+        "contribution": "Team contributions to drivetrain mechanics, fabrication and sensor telemetry.",
+        "outcome": "Participation with Grupo Tharsis UNI in the NASA rover challenge."
+      },
       "title": "NASA Human Exploration Rover Mechanical & Telemetry Subsystems",
       "category": "robotics",
       "summary": "Engineering design, kinematic drivetrain evaluation, and telemetry integration for an extraterrestrial exploration rover prototype.",

@@ -4,7 +4,7 @@ import { EducationSection } from '@/components/EducationSection';
 
 export function About() {
   const { profile } = portfolio;
-  return <section id="about" className="border-t border-slate-800 bg-[#0b1021]/30 py-16 sm:py-24">
+  return <section id="about" className="section-spacing border-t border-slate-800 bg-[#0b1021]/30">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
         <div><p className="section-eyebrow">05 / Profile</p><h2 className="section-title">A mechatronics foundation.<br />A multidisciplinary practice.</h2></div>

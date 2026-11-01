@@ -29,7 +29,7 @@ export function ResearchSection() {
     window.addEventListener('hashchange', openFromHash);
     return () => window.removeEventListener('hashchange', openFromHash);
   }, []);
-  return <section id="research" className="border-t border-slate-800 bg-[#0b1021]/30 py-16 sm:py-24">
+  return <section id="research" className="section-spacing border-t border-slate-800 bg-[#0b1021]/30">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <p className="section-eyebrow">04 / Robotics research & development</p><h2 className="section-title">Where mathematical models meet systems.</h2><p className="section-description max-w-2xl">Robotics research connects kinematic modeling, computational tools, and physical prototypes. Explore the publications, methods, and interactive model behind this area of my work.</p>
       {project && <div className="mt-8 grid gap-6 rounded-2xl border border-slate-800 bg-[#070a12] p-6 sm:p-8 lg:grid-cols-[0.7fr_1.3fr]">

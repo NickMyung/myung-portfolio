@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { getProjectsForArea, getAreaStyle, projectCategories } from '@/lib/portfolio';
 import { ProjectCard } from '@/components/ProjectCard';
+import { Reveal } from '@/components/Reveal';
 
 export function ProjectsShowcase() {
   const [selection, setSelection] = useState('featured');
@@ -51,13 +52,13 @@ export function ProjectsShowcase() {
   const visibleCount = groups.reduce((count, area) => count + area.visible.length, 0);
   const singleArea = groups.length === 1;
   return (
-    <section id="projects" className="border-t border-slate-800/80 py-16 sm:py-24">
+    <section id="projects" className="section-spacing border-t border-slate-800/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="section-eyebrow">01 / Selected work</p>
           <h2 className="section-title">Three disciplines. One engineering perspective.</h2>
           <p className="section-description">Explore work in data, full-stack software, and robotics. Each area brings its own problems, methods, and evidence, connected by a mechatronics foundation.</p>
-        </div>
+        </Reveal>
         <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter projects">
           {tabs.map((tab) => <button type="button" key={tab.id} onClick={() => selectArea(tab.id)} aria-pressed={selection === tab.id} className={`rounded-full border px-4 py-2.5 text-xs transition-colors ${selection === tab.id ? 'border-cyan-400 bg-cyan-400 text-slate-950' : 'border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-600 hover:text-white'}`}>{tab.label}</button>)}
         </div>
@@ -72,7 +73,7 @@ export function ProjectsShowcase() {
                 <p className="mt-3 text-xs text-slate-400">{area.available.length} {area.available.length === 1 ? 'case study' : 'case studies'}</p>
               </header>
               <div className={`mt-4 grid flex-1 gap-5 ${singleArea ? 'md:grid-cols-2 xl:grid-cols-3' : ''}`}>
-                {area.visible.map((project) => <ProjectCard key={project.id} project={project} />)}
+                {area.visible.map((project, index) => <Reveal key={project.id} delay={index * 70} className="h-full"><ProjectCard project={project} /></Reveal>)}
               </div>
               {selection === 'featured' && <button type="button" onClick={() => selectArea(area.id)} className={`mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm hover:bg-slate-900 ${style.border} ${style.text}`}>Explore {area.label}<ArrowRight className="h-4 w-4" aria-hidden="true" /></button>}
             </section>;

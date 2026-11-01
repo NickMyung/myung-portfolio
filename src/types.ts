@@ -36,6 +36,12 @@ export interface ProjectItem {
   title: string;
   category: string;
   summary: string;
+  preview?: {
+    title: string;
+    problem: string;
+    contribution: string;
+    outcome: string;
+  };
   problem: string;
   objective: string;
   approach: string;
