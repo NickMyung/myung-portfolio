@@ -75,6 +75,7 @@ web_modules/
 .parcel-cache
 
 # Next.js build output
+.next-review/
 .next
 out
 
@@ -147,3 +148,6 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Versiones de ultimo commit
+ultimo_commit.txt

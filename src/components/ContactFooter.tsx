@@ -27,7 +27,7 @@ export const ContactFooter: React.FC = () => {
               Get in Touch
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-light">
-              Available for technical inquiries, professional opportunities in <strong>Data Engineering</strong>, <strong>Full-Stack Software Engineering</strong>, and collaborative <strong>Robotics &amp; Biomedical Research</strong>.
+              Let’s build across <strong>Big Data and data engineering</strong>, <strong>full-stack development</strong>, and <strong>robotics research</strong>. I welcome projects in each area and collaborations connecting data, software, and physical systems.
             </p>
 
             <div className="flex flex-wrap gap-4 font-mono text-xs sm:text-sm">
@@ -49,7 +49,7 @@ export const ContactFooter: React.FC = () => {
             </div>
 
             {/* Social Network Links */}
-            <div className="flex items-center space-x-4 mt-8 font-mono text-xs">
+            <div className="flex flex-wrap items-center gap-4 mt-8 font-mono text-xs">
               <a
                 href={profile.socialLinks.github}
                 target="_blank"
@@ -58,7 +58,7 @@ export const ContactFooter: React.FC = () => {
                 className="flex items-center space-x-2 text-slate-400 hover:text-white transition-colors"
               >
                 <Github className="w-4 h-4" />
-                <span>github.com/NickMyung</span>
+                <span>GitHub</span>
               </a>
 
               <span className="text-slate-700">•</span>
@@ -71,7 +71,7 @@ export const ContactFooter: React.FC = () => {
                 className="flex items-center space-x-2 text-slate-400 hover:text-sky-400 transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
-                <span>linkedin.com/in/nick-soto-conde</span>
+                <span>LinkedIn</span>
               </a>
             </div>
           </div>
@@ -129,7 +129,7 @@ export const ContactFooter: React.FC = () => {
           <div>
             © {new Date().getFullYear()} {profile.name}. Bachelor in Mechatronics Engineering (UNI).
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
             <span className="text-cyan-400">ICCRE Japan TPC Reviewer (2024–2026)</span>
             <span>•</span>
             <span className="text-indigo-400">UTEC Big Data</span>

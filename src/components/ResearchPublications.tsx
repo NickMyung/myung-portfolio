@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { BookOpen, Copy, Check, ExternalLink, FileText, Quote } from 'lucide-react';
 import portfolioData from '../../portfolio_data.json';
 
-export const ResearchPublications: React.FC = () => {
+export const ResearchPublications: React.FC<{ compact?: boolean; onOpenSimulator?: () => void }> = ({ compact = false, onOpenSimulator }) => {
   const { publications } = portfolioData;
   const [copiedFormat, setCopiedFormat] = useState<{ id: string; format: string } | null>(null);
 
@@ -15,15 +15,15 @@ export const ResearchPublications: React.FC = () => {
   };
 
   return (
-    <section id="publications" className="py-20 bg-[#070a12] border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="publications" className={compact ? 'pt-12' : 'py-20 bg-[#070a12] border-t border-slate-900'}>
+      <div className={compact ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'}>
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className={compact ? 'max-w-3xl mb-6' : 'text-center max-w-3xl mx-auto mb-16'}>
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-800 text-xs font-mono text-cyan-300 mb-3">
             <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
             <span>Peer-Reviewed Literature</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+          <h2 className={compact ? 'text-2xl font-semibold text-white mb-4' : 'text-3xl sm:text-4xl font-extrabold text-white mb-4'}>
             Research &amp; Publications
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
@@ -99,6 +99,7 @@ export const ResearchPublications: React.FC = () => {
                   {pub.id === 'cmaae-2021' && (
                     <a
                       href="#simulator"
+                      onClick={onOpenSimulator}
                       className="text-xs font-mono text-indigo-400 hover:text-indigo-300"
                     >
                       Interactive 3D Demo ↑

@@ -22,6 +22,9 @@ export interface Profile {
 
 export interface ExpertiseItem {
   id: string;
+  categoryId: string;
+  shortTitle: string;
+  focus: string;
   title: string;
   description: string;
   competencies: string[];
@@ -51,10 +54,26 @@ export interface ProjectItem {
   status: string;
   period: string;
   featured: boolean;
+  priority: number;
+  evidenceLabel: string;
+  experienceIds: string[];
+  publicationIds: string[];
+  flow: { label: string; detail: string }[];
+}
+
+export interface AcademicProjectItem {
+  id: string;
+  organization: string;
+  role: string;
+  category: string;
+  period: string;
+  location: string;
+  description: string;
 }
 
 export interface ExperienceItem {
   id: string;
+  category: string;
   organization: string;
   client?: string;
   role: string;
@@ -115,6 +134,7 @@ export interface PortfolioData {
   experience: ExperienceItem[];
   publications: PublicationItem[];
   academicService: AcademicServiceItem[];
+  academicProjects: AcademicProjectItem[];
   education: EducationItem[];
   technicalSkills: TechnicalSkills;
 }

@@ -1,0 +1,1006 @@
+{
+  "snapshotDate": "2026-11-01",
+  "timezone": "America/Lima",
+  "sourceReferenceCommit": "90b0f04",
+  "sourceState": "Local working tree, including uncommitted changes",
+  "productionBuild": "Succeeded before capture",
+  "captureMethod": "Microsoft Edge headless / Chrome DevTools Protocol / real application viewports",
+  "nodeVersion": "v20.17.0",
+  "shots": [
+    {
+      "file": "desktop/01-home.png",
+      "title": "Professional identity & three areas",
+      "description": "Mechatronics identity, pastel-purple atmosphere, and equal entry points for Big Data, full-stack development, and robotics R&D.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/02-selected-projects.png",
+      "title": "Balanced selected projects",
+      "description": "One selected case per area, using a shared card structure and category-specific accents.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/03-experience.png",
+      "title": "Professional experience",
+      "description": "Chronological roles, technical contributions, and filters across all three areas.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/04-capabilities.png",
+      "title": "Capabilities connected to work",
+      "description": "Equal capability cards link each practice to its related case studies.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/05-research.png",
+      "title": "Robotics research & development",
+      "description": "Kinematic research, scope statements, and the entry point to the illustrative browser model.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/06-publications.png",
+      "title": "Scientific publications",
+      "description": "Publication metadata, author order, repository links, and citation-format controls.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/07-profile.png",
+      "title": "Multidisciplinary professional profile",
+      "description": "A shared engineering foundation connects the three practice areas.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/08-education.png",
+      "title": "Education & technical methods",
+      "description": "Formal education and a separate expandable technology inventory.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/09-academic-service.png",
+      "title": "Academic service & community",
+      "description": "Peer review and community leadership are separated from projects and publications.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/10-contact.png",
+      "title": "Contact & professional channels",
+      "description": "Contact details and professional links complete the public presentation.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/00-full-page.png",
+      "title": "Complete homepage overview",
+      "description": "An uncropped overview of the homepage with the 3D model closed. Open the original image to inspect the full page.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 14891
+      }
+    },
+    {
+      "file": "desktop/11-interactive-model.png",
+      "title": "Interactive kinematics model",
+      "description": "Paused WebGL model, joint controls, coordinate output, and workspace visualization. This is an illustrative model, not clinical validation.",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/12-case-data.png",
+      "title": "Data engineering case study",
+      "description": "Dedicated case page showing context, role, status, and a conceptual system overview.",
+      "route": "/projects/santander-data-platform",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/13-case-full-stack.png",
+      "title": "Full-stack development case study",
+      "description": "Dedicated case page showing context, role, status, and a conceptual system overview.",
+      "route": "/projects/ve7-fullstack-ml-platform",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "desktop/14-case-robotics.png",
+      "title": "Robotics research case study",
+      "description": "Dedicated case page showing context, role, status, and a conceptual system overview.",
+      "route": "/projects/hip-exoskeleton-kinematics",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "mobile/01-home.png",
+      "title": "Mobile / professional identity",
+      "description": "The introductory hierarchy adapts to a narrow screen.",
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "pixelDimensions": {
+        "width": 780,
+        "height": 1688
+      }
+    },
+    {
+      "file": "mobile/02-projects.png",
+      "title": "Mobile / grouped projects",
+      "description": "Project filters and area cards stack for reading on mobile.",
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "pixelDimensions": {
+        "width": 780,
+        "height": 1688
+      }
+    },
+    {
+      "file": "mobile/03-capabilities.png",
+      "title": "Mobile / capabilities",
+      "description": "Technical capability cards retain readable spacing and typography.",
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "pixelDimensions": {
+        "width": 780,
+        "height": 1688
+      }
+    },
+    {
+      "file": "mobile/04-research.png",
+      "title": "Mobile / research",
+      "description": "Research summaries and supporting context use a single-column layout.",
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "pixelDimensions": {
+        "width": 780,
+        "height": 1688
+      }
+    },
+    {
+      "file": "mobile/05-contact.png",
+      "title": "Mobile / contact",
+      "description": "Contact actions and professional links fit the mobile viewport.",
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "pixelDimensions": {
+        "width": 780,
+        "height": 1688
+      }
+    },
+    {
+      "file": "mobile/06-case-study.png",
+      "title": "Mobile / case study",
+      "description": "Long project titles and case metadata adapt to a narrow screen.",
+      "route": "/projects/santander-data-platform",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "pixelDimensions": {
+        "width": 780,
+        "height": 1688
+      }
+    },
+    {
+      "file": "mobile/07-navigation.png",
+      "title": "Mobile / navigation",
+      "description": "Expanded menu with navigation and contact access.",
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "pixelDimensions": {
+        "width": 780,
+        "height": 1688
+      }
+    },
+    {
+      "file": "code/01-pastel-background.png",
+      "title": "Pastel atmosphere on a dark canvas",
+      "description": "Layered radial gradients place lavender and lilac behind the interface. The layer does not intercept interaction.",
+      "route": "code/01-pastel-background.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "code/02-area-color-system.png",
+      "title": "A shared color system for three areas",
+      "description": "Cyan, violet, and emerald distinguish the three areas while preserving equal hierarchy.",
+      "route": "code/02-area-color-system.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "code/03-typography-and-grid.png",
+      "title": "Typography and the technical grid",
+      "description": "Inter is configured for reading and JetBrains Mono for technical labels. A subtle grid reinforces the engineering character.",
+      "route": "code/03-typography-and-grid.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "code/04-responsive-three-area-layout.png",
+      "title": "Equal areas, responsive layouts",
+      "description": "The same entry-point structure serves all areas. The project layout expands a selected area while retaining a balanced three-column overview.",
+      "route": "code/04-responsive-three-area-layout.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1641
+      }
+    },
+    {
+      "file": "code/05-project-card-hierarchy.png",
+      "title": "Reusable case-study hierarchy",
+      "description": "Project cards use the same component for role, contribution, outcome, technologies, and access to the full case.",
+      "route": "code/05-project-card-hierarchy.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "code/06-keyboard-and-motion.png",
+      "title": "Keyboard focus and motion preferences",
+      "description": "Visible focus, expanded-state semantics, and reduced-motion styles are implementation features; no accessibility certification is claimed.",
+      "route": "code/06-keyboard-and-motion.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "code/07-on-demand-research-model.png",
+      "title": "Research model loaded on demand",
+      "description": "The interactive model is client-only and mounts when opened. The interface also provides a text fallback when WebGL is unavailable.",
+      "route": "code/07-on-demand-research-model.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    },
+    {
+      "file": "code/08-data-driven-growth.png",
+      "title": "Content-driven groups and case pages",
+      "description": "Stable category identifiers connect the content, group filters, and automatically generated case pages.",
+      "route": "code/08-data-driven-growth.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1050,
+        "devicePixelRatio": 1.5
+      },
+      "pixelDimensions": {
+        "width": 2160,
+        "height": 1575
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "01-pastel-background",
+      "title": "Pastel atmosphere on a dark canvas",
+      "sources": [
+        {
+          "file": "src/app/globals.css",
+          "startLine": 6,
+          "endLine": 21
+        }
+      ]
+    },
+    {
+      "id": "02-area-color-system",
+      "title": "A shared color system for three areas",
+      "sources": [
+        {
+          "file": "src/lib/portfolio.ts",
+          "startLine": 14,
+          "endLine": 18
+        },
+        {
+          "file": "src/lib/portfolio.ts",
+          "startLine": 20,
+          "endLine": 22
+        }
+      ]
+    },
+    {
+      "id": "03-typography-and-grid",
+      "title": "Typography and the technical grid",
+      "sources": [
+        {
+          "file": "tailwind.config.js",
+          "startLine": 21,
+          "endLine": 24
+        },
+        {
+          "file": "src/app/globals.css",
+          "startLine": 47,
+          "endLine": 52
+        },
+        {
+          "file": "src/app/globals.css",
+          "startLine": 31,
+          "endLine": 35
+        }
+      ]
+    },
+    {
+      "id": "04-responsive-three-area-layout",
+      "title": "Equal areas, responsive layouts",
+      "sources": [
+        {
+          "file": "src/components/Hero.tsx",
+          "startLine": 48,
+          "endLine": 57
+        },
+        {
+          "file": "src/components/ProjectsShowcase.tsx",
+          "startLine": 65,
+          "endLine": 76
+        }
+      ]
+    },
+    {
+      "id": "05-project-card-hierarchy",
+      "title": "Reusable case-study hierarchy",
+      "sources": [
+        {
+          "file": "src/components/ProjectCard.tsx",
+          "startLine": 8,
+          "endLine": 14
+        },
+        {
+          "file": "src/components/ProjectCard.tsx",
+          "startLine": 24,
+          "endLine": 27
+        }
+      ]
+    },
+    {
+      "id": "06-keyboard-and-motion",
+      "title": "Keyboard focus and motion preferences",
+      "sources": [
+        {
+          "file": "src/app/globals.css",
+          "startLine": 25,
+          "endLine": 28
+        },
+        {
+          "file": "src/app/globals.css",
+          "startLine": 37,
+          "endLine": 44
+        },
+        {
+          "file": "src/components/Navbar.tsx",
+          "startLine": 115,
+          "endLine": 121
+        }
+      ]
+    },
+    {
+      "id": "07-on-demand-research-model",
+      "title": "Research model loaded on demand",
+      "sources": [
+        {
+          "file": "src/components/ResearchSection.tsx",
+          "startLine": 9,
+          "endLine": 12
+        },
+        {
+          "file": "src/components/ResearchSection.tsx",
+          "startLine": 24,
+          "endLine": 24
+        },
+        {
+          "file": "src/components/ResearchSection.tsx",
+          "startLine": 41,
+          "endLine": 41
+        }
+      ]
+    },
+    {
+      "id": "08-data-driven-growth",
+      "title": "Content-driven groups and case pages",
+      "sources": [
+        {
+          "file": "src/lib/portfolio.ts",
+          "startLine": 6,
+          "endLine": 12
+        },
+        {
+          "file": "src/lib/portfolio.ts",
+          "startLine": 26,
+          "endLine": 28
+        },
+        {
+          "file": "src/app/projects/[id]/page.tsx",
+          "startLine": 10,
+          "endLine": 12
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "code/01-pastel-background.html",
+      "bytes": 5811,
+      "sha256": "fd838476ae959762d85a5d22d65a0ca6b0717afb4309b1a919c00f11c4c28a08"
+    },
+    {
+      "path": "code/01-pastel-background.png",
+      "bytes": 119538,
+      "sha256": "6c2c58f060222e2521962e031e8201dba8db4925637bf811d2c14975ec66a883"
+    },
+    {
+      "path": "code/02-area-color-system.html",
+      "bytes": 5211,
+      "sha256": "fbefc96f1de4d9a5d11f6e9919a21a628468718a4719cf9d55bac250830b96b8"
+    },
+    {
+      "path": "code/02-area-color-system.png",
+      "bytes": 117907,
+      "sha256": "75dada2786c21957885af15645769deaa39ee0ea2aa54817e245e5356d2cf4b2"
+    },
+    {
+      "path": "code/03-typography-and-grid.html",
+      "bytes": 6220,
+      "sha256": "42842f8342a8eb5667da44135149c8e1e6383483f67c7e2aeb43f4bc80a04787"
+    },
+    {
+      "path": "code/03-typography-and-grid.png",
+      "bytes": 149237,
+      "sha256": "fac785975f32c382729f6cf0445c5496db69445659218e96702aaec61e59d892"
+    },
+    {
+      "path": "code/04-responsive-three-area-layout.html",
+      "bytes": 8332,
+      "sha256": "5b44b2dff15de8eaad8f5b19c9869ad970765ac0c0acb0411ce510f81d3258a7"
+    },
+    {
+      "path": "code/04-responsive-three-area-layout.png",
+      "bytes": 252520,
+      "sha256": "21082786944f27f8101544c0cf3a4898146e9bc2d1f727d092f49e9ccb3bd7d4"
+    },
+    {
+      "path": "code/05-project-card-hierarchy.html",
+      "bytes": 6179,
+      "sha256": "67173428719ba431e8aa664bcb7535894f3bf5a35d41739e5a5f897bc59f43e3"
+    },
+    {
+      "path": "code/05-project-card-hierarchy.png",
+      "bytes": 159306,
+      "sha256": "131a2384cfd420aeb6ece673deddfa4c0cce5871522b60e0a1da450134bccce5"
+    },
+    {
+      "path": "code/06-keyboard-and-motion.html",
+      "bytes": 6727,
+      "sha256": "60ad8b88f61d4789be1afbf8b190621b311b03f0318b0b3d213e527a4bc74054"
+    },
+    {
+      "path": "code/06-keyboard-and-motion.png",
+      "bytes": 157305,
+      "sha256": "b1e1e07e0da9422e9c63a66b7cb3d36319c5de0564fd6d64fe8580772e8078d6"
+    },
+    {
+      "path": "code/07-on-demand-research-model.html",
+      "bytes": 5475,
+      "sha256": "2649a3bf8fe97db343da9372527eb1bcef58687e63cb1486e4473a8958c0dd4d"
+    },
+    {
+      "path": "code/07-on-demand-research-model.png",
+      "bytes": 144890,
+      "sha256": "e3e93e0c3d9fcfaff30352baaaef0a12502130a7aeabb60e759c3d5237eac4d6"
+    },
+    {
+      "path": "code/08-data-driven-growth.html",
+      "bytes": 5712,
+      "sha256": "8952e137dc7461b89677b55a772250819acd4d6e7b1a7f59a0491e75ff767fa3"
+    },
+    {
+      "path": "code/08-data-driven-growth.png",
+      "bytes": 126739,
+      "sha256": "6513780068efe28b3d514e682eba4bea4435c96f02a7a39107f79b68be7852df"
+    },
+    {
+      "path": "code-excerpts.md",
+      "bytes": 9116,
+      "sha256": "61d4009a2fb89f8d5d42ad00753bad79fa6f26e6656b7638caa2f6e4d571f351"
+    },
+    {
+      "path": "desktop/00-full-page.png",
+      "bytes": 4838607,
+      "sha256": "9179439a379b690407413487c5a1f25c2c21082797b3ade061dc3c77851ddd86"
+    },
+    {
+      "path": "desktop/01-home.png",
+      "bytes": 1512096,
+      "sha256": "18db31438590594a96c8dc076f0e28d4583fcdaea06bb47025a4d078ffc686b5"
+    },
+    {
+      "path": "desktop/02-selected-projects.png",
+      "bytes": 905560,
+      "sha256": "7125372e33a595fb84cca7e138d3cd6e6e7528742d8bcc947ef672d227ee6511"
+    },
+    {
+      "path": "desktop/03-experience.png",
+      "bytes": 503340,
+      "sha256": "381988c333cff2d68200cb901555cb54c4299cab90592f38e46a3c4a2e5eb576"
+    },
+    {
+      "path": "desktop/04-capabilities.png",
+      "bytes": 668169,
+      "sha256": "9bbee49ec4d2fff79a05298ec957837b6581abd6ae6928091f4bd8c49b8f10c0"
+    },
+    {
+      "path": "desktop/05-research.png",
+      "bytes": 592976,
+      "sha256": "d40a362f20cba38716bd884da94d3bd68e63dfb28957007c3ae9fa3cb9680391"
+    },
+    {
+      "path": "desktop/06-publications.png",
+      "bytes": 570866,
+      "sha256": "087f1512a1e10d47f32d0907ecb14f092aa9e052d272248889fc25bb01f4caed"
+    },
+    {
+      "path": "desktop/07-profile.png",
+      "bytes": 806825,
+      "sha256": "9a7acfe7d64d42e5abed439f35e5fe948702cea99f47a9f5e22c137f9c0fff96"
+    },
+    {
+      "path": "desktop/08-education.png",
+      "bytes": 565815,
+      "sha256": "6ac3d0751404e1a21e7e19a4b0089bc2a03ba13744ed584c3cfde49abec2229d"
+    },
+    {
+      "path": "desktop/09-academic-service.png",
+      "bytes": 408412,
+      "sha256": "98af157f10d7cbc97a74c5d82d3f5a6724379289a7afe876d1258dd209c5a635"
+    },
+    {
+      "path": "desktop/10-contact.png",
+      "bytes": 408397,
+      "sha256": "dadcb2f797a9a3dfa5c88bd718ef831ca7e220a324c785aa0fcdd5976fcd1cb6"
+    },
+    {
+      "path": "desktop/11-interactive-model.png",
+      "bytes": 450495,
+      "sha256": "53a54bc0fd545acb44be6c7568c6a33fecbebc978f21bc80e942df68814e2219"
+    },
+    {
+      "path": "desktop/12-case-data.png",
+      "bytes": 909754,
+      "sha256": "f07a653e35ea197d1cc6b7d59ba6edfc07438a6dc8b93c970d03395adb51bee9"
+    },
+    {
+      "path": "desktop/13-case-full-stack.png",
+      "bytes": 908948,
+      "sha256": "c0a6f284cbef334660637bf97315dea7a06b655b87b0b1b83c2ecbeac972469a"
+    },
+    {
+      "path": "desktop/14-case-robotics.png",
+      "bytes": 911358,
+      "sha256": "900147438b0b7a57de306fa30f46997ca0466325204ac7b93d68a4fda28386a9"
+    },
+    {
+      "path": "guia-de-revision.html",
+      "bytes": 15589,
+      "sha256": "34fcb79c03e5e3e028d6b110d11f341a62c15083a8c377e2b739cdb99734760c"
+    },
+    {
+      "path": "GUIA_DE_REVISION.md",
+      "bytes": 11972,
+      "sha256": "6ff64dd5c7e64ef675ea6dd498609cf47df8eb84f8a8d097fce63b97dcfec0cc"
+    },
+    {
+      "path": "index.html",
+      "bytes": 18063,
+      "sha256": "443af1495eb6d47e7b4a7dbbcc0bf7c142f8cd12b87cd3a1112d692c82caaf58"
+    },
+    {
+      "path": "mobile/01-home.png",
+      "bytes": 788070,
+      "sha256": "34d319c2f4faf9d477f463545a5db13ebd157650f5d6bd18a528c4c01b63eef3"
+    },
+    {
+      "path": "mobile/02-projects.png",
+      "bytes": 548609,
+      "sha256": "2e724d308d49f4c355c675ef29baab5ed9219df1c13def0c9d2350a3cfd5b6e4"
+    },
+    {
+      "path": "mobile/03-capabilities.png",
+      "bytes": 372373,
+      "sha256": "86141f1cdfa3ef10a8c8a896f352ce419fd9ce92be5ab59f54adb0820d9473d3"
+    },
+    {
+      "path": "mobile/04-research.png",
+      "bytes": 338473,
+      "sha256": "34e619e3e3de179e28b8bc3b9e56f9fcf5d9966cdf8d425aa1035fcc83242f21"
+    },
+    {
+      "path": "mobile/05-contact.png",
+      "bytes": 127471,
+      "sha256": "1177ca17bd311c95524725ff0b96d9cef49592ef58e05180e9516acc74db0647"
+    },
+    {
+      "path": "mobile/06-case-study.png",
+      "bytes": 538396,
+      "sha256": "c5e1321b0c8f1a1a6cd3e6036276494611a0207fd256037db301e2ad1984e34f"
+    },
+    {
+      "path": "mobile/07-navigation.png",
+      "bytes": 535235,
+      "sha256": "23601789a1308bbe2c885682acd893de9d1ad0fe0ae62b9a551dd67f328640a2"
+    },
+    {
+      "path": "README_ES.md",
+      "bytes": 1938,
+      "sha256": "d21e9430829bae471ff3264b6eed735ad7ee0e2b5228ec7d58acc0fb10caa6e5"
+    },
+    {
+      "path": "review-guide.html",
+      "bytes": 14342,
+      "sha256": "d927b7bbcd3a474994c363bc8018ab608495b8246dac28b64ea7c984bb443ea3"
+    },
+    {
+      "path": "REVIEW_GUIDE_EN.md",
+      "bytes": 10731,
+      "sha256": "8f1a5d227f2a91e48e2ed29b834019f1016c581bf101ab8894872fd1b4e6631d"
+    },
+    {
+      "path": "source/next-env.d.ts",
+      "bytes": 233,
+      "sha256": "e462a655754db9df18b4a657454a7b6a88717ffded4e89403b2b3a47c6603fc3"
+    },
+    {
+      "path": "source/next.config.mjs",
+      "bytes": 314,
+      "sha256": "1381ba94af2985e045856a303664a23342f7d6d3384c17d96315865a796ec829"
+    },
+    {
+      "path": "source/package-lock.json",
+      "bytes": 58921,
+      "sha256": "f90feaa6013a0fd3a4812aa9462638e21f4a3de50f3f8d14440c8e046262fa5b"
+    },
+    {
+      "path": "source/package.json",
+      "bytes": 662,
+      "sha256": "6733c6e8ac131409aead41553c243e3fb5b6f85a34e19abd36b26b505ff93484"
+    },
+    {
+      "path": "source/portfolio_data.json",
+      "bytes": 31594,
+      "sha256": "954e5c9ce8771fbdfbabd266d6a520045a699a5275d429418b0a8135d9d3e01b"
+    },
+    {
+      "path": "source/postcss.config.js",
+      "bytes": 89,
+      "sha256": "b78f5d0a0a449ecf58b6b6252e26cd2216c7aa41235e2d6d01a26b9a065cd439"
+    },
+    {
+      "path": "source/README.md",
+      "bytes": 606,
+      "sha256": "331cc9c4982a355ae3840f07fc76f66559be70b0bfb65ba55acc8440f6ce0753"
+    },
+    {
+      "path": "source/src/app/globals.css",
+      "bytes": 2081,
+      "sha256": "e1f099e68651c1851df5041eee5d0940d53dc321913d15e463c3ef490477e1f7"
+    },
+    {
+      "path": "source/src/app/layout.tsx",
+      "bytes": 2507,
+      "sha256": "b2c6c732c926c35fc5ef3158b4be8310d5ac7d68a24f3405c96835344a36d927"
+    },
+    {
+      "path": "source/src/app/page.tsx",
+      "bytes": 710,
+      "sha256": "cb749ab1715ddedc905732ac58b24887fbffb17353d5d8fac55b9382a9a4c7be"
+    },
+    {
+      "path": "source/src/app/projects/[id]/not-found.tsx",
+      "bytes": 379,
+      "sha256": "c7430eef9d004b454fe7d60a755c39317742232e0fc7ab19ce466eb91e432adf"
+    },
+    {
+      "path": "source/src/app/projects/[id]/page.tsx",
+      "bytes": 5211,
+      "sha256": "9212e65a4fb32748ce7030b9c8b42e133d35d8cb04686fbf53018035dde11c95"
+    },
+    {
+      "path": "source/src/components/About.tsx",
+      "bytes": 1333,
+      "sha256": "7fc58971c9cdd227a982b5a04b948602e8a963009d68cc3e36c20408fd35b0f7"
+    },
+    {
+      "path": "source/src/components/AcademicService.tsx",
+      "bytes": 974,
+      "sha256": "cd08fc429927c1d1d61d2806812237382367d58a1786ea57ae4076eab73edbba"
+    },
+    {
+      "path": "source/src/components/ContactFooter.tsx",
+      "bytes": 6696,
+      "sha256": "8df1fe2ec16798a5b58877148c275e69102fdceb5154d622ba5afbf098a4506d"
+    },
+    {
+      "path": "source/src/components/EducationSection.tsx",
+      "bytes": 1578,
+      "sha256": "4ceb2a4bf8fa306da743400e54398325f77e65087bce1de123b6aa0746a75706"
+    },
+    {
+      "path": "source/src/components/ExoskeletonWorkspace3D.tsx",
+      "bytes": 23511,
+      "sha256": "018a153dc6241ad566ae51247aa1300a92250e6a584607729cd58c217144580d"
+    },
+    {
+      "path": "source/src/components/ExperienceTimeline.tsx",
+      "bytes": 7549,
+      "sha256": "8d240bf007bb9a51bdf00e73d9f839b51bb3cb62c64985465cff28f4de1f11a4"
+    },
+    {
+      "path": "source/src/components/Expertise.tsx",
+      "bytes": 2540,
+      "sha256": "3b19ba6962c6e0e43384adb4164c518ce618868d4f7e77e0116b5cc35780ed6f"
+    },
+    {
+      "path": "source/src/components/Hero.tsx",
+      "bytes": 3425,
+      "sha256": "b5e96fe2400da95aee701405d5e0f6f1b1e80b5256d1e69200892b89fa2a3cc7"
+    },
+    {
+      "path": "source/src/components/Navbar.tsx",
+      "bytes": 7062,
+      "sha256": "66cb3bec4e4fe26d0717541f69e7d781d021ec71eb2b9d13e1590d192e1b29b4"
+    },
+    {
+      "path": "source/src/components/ProjectCard.tsx",
+      "bytes": 2389,
+      "sha256": "06215fabd9245509f8c21f8aab6149811992c368d9afe3296fe9d23845a0a822"
+    },
+    {
+      "path": "source/src/components/ProjectFlow.tsx",
+      "bytes": 1544,
+      "sha256": "9a71344f93984ecb263e56b752317fb526fecffed484823870438c8144750f35"
+    },
+    {
+      "path": "source/src/components/ProjectLinks.tsx",
+      "bytes": 1074,
+      "sha256": "32aed6b59c632dbe8e839eefd472c476e3c28177e9201e20f274826eb33a52f4"
+    },
+    {
+      "path": "source/src/components/ProjectsShowcase.tsx",
+      "bytes": 4904,
+      "sha256": "1d9b9df994557f6e5a09da05c12dff209a07af2d0f2c2252985bd50140ca7ae2"
+    },
+    {
+      "path": "source/src/components/ResearchPublications.tsx",
+      "bytes": 7254,
+      "sha256": "0e716666447741d6e1d82011fb0f4d6ec29109d8ab22ebc9737b2f354a38b49d"
+    },
+    {
+      "path": "source/src/components/ResearchSection.tsx",
+      "bytes": 6047,
+      "sha256": "b71d9a089f5fb5e5f59cb755a1c4c6a2fb1faca6cedbb7ed6e79f05e2535df9b"
+    },
+    {
+      "path": "source/src/lib/portfolio.ts",
+      "bytes": 1313,
+      "sha256": "27ae4df8064bab54555a39a57b5cc5c19ef836ccb31315d24babde15f6229534"
+    },
+    {
+      "path": "source/src/types.ts",
+      "bytes": 2813,
+      "sha256": "996ccd74e73073feacad76c9e160a1d8690c968c874a589597a164e5d48382eb"
+    },
+    {
+      "path": "source/tailwind.config.js",
+      "bytes": 649,
+      "sha256": "e075c4c401220fb86e00ad1eec93d5a40af68719e69551cf2d68318d5a846798"
+    },
+    {
+      "path": "source/tsconfig.json",
+      "bytes": 609,
+      "sha256": "7c53137b4301a9385fd8ae2c3b8e6429466ddb7e713621306b41259914294e0d"
+    }
+  ],
+  "validation": {
+    "pngFiles": 30,
+    "galleryLinks": "All local targets exist",
+    "sourceExcerpts": "Match current source files byte-for-byte",
+    "integrity": "All listed SHA-256 hashes verified"
+  },
+  "packageRevision": 2,
+  "documentationUpdatedOn": "2026-11-01",
+  "readingGuides": {
+    "spanish": {
+      "html": "guia-de-revision.html",
+      "markdown": "GUIA_DE_REVISION.md"
+    },
+    "english": {
+      "html": "review-guide.html",
+      "markdown": "REVIEW_GUIDE_EN.md"
+    }
+  }
+}
