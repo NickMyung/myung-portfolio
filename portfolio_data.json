@@ -1,182 +1,401 @@
 {
-  "personal": {
+  "profile": {
     "name": "Nick Soto Conde",
-    "title": "Mechatronics Engineer | Data Engineer & Full Stack Developer | Robotics & Bioengineering Researcher",
-    "headline": "Bridging Software Systems, Cloud Data Engineering, Physical Robotics, and Bioengineering Research",
-    "location": "Lima, Perú",
+    "headline": "Mechatronics Engineer | Data & Software Engineering | Robotics Research",
+    "professionalSummary": "I am a Mechatronics Engineer with professional experience in data engineering and software development, complemented by research experience in robotics and biomedical engineering. My work spans distributed data processing, cloud-based systems, application development, and robotic system modeling. I am interested in building reliable, scalable, and technically grounded solutions that connect engineering, software, and data.",
+    "location": "Lima, Peru (Jesús María) • Available for Remote & Hybrid",
     "email": "nicksc1911@gmail.com",
-    "phone": "+51 942002064",
+    "phone": "+51 942 002 064",
     "languages": [
       { "language": "Spanish", "level": "Native" },
-      { "language": "English", "level": "Advanced (C1/Professional)" },
-      { "language": "Korean", "level": "Basic (A1)" }
+      { "language": "English", "level": "Advanced (Professional Working Proficiency)" },
+      { "language": "Korean", "level": "Basic" }
     ],
-    "education": [
-      {
-        "degree": "B.Sc. in Mechatronics Engineering (Bachiller en Ingeniería Mecatrónica)",
-        "institution": "Universidad Nacional de Ingeniería (UNI)",
-        "period": "2017 - 2022",
-        "honors": "NASA Human Rover Challenge Team Member, Director of Research IEEE EMBS UNI"
-      },
-      {
-        "degree": "Specialization in Big Data",
-        "institution": "Universidad de Ingeniería y Tecnología (UTEC)",
-        "period": "2024"
-      }
-    ]
+    "socialLinks": {
+      "github": "https://github.com/NickMyung",
+      "linkedin": "https://www.linkedin.com/in/nick-soto-conde/",
+      "email": "mailto:nicksc1911@gmail.com"
+    },
+    "resumeUrl": "#contact",
+    "about": {
+      "professionalBackground": "Graduated with a Bachelor's degree in Mechatronics Engineering from the National University of Engineering (UNI) in Peru, followed by specialized studies in Big Data at UTEC. My professional trajectory has focused on enterprise data engineering, cloud-based architectures, and full-stack software development, built on a rigorous foundation of mechanical, electrical, and control engineering.",
+      "engineeringApproach": "I solve technical problems using an engineering approach grounded in first principles: integrating mathematical kinematics, robust distributed data processing, and maintainable software architecture. I prioritize building reliable, well-tested, and maintainable systems over fragile complexity.",
+      "researchInterests": "Robotics engineering, lower-limb rehabilitation exoskeletons, forward and inverse kinematic modeling via Denavit–Hartenberg conventions, workspace characterization, and biomedical engineering applications.",
+      "careerFocus": "Designing and operating resilient cloud data pipelines (AWS/GCP), distributed computing with Apache Spark, robust full-stack web and mobile systems, and participating in forward-looking engineering and robotics research."
+    }
   },
-  "narrative": {
-    "core_statement": "Ingeniero Mecatrónico egresado de la Universidad Nacional de Ingeniería (UNI) con una trayectoria multidisciplinaria que articula ingeniería de software full stack, arquitecturas modernas de datos en la nube (AWS/GCP), robótica aplicada a rehabilitación y liderazgo en investigación científica internacional.",
-    "pillars": [
-      {
-        "id": "data-engineering",
-        "title": "Ingeniería y Analítica de Datos",
-        "summary": "Diseño de canalizaciones de datos masivos (Apache Spark, Scala, Python, AWS EMR/Glue), gobierno de datos corporativo (DataHub) y modelado analítico para el sector financiero (Santander Consumer Bank) e industrial."
-      },
-      {
-        "id": "fullstack-software",
-        "title": "Desarrollo Full Stack & Cloud",
-        "summary": "Liderazgo técnico en desarrollo web y móvil (React, React Native, TypeScript, GraphQL, Next.js, FastAPI/Flask), arquitecturas serverless en AWS/GCP e integración de modelos de Machine Learning en producción."
-      },
-      {
-        "id": "robotics-bioengineering",
-        "title": "Robótica & Bioingeniería Médica",
-        "summary": "Modelado cinemático (D-H, espacios de trabajo, simulación computacional), diseño de exoesqueletos para rehabilitación de cadera y extremidades inferiores, prótesis y robótica espacial (NASA Rover Challenge)."
-      },
-      {
-        "id": "scientific-peer-review",
-        "title": "Investigación Internacional & Comité Científico (TPC)",
-        "summary": "Autor en conferencias indexadas internacionales y miembro activo del Comité Técnico de Revisión (Technical Program Committee / Reviewer) en congresos de robótica y automatización (ICCRE Japón 2024, 2025, 2026)."
-      }
-    ]
-  },
-  "publications": [
+  "expertise": [
     {
-      "id": "cmaae-2021",
-      "title": "Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation",
-      "conference": "CMAAE 2021 / International Conference",
-      "authors": ["Deyby Huamanchahua", "Nick Soto Conde", "Jean Carlos Vasquez Frias", "Diego Lopez Meza", "Ángel E. Alvarez-Rodríguez"],
-      "year": 2021,
-      "links": {
-        "utec_cris": "https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/"
-      },
-      "abstract": "Direct kinematic analysis of a 3-Degrees-of-Freedom (3-DoF) hip exoskeleton designed to assist human walking, utilizing Denavit-Hartenberg (D-H) convention and Euler angles for orientation modeling, paired with numerical simulation and workspace visual validation.",
-      "keywords": ["Hip Exoskeleton", "Kinematics Analysis", "Denavit-Hartenberg", "Workspace Simulation", "Rehabilitation Robotics"]
+      "id": "data-engineering",
+      "title": "Data Engineering & Cloud Platforms",
+      "description": "Design, construction, and optimization of data pipelines, distributed data processing, and enterprise metadata governance.",
+      "competencies": [
+        "Data Pipelines",
+        "ETL/ELT Pipelines",
+        "Distributed Data Processing",
+        "Data Warehousing",
+        "Cloud Data Platforms",
+        "Metadata Management",
+        "Data Integration",
+        "Data Quality",
+        "Data Governance (DataHub)"
+      ],
+      "technologies": [
+        "Apache Spark",
+        "Scala",
+        "Python",
+        "AWS (EMR, Glue, Athena, S3, Step Functions)",
+        "DataHub",
+        "SQL Server",
+        "Oracle",
+        "PostgreSQL",
+        "GCP BigQuery"
+      ]
     },
     {
-      "id": "rcae-2021",
-      "title": "Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review",
-      "conference": "RCAE 2021 / International Conference",
-      "authors": ["Deyby Huamanchahua", "Jean Carlos Vasquez-Frias", "Nick Soto-Conde", "Diego Lopez-Meza", "Angel E. Alvarez-Rodriguez"],
-      "year": 2021,
-      "links": {
-        "continental_cris": "https://cris.continental.edu.pe/es/publications/mechatronic-exoskeletons-for-hip-rehabilitation-a-schematic-revie/"
-      },
-      "abstract": "Schematic and structured review of mechatronic architectures, degrees of freedom, actuator typologies, and control strategies for hip and lower-limb rehabilitation exoskeletons.",
-      "keywords": ["Mechatronic Design", "Exoskeletons", "Hip Rehabilitation", "Actuation Systems", "Biomedical Engineering"]
+      "id": "software-engineering",
+      "title": "Software Engineering & Application Development",
+      "description": "Full-stack web and mobile applications, REST & GraphQL API engineering, microservices, and technical development coordination.",
+      "competencies": [
+        "Full-Stack Development",
+        "Backend Engineering",
+        "Frontend Development",
+        "REST API Development",
+        "GraphQL API Integration",
+        "Software Architecture",
+        "Serverless Applications",
+        "System Integration",
+        "Technical Leadership (Scrum)"
+      ],
+      "technologies": [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "React Native",
+        "Next.js",
+        "Node.js",
+        "Python (Flask)",
+        "Docker",
+        "AWS AppSync",
+        "AWS Lambda",
+        "DynamoDB",
+        "Git / CI/CD"
+      ]
+    },
+    {
+      "id": "robotics-biomedical",
+      "title": "Robotics & Biomedical Engineering",
+      "description": "Kinematic modeling, numerical simulation, 3D workspace characterization, and mechatronic design for rehabilitation robotics.",
+      "competencies": [
+        "Robot Kinematics",
+        "Forward Kinematics",
+        "Kinematic Modeling",
+        "Workspace Analysis",
+        "Robotics Simulation",
+        "Control Systems",
+        "Mechanical Design",
+        "Rehabilitation Robotics",
+        "Biomedical Engineering Applications"
+      ],
+      "technologies": [
+        "Denavit–Hartenberg Convention",
+        "Wolfram Mathematica",
+        "Python / Jupyter",
+        "Euler Angles",
+        "SolidWorks",
+        "C / C++ (Embedded)",
+        "ESP32",
+        "Three.js / WebGL Simulation"
+      ]
     }
   ],
-  "academic_service": [
+  "projects": [
     {
-      "role": "Technical Program Committee (TPC) Member & Scientific Reviewer",
-      "event": "ICCRE - International Conference on Control, Robotics and Environment / Control, Automation and Robotics",
-      "location": "Japón",
-      "years": ["2024", "2025", "2026"],
-      "description": "Evaluación por pares de artículos científicos sobre control avanzado, robótica autónoma, visión computacional y aplicaciones bio-robóticas."
-    },
-    {
-      "role": "Director of Research",
-      "organization": "IEEE EMBS UNI (Engineering in Medicine and Biology Society)",
+      "id": "hip-exoskeleton-kinematics",
+      "title": "3-DoF Hip Exoskeleton Kinematic Analysis & Workspace Simulation",
+      "category": "Robotics & Biomedical Engineering",
+      "summary": "Direct kinematic characterization and 3D reachable workspace evaluation of a three-degree-of-freedom wearable hip exoskeleton for gait rehabilitation.",
+      "problem": "Kinematic misalignments between wearable robotic devices and human anatomical hip joints can reduce gait assistance efficacy and cause user discomfort. Precise geometric formulation is essential prior to mechanical manufacturing.",
+      "objective": "Formulate the kinematic equations using Denavit–Hartenberg parameters and evaluate the 3D reachable workspace envelope to ensure full coverage of physiological walking ranges.",
+      "approach": "Applied the Denavit–Hartenberg convention to define joint reference frames across sagittal (flexion/extension), frontal (abduction/adduction), and transverse (internal/external rotation) axes. Computational verification was implemented in Python and Wolfram.",
+      "architecture": "Serial kinematic chain with 3 revolute joints: Joint 1 (Flexion/Extension: -20° to 90°), Joint 2 (Abduction/Adduction: -15° to 45°), and Joint 3 (Internal/External Rotation: -25° to 25°), computing transformation matrix T_0_3 to map the distal cuff.",
+      "technologies": ["Python", "Denavit–Hartenberg Convention", "Wolfram", "Jupyter", "Euler Angles", "Three.js / WebGL"],
+      "role": "Co-Author & Kinematics Modeler",
+      "contributions": "Formulated the D-H parameter tables, programmed transformation matrix scripts, generated workspace point clouds, and co-wrote the peer-reviewed conference paper.",
+      "challenges": "Modeling non-singular joint limits that accurately reflect natural hip ranges of motion without mechanical collisions between exoskeleton links.",
+      "results": "Demonstrated that the 3-DoF workspace envelope comprehensively encompasses human gait angles. Results were published and presented at CMAAE 2021.",
+      "evidence": "Conference paper indexed in scientific databases and UTEC CRIS repository; live interactive 3D WebGL simulator available in this portfolio.",
+      "links": {
+        "cris": "https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/"
+      },
+      "status": "Completed (Published Research Prototype)",
       "period": "2021",
-      "description": "Liderazgo de proyectos estudiantiles y de investigación en bioingeniería, dispositivos médicos y señales biomédicas."
+      "featured": true
     },
     {
-      "role": "Team Member - Mechanical & Telemetry System",
-      "organization": "Grupo Tharsis - UNI (NASA Human Exploration Rover Challenge)",
+      "id": "santander-data-platform",
+      "title": "Financial Data Pipeline Modernization & Cloud Migration",
+      "category": "Data Engineering",
+      "summary": "Migration and re-architecture of financial data processes from legacy on-premise infrastructure to AWS Cloud for Santander Consumer Bank.",
+      "problem": "Legacy on-premise financial workflows had performance bottlenecks, tight coupling to obsolete core systems, and lacked centralized metadata governance across banking domains.",
+      "objective": "Modernize data processes into domain/subdomain architectures in AWS, re-implement ETL workflows with Apache Spark, and introduce enterprise data governance with DataHub.",
+      "approach": "Mapped AS-IS processes, designed equivalence models between Core Bancario To-Be vs As-Is, built distributed Spark jobs, orchestrated tasks with AWS Step Functions, and modeled metadata entities in DataHub.",
+      "architecture": "Amazon S3 Ingestion Layer -> Distributed Data Processing with Apache Spark on AWS EMR & Glue -> Orquestation with AWS Step Functions -> Data Serving (Athena/Redshift) -> Data Governance Catalog in DataHub.",
+      "technologies": ["Apache Spark", "Scala", "Python", "AWS EMR", "AWS Glue", "AWS Step Functions", "Amazon S3", "DataHub", "Oracle", "SQL Server"],
+      "role": "Data Engineer (Squad Finanzas Data)",
+      "contributions": "Created Python/SQL scripts for structured requirement gathering, developed distributed Spark ETLs, established data dictionaries, and integrated metadata governance schemas into DataHub under corporate standards.",
+      "challenges": "Reconciling historical accounting definitions between disparate banking cores while maintaining strict data consistency and zero regression in financial metrics.",
+      "results": "Achieved consistent execution of financial data pipelines on AWS, established standardized squad workflows, and streamlined banking core equivalence mappings.",
+      "evidence": "Production deployment at Santander Consumer Bank via IDM Technology and SES.",
+      "links": {},
+      "status": "Completed & Operational",
+      "period": "2025 - 2026",
+      "featured": true
+    },
+    {
+      "id": "ve7-fullstack-ml-platform",
+      "title": "Mobile & Web Platform with Integrated Predictive Recommendation",
+      "category": "Software Development",
+      "summary": "Full-stack mobile (Android) and web application integrating REST microservices and a machine learning decision-tree model for product recommendation.",
+      "problem": "Agricultural distributors and commercial teams needed a reliable, low-latency mobile tool to browse catalogs and receive data-driven category recommendations.",
+      "objective": "Develop a responsive cross-platform mobile and web application connected to containerized backend APIs serving real-time predictive models.",
+      "approach": "Built mobile/web clients with React Native / React + TypeScript; developed Flask REST microservices containerized in Docker; trained and embedded a decision tree model for product recommendations.",
+      "architecture": "React & React Native Client -> REST API Gateway -> Flask Python Microservices -> Scikit-Learn Inference Engine -> Cloud Storage & Database Services on AWS / GCP.",
+      "technologies": ["React", "React Native", "TypeScript", "Python (Flask)", "Scikit-Learn", "Docker", "AWS", "GCP", "Tailwind CSS"],
+      "role": "Full-Stack Software Developer & Technical Lead",
+      "contributions": "Planned module routing and component architecture in TypeScript, developed Flask REST APIs, integrated the ML prediction pipeline, coordinated tasks using Scrum, and published the app to Google Play Store.",
+      "challenges": "Ensuring lightweight API response times when executing inference calls over mobile network latencies and managing cross-platform UI parity.",
+      "results": "Delivered production mobile app on Google Play Store and web dashboard on AWS, enabling real-time product classification and catalog access.",
+      "evidence": "Google Play Store app release and cloud-deployed web application.",
+      "links": {},
+      "status": "Completed",
+      "period": "2023 - 2024",
+      "featured": true
+    },
+    {
+      "id": "nasa-rover-tharsis",
+      "title": "NASA Human Exploration Rover Mechanical & Telemetry Subsystems",
+      "category": "Robotics & Engineering",
+      "summary": "Engineering design, kinematic drivetrain evaluation, and telemetry integration for an extraterrestrial exploration rover prototype.",
+      "problem": "Designing a human-powered roving vehicle capable of traversing simulated planetary obstacles and collecting scientific samples under strict mass and dimensional constraints.",
+      "objective": "Develop mechanical drive, suspension, and telemetry subsystems complying with NASA competition guidelines and challenging obstacle courses.",
+      "approach": "Performed 3D CAD modeling, structural stress evaluations, kinematic drivetrain calculations, and onboard sensor telemetry prototyping within Grupo Tharsis UNI.",
+      "architecture": "Custom dual-human drivetrain, articulated suspension geometry, quick-folding chassis mechanism, and onboard sensor telemetry module.",
+      "technologies": ["SolidWorks CAD", "Kinematic Analysis", "Structural Simulation", "Telemetry Sensors", "ESP32 / Embedded Systems"],
+      "role": "Team Member — Mechanical & Telemetry Subsystems",
+      "contributions": "Collaborated on drivetrain mechanics, suspension clearance calculations, physical fabrication, and team telemetry integration for Grupo Tharsis UNI.",
+      "challenges": "Balancing structural rigidity against vehicle weight limits to prevent mechanical deformation on irregular terrain obstacles.",
+      "results": "Qualified and represented Peru and UNI in the international NASA Human Exploration Rover Challenge (Huntsville, Alabama).",
+      "evidence": "Official participation record with Grupo Tharsis UNI in the NASA HERC competition.",
+      "links": {},
+      "status": "Completed (Competition Entry)",
       "period": "2019 - 2022",
-      "description": "Diseño, simulación y manufactura de vehículo rover para la competencia global de exploración humana de la NASA."
-    },
-    {
-      "role": "Investigador / Diseñador",
-      "event": "Feria de Proyectos FIM UNI 2021-II",
-      "project": "Diseño y simulación de prototipo de prótesis de mano",
-      "advisor": "Ing. Oliden Martinez"
+      "featured": true
     }
   ],
   "experience": [
     {
-      "company": "IDM Technology",
+      "id": "idm-santander",
+      "organization": "IDM Technology",
       "client": "Santander Consumer Bank",
-      "role": "Ingeniero de Datos",
-      "period": "Agosto 2026 – Presente",
-      "stack": ["Python", "Spark", "Scala", "AWS (EMR, Glue, Athena, S3, Step Functions)", "DataHub", "SQL Server", "Oracle"],
-      "achievements": [
-        "Relevamiento y migración de flujos AS-IS (On-Premise CrediScotia) hacia arquitectura To-Be en AWS Cloud.",
-        "Desarrollo de ETL distribuidos en Apache Spark y optimización de tiempos de procesamiento en el Squad Finanzas Data.",
-        "Implementación de gobierno de datos corporativo con DataHub, modelando dominios y subdominios de Gestión de Información (GI)."
-      ]
+      "role": "Data Engineer",
+      "period": "August 2026 – Present",
+      "location": "Lima, Peru",
+      "scope": "Data migration, distributed ETL development, and metadata governance for finance and information management domains.",
+      "contributions": [
+        "Analyzed on-premise AS-IS data flows to establish domain and subdomain boundaries for cloud migration to AWS.",
+        "Created parameterized Python and SQL scripts to map data inputs to data products systematically.",
+        "Developed distributed ETL workflows using Apache Spark on AWS to replicate financial business logic in the target cloud stack.",
+        "Formulated core banking data equivalence mappings between target (To-Be) and legacy (As-Is) systems.",
+        "Collaborated with data governance teams to implement DataHub, defining metadata dictionaries and schema standards."
+      ],
+      "technologies": ["Python", "Apache Spark", "Scala", "AWS (EMR, Glue, Athena, S3, Step Functions)", "DataHub", "SQL Server", "Oracle"]
     },
     {
-      "company": "SES",
+      "id": "ses-santander",
+      "organization": "SES",
       "client": "Santander Consumer Bank",
-      "role": "Ingeniero de Datos",
-      "period": "Agosto 2025 – Julio 2026",
-      "stack": ["Python", "Spark", "Scala", "AWS", "SQL Server", "Oracle", "DataHub"],
-      "achievements": [
-        "Definición de estándares de desarrollo y arquitectura de subdominios financieros bajo el modelo corporativo internacional.",
-        "Gestión de equivalencias entre el Core Bancario To-Be vs As-Is, acelerando la homologación de sistemas satélites."
-      ]
+      "role": "Data Engineer",
+      "period": "August 2025 – July 2026",
+      "location": "Lima, Peru",
+      "scope": "Cloud ETL modernization and data engineering standardization for the Finanzas Data squad.",
+      "contributions": [
+        "Defined development standards and project structures for the Information Management subdomain aligned with corporate guidelines.",
+        "Optimized data transformation queries in Spark, resulting in more maintainable and efficient cloud data pipelines.",
+        "Participated in sprint planning, requirements breakdown, and delivery scheduling under agile methodologies.",
+        "Authored data dictionaries and supported governance cataloging in DataHub for financial reporting models."
+      ],
+      "technologies": ["Python", "Apache Spark", "Scala", "AWS (EMR, S3, Athena, Glue)", "DataHub", "SQL Server", "Oracle"]
     },
     {
-      "company": "Virutex Ilko",
-      "role": "Analista de Datos y BI",
-      "period": "Enero 2024 – Julio 2025",
-      "stack": ["Python", "Pandas", "SQL Server", "PySpark", "Power BI", "Jenkins", "Automation Anywhere (RPA)", "Selenium"],
-      "achievements": [
-        "Diseño y administración de Data Warehouse para las áreas de ventas, inventarios y logística.",
-        "Desarrollo de simulador interactivo de KPIs empresariales para evaluación de escenarios de negocio comerciales y financieros.",
-        "Automatización de procesos mediante RPA y scripts de Python, eliminando cargas manuales críticas."
-      ]
+      "id": "virutex-ilko",
+      "organization": "Virutex Ilko",
+      "role": "Data Analyst & Business Intelligence",
+      "period": "January 2024 – July 2025",
+      "location": "Lima, Peru",
+      "scope": "Data warehousing, ETL automation, and interactive KPI simulation tools for sales, inventory, and logistics.",
+      "contributions": [
+        "Designed and maintained the corporate Data Warehouse to support commercial, logistics, and inventory reporting.",
+        "Automated recurring data workflows using Python scripts and Automation Anywhere RPA bots, reducing manual administrative burdens.",
+        "Developed interactive KPI simulation applications enabling commercial and finance teams to test business projections.",
+        "Implemented web scraping scripts using Selenium and Python to collect public market data for reporting."
+      ],
+      "technologies": ["Python", "Pandas", "SQL Server", "PySpark", "Power BI", "Automation Anywhere (RPA)", "Selenium", "Jenkins"]
     },
     {
-      "company": "Bioverse",
-      "role": "Desarrollador Backend",
+      "id": "bioverse",
+      "organization": "Bioverse",
+      "role": "Backend Developer",
       "period": "2024",
-      "stack": ["Next.js", "Node.js", "GraphQL", "DynamoDB", "AWS AppSync", "Lambda", "Cognito", "Athena", "Glue"],
-      "achievements": [
-        "Estructuración de backend serverless sobre AWS con APIs GraphQL de alto rendimiento.",
-        "Procesamiento y canalización ETL de eventos de usuario para monitorización y analítica de uso en tiempo real."
-      ]
+      "location": "Remote",
+      "scope": "Serverless backend architecture on AWS and GraphQL API integration for Next.js web application.",
+      "contributions": [
+        "Structured serverless backend architecture utilizing AWS Lambda, DynamoDB, and AWS AppSync.",
+        "Engineered GraphQL APIs for efficient data consumption from the Next.js frontend client.",
+        "Developed serverless ETL pipelines to monitor user engagement metrics and platform activity centrally.",
+        "Implemented access control policies using AWS Cognito to secure media and premium platform content."
+      ],
+      "technologies": ["Next.js", "Node.js", "GraphQL", "DynamoDB", "AWS AppSync", "AWS Lambda", "Cognito", "AWS Athena", "AWS Glue"]
     },
     {
-      "company": "VE7 Agronegocios S.A.C.",
-      "role": "Desarrollador Web Full Stack - Líder de Equipo de Desarrollo",
-      "period": "Enero 2023 – Enero 2024",
-      "stack": ["React", "React Native", "TypeScript", "Flask", "Docker", "Tailwind CSS", "Scikit-Learn", "AWS", "GCP"],
-      "achievements": [
-        "Liderazgo del equipo de desarrollo bajo metodología Scrum y publicación de apps en Google Play y plataformas Web.",
-        "Integración de modelos predictivos de Machine Learning (árboles de decisión) en APIs REST para recomendaciones de productos."
-      ]
+      "id": "ve7-fullstack",
+      "organization": "VE7 Agronegocios S.A.C.",
+      "role": "Full-Stack Web Developer & Development Team Lead",
+      "period": "January 2023 – January 2024",
+      "location": "Lima, Peru",
+      "scope": "Technical leadership, cross-platform mobile/web development, and machine learning API integration.",
+      "contributions": [
+        "Led the software development team under Scrum methodology, coordinating sprints, architecture choices, and code reviews.",
+        "Built modular UI components in TypeScript using React and React Native for mobile and web platforms.",
+        "Developed REST APIs in Flask (Python) containerized with Docker, deployed across cloud instances on GCP and AWS.",
+        "Trained and integrated a decision-tree ML recommendation model directly into the API for mobile catalog features.",
+        "Managed successful application releases to Google Play Store and cloud production environments."
+      ],
+      "technologies": ["React", "React Native", "TypeScript", "Python (Flask)", "Scikit-Learn", "Docker", "Tailwind CSS", "AWS", "GCP"]
     },
     {
-      "company": "VE7 Agronegocios S.A.C.",
-      "role": "Ingeniero de Datos",
-      "period": "Enero 2022 – Enero 2023",
-      "stack": ["Apache Spark", "PySpark", "Apache Airflow", "Apache Beam", "Hadoop", "GCP BigQuery", "AWS"],
-      "achievements": [
-        "Migración completa de infraestructura y canalizaciones ETL desde GCP hacia AWS.",
-        "Implementación de modelos analíticos de clustering y segmentación para marketing inteligente."
-      ]
+      "id": "ve7-data",
+      "organization": "VE7 Agronegocios S.A.C.",
+      "role": "Data Engineer",
+      "period": "January 2022 – January 2023",
+      "location": "Lima, Peru",
+      "scope": "Big data pipeline development and cloud provider migration.",
+      "contributions": [
+        "Automated ETL pipelines using Apache Spark (with Scala) and PySpark for high-volume data transformation.",
+        "Successfully planned and executed the migration of data pipelines and storage from GCP to AWS.",
+        "Implemented segmentation and clustering models to provide behavioral insights for marketing initiatives.",
+        "Built interactive analytics dashboards to communicate operational KPIs across company departments."
+      ],
+      "technologies": ["Apache Spark", "PySpark", "Scala", "Apache Airflow", "Hadoop", "GCP BigQuery", "AWS", "Docker"]
     },
     {
-      "company": "Medabots S.A.C.",
-      "role": "Practicante de Ingeniería y Desarrollo",
-      "period": "Abril 2021 – Septiembre 2021",
-      "stack": ["Python", "Cinemática Robótica", "Simulación", "Redacción Científica"],
-      "achievements": [
-        "Desarrollo de software de cálculo cinemático y espacio de trabajo para robots de rehabilitación física.",
-        "Publicación de 2 artículos científicos presentados en conferencias internacionales indexadas."
-      ]
+      "id": "medabots",
+      "organization": "Medabots S.A.C.",
+      "role": "Engineering & Development Intern (R&D)",
+      "period": "April 2021 – September 2021",
+      "location": "Lima, Peru",
+      "scope": "Robotics research, state-of-the-art literature review, kinematic calculations, and scientific writing.",
+      "contributions": [
+        "Conducted literature reviews on robotic mechatronic devices for lower-limb joint rehabilitation.",
+        "Developed mathematical computation scripts for forward and inverse kinematics and 3D workspace simulation.",
+        "Designed simulation interfaces to visualize kinematic movement and reachable boundary behavior.",
+        "Co-authored 2 research papers presented and published at international conferences (CMAAE 2021 and RCAE 2021)."
+      ],
+      "technologies": ["Python", "Robot Kinematics", "Workspace Simulation", "Denavit–Hartenberg", "Scientific Writing"]
     }
-  ]
+  ],
+  "publications": [
+    {
+      "id": "cmaae-2021",
+      "title": "Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation",
+      "authors": ["Deyby Huamanchahua", "Nick Soto Conde", "Jean Carlos Vasquez Frias", "Diego Lopez Meza", "Ángel E. Alvarez-Rodríguez"],
+      "year": 2021,
+      "type": "Conference Paper",
+      "venue": "International Conference on Mechanical, Automotive and Aerospace Engineering (CMAAE 2021)",
+      "abstract": "Research focused on the kinematic analysis of a three-degree-of-freedom hip exoskeleton, including geometric modeling and workspace simulation for rehabilitation-oriented robotic applications.",
+      "keywords": ["Hip Exoskeleton", "Kinematics Analysis", "Denavit-Hartenberg", "Workspace Simulation", "Rehabilitation Robotics"],
+      "url": "https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/",
+      "citationIEEE": "D. Huamanchahua, N. Soto Conde, J. C. Vasquez Frias, D. Lopez Meza, and Á. E. Alvarez-Rodríguez, \"Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation,\" in Proceedings of CMAAE 2021, 2021.",
+      "citationAPA": "Huamanchahua, D., Soto Conde, N., Vasquez Frias, J. C., Lopez Meza, D., & Alvarez-Rodríguez, Á. E. (2021). Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation. In Proceedings of CMAAE 2021.",
+      "bibtex": "@inproceedings{sotoconde2021kinematics,\n  title={Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation},\n  author={Huamanchahua, Deyby and Soto Conde, Nick and Vasquez Frias, Jean Carlos and Lopez Meza, Diego and Alvarez-Rodr{\\'\\i}guez, {\\'A}ngel E.},\n  booktitle={Proceedings of CMAAE 2021},\n  year={2021}\n}"
+    },
+    {
+      "id": "rcae-2021",
+      "title": "Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review",
+      "authors": ["Deyby Huamanchahua", "Jean Carlos Vasquez-Frias", "Nick Soto-Conde", "Diego Lopez-Meza", "Angel E. Alvarez-Rodriguez"],
+      "year": 2021,
+      "type": "Review Paper",
+      "venue": "International Conference on Robotics, Control and Automation Engineering (RCAE 2021)",
+      "abstract": "A review of mechatronic architectures and engineering considerations for hip rehabilitation exoskeletons, examining mechanical configurations, degrees of freedom, actuation technologies, and control-related approaches.",
+      "keywords": ["Mechatronic Exoskeletons", "Hip Rehabilitation", "Schematic Review", "Actuator Systems", "Assistive Robotics"],
+      "url": "https://cris.continental.edu.pe/es/publications/mechatronic-exoskeletons-for-hip-rehabilitation-a-schematic-revie/",
+      "citationIEEE": "D. Huamanchahua, J. C. Vasquez-Frias, N. Soto-Conde, D. Lopez-Meza, and A. E. Alvarez-Rodriguez, \"Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review,\" in Proceedings of RCAE 2021, 2021.",
+      "citationAPA": "Huamanchahua, D., Vasquez-Frias, J. C., Soto-Conde, N., Lopez-Meza, D., & Alvarez-Rodriguez, A. E. (2021). Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review. In Proceedings of RCAE 2021.",
+      "bibtex": "@inproceedings{sotoconde2021mechatronic,\n  title={Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review},\n  author={Huamanchahua, Deyby and Vasquez-Frias, Jean Carlos and Soto-Conde, Nick and Lopez-Meza, Diego and Alvarez-Rodriguez, Angel E.},\n  booktitle={Proceedings of RCAE 2021},\n  year={2021}\n}"
+    }
+  ],
+  "academicService": [
+    {
+      "id": "iccre-japan-tpc",
+      "organization": "ICCRE — International Conference on Control, Robotics and Automation Engineering",
+      "role": "Technical Program Committee (TPC) Member & Scientific Reviewer",
+      "category": "Conference Service",
+      "period": "2024, 2025, 2026",
+      "location": "Japan",
+      "description": "Appointed to the Technical Program Committee to perform peer reviews of scientific submissions in robot kinematics, control algorithms, autonomous systems, and bio-robotic applications."
+    },
+    {
+      "id": "ieee-embs-uni",
+      "organization": "IEEE Engineering in Medicine and Biology Society (EMBS) — UNI Student Branch",
+      "role": "Director of Research",
+      "category": "Student & Professional Organizations",
+      "period": "2021",
+      "location": "Lima, Peru",
+      "description": "Directed undergraduate research activities, coordinated study sessions on biomedical signals and medical instrumentation, and facilitated student involvement in bioengineering initiatives."
+    },
+    {
+      "id": "grupo-tharsis-nasa",
+      "organization": "Grupo Tharsis — Universidad Nacional de Ingeniería (UNI)",
+      "role": "Team Member — Mechanical & Telemetry Subsystems",
+      "category": "Research Leadership & Competition",
+      "period": "2019 – 2022",
+      "location": "Lima, Peru / NASA Marshall Space Flight Center, USA",
+      "description": "Contributed to mechanical drivetrain design, geometric clearance evaluations, and telemetry instrumentation for the human-powered exploration rover in the NASA Human Exploration Rover Challenge (HERC)."
+    },
+    {
+      "id": "fim-uni-hand-prosthesis",
+      "organization": "Facultad de Ingeniería Mecánica — Universidad Nacional de Ingeniería (FIM UNI)",
+      "role": "Student Researcher & Designer",
+      "category": "Academic Engineering Project",
+      "period": "2021",
+      "location": "Lima, Peru",
+      "description": "Designed and simulated a robotic hand prosthesis prototype presented at the FIM 2021-II Engineering Projects Fair (Advisor: Ing. Oliden Martinez)."
+    }
+  ],
+  "education": [
+    {
+      "id": "uni-mechatronics",
+      "institution": "Universidad Nacional de Ingeniería (UNI)",
+      "degree": "Bachelor of Science in Mechatronics Engineering (Bachiller en Ingeniería Mecatrónica)",
+      "period": "2017 – 2022",
+      "location": "Lima, Peru",
+      "description": "Foundational and advanced training in control theory, robotics, mechanical design, microcontrollers, embedded programming, electronics, and digital signal processing."
+    },
+    {
+      "id": "utec-bigdata",
+      "institution": "Universidad de Ingeniería y Tecnología (UTEC)",
+      "degree": "Specialization in Big Data",
+      "period": "2024",
+      "location": "Lima, Peru",
+      "description": "Specialized curriculum covering distributed data architectures, scalable data processing, data warehousing, and cloud data platform operations."
+    }
+  ],
+  "technicalSkills": {
+    "programmingLanguages": ["Python", "TypeScript", "JavaScript", "SQL", "Scala", "C / C++"],
+    "dataEngineering": ["Apache Spark", "ETL/ELT Pipelines", "Data Pipelines", "AWS EMR", "AWS Glue", "AWS Athena", "DataHub (Governance)", "Data Warehousing", "Data Integration"],
+    "cloudAndInfrastructure": ["AWS (S3, EMR, Glue, Athena, Step Functions, Lambda, AppSync, Cognito)", "GCP (BigQuery, Cloud Storage)", "Docker", "Git", "Jenkins"],
+    "softwareDevelopment": ["React", "React Native", "Next.js", "Node.js", "Python (Flask)", "GraphQL", "REST APIs", "Tailwind CSS"],
+    "roboticsAndSimulation": ["Denavit–Hartenberg Convention", "Kinematic Modeling", "Workspace Analysis", "Wolfram Mathematica", "SolidWorks", "Three.js / WebGL Simulation"],
+    "researchMethods": ["Scientific Literature Review", "Peer Review Standards", "Conference Manuscript Evaluation", "Scientific Writing", "Biomechanical Modeling"]
+  }
 }

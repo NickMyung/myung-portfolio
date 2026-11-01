@@ -2,33 +2,57 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Nick Soto Conde | Mechatronics, Data Engineering & Bio-Robotics',
+  metadataBase: new URL('https://nicksotoconde.dev'),
+  title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering | Robotics Research',
   description:
-    'Portafolio profesional de Nick Soto Conde. Bachiller en Ingeniería Mecatrónica (UNI), Especialista en Big Data (UTEC), Ingeniero de Datos en Santander Consumer Bank, Full Stack & Investigador en Bio-Robótica (ICCRE Japón TPC Reviewer).',
+    'Professional portfolio of Nick Soto Conde. Mechatronics Engineer (UNI), Big Data Specialist (UTEC), Data Engineer at Santander Consumer Bank, Full-Stack Developer, and Robotics & Rehabilitation Researcher.',
   keywords: [
     'Nick Soto Conde',
-    'Ingeniería Mecatrónica',
-    'UNI',
-    'UTEC Big Data',
-    'Ingeniero de Datos',
+    'Mechatronics Engineer',
+    'Data Engineer',
+    'Software Engineer',
+    'Full-Stack Developer',
+    'Robotics Research',
+    'Rehabilitation Robotics',
+    '3DoF Hip Exoskeleton',
+    'Denavit-Hartenberg',
     'Santander Consumer Bank',
     'Apache Spark',
-    'Exoesqueleto de Cadera',
-    'Robótica de Rehabilitación',
+    'DataHub',
     'CMAAE 2021',
     'RCAE 2021',
-    'ICCRE Japón',
+    'ICCRE Japan TPC',
+    'Universidad Nacional de Ingenieria',
+    'UTEC Big Data'
   ],
-  authors: [{ name: 'Nick Soto Conde' }],
+  authors: [{ name: 'Nick Soto Conde', url: 'https://github.com/NickMyung' }],
   creator: 'Nick Soto Conde',
+  publisher: 'Nick Soto Conde',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     type: 'website',
-    locale: 'es_PE',
+    locale: 'en_US',
     url: 'https://nicksotoconde.dev',
-    title: 'Nick Soto Conde | Mechatronics, Data Engineering & Bio-Robotics',
+    title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering | Robotics Research',
     description:
-      'Portafolio profesional de Nick Soto Conde. Ingeniero Mecatrónico (UNI), Ingeniero de Datos, Full Stack e Investigador en Robótica de Rehabilitación.',
+      'Professional engineering portfolio bridging distributed cloud data pipelines, full-stack application development, and peer-reviewed rehabilitation robotics research.',
     siteName: 'Nick Soto Conde Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering',
+    description:
+      'Data Engineering, Full-Stack Software Development, and Robotics & Rehabilitation Research.',
   },
 };
 
@@ -38,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className="dark">
+    <html lang="en" className="dark scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

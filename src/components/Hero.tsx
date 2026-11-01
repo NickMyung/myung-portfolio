@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { ArrowDown, Cpu, Database, Award, ExternalLink, FileText, CheckCircle2 } from 'lucide-react';
+import { ArrowDown, Cpu, Database, Award, ExternalLink, FileText, Github, Linkedin, ArrowRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -10,72 +12,96 @@ export const Hero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Status Badge */}
-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-6 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Ingeniería Mecatrónica & Sistemas Ciber-Biológicos</span>
+          {/* Professional Identity Badge */}
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-6 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span>National University of Engineering (UNI) • UTEC Big Data</span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
-            Software, Datos & <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
-              Robótica en Bioingeniería
-            </span>
+          {/* Name */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4">
+            Nick Soto Conde
           </h1>
 
-          {/* Subtitle / Value proposition */}
-          <p className="text-base sm:text-lg lg:text-xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
-            Soy <strong className="text-white font-semibold">Nick Soto Conde</strong>, Bachiller en Ingeniería Mecatrónica por la <strong className="text-cyan-400 font-semibold">Universidad Nacional de Ingeniería (UNI)</strong> con especialización en Big Data en <strong className="text-indigo-300 font-semibold">UTEC</strong>. Desarrollo soluciones escalables en la nube, pipelines de datos bancarios masivos, cinemática de exoesqueletos de rehabilitación e investigación científica internacional.
+          {/* Primary Position Headline */}
+          <p className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent mb-6">
+            Mechatronics Engineer | Data &amp; Software Engineering | Robotics Research
           </p>
 
-          {/* Quick CTA Actions */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
-            <a
-              href="#simulator"
-              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-mono text-sm font-bold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-lg shadow-cyan-500/25 active:scale-95"
-            >
-              <Cpu className="w-4 h-4" />
-              <span>Probar Simulador 3D</span>
-            </a>
+          {/* Professional Summary */}
+          <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
+            I am a Mechatronics Engineer with professional experience in data engineering and software development, complemented by research experience in robotics and biomedical engineering. My work spans distributed data processing, cloud-based systems, application development, and robotic system modeling. I am interested in building reliable, scalable, and technically grounded solutions that connect engineering, software, and data.
+          </p>
 
-            <a
-              href="#publications"
-              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-mono text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 transition-all hover:border-slate-500"
-            >
-              <Award className="w-4 h-4 text-cyan-400" />
-              <span>Papers & TPC Reviewer</span>
-            </a>
-
+          {/* Action Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-14 font-mono text-xs sm:text-sm">
             <a
               href="#projects"
-              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-mono text-sm font-semibold bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-all"
+              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-bold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-lg shadow-cyan-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400"
             >
-              <Database className="w-4 h-4 text-indigo-400" />
-              <span>Casos de Estudio</span>
+              <span>View Projects</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <a
+              href="#contact"
+              className="flex items-center space-x-2 px-6 py-3.5 rounded-xl font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 transition-all hover:border-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            >
+              <FileText className="w-4 h-4 text-cyan-400" />
+              <span>Download CV</span>
+            </a>
+
+            <a
+              href="https://github.com/NickMyung"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center space-x-2 px-4 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            >
+              <Github className="w-4 h-4" />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/nick-soto-conde/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center space-x-2 px-4 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            >
+              <Linkedin className="w-4 h-4 text-sky-400" />
+              <span>LinkedIn</span>
             </a>
           </div>
 
-          {/* Key Metrics Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+          {/* Grounded Technical Pillars Preview */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
             <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-mono font-bold text-cyan-400 mb-1">UNI + UTEC</div>
-              <p className="text-xs text-slate-400 font-mono">Ing. Mecatrónica & Big Data</p>
+              <span className="font-mono text-xs text-cyan-400 uppercase tracking-wide block mb-1">
+                Data Platforms
+              </span>
+              <p className="text-sm font-semibold text-white">Data Engineering</p>
+              <p className="text-xs text-slate-400 font-mono mt-1">
+                Apache Spark, AWS EMR/Glue, DataHub, Distributed ETLs
+              </p>
             </div>
 
             <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-mono font-bold text-indigo-400 mb-1">2 Papers</div>
-              <p className="text-xs text-slate-400 font-mono">CMAAE & RCAE Indexados</p>
+              <span className="font-mono text-xs text-indigo-400 uppercase tracking-wide block mb-1">
+                Software Engineering
+              </span>
+              <p className="text-sm font-semibold text-white">Full-Stack &amp; APIs</p>
+              <p className="text-xs text-slate-400 font-mono mt-1">
+                React, React Native, TypeScript, GraphQL, Docker, Cloud
+              </p>
             </div>
 
             <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-mono font-bold text-emerald-400 mb-1">TPC Reviewer</div>
-              <p className="text-xs text-slate-400 font-mono">ICCRE Japón (2024-2026)</p>
-            </div>
-
-            <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-mono font-bold text-pink-400 mb-1">AWS & Spark</div>
-              <p className="text-xs text-slate-400 font-mono">Core Santander Consumer</p>
+              <span className="font-mono text-xs text-emerald-400 uppercase tracking-wide block mb-1">
+                Research &amp; Systems
+              </span>
+              <p className="text-sm font-semibold text-white">Robotics &amp; Kinematics</p>
+              <p className="text-xs text-slate-400 font-mono mt-1">
+                Denavit–Hartenberg, Exoskeletons, TPC Reviewer ICCRE
+              </p>
             </div>
           </div>
         </div>
