@@ -75,6 +75,20 @@
 .visual-node-index { position: absolute; right: calc(50% - 36px); top: -5px; border: 1px solid rgba(var(--area-rgb), 0.35); border-radius: 5px; padding: 1px 4px; background: #101929; font: 9px/1.5 monospace; }
 .hero-action, .hero-area { transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease; }
 
+/* Keep the complete area label on one line, scaling its spacing with the type. */
+.hero-badge-container { container-type: inline-size; }
+.hero-area-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6667em;
+  padding: 0.5em 1.1667em;
+  white-space: nowrap;
+  line-height: 1.625;
+  font-size: min(0.75rem, 1.7vw);
+  font-size: clamp(0px, calc((100cqi - 2px) / var(--hero-badge-units)), 0.75rem);
+}
+.hero-area-badge-dot { width: 0.6667em; height: 0.6667em; }
+
 @keyframes reveal-in {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }

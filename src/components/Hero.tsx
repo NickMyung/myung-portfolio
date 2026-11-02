@@ -5,6 +5,8 @@ import { ArrowRight } from 'lucide-react';
 import { portfolio, projectCategories, getAreaStyle } from '@/lib/portfolio';
 import { Reveal } from '@/components/Reveal';
 
+const heroAreaLabel = [...projectCategories.map((area) => area.label), portfolio.scientificContribution.shortTitle].join(' · ');
+
 export const Hero: React.FC = () => {
   return (
     <section id="top" className="relative pt-28 sm:pt-36 pb-20 sm:pb-24 lg:pb-32 overflow-hidden bg-grid-pattern">
@@ -16,9 +18,11 @@ export const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <Reveal>
           {/* Professional Identity Badge */}
-          <div className="inline-flex max-w-full items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-left text-xs font-mono text-cyan-300 mb-6 backdrop-blur-md">
-            <span className="w-2 h-2 shrink-0 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="min-w-0 leading-relaxed">{[...projectCategories.map((area) => area.label), portfolio.scientificContribution.shortTitle].join(' · ')}</span>
+          <div className="hero-badge-container mb-8 sm:mb-10">
+            <div className="hero-area-badge rounded-full bg-slate-900/90 border border-cyan-500/30 text-left font-mono text-cyan-300 backdrop-blur-md" style={{ '--hero-badge-units': heroAreaLabel.length * 0.6 + 4 } as React.CSSProperties}>
+              <span className="hero-area-badge-dot shrink-0 rounded-full bg-cyan-400 animate-pulse" aria-hidden="true" />
+              <span>{heroAreaLabel}</span>
+            </div>
           </div>
 
           {/* Name */}
