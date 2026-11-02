@@ -7,9 +7,35 @@ Las instrucciones del agente **Portfolio Architect & Evidence Curator** están e
 prompts, fichas de evidencia y mejoras concretas identificadas en el repositorio.
 
 > **Repository:** [https://github.com/NickMyung/myung-portfolio](https://github.com/NickMyung/myung-portfolio)  
-> **Positioning:** Mechatronics Engineer | Data & Software Engineering | Robotics Research
+> **Positioning:** Mechatronics Engineering Graduate | Data Engineering & Business Automation | Full-Stack Development | Robotics R&D
 
-Professional engineering portfolio showcasing the multidisciplinary background of **Nick Soto Conde**: Mechatronics Engineer (Universidad Nacional de Ingeniería - UNI), Big Data Specialist (UTEC), Data Engineer at Santander Consumer Bank, Full-Stack Developer, and Rehabilitation Robotics Researcher (Technical Program Committee Reviewer at ICCRE Japan).
+Multidisciplinary portfolio of **Nick Soto Conde**, presenting data engineering and business automation, full-stack development, and robotics research and development with equal visual emphasis, grounded in mechatronics engineering.
+
+The homepage follows: **Projects → Scientific Contribution → Experience → Capabilities → Robotics & Publications → Profile → Contact**. The hero presents four entry points: Data & Automation, Full-Stack, Robotics R&D, and Scientific Contribution & Research Leadership. The project catalog retains its three engineering categories and selects one featured case per area. Experience shows all roles by default. Each case has a shareable page at `/projects/[id]`, with a conceptual architecture, personal contribution, outcome, and an explanation of available material. The 3D model loads only when opened in the robotics section.
+
+Las tres variantes del resumen, la versión activa y el criterio para presentar el grado de bachiller se guardan en [el archivo editorial del perfil](docs/PROFILE_SUMMARY_VARIANTS.md).
+
+### V3 visual presentation
+
+Scientific contribution is a fourth pillar in the introduction. The hero area badge scales proportionally to stay on one line. The compact scientific-review and research-director cards have been removed from the hero and reserved for future placement, with their data preserved in `academicService`; see [the hero presentation record](docs/RSCH_HERO_PRESENTATION.md). Their details appear at `#academic-service`, before professional experience; the Science navigation item and fourth hero card link there. `scientificContribution` supplies the editorial introduction, shared research methods, and their applications to the three engineering disciplines. Official roles, dates, affiliations, and publication metadata remain separate from this first-person narrative. See [the scientific positioning record](docs/SCIENTIFIC_CONTRIBUTION_POSITIONING.md).
+
+Project cards use conceptual system maps generated from each project's existing `flow`, with equal layouts and cyan, violet, and emerald accents for the three disciplines. These diagrams are editorial illustrations, not original project screenshots, CAD drawings, or proof of a production architecture. Full project context and evidence remain on the case pages.
+
+The optional `projects[].preview` fields (`title`, `problem`, `contribution`, `outcome`) provide concise card copy; projects without them fall back to the original case content. Keep summaries consistent with those fields. `ProjectVisual.tsx` renders the map, and `Reveal.tsx` provides a one-time viewport entrance. Content remains readable without JavaScript or IntersectionObserver; reduced-motion preferences disable entrances and hover movement. Major sections share responsive spacing through `.section-spacing`. No animation dependency is required.
+
+The files under `output/portfolio-review-2026-11-01/` and its ZIP archives preserve the **v2 review snapshot**; they do not represent the v3 interface.
+
+### Data & Automation
+
+The data category includes three complementary cases: financial data modernization and governance, end-to-end cloud data platform migration, and business analytics and process automation. Titles, summaries, and development keywords emphasize the work rather than company names. The homepage still selects one case per discipline; the Data & Automation filter opens the three data cases and a business-oriented introduction.
+
+Optional `expertise[].overview` content supplies an area's headline and pillars. Optional `projects[].business` identifies the development `focus` and `keywords`, industry, audience, business context, teams, decisions supported, and documented deliverables. Process automation also groups its business domains. Employers remain in the career timeline; business cases link to that timeline without listing companies in their sidebar. Existing case IDs and experience relationships are preserved. Optional `crossCutting` entries describe lifecycle-wide concerns separately from sequential `flow` stages. Flow thumbnails show the first, middle, and last stages when there are more than three; complete stages remain on the case page. Business case links return to their area.
+
+The case narratives are based on the owner's CV and confirmations, with no newly invented numerical outcomes. They describe professional work; they do not publish client datasets or claim independently verified production architectures. See [the positioning and source record](docs/DATA_AUTOMATION_POSITIONING.md).
+
+The three areas are defined in `portfolio_data.json` under `expertise`. Their stable category IDs are **`data`**, **`software`**, and **`robotics`**; these IDs are used by projects and experience. Titles, descriptions, filters, area links, and project counts derive from that shared definition. `featured` makes a case eligible for the balanced homepage selection, and `priority` orders projects within each area. Category filters and All projects show the full catalog. The earlier Virutex draft in `../agents/portfolio/BORRADORES_CASOS.md` is superseded by the v3 case based on the supplied CV and owner confirmations. Bioverse remains a separate internal draft.
+
+To add a project, copy the full structure of an existing item in `projects`, assign a unique `id` and a valid `category`, and supply the content and available evidence. Related capability links update automatically; no `expertise.projectIds` list is needed. Run `npm run build` to generate its case page. See [the multidisciplinary content guide](../agents/portfolio/ENFOQUE_MULTIDISCIPLINARIO.md) for the editorial workflow.
 
 ---
 
@@ -17,22 +43,24 @@ Professional engineering portfolio showcasing the multidisciplinary background o
 
 The portfolio is structured according to rigorous engineering and scientific standards:
 
-1. **Home / Hero**: Clear professional positioning, verifiable summary, CV download, GitHub and LinkedIn links.
+1. **Home / Hero**: Mechatronics identity, scientific review and research leadership highlights, and four equal entry points into Data & Automation, full-stack development, robotics R&D, and scientific contribution. Social and contact links remain in navigation and contact.
 2. **About**: Professional Background, First-Principles Engineering Approach, Research Interests, and Career Focus.
 3. **Expertise**: Three core domains:
-   - *Data Engineering & Cloud Platforms* (Apache Spark, Scala, AWS EMR/Glue/Athena, DataHub, SQL Server, Oracle).
-   - *Software Engineering & Application Development* (React, React Native, TypeScript, GraphQL, Docker, Python Flask).
-   - *Robotics & Biomedical Engineering* (Denavit–Hartenberg Kinematics, 3-DoF Hip Exoskeletons, Workspace Simulation).
+   - *Data Engineering & Business Automation* (cloud platforms, Big Data, governance, Python/SQL/JavaScript, RPA and BI).
+   - *Full-Stack Development* (React, React Native, TypeScript, GraphQL, Docker, Python Flask).
+   - *Robotics Research & Development* (Denavit–Hartenberg Kinematics, 3-DoF Hip Exoskeletons, Workspace Simulation).
 4. **Featured Projects (Technical Case Studies)**:
    - *3-DoF Hip Exoskeleton Kinematic Analysis & Workspace Simulation* (CMAAE 2021).
-   - *Financial Data Pipeline Modernization & Cloud Migration* (Santander Consumer Bank via IDM/SES).
-   - *Mobile & Web Platform with Integrated Predictive Recommendation* (VE7 / Bioverse).
+   - *Financial Data Modernization & Governance*.
+   - *End-to-End Data Platform & Cloud Migration*.
+   - *Business Analytics & Process Automation*.
+   - *Mobile & Web Platform with Integrated Predictive Recommendation* (VE7 Agronegocios).
    - *NASA Human Exploration Rover Mechanical & Telemetry Subsystems* (Grupo Tharsis UNI).
-   - Comprehensive case studies detailing: Problem, Objective, Methodology, Architecture, Contributions, Challenges, Results, and Evidence.
+   - Dedicated case pages with context, objective, approach, architecture, contributions, challenges, outcomes, and available material. Descriptions of professional experience are distinguished from linked artifacts.
 5. **Interactive 3D Kinematics Simulator (Three.js / WebGL)**:
    - Dynamic client-side simulation decoupling (`next/dynamic`, `ssr: false`).
-   - Forward kinematics computed live via Denavit–Hartenberg transformation matrices ($T_0^3$).
-   - 3D reachable workspace point-cloud envelope and gait cycle simulation.
+   - Illustrative joint controls, workspace visualization, and a user-started gait animation.
+   - Parameters have not been independently checked against the publication; the demo does not establish clinical performance. A text fallback is available if WebGL fails.
 6. **Professional Experience**:
    - Structured format: **Action + Technical Context + Contribution + Result**.
    - Chronological roles spanning Santander Consumer Bank, Virutex Ilko, Bioverse, VE7 Agronegocios, and Medabots.
@@ -41,10 +69,10 @@ The portfolio is structured according to rigorous engineering and scientific sta
    - *Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation* (CMAAE 2021).
    - *Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review* (RCAE 2021).
    - Full scientific metadata, official author order, and one-click citation copy buttons in **IEEE**, **APA**, and **BibTeX**.
-8. **Academic Service & Leadership**:
+8. **Scientific Contribution & Research Leadership** (before professional experience):
    - *Technical Program Committee (TPC) Member & Scientific Reviewer* at **ICCRE Japan** (2024, 2025, 2026).
    - *Director of Research* at **IEEE EMBS UNI** (2021).
-   - *Subsystem Team Member* at **Grupo Tharsis UNI** (NASA Human Exploration Rover Challenge).
+   - The rover is presented as a team engineering project under Research; the hand prosthesis is listed under academic engineering projects.
 9. **Education & Technical Skills**:
    - Formal university degree: B.Sc. in Mechatronics Engineering (UNI, 2017–2022).
    - Specialized post-graduate training: Specialization in Big Data (UTEC, 2024).
@@ -96,6 +124,16 @@ npm run build
 npm run start
 ```
 
+If a running development server locks `.next`, use an isolated local review build in PowerShell:
+
+```powershell
+$env:PORTFOLIO_BUILD_DIR = '.next-review'
+npm run build
+node node_modules/next/dist/bin/next start --port 3001
+```
+
+The default output remains `.next`. The environment override is only needed for an isolated build; `.next-review/` is ignored by Git.
+
 ---
 
 ## 🗂️ Project Structure
@@ -105,21 +143,30 @@ portfolio/
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx         # Root layout, OpenGraph, SEO metadata, fonts
-│   │   ├── page.tsx           # Main page assembling all 9 architectural sections
+│   │   ├── page.tsx           # Projects-first, multidisciplinary homepage
+│   │   └── projects/[id]/page.tsx # Shareable case pages generated from project data
 │   │   └── globals.css        # Tailwind directives, grid background, scrollbars
 │   ├── components/
 │   │   ├── Navbar.tsx         # Accessible navigation bar with mobile responsive menu
 │   │   ├── Hero.tsx           # Normalized headline, verified summary, quick CTAs
 │   │   ├── About.tsx          # 4 structured domains (Background, Approach, Interests, Focus)
 │   │   ├── Expertise.tsx      # 3 core pillars with verified competencies & technologies
-│   │   ├── ProjectsShowcase.tsx # Case studies with modal details and filters
+│   │   ├── ProjectsShowcase.tsx # Selected work, category filters, and case-page links
+│   │   ├── ProjectCard.tsx    # Concise problem, contribution, and outcome previews
+│   │   ├── ProjectVisual.tsx  # Flow-based conceptual illustrations per discipline
+│   │   ├── AreaOverview.tsx   # Optional area introduction and business settings
+│   │   ├── BusinessContext.tsx # Industry, business domains, decisions and deliverables
+│   │   ├── Reveal.tsx         # Progressive viewport animation with motion preferences
+│   │   ├── ProjectFlow.tsx    # Responsive conceptual system diagrams
+│   │   ├── ResearchSection.tsx # Research overview and on-demand 3D model
 │   │   ├── ExoskeletonWorkspace3D.tsx # Interactive 3D D-H kinematics & workspace simulator
 │   │   ├── ExperienceTimeline.tsx # Career history (Action + Context + Contribution + Result)
 │   │   ├── ResearchPublications.tsx # Peer-reviewed papers with IEEE/APA/BibTeX citation copier
-│   │   ├── AcademicService.tsx  # ICCRE Japan TPC Reviewer, IEEE EMBS, NASA Rover Tharsis
+│   │   ├── AcademicService.tsx  # Prominent scientific contribution before experience
 │   │   ├── EducationSection.tsx # UNI B.Sc., UTEC Big Data, and functional skills matrix
 │   │   └── ContactFooter.tsx  # Contact methods, social links, location, languages
-│   └── types.ts               # Strict TypeScript interfaces matching portfolio_data.json
+│   ├── lib/portfolio.ts       # Typed data access, project taxonomy, and ordering
+│   └── types.ts               # TypeScript interfaces matching portfolio_data.json
 ├── portfolio_data.json        # Single Source of Truth for all content
 ├── next.config.mjs            # Next.js configuration
 ├── tailwind.config.js         # Tailwind theme & color definitions
@@ -131,7 +178,7 @@ portfolio/
 
 ## 📝 Content Management
 
-All data is decoupled from the UI inside **`portfolio_data.json`**.  
+Editorial profile data, cases, expertise, experience, publications, service and education are maintained in **`portfolio_data.json`**. Some interface labels and visual descriptions live in components.
 To add a new publication, update a role, or modify project metrics:
 
 1. Open `portfolio/portfolio_data.json`.
@@ -140,13 +187,13 @@ To add a new publication, update a role, or modify project metrics:
 
 ---
 
-## ♿ Accessibility & Performance (WCAG 2.2 AA)
+## ♿ Accessibility & Performance
 
 - Semantic HTML tags (`<nav>`, `<main>`, `<section>`, `<header>`, `<footer>`, `<article>`).
 - Keyboard navigability with visible focus indicators (`focus:ring-2 focus:ring-cyan-400`).
-- Proper contrast ratios across text elements on cyber-dark backgrounds.
-- Client-side lazy evaluation of WebGL canvas (`next/dynamic` with `ssr: false`).
-- Zero external font fetch network failures during offline or sandboxed builds.
+- Visible focus styles, pressed/expanded states, and a skip-to-content link support keyboard navigation.
+- The WebGL canvas uses `next/dynamic` with `ssr: false` and mounts only when requested.
+- Reduced-motion styles are respected and the model starts paused. These features do not constitute an accessibility certification.
 
 ---
 

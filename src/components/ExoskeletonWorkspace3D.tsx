@@ -17,7 +17,7 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
   const [theta3, setTheta3] = useState<number>(5);   // Internal/External Rotation (-25 to 25)
 
   // Simulation controls
-  const [isGaitSimRunning, setIsGaitSimRunning] = useState<boolean>(true);
+  const [isGaitSimRunning, setIsGaitSimRunning] = useState<boolean>(false);
   const [showWorkspaceCloud, setShowWorkspaceCloud] = useState<boolean>(true);
   const [showCoordinateAxes, setShowCoordinateAxes] = useState<boolean>(true);
 
@@ -26,7 +26,7 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
 
   // Refs for animation loop
   const anglesRef = useRef({ theta1: 25, theta2: 10, theta3: 5 });
-  const gaitSimRef = useRef(true);
+  const gaitSimRef = useRef(false);
   const cloudVisibilityRef = useRef(true);
   const axesVisibilityRef = useRef(true);
 
@@ -65,6 +65,8 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;
     container.appendChild(renderer.domElement);
+    renderer.domElement.setAttribute('role', 'img');
+    renderer.domElement.setAttribute('aria-label', 'Illustrative three-joint hip model and reachable workspace. Use the joint sliders below to change the angles.');
 
     // 2. Technical Floor Grid
     const gridHelper = new THREE.GridHelper(800, 32, 0x00f0ff, 0x1e2b58);
@@ -279,6 +281,7 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
     // 8. Animation & Kinematics Loop
     let clock = new THREE.Clock();
     let animationFrameId: number;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
@@ -309,7 +312,7 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
       axesHelper.visible = axesVisibilityRef.current;
 
       // Subtle rotation of workspace cloud for depth perspective
-      if (cloudVisibilityRef.current) {
+      if (cloudVisibilityRef.current && gaitSimRef.current && !reducedMotion) {
         workspacePointCloud.rotation.y += 0.001;
       }
 
@@ -322,7 +325,9 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
       const computedY = Math.round((worldPos.y - 80) * 1.8);
       const computedZ = Math.round(worldPos.z * 1.8);
 
-      setEndEffector({ x: computedX, y: computedY, z: computedZ });
+      setEndEffector((previous) => previous.x === computedX && previous.y === computedY && previous.z === computedZ
+        ? previous
+        : { x: computedX, y: computedY, z: computedZ });
 
       renderer.render(scene, camera);
     };
@@ -378,12 +383,13 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
               className="flex items-center space-x-1.5 px-3 py-1 text-xs font-mono rounded-lg bg-indigo-950/80 hover:bg-indigo-900 text-indigo-300 border border-indigo-700/50 transition-colors"
             >
               <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
-              <span>Ver Paper (CMAAE 2021)</span>
+              <span>View paper (CMAAE 2021)</span>
             </button>
           )}
 
           <button
             onClick={() => setIsGaitSimRunning(!isGaitSimRunning)}
+            aria-pressed={isGaitSimRunning}
             className={`flex items-center space-x-1.5 px-3 py-1 text-xs font-mono rounded-lg transition-all ${
               isGaitSimRunning
                 ? 'bg-emerald-950 text-emerald-300 border border-emerald-700 hover:bg-emerald-900'
@@ -391,7 +397,7 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
             }`}
           >
             {isGaitSimRunning ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-            <span>{isGaitSimRunning ? 'Pausar Marcha' : 'Simular Marcha'}</span>
+            <span>{isGaitSimRunning ? 'Pause gait' : 'Simulate gait'}</span>
           </button>
         </div>
       </div>
@@ -399,7 +405,7 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
       {/* 3D Canvas Container */}
       <div className="relative w-full h-[460px] sm:h-[540px] cursor-grab active:cursor-grabbing" ref={mountRef}>
         {/* Floating Telemetry & Kinematics HUD */}
-        <div className="absolute top-4 left-4 z-10 p-3 sm:p-4 rounded-xl bg-slate-950/80 backdrop-blur-md border border-cyan-500/20 font-mono text-xs max-w-[280px] shadow-lg pointer-events-none">
+        <div className="absolute top-4 left-4 z-10 p-3 sm:p-4 rounded-xl bg-slate-950/80 backdrop-blur-md border border-cyan-500/20 font-mono text-xs max-w-[210px] sm:max-w-[280px] shadow-lg pointer-events-none">
           <div className="flex items-center space-x-2 text-cyan-400 mb-2 font-semibold">
             <Activity className="w-4 h-4 text-cyan-400 animate-spin" style={{ animationDuration: '6s' }} />
             <span>FORWARD KINEMATICS (D-H)</span>
@@ -419,7 +425,7 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
               <span className="text-emerald-400 font-bold">{theta3.toFixed(1)}°</span>
             </div>
             <div className="pt-2">
-              <span className="text-slate-400 block text-[10px] uppercase tracking-wide">Coordenadas Efector Final (mm):</span>
+              <span className="text-slate-400 block text-[10px] uppercase tracking-wide">End-effector position (mm):</span>
               <div className="grid grid-cols-3 gap-1 mt-1 text-center font-bold">
                 <span className="bg-slate-900 px-1 py-0.5 rounded text-cyan-400">X: {endEffector.x}</span>
                 <span className="bg-slate-900 px-1 py-0.5 rounded text-pink-400">Y: {endEffector.y}</span>
@@ -431,13 +437,14 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
 
         {/* Orbit Hint */}
         <div className="absolute bottom-4 left-4 z-10 px-3 py-1.5 rounded-lg bg-slate-950/70 backdrop-blur-sm border border-slate-800 text-[11px] font-mono text-slate-400 pointer-events-none flex items-center space-x-2">
-          <span>🖱️ Arrastra para orbitar 360° | Rueda para zoom</span>
+          <span>Drag to orbit · Scroll to zoom</span>
         </div>
 
         {/* Viewport Toggles (Right) */}
         <div className="absolute top-4 right-4 z-10 flex flex-col space-y-2">
           <button
             onClick={() => setShowWorkspaceCloud(!showWorkspaceCloud)}
+            aria-pressed={showWorkspaceCloud}
             className={`flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all backdrop-blur-md ${
               showWorkspaceCloud
                 ? 'bg-cyan-950/90 text-cyan-300 border border-cyan-500/50 shadow-cyan-950/50 shadow-md'
@@ -445,12 +452,13 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
             }`}
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Nube Espacio de Trabajo</span>
-            <span className="sm:hidden">Nube 3D</span>
+            <span className="hidden sm:inline">Workspace cloud</span>
+            <span className="sm:hidden">Cloud</span>
           </button>
 
           <button
             onClick={() => setShowCoordinateAxes(!showCoordinateAxes)}
+            aria-pressed={showCoordinateAxes}
             className={`flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all backdrop-blur-md ${
               showCoordinateAxes
                 ? 'bg-indigo-950/90 text-indigo-300 border border-indigo-500/50'
@@ -458,8 +466,8 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Ejes de Coordenadas</span>
-            <span className="sm:hidden">Ejes</span>
+            <span className="hidden sm:inline">Coordinate axes</span>
+            <span className="sm:hidden">Axes</span>
           </button>
         </div>
       </div>
@@ -468,11 +476,11 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
       <div className="p-4 sm:p-6 bg-slate-900/90 backdrop-blur-md border-t border-slate-800">
         <div className="flex items-center justify-between mb-3">
           <h4 className="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold">
-            Control Manual de Articulaciones (3 Grados de Libertad)
+            Manual joint control (3 degrees of freedom)
           </h4>
           {isGaitSimRunning && (
             <span className="text-[11px] font-mono text-amber-400">
-              * Pausa la simulación para ajustar manualmente
+              Pause the simulation to adjust the joints
             </span>
           )}
         </div>
@@ -481,11 +489,12 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
           {/* Theta 1 Slider */}
           <div className="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
             <div className="flex justify-between items-center mb-1">
-              <span className="text-cyan-400 font-semibold">θ₁ Flexión / Extensión</span>
+              <span className="text-cyan-400 font-semibold">θ₁ Flexion / Extension</span>
               <span className="text-cyan-300">{theta1}°</span>
             </div>
             <input
               type="range"
+              aria-label="Hip flexion and extension in degrees"
               min="-20"
               max="90"
               value={theta1}
@@ -494,19 +503,20 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
               className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400 disabled:opacity-40"
             />
             <div className="flex justify-between text-[10px] text-slate-500 mt-1">
-              <span>-20° (Extensión)</span>
-              <span>+90° (Flexión)</span>
+              <span>-20° (Extension)</span>
+              <span>+90° (Flexion)</span>
             </div>
           </div>
 
           {/* Theta 2 Slider */}
           <div className="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
             <div className="flex justify-between items-center mb-1">
-              <span className="text-pink-400 font-semibold">θ₂ Abducción / Aducción</span>
+              <span className="text-pink-400 font-semibold">θ₂ Abduction / Adduction</span>
               <span className="text-pink-300">{theta2}°</span>
             </div>
             <input
               type="range"
+              aria-label="Hip abduction and adduction in degrees"
               min="-15"
               max="45"
               value={theta2}
@@ -515,19 +525,20 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
               className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-pink-500 disabled:opacity-40"
             />
             <div className="flex justify-between text-[10px] text-slate-500 mt-1">
-              <span>-15° (Aducción)</span>
-              <span>+45° (Abducción)</span>
+              <span>-15° (Adduction)</span>
+              <span>+45° (Abduction)</span>
             </div>
           </div>
 
           {/* Theta 3 Slider */}
           <div className="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
             <div className="flex justify-between items-center mb-1">
-              <span className="text-emerald-400 font-semibold">θ₃ Rotación Interna/Externa</span>
+              <span className="text-emerald-400 font-semibold">θ₃ Internal / External Rotation</span>
               <span className="text-emerald-300">{theta3}°</span>
             </div>
             <input
               type="range"
+              aria-label="Hip internal and external rotation in degrees"
               min="-25"
               max="25"
               value={theta3}
@@ -536,8 +547,8 @@ export const ExoskeletonWorkspace3D: React.FC<ExoskeletonWorkspace3DProps> = ({ 
               className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400 disabled:opacity-40"
             />
             <div className="flex justify-between text-[10px] text-slate-500 mt-1">
-              <span>-25° (Externa)</span>
-              <span>+25° (Interna)</span>
+              <span>-25° (External)</span>
+              <span>+25° (Internal)</span>
             </div>
           </div>
         </div>

@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { portfolio } from '@/lib/portfolio';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nicksotoconde.dev'),
-  title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering | Robotics Research',
+  title: `${portfolio.profile.name} | ${portfolio.profile.headline}`,
   description:
-    'Professional portfolio of Nick Soto Conde. Mechatronics Engineer (UNI), Big Data Specialist (UTEC), Data Engineer at Santander Consumer Bank, Full-Stack Developer, and Robotics & Rehabilitation Researcher.',
+    portfolio.profile.professionalSummary,
   keywords: [
     'Nick Soto Conde',
-    'Mechatronics Engineer',
+    'Mechatronics Engineering',
     'Data Engineer',
+    'Business Process Automation',
+    'Business Intelligence',
     'Software Engineer',
     'Full-Stack Developer',
     'Robotics Research',
@@ -22,6 +25,9 @@ export const metadata: Metadata = {
     'CMAAE 2021',
     'RCAE 2021',
     'ICCRE Japan TPC',
+    'Scientific Peer Review',
+    'Research Leadership',
+    'IEEE EMBS UNI',
     'Universidad Nacional de Ingenieria',
     'UTEC Big Data'
   ],
@@ -43,16 +49,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://nicksotoconde.dev',
-    title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering | Robotics Research',
+    title: `${portfolio.profile.name} | ${portfolio.profile.headline}`,
     description:
-      'Professional engineering portfolio bridging distributed cloud data pipelines, full-stack application development, and peer-reviewed rehabilitation robotics research.',
+      portfolio.profile.professionalSummary,
     siteName: 'Nick Soto Conde Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nick Soto Conde | Mechatronics Engineer | Data & Software Engineering',
+    title: `${portfolio.profile.name} | ${portfolio.profile.headline}`,
     description:
-      'Data Engineering, Full-Stack Software Development, and Robotics & Rehabilitation Research.',
+      portfolio.profile.professionalSummary,
   },
 };
 
@@ -71,7 +77,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#070a12] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black min-h-screen">
+      <body className="text-slate-100 font-sans selection:bg-cyan-500 selection:text-black min-h-screen">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-300 focus:px-5 focus:py-3 focus:text-slate-950">Skip to content</a>
         {children}
       </body>
     </html>

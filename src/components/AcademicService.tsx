@@ -1,119 +1,23 @@
-'use client';
+import { portfolio } from '@/lib/portfolio';
+import { BookOpen, ArrowUpRight } from 'lucide-react';
+import { Reveal } from '@/components/Reveal';
 
-import React from 'react';
-import { ShieldCheck, Award, Users, Orbit, Building2, MapPin, Calendar } from 'lucide-react';
-import portfolioData from '../../portfolio_data.json';
-
-export const AcademicService: React.FC = () => {
-  const { academicService } = portfolioData;
-
-  const categoryIcons: Record<string, typeof ShieldCheck> = {
-    'Conference Service': ShieldCheck,
-    'Student & Professional Organizations': Users,
-    'Research Leadership & Competition': Orbit,
-    'Academic Engineering Project': Award,
-  };
-
-  return (
-    <section id="academic-service" className="py-20 bg-[#0b1021]/50 border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-indigo-950/80 border border-indigo-800 text-xs font-mono text-indigo-300 mb-3">
-            <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Academic Community Contribution</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-            Academic Service &amp; Leadership
-          </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
-            Peer review service for international conferences, leadership within IEEE student societies, and competitive university engineering teams.
-          </p>
-        </div>
-
-        {/* Highlight Banner: ICCRE Japan TPC Member */}
-        <div className="mb-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-indigo-950/70 via-slate-900 to-slate-950 border border-indigo-500/40 shadow-xl">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 rounded-xl bg-indigo-900/60 border border-indigo-500/50 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-6 h-6 text-indigo-300" />
-              </div>
-              <div>
-                <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-indigo-900 text-indigo-300 border border-indigo-700 font-semibold">
-                    ICCRE • Japan
-                  </span>
-                  <span className="font-mono text-xs px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
-                    2024 • 2025 • 2026
-                  </span>
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white">
-                  Technical Program Committee (TPC) Member &amp; Scientific Reviewer
-                </h3>
-                <p className="text-xs font-mono text-slate-400 mt-1">
-                  International Conference on Control, Robotics and Automation Engineering
-                </p>
-                <p className="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed max-w-2xl font-light">
-                  Appointed to the Technical Program Committee to perform peer reviews of scientific submissions in robot kinematics, control algorithms, autonomous systems, and bio-robotic applications across three consecutive editions in Japan.
-                </p>
-              </div>
-            </div>
-
-            <div className="shrink-0 flex flex-col space-y-2 w-full md:w-auto font-mono text-xs">
-              <div className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 flex items-center justify-between gap-3">
-                <span className="text-slate-400">Official Function:</span>
-                <span className="text-cyan-400 font-bold">TPC Member &amp; Reviewer</span>
-              </div>
-              <div className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 flex items-center justify-between gap-3">
-                <span className="text-slate-400">Venue:</span>
-                <span className="text-indigo-300 font-bold">Japan</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Academic Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {academicService
-            .filter((item) => item.id !== 'iccre-japan-tpc')
-            .map((item) => {
-              const Icon = categoryIcons[item.category] || ShieldCheck;
-              return (
-                <div
-                  key={item.id}
-                  className="p-6 rounded-2xl bg-[#0b1021] border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between shadow-lg"
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">
-                        {item.category}
-                      </span>
-                      <span className="text-xs font-mono text-slate-500">{item.period}</span>
-                    </div>
-
-                    <h4 className="text-base font-bold text-white mb-1 leading-snug">
-                      {item.role}
-                    </h4>
-
-                    <p className="text-xs font-mono text-cyan-400 mb-3 flex items-center gap-1.5">
-                      <Building2 className="w-3 h-3" />
-                      <span>{item.organization}</span>
-                    </p>
-
-                    <p className="text-slate-300 text-xs leading-relaxed font-light mb-4">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-slate-800/80 text-[11px] font-mono text-slate-500 flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    <span>{item.location}</span>
-                  </div>
-                </div>
-              );
-            })}
-        </div>
+export function AcademicService() {
+  const contribution = portfolio.scientificContribution;
+  return <section id="academic-service" className="section-spacing border-t border-rose-900/30 bg-[#0b1021]/30" aria-labelledby="service-title">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Reveal className="max-w-3xl">
+        <p className="section-eyebrow text-rose-300">02 / Scientific contribution</p>
+        <h2 id="service-title" className="section-title">{contribution.title}</h2>
+        <p className="section-description">{contribution.introduction}</p>
+      </Reveal>
+      <div className="mt-9 grid gap-6 md:grid-cols-2">{portfolio.academicService.map((item, index) => <Reveal key={item.id} delay={index * 70} className="h-full"><article className="h-full rounded-2xl border border-rose-900/40 bg-[#0b1021] p-6 sm:p-8"><div className="flex items-center justify-between gap-4"><BookOpen className="h-6 w-6 text-rose-300" aria-hidden="true" /><p className="font-mono text-[10px] text-rose-200">{item.period} · {item.location}</p></div><p className="mt-5 font-mono text-[10px] uppercase tracking-widest text-rose-300">{item.category}</p><h3 className="mt-3 text-xl font-semibold leading-snug text-white">{item.role}</h3><p className="mt-3 text-sm leading-relaxed text-slate-300">{item.organization}</p><p className="mt-4 text-sm leading-relaxed text-slate-400">{item.description}</p></article></Reveal>)}</div>
+      <div className="mt-7 rounded-2xl border border-slate-700/70 bg-slate-950/40 p-6 sm:p-8">
+        <h3 className="max-w-3xl text-xl font-semibold text-white">{contribution.foundation}</h3>
+        <div className="mt-6 grid gap-6 md:grid-cols-3">{contribution.methods.map((method, index) => <div key={method.title} className="border-t border-rose-900/50 pt-4"><p className="font-mono text-[10px] text-rose-300">0{index + 1}</p><h4 className="mt-2 text-sm font-semibold text-slate-200">{method.title}</h4><p className="mt-2 text-xs leading-relaxed text-slate-400">{method.description}</p></div>)}</div>
+        <a href="#expertise" className="mt-6 inline-flex items-center gap-2 rounded text-sm text-rose-200 hover:text-white">How research informs my engineering practice<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
       </div>
-    </section>
-  );
-};
+      <div className="mt-7 flex flex-col items-start justify-between gap-4 rounded-xl border border-rose-900/40 px-6 py-5 sm:flex-row sm:items-center"><div><p className="text-sm font-semibold text-white">Research publications & technical work</p><p className="mt-2 text-xs leading-relaxed text-slate-400">Explore the papers, citations, and robotics model connected to this research background.</p></div><a href="#publications" className="inline-flex shrink-0 items-center gap-2 rounded text-sm text-rose-200 hover:text-white">Explore publications<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a></div>
+    </div>
+  </section>;
+}

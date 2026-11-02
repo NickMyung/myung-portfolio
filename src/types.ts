@@ -22,10 +22,30 @@ export interface Profile {
 
 export interface ExpertiseItem {
   id: string;
+  categoryId: string;
+  shortTitle: string;
+  focus: string;
   title: string;
   description: string;
   competencies: string[];
   technologies: string[];
+  overview?: {
+    headline: string;
+    description: string;
+    pillars: { title: string; description: string }[];
+  };
+}
+
+export interface ProjectBusinessContext {
+  focus: string;
+  keywords: string[];
+  industry: string;
+  audience: string;
+  context: string;
+  teams: string[];
+  decisions: string;
+  domainGroups?: { title: string; teams: string[] }[];
+  deliverables?: { title: string; description: string }[];
 }
 
 export interface ProjectItem {
@@ -33,6 +53,12 @@ export interface ProjectItem {
   title: string;
   category: string;
   summary: string;
+  preview?: {
+    title: string;
+    problem: string;
+    contribution: string;
+    outcome: string;
+  };
   problem: string;
   objective: string;
   approach: string;
@@ -51,10 +77,28 @@ export interface ProjectItem {
   status: string;
   period: string;
   featured: boolean;
+  priority: number;
+  evidenceLabel: string;
+  experienceIds: string[];
+  publicationIds: string[];
+  flow: { label: string; detail: string }[];
+  business?: ProjectBusinessContext;
+  crossCutting?: { label: string; detail: string }[];
+}
+
+export interface AcademicProjectItem {
+  id: string;
+  organization: string;
+  role: string;
+  category: string;
+  period: string;
+  location: string;
+  description: string;
 }
 
 export interface ExperienceItem {
   id: string;
+  category: string;
   organization: string;
   client?: string;
   role: string;
@@ -83,11 +127,22 @@ export interface PublicationItem {
 export interface AcademicServiceItem {
   id: string;
   organization: string;
+  shortOrganization: string;
   role: string;
   category: string;
   period: string;
   location: string;
   description: string;
+}
+
+export interface ScientificContribution {
+  shortTitle: string;
+  title: string;
+  focus: string;
+  introduction: string;
+  foundation: string;
+  methods: { title: string; description: string }[];
+  applications: { categoryId: string; description: string }[];
 }
 
 export interface EducationItem {
@@ -115,6 +170,8 @@ export interface PortfolioData {
   experience: ExperienceItem[];
   publications: PublicationItem[];
   academicService: AcademicServiceItem[];
+  scientificContribution: ScientificContribution;
+  academicProjects: AcademicProjectItem[];
   education: EducationItem[];
   technicalSkills: TechnicalSkills;
 }

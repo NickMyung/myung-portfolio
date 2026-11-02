@@ -1,15 +1,24 @@
 {
   "profile": {
     "name": "Nick Soto Conde",
-    "headline": "Mechatronics Engineer | Data & Software Engineering | Robotics Research",
-    "professionalSummary": "I am a Mechatronics Engineer with professional experience in data engineering and software development, complemented by research experience in robotics and biomedical engineering. My work spans distributed data processing, cloud-based systems, application development, and robotic system modeling. I am interested in building reliable, scalable, and technically grounded solutions that connect engineering, software, and data.",
+    "headline": "Mechatronics Engineering Graduate",
+    "professionalSummary": "As a Mechatronics Engineering graduate, my work spans data engineering, full-stack development, business automation, and robotics. Guided by the elegance of research, my approach shapes how I unravel complex problems, weigh evidence, and build the bridge where abstract models take form in scalable software and physical systems.",
     "location": "Lima, Peru (Jesús María) • Available for Remote & Hybrid",
     "email": "nicksc1911@gmail.com",
     "phone": "+51 942 002 064",
     "languages": [
-      { "language": "Spanish", "level": "Native" },
-      { "language": "English", "level": "Advanced (Professional Working Proficiency)" },
-      { "language": "Korean", "level": "Basic" }
+      {
+        "language": "Spanish",
+        "level": "Native"
+      },
+      {
+        "language": "English",
+        "level": "Advanced (Professional Working Proficiency)"
+      },
+      {
+        "language": "Korean",
+        "level": "Basic"
+      }
     ],
     "socialLinks": {
       "github": "https://github.com/NickMyung",
@@ -18,26 +27,27 @@
     },
     "resumeUrl": "#contact",
     "about": {
-      "professionalBackground": "Graduated with a Bachelor's degree in Mechatronics Engineering from the National University of Engineering (UNI) in Peru, followed by specialized studies in Big Data at UTEC. My professional trajectory has focused on enterprise data engineering, cloud-based architectures, and full-stack software development, built on a rigorous foundation of mechanical, electrical, and control engineering.",
-      "engineeringApproach": "I solve technical problems using an engineering approach grounded in first principles: integrating mathematical kinematics, robust distributed data processing, and maintainable software architecture. I prioritize building reliable, well-tested, and maintainable systems over fragile complexity.",
+      "professionalBackground": "My professional formation combines Mechatronics Engineering at UNI and specialized Big Data studies at UTEC with research, scientific peer review, and research leadership. These experiences shape my practice across data platforms and business automation, full-stack development, and robotics.",
+      "engineeringApproach": "My research experience informs how I work: formulate the problem, examine prior work, make assumptions explicit, evaluate results, and document decisions. I apply this approach to business data definitions, software architecture, and mathematical models of robotic systems.",
       "researchInterests": "Robotics engineering, lower-limb rehabilitation exoskeletons, forward and inverse kinematic modeling via Denavit–Hartenberg conventions, workspace characterization, and biomedical engineering applications.",
-      "careerFocus": "Designing and operating resilient cloud data pipelines (AWS/GCP), distributed computing with Apache Spark, robust full-stack web and mobile systems, and participating in forward-looking engineering and robotics research."
+      "careerFocus": "Building across data platforms and business automation, full-stack software systems, and robotics research and development, while contributing through scientific review and research collaboration. Research remains a pillar connecting these areas of my professional practice."
     }
   },
   "expertise": [
     {
       "id": "data-engineering",
-      "title": "Data Engineering & Cloud Platforms",
-      "description": "Design, construction, and optimization of data pipelines, distributed data processing, and enterprise metadata governance.",
+      "title": "Data Engineering & Business Automation",
+      "description": "Build and modernize data platforms, automate business workflows, and connect operational information with business analytics. Experience spans financial services, consumer goods, and agribusiness.",
       "competencies": [
-        "Data Pipelines",
+        "End-to-End Data Platforms",
+        "Cloud Data Migration",
         "ETL/ELT Pipelines",
-        "Distributed Data Processing",
+        "Big Data & Distributed Processing",
         "Data Warehousing",
-        "Cloud Data Platforms",
+        "Business Process Automation",
+        "Robotic Process Automation (RPA)",
+        "Business Intelligence & KPI Scenarios",
         "Metadata Management",
-        "Data Integration",
-        "Data Quality",
         "Data Governance (DataHub)"
       ],
       "technologies": [
@@ -49,12 +59,38 @@
         "SQL Server",
         "Oracle",
         "PostgreSQL",
-        "GCP BigQuery"
-      ]
+        "GCP BigQuery",
+        "JavaScript",
+        "Apache Airflow",
+        "Automation Anywhere",
+        "Power BI",
+        "Jenkins"
+      ],
+      "categoryId": "data",
+      "shortTitle": "Data & Automation",
+      "focus": "Data platforms, automated workflows, and analytics for finance, commercial, and operations teams.",
+      "overview": {
+        "headline": "From operational data to better business decisions.",
+        "description": "I build and modernize data platforms and automate business workflows, connecting operational systems with analytics for finance, commercial, and operations teams. Explore three complementary experiences: financial data modernization, an end-to-end cloud migration, and cross-functional process automation.",
+        "pillars": [
+          {
+            "title": "Engineer the data foundation",
+            "description": "Integrate operational sources, orchestrate transformations, and build cloud platforms and shared analytical data."
+          },
+          {
+            "title": "Automate business workflows",
+            "description": "Use code and RPA to make recurring data tasks and information delivery repeatable."
+          },
+          {
+            "title": "Enable business decisions",
+            "description": "Connect business definitions with dashboards, KPIs, and interactive scenarios for the teams using them."
+          }
+        ]
+      }
     },
     {
       "id": "software-engineering",
-      "title": "Software Engineering & Application Development",
+      "title": "Full-Stack Development",
       "description": "Full-stack web and mobile applications, REST & GraphQL API engineering, microservices, and technical development coordination.",
       "competencies": [
         "Full-Stack Development",
@@ -80,11 +116,14 @@
         "AWS Lambda",
         "DynamoDB",
         "Git / CI/CD"
-      ]
+      ],
+      "categoryId": "software",
+      "shortTitle": "Full-Stack",
+      "focus": "Web and mobile products, APIs, and cloud application systems."
     },
     {
       "id": "robotics-biomedical",
-      "title": "Robotics & Biomedical Engineering",
+      "title": "Robotics Research & Development",
       "description": "Kinematic modeling, numerical simulation, 3D workspace characterization, and mechatronic design for rehabilitation robotics.",
       "competencies": [
         "Robot Kinematics",
@@ -106,91 +145,498 @@
         "C / C++ (Embedded)",
         "ESP32",
         "Three.js / WebGL Simulation"
-      ]
+      ],
+      "categoryId": "robotics",
+      "shortTitle": "Robotics R&D",
+      "focus": "Kinematic models, simulation, and mechatronic research prototypes."
     }
   ],
   "projects": [
     {
       "id": "hip-exoskeleton-kinematics",
+      "preview": {
+        "title": "Hip exoskeleton kinematics",
+        "problem": "Understand joint geometry before manufacturing a wearable robotic device.",
+        "contribution": "D-H formulations, transformation scripts and workspace point clouds; paper co-authorship.",
+        "outcome": "Kinematic analysis and workspace simulation documented in a CMAAE 2021 paper."
+      },
       "title": "3-DoF Hip Exoskeleton Kinematic Analysis & Workspace Simulation",
-      "category": "Robotics & Biomedical Engineering",
+      "category": "robotics",
       "summary": "Direct kinematic characterization and 3D reachable workspace evaluation of a three-degree-of-freedom wearable hip exoskeleton for gait rehabilitation.",
       "problem": "Kinematic misalignments between wearable robotic devices and human anatomical hip joints can reduce gait assistance efficacy and cause user discomfort. Precise geometric formulation is essential prior to mechanical manufacturing.",
       "objective": "Formulate the kinematic equations using Denavit–Hartenberg parameters and evaluate the 3D reachable workspace envelope to ensure full coverage of physiological walking ranges.",
       "approach": "Applied the Denavit–Hartenberg convention to define joint reference frames across sagittal (flexion/extension), frontal (abduction/adduction), and transverse (internal/external rotation) axes. Computational verification was implemented in Python and Wolfram.",
       "architecture": "Serial kinematic chain with 3 revolute joints: Joint 1 (Flexion/Extension: -20° to 90°), Joint 2 (Abduction/Adduction: -15° to 45°), and Joint 3 (Internal/External Rotation: -25° to 25°), computing transformation matrix T_0_3 to map the distal cuff.",
-      "technologies": ["Python", "Denavit–Hartenberg Convention", "Wolfram", "Jupyter", "Euler Angles", "Three.js / WebGL"],
+      "technologies": [
+        "Python",
+        "Denavit–Hartenberg Convention",
+        "Wolfram",
+        "Jupyter",
+        "Euler Angles",
+        "Three.js / WebGL"
+      ],
       "role": "Co-Author & Kinematics Modeler",
       "contributions": "Formulated the D-H parameter tables, programmed transformation matrix scripts, generated workspace point clouds, and co-wrote the peer-reviewed conference paper.",
       "challenges": "Modeling non-singular joint limits that accurately reflect natural hip ranges of motion without mechanical collisions between exoskeleton links.",
-      "results": "Demonstrated that the 3-DoF workspace envelope comprehensively encompasses human gait angles. Results were published and presented at CMAAE 2021.",
-      "evidence": "Conference paper indexed in scientific databases and UTEC CRIS repository; live interactive 3D WebGL simulator available in this portfolio.",
+      "results": "Kinematic analysis and workspace simulation documented in a CMAAE 2021 conference paper.",
+      "evidence": "A UTEC CRIS publication record is linked below. The browser model is an illustrative companion; its parameters have not been independently checked against the published model, and it does not establish clinical performance.",
       "links": {
         "cris": "https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/"
       },
       "status": "Completed (Published Research Prototype)",
       "period": "2021",
-      "featured": true
+      "featured": true,
+      "priority": 3,
+      "evidenceLabel": "Publication record & interactive model",
+      "experienceIds": [
+        "medabots"
+      ],
+      "publicationIds": [
+        "cmaae-2021"
+      ],
+      "flow": [
+        {
+          "label": "Joint parameters",
+          "detail": "Three rotational degrees of freedom"
+        },
+        {
+          "label": "Kinematic model",
+          "detail": "Denavit-Hartenberg transformations"
+        },
+        {
+          "label": "Workspace",
+          "detail": "End-effector positions and point-cloud visualization"
+        }
+      ]
     },
     {
       "id": "santander-data-platform",
-      "title": "Financial Data Pipeline Modernization & Cloud Migration",
-      "category": "Data Engineering",
-      "summary": "Migration and re-architecture of financial data processes from legacy on-premise infrastructure to AWS Cloud for Santander Consumer Bank.",
+      "preview": {
+        "title": "Financial data & governance",
+        "problem": "Move legacy financial workflows to the cloud with consistent metadata governance.",
+        "contribution": "Python/SQL mappings, distributed Spark ETLs and DataHub metadata schemas.",
+        "outcome": "Financial pipelines on AWS with standardized workflows and banking core mappings."
+      },
+      "title": "Financial Data Modernization & Governance",
+      "category": "data",
+      "summary": "Modernization of financial information workflows, connecting business definitions, banking core mappings, cloud ETL, and metadata governance.",
       "problem": "Legacy on-premise financial workflows had performance bottlenecks, tight coupling to obsolete core systems, and lacked centralized metadata governance across banking domains.",
-      "objective": "Modernize data processes into domain/subdomain architectures in AWS, re-implement ETL workflows with Apache Spark, and introduce enterprise data governance with DataHub.",
+      "objective": "Modernize data processes into domain/subdomain architectures in AWS, re-implement ETL workflows with Apache Spark, and support metadata governance with DataHub.",
       "approach": "Mapped AS-IS processes, designed equivalence models between Core Bancario To-Be vs As-Is, built distributed Spark jobs, orchestrated tasks with AWS Step Functions, and modeled metadata entities in DataHub.",
-      "architecture": "Amazon S3 Ingestion Layer -> Distributed Data Processing with Apache Spark on AWS EMR & Glue -> Orquestation with AWS Step Functions -> Data Serving (Athena/Redshift) -> Data Governance Catalog in DataHub.",
-      "technologies": ["Apache Spark", "Scala", "Python", "AWS EMR", "AWS Glue", "AWS Step Functions", "Amazon S3", "DataHub", "Oracle", "SQL Server"],
+      "architecture": "Amazon S3 ingestion -> distributed Apache Spark processing on AWS EMR and Glue, coordinated through Step Functions -> financial data products and Athena. DataHub metadata governance spans the lifecycle.",
+      "technologies": [
+        "Apache Spark",
+        "Scala",
+        "Python",
+        "AWS EMR",
+        "AWS Glue",
+        "AWS Step Functions",
+        "Amazon S3",
+        "DataHub",
+        "Oracle",
+        "SQL Server"
+      ],
       "role": "Data Engineer (Squad Finanzas Data)",
       "contributions": "Created Python/SQL scripts for structured requirement gathering, developed distributed Spark ETLs, established data dictionaries, and integrated metadata governance schemas into DataHub under corporate standards.",
-      "challenges": "Reconciling historical accounting definitions between disparate banking cores while maintaining strict data consistency and zero regression in financial metrics.",
+      "challenges": "Reconciling financial definitions between banking cores and preserving consistent business logic across legacy and cloud workflows.",
       "results": "Achieved consistent execution of financial data pipelines on AWS, established standardized squad workflows, and streamlined banking core equivalence mappings.",
-      "evidence": "Production deployment at Santander Consumer Bank via IDM Technology and SES.",
+      "evidence": "This case describes my professional experience in financial data modernization. Client code, datasets, and deployment records are not published in this portfolio.",
       "links": {},
       "status": "Completed & Operational",
       "period": "2025 - 2026",
-      "featured": true
+      "featured": true,
+      "priority": 1,
+      "evidenceLabel": "Professional experience",
+      "experienceIds": [
+        "idm-santander",
+        "ses-santander"
+      ],
+      "publicationIds": [],
+      "flow": [
+        {
+          "label": "Source systems",
+          "detail": "Legacy financial processes and source mappings"
+        },
+        {
+          "label": "Cloud processing",
+          "detail": "S3, Apache Spark, AWS EMR and Glue"
+        },
+        {
+          "label": "Data consumption",
+          "detail": "Financial data products and Athena"
+        }
+      ],
+      "business": {
+        "focus": "Financial workflows & metadata governance",
+        "keywords": [
+          "Cloud ETL",
+          "Core data mapping",
+          "Metadata governance"
+        ],
+        "industry": "Financial services",
+        "audience": "Finance & Information Management",
+        "context": "Finance and Information Management (GI) processes depended on legacy on-premise flows. Moving those processes to AWS required understanding the financial logic, identifying equivalent information in the target banking core, and organizing data by business domain and subdomain.",
+        "teams": [
+          "Finance",
+          "Information Management (GI)"
+        ],
+        "decisions": "Support the use of financial information with clearer input-to-data-product mappings, consistent core equivalences, and documented definitions for the teams consuming the data.",
+        "deliverables": [
+          {
+            "title": "Business-rule mappings",
+            "description": "Structured Python/SQL mappings between source inputs, financial data products, and banking core equivalents."
+          },
+          {
+            "title": "Cloud ETL workflows",
+            "description": "Spark-based transformations supporting the migration of Finance and GI processes to AWS."
+          },
+          {
+            "title": "Metadata documentation",
+            "description": "Data dictionaries and domain schemas, working with governance teams on DataHub implementation."
+          }
+        ]
+      },
+      "crossCutting": [
+        {
+          "label": "Metadata governance",
+          "detail": "Data dictionaries, domain schemas, and DataHub cataloging in collaboration with governance teams."
+        }
+      ]
+    },
+    {
+      "id": "thikathani-cloud-data-platform",
+      "preview": {
+        "title": "Cloud migration & data platforms",
+        "problem": "Move an end-to-end analytical data platform between cloud providers.",
+        "contribution": "Odoo data extraction, orchestration, Spark processing, governance, and visualization.",
+        "outcome": "Migrated ETL architectures to AWS and delivered business KPIs and dashboards."
+      },
+      "title": "End-to-End Data Platform & Cloud Migration",
+      "category": "data",
+      "summary": "Migration of analytical ETL architectures from GCP to AWS, connecting Odoo data extraction with orchestration, processing, governance, and business visualization.",
+      "problem": "A change of cloud provider required migrating the ETL architectures supporting the business, while management, operations, and marketing teams relied on transformed data and indicators.",
+      "objective": "Migrate the analytical data platform from GCP to AWS and connect the extraction-to-visualization lifecycle with business KPI needs.",
+      "approach": "Worked across Odoo data extraction, workflow orchestration, Spark/Scala/PySpark processing, data governance, and dashboard delivery. Migrated existing GCP ETL architectures to AWS and used transformed company data for KPIs and marketing analysis.",
+      "architecture": "Odoo operational data -> extraction and orchestration -> Spark/Scala/PySpark transformations -> analytical data -> dashboards and business KPIs. GCP-to-AWS platform migration; governance spans the analytical lifecycle. This is a conceptual view, not a deployment topology.",
+      "technologies": [
+        "Apache Spark",
+        "Scala",
+        "PySpark",
+        "Python",
+        "Apache Airflow",
+        "Odoo",
+        "GCP BigQuery",
+        "AWS EMR",
+        "AWS Glue",
+        "Amazon S3",
+        "Amazon QuickSight"
+      ],
+      "role": "Data Engineer",
+      "contributions": "Implemented ETL automation and data processing, contributed to the GCP-to-AWS architecture migration, connected the lifecycle from Odoo extraction to visualization, and developed dashboards and business indicators. Transformed data also supported pattern analysis and segmentation for marketing.",
+      "challenges": "Covering the extraction-to-visualization lifecycle across a change of cloud provider while keeping analytical outputs connected to management and operational needs.",
+      "results": "Migrated ETL architectures from GCP to AWS. Delivered management and operations KPIs and interactive dashboards, with transformed data also supporting marketing analysis.",
+      "evidence": "This case is based on my professional experience in end-to-end data engineering and cloud migration. The flow is a conceptual reconstruction of the described work. Company code, datasets, and deployment records are not publicly included.",
+      "links": {},
+      "status": "Completed during the role",
+      "period": "2022 - 2023",
+      "featured": false,
+      "priority": 2,
+      "evidenceLabel": "Professional experience",
+      "experienceIds": [
+        "ve7-data"
+      ],
+      "publicationIds": [],
+      "flow": [
+        {
+          "label": "Operational sources",
+          "detail": "Data extraction from Odoo for analytical workflows"
+        },
+        {
+          "label": "Orchestration",
+          "detail": "Automated coordination of ETL processing"
+        },
+        {
+          "label": "Data processing",
+          "detail": "Spark, Scala, and PySpark transformations"
+        },
+        {
+          "label": "Analytical data",
+          "detail": "Transformed data supporting business KPIs and analysis"
+        },
+        {
+          "label": "Business visualization",
+          "detail": "Interactive dashboards for management and operations"
+        }
+      ],
+      "crossCutting": [
+        {
+          "label": "Data governance",
+          "detail": "Governance across the extraction-to-visualization lifecycle of the analytical platform."
+        }
+      ],
+      "business": {
+        "focus": "End-to-end data & cloud migration",
+        "keywords": [
+          "GCP to AWS",
+          "ERP integration",
+          "Data orchestration"
+        ],
+        "industry": "Agribusiness",
+        "audience": "Management, operations & marketing",
+        "context": "The analytical platform connected operational information with management indicators, operational dashboards, and marketing analysis. Its migration covered the data lifecycle from ERP extraction to business visualization.",
+        "teams": [
+          "Management",
+          "Operations",
+          "Marketing"
+        ],
+        "decisions": "Give management and operations visibility into business KPIs and events, and provide transformed data for marketing pattern analysis and segmentation.",
+        "deliverables": [
+          {
+            "title": "Cloud platform migration",
+            "description": "ETL architectures migrated from GCP to AWS during the provider transition."
+          },
+          {
+            "title": "End-to-end data workflows",
+            "description": "Work spanning Odoo extraction, orchestration, distributed processing, governance, and visualization."
+          },
+          {
+            "title": "Business KPIs & dashboards",
+            "description": "Indicators for management and operations, with analytical data also used to surface patterns for marketing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "virutex-ilko-business-automation",
+      "preview": {
+        "title": "Business analytics & automation",
+        "problem": "Connect departmental information needs and automate recurring manual workflows.",
+        "contribution": "Shared analytical data, Python/SQL/JavaScript workflows, RPA, and KPI tools.",
+        "outcome": "Automated data delivery and interactive scenarios for commercial and finance teams."
+      },
+      "title": "Business Analytics & Process Automation",
+      "category": "data",
+      "summary": "Data warehousing, ETL and process automation, and BI solutions for financial, commercial, and operational teams, including interactive tools for business KPI scenarios.",
+      "problem": "Different business functions needed accessible information from sales, inventory, and logistics, while recurring manual tasks added work to information preparation and delivery.",
+      "objective": "Make analytical data available across departments, automate recurring data and business workflows, and give commercial and finance teams tools to explore KPI scenarios.",
+      "approach": "Designed and maintained shared analytical data structures and ETL workflows. Used Python, SQL, JavaScript, and Automation Anywhere for data and process solutions; developed BI dashboards and interactive KPI tools for commercial and finance users.",
+      "architecture": "Departmental data sources -> ETL and shared analytical data warehouse -> code and RPA workflows -> dashboards and interactive KPI scenario tools. Conceptual view of complementary solutions, not a single deployment or one workflow shared by every department.",
+      "technologies": [
+        "Python",
+        "SQL Server",
+        "JavaScript",
+        "Automation Anywhere (RPA)",
+        "Power BI",
+        "Pandas",
+        "PySpark",
+        "Jenkins",
+        "Selenium",
+        "SharePoint"
+      ],
+      "role": "Data Analyst & Business Intelligence",
+      "contributions": "Built and maintained data warehouse and ETL solutions, automated manual tasks with scripts and RPA, optimized transformation queries, and developed dashboards and parameterized KPI scenario tools. Worked with needs across financial, commercial, and operational areas.",
+      "challenges": "Making transformations more maintainable and reusable while supporting different departmental information needs and recurring administrative workflows.",
+      "results": "Automated manual information preparation and delivery tasks, improved the maintainability of ETL workflows, and delivered tools that let commercial and finance teams visualize KPIs and explore alternative scenarios.",
+      "evidence": "This case is based on my professional experience in data analysis, BI, and process automation. The overview groups complementary work across departments; it does not imply that every solution was used by every area. Internal datasets, scripts, bots, and business dashboards are not publicly included.",
+      "links": {},
+      "status": "Completed during the role",
+      "period": "2024 - 2025",
+      "featured": false,
+      "priority": 3,
+      "evidenceLabel": "Professional experience",
+      "experienceIds": [
+        "virutex-ilko"
+      ],
+      "publicationIds": [],
+      "flow": [
+        {
+          "label": "Business information",
+          "detail": "Departmental needs and sales, inventory, and logistics data"
+        },
+        {
+          "label": "Data & automation",
+          "detail": "Shared warehouse, ETL, scripts, and RPA workflows"
+        },
+        {
+          "label": "Decision tools",
+          "detail": "Dashboards and interactive KPI scenarios"
+        }
+      ],
+      "crossCutting": [
+        {
+          "label": "Shared data organization",
+          "detail": "Standardized database locations and transformation structures supporting maintainable analytical workflows."
+        }
+      ],
+      "business": {
+        "focus": "Cross-functional analytics & process automation",
+        "keywords": [
+          "Process automation",
+          "RPA",
+          "KPI scenarios"
+        ],
+        "industry": "Consumer goods",
+        "audience": "Finance, commercial & operations",
+        "context": "The work served information and process needs across a consumer-goods business: from financial and commercial teams to supply chain, production, and distribution. Shared data and automation supported recurring work, while KPI tools enabled commercial and financial scenario exploration.",
+        "teams": [
+          "Financial planning",
+          "Costs",
+          "Collections",
+          "Marketing",
+          "Commercial",
+          "Sales administration",
+          "Supply chain",
+          "Production",
+          "Distribution"
+        ],
+        "decisions": "Help commercial and finance teams examine business KPIs and alternative scenarios, and make information available for recurring financial, commercial, and operational work.",
+        "domainGroups": [
+          {
+            "title": "Finance & performance",
+            "teams": [
+              "Financial planning",
+              "Costs",
+              "Collections"
+            ]
+          },
+          {
+            "title": "Commercial & customers",
+            "teams": [
+              "Marketing",
+              "Commercial",
+              "Sales administration"
+            ]
+          },
+          {
+            "title": "Supply chain & operations",
+            "teams": [
+              "Supply chain",
+              "Production",
+              "Distribution"
+            ]
+          }
+        ],
+        "deliverables": [
+          {
+            "title": "Analytical data foundation",
+            "description": "Data warehouse and ETL work supporting sales, inventory, and logistics information."
+          },
+          {
+            "title": "Code & RPA automation",
+            "description": "Scripts and Automation Anywhere bots for recurring data tasks and manual information workflows."
+          },
+          {
+            "title": "Interactive KPI scenarios",
+            "description": "Tools for commercial and finance teams to enter parameters, explore versions, and visualize possible KPI outcomes."
+          }
+        ]
+      }
     },
     {
       "id": "ve7-fullstack-ml-platform",
+      "preview": {
+        "title": "Mobile & web recommendations",
+        "problem": "Connect agricultural catalogs with product recommendations for commercial teams.",
+        "contribution": "TypeScript components, Flask APIs, ML integration and Scrum coordination.",
+        "outcome": "Mobile app released on Google Play and a web dashboard deployed on AWS."
+      },
       "title": "Mobile & Web Platform with Integrated Predictive Recommendation",
-      "category": "Software Development",
+      "category": "software",
       "summary": "Full-stack mobile (Android) and web application integrating REST microservices and a machine learning decision-tree model for product recommendation.",
       "problem": "Agricultural distributors and commercial teams needed a reliable, low-latency mobile tool to browse catalogs and receive data-driven category recommendations.",
       "objective": "Develop a responsive cross-platform mobile and web application connected to containerized backend APIs serving real-time predictive models.",
       "approach": "Built mobile/web clients with React Native / React + TypeScript; developed Flask REST microservices containerized in Docker; trained and embedded a decision tree model for product recommendations.",
       "architecture": "React & React Native Client -> REST API Gateway -> Flask Python Microservices -> Scikit-Learn Inference Engine -> Cloud Storage & Database Services on AWS / GCP.",
-      "technologies": ["React", "React Native", "TypeScript", "Python (Flask)", "Scikit-Learn", "Docker", "AWS", "GCP", "Tailwind CSS"],
+      "technologies": [
+        "React",
+        "React Native",
+        "TypeScript",
+        "Python (Flask)",
+        "Scikit-Learn",
+        "Docker",
+        "AWS",
+        "GCP",
+        "Tailwind CSS"
+      ],
       "role": "Full-Stack Software Developer & Technical Lead",
       "contributions": "Planned module routing and component architecture in TypeScript, developed Flask REST APIs, integrated the ML prediction pipeline, coordinated tasks using Scrum, and published the app to Google Play Store.",
       "challenges": "Ensuring lightweight API response times when executing inference calls over mobile network latencies and managing cross-platform UI parity.",
       "results": "Delivered production mobile app on Google Play Store and web dashboard on AWS, enabling real-time product classification and catalog access.",
-      "evidence": "Google Play Store app release and cloud-deployed web application.",
+      "evidence": "This case is based on my work at VE7 Agronegocios. Public app, source-code, and deployment links are not currently included in this portfolio.",
       "links": {},
       "status": "Completed",
       "period": "2023 - 2024",
-      "featured": true
+      "featured": true,
+      "priority": 2,
+      "evidenceLabel": "Professional experience",
+      "experienceIds": [
+        "ve7-fullstack"
+      ],
+      "publicationIds": [],
+      "flow": [
+        {
+          "label": "User interface",
+          "detail": "React and React Native clients"
+        },
+        {
+          "label": "Application services",
+          "detail": "Containerized Flask REST APIs"
+        },
+        {
+          "label": "Recommendations",
+          "detail": "Decision-tree model inference"
+        }
+      ]
     },
     {
       "id": "nasa-rover-tharsis",
+      "preview": {
+        "title": "Rover mechanics & telemetry",
+        "problem": "Traverse simulated planetary obstacles within vehicle mass and size constraints.",
+        "contribution": "Team contributions to drivetrain mechanics, fabrication and sensor telemetry.",
+        "outcome": "Participation with Grupo Tharsis UNI in the NASA rover challenge."
+      },
       "title": "NASA Human Exploration Rover Mechanical & Telemetry Subsystems",
-      "category": "Robotics & Engineering",
+      "category": "robotics",
       "summary": "Engineering design, kinematic drivetrain evaluation, and telemetry integration for an extraterrestrial exploration rover prototype.",
       "problem": "Designing a human-powered roving vehicle capable of traversing simulated planetary obstacles and collecting scientific samples under strict mass and dimensional constraints.",
       "objective": "Develop mechanical drive, suspension, and telemetry subsystems complying with NASA competition guidelines and challenging obstacle courses.",
       "approach": "Performed 3D CAD modeling, structural stress evaluations, kinematic drivetrain calculations, and onboard sensor telemetry prototyping within Grupo Tharsis UNI.",
       "architecture": "Custom dual-human drivetrain, articulated suspension geometry, quick-folding chassis mechanism, and onboard sensor telemetry module.",
-      "technologies": ["SolidWorks CAD", "Kinematic Analysis", "Structural Simulation", "Telemetry Sensors", "ESP32 / Embedded Systems"],
+      "technologies": [
+        "SolidWorks CAD",
+        "Kinematic Analysis",
+        "Structural Simulation",
+        "Telemetry Sensors",
+        "ESP32 / Embedded Systems"
+      ],
       "role": "Team Member — Mechanical & Telemetry Subsystems",
       "contributions": "Collaborated on drivetrain mechanics, suspension clearance calculations, physical fabrication, and team telemetry integration for Grupo Tharsis UNI.",
       "challenges": "Balancing structural rigidity against vehicle weight limits to prevent mechanical deformation on irregular terrain obstacles.",
       "results": "Qualified and represented Peru and UNI in the international NASA Human Exploration Rover Challenge (Huntsville, Alabama).",
-      "evidence": "Official participation record with Grupo Tharsis UNI in the NASA HERC competition.",
+      "evidence": "This case describes my contribution within Grupo Tharsis UNI. Participation records, CAD files, and team photographs are not currently linked in this portfolio.",
       "links": {},
       "status": "Completed (Competition Entry)",
       "period": "2019 - 2022",
-      "featured": true
+      "featured": false,
+      "priority": 4,
+      "evidenceLabel": "Team engineering project",
+      "experienceIds": [],
+      "publicationIds": [],
+      "flow": [
+        {
+          "label": "Mechanical design",
+          "detail": "Drivetrain and suspension geometry"
+        },
+        {
+          "label": "Prototype",
+          "detail": "Fabrication and subsystem integration"
+        },
+        {
+          "label": "Telemetry",
+          "detail": "Sensor instrumentation with the team"
+        }
+      ]
     }
   ],
   "experience": [
@@ -209,7 +655,16 @@
         "Formulated core banking data equivalence mappings between target (To-Be) and legacy (As-Is) systems.",
         "Collaborated with data governance teams to implement DataHub, defining metadata dictionaries and schema standards."
       ],
-      "technologies": ["Python", "Apache Spark", "Scala", "AWS (EMR, Glue, Athena, S3, Step Functions)", "DataHub", "SQL Server", "Oracle"]
+      "technologies": [
+        "Python",
+        "Apache Spark",
+        "Scala",
+        "AWS (EMR, Glue, Athena, S3, Step Functions)",
+        "DataHub",
+        "SQL Server",
+        "Oracle"
+      ],
+      "category": "data"
     },
     {
       "id": "ses-santander",
@@ -225,7 +680,16 @@
         "Participated in sprint planning, requirements breakdown, and delivery scheduling under agile methodologies.",
         "Authored data dictionaries and supported governance cataloging in DataHub for financial reporting models."
       ],
-      "technologies": ["Python", "Apache Spark", "Scala", "AWS (EMR, S3, Athena, Glue)", "DataHub", "SQL Server", "Oracle"]
+      "technologies": [
+        "Python",
+        "Apache Spark",
+        "Scala",
+        "AWS (EMR, S3, Athena, Glue)",
+        "DataHub",
+        "SQL Server",
+        "Oracle"
+      ],
+      "category": "data"
     },
     {
       "id": "virutex-ilko",
@@ -233,14 +697,26 @@
       "role": "Data Analyst & Business Intelligence",
       "period": "January 2024 – July 2025",
       "location": "Lima, Peru",
-      "scope": "Data warehousing, ETL automation, and interactive KPI simulation tools for sales, inventory, and logistics.",
+      "scope": "Data warehousing, business process automation, BI, and KPI scenario tools across financial, commercial, and operational areas.",
       "contributions": [
         "Designed and maintained the corporate Data Warehouse to support commercial, logistics, and inventory reporting.",
         "Automated recurring data workflows using Python scripts and Automation Anywhere RPA bots, reducing manual administrative burdens.",
         "Developed interactive KPI simulation applications enabling commercial and finance teams to test business projections.",
         "Implemented web scraping scripts using Selenium and Python to collect public market data for reporting."
       ],
-      "technologies": ["Python", "Pandas", "SQL Server", "PySpark", "Power BI", "Automation Anywhere (RPA)", "Selenium", "Jenkins"]
+      "technologies": [
+        "Python",
+        "Pandas",
+        "SQL Server",
+        "PySpark",
+        "Power BI",
+        "Automation Anywhere (RPA)",
+        "Selenium",
+        "Jenkins",
+        "JavaScript",
+        "SharePoint"
+      ],
+      "category": "data"
     },
     {
       "id": "bioverse",
@@ -255,7 +731,18 @@
         "Developed serverless ETL pipelines to monitor user engagement metrics and platform activity centrally.",
         "Implemented access control policies using AWS Cognito to secure media and premium platform content."
       ],
-      "technologies": ["Next.js", "Node.js", "GraphQL", "DynamoDB", "AWS AppSync", "AWS Lambda", "Cognito", "AWS Athena", "AWS Glue"]
+      "technologies": [
+        "Next.js",
+        "Node.js",
+        "GraphQL",
+        "DynamoDB",
+        "AWS AppSync",
+        "AWS Lambda",
+        "Cognito",
+        "AWS Athena",
+        "AWS Glue"
+      ],
+      "category": "software"
     },
     {
       "id": "ve7-fullstack",
@@ -271,7 +758,18 @@
         "Trained and integrated a decision-tree ML recommendation model directly into the API for mobile catalog features.",
         "Managed successful application releases to Google Play Store and cloud production environments."
       ],
-      "technologies": ["React", "React Native", "TypeScript", "Python (Flask)", "Scikit-Learn", "Docker", "Tailwind CSS", "AWS", "GCP"]
+      "technologies": [
+        "React",
+        "React Native",
+        "TypeScript",
+        "Python (Flask)",
+        "Scikit-Learn",
+        "Docker",
+        "Tailwind CSS",
+        "AWS",
+        "GCP"
+      ],
+      "category": "software"
     },
     {
       "id": "ve7-data",
@@ -279,14 +777,25 @@
       "role": "Data Engineer",
       "period": "January 2022 – January 2023",
       "location": "Lima, Peru",
-      "scope": "Big data pipeline development and cloud provider migration.",
+      "scope": "End-to-end data engineering for Thikathani, the VE7 brand/platform: Odoo extraction, orchestration, distributed processing, governance, visualization, and migration from GCP to AWS.",
       "contributions": [
         "Automated ETL pipelines using Apache Spark (with Scala) and PySpark for high-volume data transformation.",
         "Successfully planned and executed the migration of data pipelines and storage from GCP to AWS.",
         "Implemented segmentation and clustering models to provide behavioral insights for marketing initiatives.",
         "Built interactive analytics dashboards to communicate operational KPIs across company departments."
       ],
-      "technologies": ["Apache Spark", "PySpark", "Scala", "Apache Airflow", "Hadoop", "GCP BigQuery", "AWS", "Docker"]
+      "technologies": [
+        "Apache Spark",
+        "PySpark",
+        "Scala",
+        "Apache Airflow",
+        "Hadoop",
+        "GCP BigQuery",
+        "AWS",
+        "Docker",
+        "Odoo"
+      ],
+      "category": "data"
     },
     {
       "id": "medabots",
@@ -301,19 +810,38 @@
         "Designed simulation interfaces to visualize kinematic movement and reachable boundary behavior.",
         "Co-authored 2 research papers presented and published at international conferences (CMAAE 2021 and RCAE 2021)."
       ],
-      "technologies": ["Python", "Robot Kinematics", "Workspace Simulation", "Denavit–Hartenberg", "Scientific Writing"]
+      "technologies": [
+        "Python",
+        "Robot Kinematics",
+        "Workspace Simulation",
+        "Denavit–Hartenberg",
+        "Scientific Writing"
+      ],
+      "category": "robotics"
     }
   ],
   "publications": [
     {
       "id": "cmaae-2021",
       "title": "Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation",
-      "authors": ["Deyby Huamanchahua", "Nick Soto Conde", "Jean Carlos Vasquez Frias", "Diego Lopez Meza", "Ángel E. Alvarez-Rodríguez"],
+      "authors": [
+        "Deyby Huamanchahua",
+        "Nick Soto Conde",
+        "Jean Carlos Vasquez Frias",
+        "Diego Lopez Meza",
+        "Ángel E. Alvarez-Rodríguez"
+      ],
       "year": 2021,
       "type": "Conference Paper",
       "venue": "International Conference on Mechanical, Automotive and Aerospace Engineering (CMAAE 2021)",
       "abstract": "Research focused on the kinematic analysis of a three-degree-of-freedom hip exoskeleton, including geometric modeling and workspace simulation for rehabilitation-oriented robotic applications.",
-      "keywords": ["Hip Exoskeleton", "Kinematics Analysis", "Denavit-Hartenberg", "Workspace Simulation", "Rehabilitation Robotics"],
+      "keywords": [
+        "Hip Exoskeleton",
+        "Kinematics Analysis",
+        "Denavit-Hartenberg",
+        "Workspace Simulation",
+        "Rehabilitation Robotics"
+      ],
       "url": "https://cris.utec.edu.pe/es/publications/kinematics-analysis-of-a-3dof-hip-exoskeleton-and-workspace-simul/",
       "citationIEEE": "D. Huamanchahua, N. Soto Conde, J. C. Vasquez Frias, D. Lopez Meza, and Á. E. Alvarez-Rodríguez, \"Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation,\" in Proceedings of CMAAE 2021, 2021.",
       "citationAPA": "Huamanchahua, D., Soto Conde, N., Vasquez Frias, J. C., Lopez Meza, D., & Alvarez-Rodríguez, Á. E. (2021). Kinematics Analysis of a 3DoF Hip Exoskeleton and Workspace Simulation. In Proceedings of CMAAE 2021.",
@@ -322,12 +850,24 @@
     {
       "id": "rcae-2021",
       "title": "Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review",
-      "authors": ["Deyby Huamanchahua", "Jean Carlos Vasquez-Frias", "Nick Soto-Conde", "Diego Lopez-Meza", "Angel E. Alvarez-Rodriguez"],
+      "authors": [
+        "Deyby Huamanchahua",
+        "Jean Carlos Vasquez-Frias",
+        "Nick Soto-Conde",
+        "Diego Lopez-Meza",
+        "Angel E. Alvarez-Rodriguez"
+      ],
       "year": 2021,
       "type": "Review Paper",
       "venue": "International Conference on Robotics, Control and Automation Engineering (RCAE 2021)",
       "abstract": "A review of mechatronic architectures and engineering considerations for hip rehabilitation exoskeletons, examining mechanical configurations, degrees of freedom, actuation technologies, and control-related approaches.",
-      "keywords": ["Mechatronic Exoskeletons", "Hip Rehabilitation", "Schematic Review", "Actuator Systems", "Assistive Robotics"],
+      "keywords": [
+        "Mechatronic Exoskeletons",
+        "Hip Rehabilitation",
+        "Schematic Review",
+        "Actuator Systems",
+        "Assistive Robotics"
+      ],
       "url": "https://cris.continental.edu.pe/es/publications/mechatronic-exoskeletons-for-hip-rehabilitation-a-schematic-revie/",
       "citationIEEE": "D. Huamanchahua, J. C. Vasquez-Frias, N. Soto-Conde, D. Lopez-Meza, and A. E. Alvarez-Rodriguez, \"Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review,\" in Proceedings of RCAE 2021, 2021.",
       "citationAPA": "Huamanchahua, D., Vasquez-Frias, J. C., Soto-Conde, N., Lopez-Meza, D., & Alvarez-Rodriguez, A. E. (2021). Mechatronic Exoskeletons for Hip Rehabilitation: A Schematic Review. In Proceedings of RCAE 2021.",
@@ -342,7 +882,8 @@
       "category": "Conference Service",
       "period": "2024, 2025, 2026",
       "location": "Japan",
-      "description": "Appointed to the Technical Program Committee to perform peer reviews of scientific submissions in robot kinematics, control algorithms, autonomous systems, and bio-robotic applications."
+      "description": "Appointed to the Technical Program Committee to perform peer reviews of scientific submissions in robot kinematics, control algorithms, autonomous systems, and bio-robotic applications.",
+      "shortOrganization": "ICCRE · Japan"
     },
     {
       "id": "ieee-embs-uni",
@@ -351,32 +892,15 @@
       "category": "Student & Professional Organizations",
       "period": "2021",
       "location": "Lima, Peru",
-      "description": "Directed undergraduate research activities, coordinated study sessions on biomedical signals and medical instrumentation, and facilitated student involvement in bioengineering initiatives."
-    },
-    {
-      "id": "grupo-tharsis-nasa",
-      "organization": "Grupo Tharsis — Universidad Nacional de Ingeniería (UNI)",
-      "role": "Team Member — Mechanical & Telemetry Subsystems",
-      "category": "Research Leadership & Competition",
-      "period": "2019 – 2022",
-      "location": "Lima, Peru / NASA Marshall Space Flight Center, USA",
-      "description": "Contributed to mechanical drivetrain design, geometric clearance evaluations, and telemetry instrumentation for the human-powered exploration rover in the NASA Human Exploration Rover Challenge (HERC)."
-    },
-    {
-      "id": "fim-uni-hand-prosthesis",
-      "organization": "Facultad de Ingeniería Mecánica — Universidad Nacional de Ingeniería (FIM UNI)",
-      "role": "Student Researcher & Designer",
-      "category": "Academic Engineering Project",
-      "period": "2021",
-      "location": "Lima, Peru",
-      "description": "Designed and simulated a robotic hand prosthesis prototype presented at the FIM 2021-II Engineering Projects Fair (Advisor: Ing. Oliden Martinez)."
+      "description": "Directed undergraduate research activities, coordinated study sessions on biomedical signals and medical instrumentation, and facilitated student involvement in bioengineering initiatives.",
+      "shortOrganization": "IEEE EMBS · UNI Student Branch"
     }
   ],
   "education": [
     {
       "id": "uni-mechatronics",
       "institution": "Universidad Nacional de Ingeniería (UNI)",
-      "degree": "Bachelor of Science in Mechatronics Engineering (Bachiller en Ingeniería Mecatrónica)",
+      "degree": "Bachelor's degree in Mechatronics Engineering (Bachiller en Ingeniería Mecatrónica)",
       "period": "2017 – 2022",
       "location": "Lima, Peru",
       "description": "Foundational and advanced training in control theory, robotics, mechanical design, microcontrollers, embedded programming, electronics, and digital signal processing."
@@ -391,11 +915,102 @@
     }
   ],
   "technicalSkills": {
-    "programmingLanguages": ["Python", "TypeScript", "JavaScript", "SQL", "Scala", "C / C++"],
-    "dataEngineering": ["Apache Spark", "ETL/ELT Pipelines", "Data Pipelines", "AWS EMR", "AWS Glue", "AWS Athena", "DataHub (Governance)", "Data Warehousing", "Data Integration"],
-    "cloudAndInfrastructure": ["AWS (S3, EMR, Glue, Athena, Step Functions, Lambda, AppSync, Cognito)", "GCP (BigQuery, Cloud Storage)", "Docker", "Git", "Jenkins"],
-    "softwareDevelopment": ["React", "React Native", "Next.js", "Node.js", "Python (Flask)", "GraphQL", "REST APIs", "Tailwind CSS"],
-    "roboticsAndSimulation": ["Denavit–Hartenberg Convention", "Kinematic Modeling", "Workspace Analysis", "Wolfram Mathematica", "SolidWorks", "Three.js / WebGL Simulation"],
-    "researchMethods": ["Scientific Literature Review", "Peer Review Standards", "Conference Manuscript Evaluation", "Scientific Writing", "Biomechanical Modeling"]
+    "programmingLanguages": [
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "Scala",
+      "C / C++"
+    ],
+    "dataEngineering": [
+      "Apache Spark",
+      "ETL/ELT Pipelines",
+      "Data Pipelines",
+      "AWS EMR",
+      "AWS Glue",
+      "AWS Athena",
+      "DataHub (Governance)",
+      "Data Warehousing",
+      "Data Integration"
+    ],
+    "cloudAndInfrastructure": [
+      "AWS (S3, EMR, Glue, Athena, Step Functions, Lambda, AppSync, Cognito)",
+      "GCP (BigQuery, Cloud Storage)",
+      "Docker",
+      "Git",
+      "Jenkins"
+    ],
+    "softwareDevelopment": [
+      "React",
+      "React Native",
+      "Next.js",
+      "Node.js",
+      "Python (Flask)",
+      "GraphQL",
+      "REST APIs",
+      "Tailwind CSS"
+    ],
+    "roboticsAndSimulation": [
+      "Denavit–Hartenberg Convention",
+      "Kinematic Modeling",
+      "Workspace Analysis",
+      "Wolfram Mathematica",
+      "SolidWorks",
+      "Three.js / WebGL Simulation"
+    ],
+    "researchMethods": [
+      "Scientific Literature Review",
+      "Peer Review Standards",
+      "Conference Manuscript Evaluation",
+      "Scientific Writing",
+      "Biomechanical Modeling"
+    ]
+  },
+  "academicProjects": [
+    {
+      "id": "fim-uni-hand-prosthesis",
+      "organization": "Facultad de Ingeniería Mecánica — Universidad Nacional de Ingeniería (FIM UNI)",
+      "role": "Student Researcher & Designer",
+      "category": "Academic Engineering Project",
+      "period": "2021",
+      "location": "Lima, Peru",
+      "description": "Designed and simulated a robotic hand prosthesis prototype presented at the FIM 2021-II Engineering Projects Fair (Advisor: Ing. Oliden Martinez)."
+    }
+  ],
+  "scientificContribution": {
+    "shortTitle": "Scientific Contribution",
+    "title": "Scientific Contribution & Research Leadership",
+    "focus": "Scientific review committee member, co-author of published papers, and research leader within an IEEE student branch.",
+    "introduction": "Research has shaped how I approach engineering: asking clear questions, examining prior work, making assumptions explicit, and communicating technical decisions. My contribution includes scientific peer review and research leadership within a university research community.",
+    "foundation": "Research is a pillar of my professional formation and engineering practice.",
+    "methods": [
+      {
+        "title": "Frame the problem",
+        "description": "Turn an open question into a defined problem, with clear scope and explicit assumptions."
+      },
+      {
+        "title": "Evaluate the evidence",
+        "description": "Examine prior work, models, and results to compare approaches and understand their limitations."
+      },
+      {
+        "title": "Make the work reviewable",
+        "description": "Document reasoning, communicate findings, and explain the decisions behind a technical solution."
+      }
+    ],
+    "applications": [
+      {
+        "categoryId": "data",
+        "description": "Make business definitions explicit, examine transformation assumptions, and document how information reaches its users."
+      },
+      {
+        "categoryId": "software",
+        "description": "Compare implementation alternatives, structure problems, and explain architectural choices and trade-offs."
+      },
+      {
+        "categoryId": "robotics",
+        "description": "Connect literature review, mathematical models, and simulation while keeping model assumptions and limitations visible."
+      }
+    ]
   }
 }

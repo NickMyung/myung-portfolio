@@ -3,44 +3,36 @@
 import React, { useState } from 'react';
 import { Briefcase, Calendar, Building2, MapPin, ChevronRight } from 'lucide-react';
 import portfolioData from '../../portfolio_data.json';
+import { portfolio, getCategoryLabel } from '@/lib/portfolio';
 
 export const ExperienceTimeline: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'all' | 'data' | 'software' | 'robotics'>('all');
   const { experience } = portfolioData;
 
-  const filterMapping: Record<string, 'data' | 'software' | 'robotics'> = {
-    'idm-santander': 'data',
-    'ses-santander': 'data',
-    'virutex-ilko': 'data',
-    'bioverse': 'software',
-    've7-fullstack': 'software',
-    've7-data': 'data',
-    'medabots': 'robotics',
-  };
-
   const filtered = experience.filter(
-    (exp) => activeFilter === 'all' || filterMapping[exp.id] === activeFilter
+    (exp) => activeFilter === 'all' || exp.category === activeFilter
   );
 
   return (
-    <section id="experience" className="py-20 bg-[#0b1021]/50 border-t border-slate-900">
+    <section id="experience" className="section-spacing bg-[#0b1021]/50 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
-            Career Progression
+            03 / Career progression
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
             Professional Experience
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Documented engineering responsibilities, technical scopes, and personal contributions across enterprise banking platforms, cloud data systems, and full-stack applications.
+            A trajectory across data and business automation, full-stack software, and robotics research, shaped by research methods and scientific collaboration. Explore every role or follow one area to see its progression.
           </p>
 
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-8 font-mono text-xs">
             <button
               onClick={() => setActiveFilter('all')}
+              aria-pressed={activeFilter === 'all'}
               className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
                 activeFilter === 'all'
                   ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
@@ -51,38 +43,42 @@ export const ExperienceTimeline: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('data')}
+              aria-pressed={activeFilter === 'data'}
               className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
                 activeFilter === 'data'
                   ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
               }`}
             >
-              Data Engineering
+              {getCategoryLabel('data')}
             </button>
             <button
               onClick={() => setActiveFilter('software')}
+              aria-pressed={activeFilter === 'software'}
               className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
                 activeFilter === 'software'
                   ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
               }`}
             >
-              Software Development
+              {getCategoryLabel('software')}
             </button>
             <button
               onClick={() => setActiveFilter('robotics')}
+              aria-pressed={activeFilter === 'robotics'}
               className={`px-4 py-2 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
                 activeFilter === 'robotics'
                   ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
                   : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
               }`}
             >
-              Robotics R&amp;D
+              {getCategoryLabel('robotics')}
             </button>
           </div>
         </div>
 
         {/* Experience Stream */}
+        <p className="sr-only" aria-live="polite">{filtered.length} roles shown</p>
         <div className="space-y-6 max-w-4xl mx-auto">
           {filtered.map((exp) => (
             <div
@@ -125,7 +121,7 @@ export const ExperienceTimeline: React.FC = () => {
 
               {/* Contributions */}
               <div className="space-y-2 mb-5">
-                {exp.contributions.map((point, pIdx) => (
+                {exp.contributions.slice(0, 2).map((point, pIdx) => (
                   <div key={pIdx} className="flex items-start space-x-2 text-xs sm:text-sm text-slate-300">
                     <ChevronRight className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
                     <span className="font-light">{point}</span>
@@ -133,9 +129,12 @@ export const ExperienceTimeline: React.FC = () => {
                 ))}
               </div>
 
+              {exp.contributions.length > 2 && <details className="mb-5"><summary className="cursor-pointer rounded text-xs font-medium text-cyan-300">More contributions</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-400">{exp.contributions.slice(2).map((point) => <li key={point}>{point}</li>)}</ul></details>}
+              {portfolio.projects.filter((project) => project.experienceIds.includes(exp.id)).map((project) => <a key={project.id} href={`/projects/${project.id}`} className="mb-5 inline-block rounded text-sm text-cyan-300 hover:text-cyan-100">Related case: {project.title} →</a>)}
+
               {/* Technologies */}
               <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800">
-                {exp.technologies.map((stk, sIdx) => (
+                {exp.technologies.slice(0, 6).map((stk, sIdx) => (
                   <span
                     key={sIdx}
                     className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800"
