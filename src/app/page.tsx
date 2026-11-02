@@ -1,7 +1,6 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { ProjectsShowcase } from '@/components/ProjectsShowcase';
-import { AcademicService } from '@/components/AcademicService';
 import { ExperienceTimeline } from '@/components/ExperienceTimeline';
 import { Expertise } from '@/components/Expertise';
 import { ResearchSection } from '@/components/ResearchSection';
@@ -14,7 +13,6 @@ export default function Home() {
     <main id="main-content">
       <Hero />
       <ProjectsShowcase />
-      <AcademicService />
       <ExperienceTimeline />
       <Expertise />
       <ResearchSection />

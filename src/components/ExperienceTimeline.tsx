@@ -19,13 +19,13 @@ export const ExperienceTimeline: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
-            03 / Career progression
+            02 / Career progression
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
             Professional Experience
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            A trajectory across data and business automation, full-stack software, and robotics research, shaped by research methods and scientific collaboration. Explore every role or follow one area to see its progression.
+            A trajectory across data and business automation, full-stack software, and robotics research. Explore every role or follow one area to see its progression.
           </p>
 
           {/* Filter Pills */}
