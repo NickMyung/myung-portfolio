@@ -16,7 +16,7 @@ Robotics R&D conservan sus tres categorías de proyectos. Scientific Contributio
 proyectos y la experiencia profesional. El cuarto acceso no crea una categoría
 vacía de proyectos ni convierte el servicio académico en un empleo adicional.
 
-La identidad principal continúa siendo Mechatronics Engineer. El fondo cálido,
+La identidad principal continúa siendo Mechatronics Engineering Graduate. El fondo cálido,
 las tarjetas de proyectos y sus títulos centrados en desarrollos se conservan.
 
 ## Fuente de contenido y alcance

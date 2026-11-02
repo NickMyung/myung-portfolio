@@ -1,8 +1,8 @@
 {
   "profile": {
     "name": "Nick Soto Conde",
-    "headline": "Mechatronics Engineer",
-    "professionalSummary": "I am a Mechatronics Engineer working across data and business automation, full-stack development, and robotics. Research is a foundation of my professional practice: it shapes how I formulate problems, evaluate evidence, and connect models with working systems.",
+    "headline": "Mechatronics Engineering Graduate",
+    "professionalSummary": "As a Mechatronics Engineering graduate, my work spans data engineering, full-stack development, business automation, and robotics. Guided by the elegance of research, my approach shapes how I unravel complex problems, weigh evidence, and build the bridge where abstract models take form in scalable software and physical systems.",
     "location": "Lima, Peru (Jesús María) • Available for Remote & Hybrid",
     "email": "nicksc1911@gmail.com",
     "phone": "+51 942 002 064",
@@ -900,7 +900,7 @@
     {
       "id": "uni-mechatronics",
       "institution": "Universidad Nacional de Ingeniería (UNI)",
-      "degree": "Bachelor of Science in Mechatronics Engineering (Bachiller en Ingeniería Mecatrónica)",
+      "degree": "Bachelor's degree in Mechatronics Engineering (Bachiller en Ingeniería Mecatrónica)",
       "period": "2017 – 2022",
       "location": "Lima, Peru",
       "description": "Foundational and advanced training in control theory, robotics, mechanical design, microcontrollers, embedded programming, electronics, and digital signal processing."

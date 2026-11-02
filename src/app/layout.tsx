@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     portfolio.profile.professionalSummary,
   keywords: [
     'Nick Soto Conde',
-    'Mechatronics Engineer',
+    'Mechatronics Engineering',
     'Data Engineer',
     'Business Process Automation',
     'Business Intelligence',

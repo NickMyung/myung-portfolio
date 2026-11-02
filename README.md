@@ -7,11 +7,13 @@ Las instrucciones del agente **Portfolio Architect & Evidence Curator** están e
 prompts, fichas de evidencia y mejoras concretas identificadas en el repositorio.
 
 > **Repository:** [https://github.com/NickMyung/myung-portfolio](https://github.com/NickMyung/myung-portfolio)  
-> **Positioning:** Mechatronics Engineer | Data Engineering & Business Automation | Full-Stack Development | Robotics R&D
+> **Positioning:** Mechatronics Engineering Graduate | Data Engineering & Business Automation | Full-Stack Development | Robotics R&D
 
 Multidisciplinary portfolio of **Nick Soto Conde**, presenting data engineering and business automation, full-stack development, and robotics research and development with equal visual emphasis, grounded in mechatronics engineering.
 
 The homepage follows: **Projects → Scientific Contribution → Experience → Capabilities → Robotics & Publications → Profile → Contact**. The hero presents four entry points: Data & Automation, Full-Stack, Robotics R&D, and Scientific Contribution & Research Leadership. The project catalog retains its three engineering categories and selects one featured case per area. Experience shows all roles by default. Each case has a shareable page at `/projects/[id]`, with a conceptual architecture, personal contribution, outcome, and an explanation of available material. The 3D model loads only when opened in the robotics section.
+
+Las tres variantes del resumen, la versi?n activa y el criterio para presentar el grado de bachiller se guardan en [el archivo editorial del perfil](docs/PROFILE_SUMMARY_VARIANTS.md).
 
 ### V3 visual presentation
 
