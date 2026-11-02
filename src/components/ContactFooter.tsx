@@ -129,7 +129,7 @@ export const ContactFooter: React.FC = () => {
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} {profile.name}. Bachelor in Mechatronics Engineering (UNI).
+            © {new Date().getFullYear()} {profile.name}. Bachelor's degree in Mechatronics Engineering (UNI).
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
             <span className="text-cyan-400">ICCRE Japan TPC Reviewer (2024–2026)</span>

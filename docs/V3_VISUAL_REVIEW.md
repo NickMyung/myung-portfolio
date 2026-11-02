@@ -4,7 +4,7 @@ Fecha: 1 de noviembre de 2026. Rama: `myung-portafolio-v3`, derivada de `myung-p
 
 ## Alcance
 
-Se conserva la identidad Mechatronics Engineer y la misma jerarquía para datos,
+Se conserva la identidad Mechatronics Engineering Graduate y la misma jerarquía para datos,
 full stack y robótica e I+D. Las tarjetas presentan mapas conceptuales generados
 con `projects[].flow` y resúmenes breves en `projects[].preview`. El contenido
 completo, los roles y el alcance de la evidencia permanecen en cada caso.

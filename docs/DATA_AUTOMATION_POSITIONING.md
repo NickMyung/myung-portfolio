@@ -11,7 +11,7 @@ interno de fuentes; las referencias históricas siguientes explican la procedenc
 
 ## Posicionamiento recomendado
 
-Conservar Mechatronics Engineer como profesión principal y mantener tres áreas
+Conservar Mechatronics Engineering Graduate como profesión principal y mantener tres áreas
 equivalentes: Data & Automation, Full-Stack y Robotics R&D.
 
 - Nombre corto del área: **Data & Automation**.
