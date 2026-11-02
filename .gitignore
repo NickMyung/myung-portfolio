@@ -152,3 +152,6 @@ vite.config.ts.timestamp-*
 
 # Versiones de ultimo commit
 ultimo_commit.txt
+
+.vercel
+.env*
