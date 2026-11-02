@@ -7,6 +7,14 @@ se retiraron de la portada y quedaron reservados para reutilizarlos. Los datos y
 el detalle de la sección científica se conservan. La barra de áreas se ajusta
 proporcionalmente en una sola línea. Véase [el registro de presentación](RSCH_HERO_PRESENTATION.md).
 
+El resumen del bloque 04 menciona explícitamente la pertenencia al comité de
+revisión científica y la coautoría de papers publicados sobre robótica y
+rehabilitación. Se apoya en el cargo existente `academicService[id=iccre-japan-tpc]`,
+las publicaciones `cmaae-2021` y `rcae-2021` y la petición del propietario del
+2026-11-02. No se añaden métricas de revisión ni autoría individual; los registros
+bibliográficos y su orden de autores permanecen intactos. Esta edición no supone
+una nueva verificación externa de las publicaciones.
+
 ## Petición y estructura
 
 El propietario solicitó un cuarto bloque principal de contribución científica,
