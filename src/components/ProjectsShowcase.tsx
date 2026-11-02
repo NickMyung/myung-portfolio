@@ -6,8 +6,10 @@ import { getProjectsForArea, getAreaStyle, projectCategories } from '@/lib/portf
 import { ProjectCard } from '@/components/ProjectCard';
 import { Reveal } from '@/components/Reveal';
 import { AreaOverview } from '@/components/AreaOverview';
+import type { PortfolioVersion } from '@/types';
+import { DEFAULT_PORTFOLIO_VERSION, getPresentation } from '@/lib/portfolio-versions';
 
-export function ProjectsShowcase() {
+export function ProjectsShowcase({ version = DEFAULT_PORTFOLIO_VERSION }: { version?: PortfolioVersion }) {
   const [selection, setSelection] = useState('featured');
   const pendingAreaScroll = useRef(false);
   const tabs = [{ id: 'featured', label: 'Selected work' }, ...projectCategories, { id: 'all', label: 'All projects' }];
@@ -58,7 +60,7 @@ export function ProjectsShowcase() {
         <Reveal className="max-w-2xl">
           <p className="section-eyebrow">01 / Selected work</p>
           <h2 className="section-title">Across disciplines. One engineering perspective.</h2>
-          <p className="section-description">Explore data and business automation, full-stack software, and robotics. A research foundation connects how I frame problems, examine assumptions, and document decisions across these disciplines.</p>
+          <p className="section-description">{getPresentation(version).projectsDescription}</p>
         </Reveal>
         <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter projects">
           {tabs.map((tab) => <button type="button" key={tab.id} onClick={() => selectArea(tab.id)} aria-pressed={selection === tab.id} className={`rounded-full border px-4 py-2.5 text-xs transition-colors ${selection === tab.id ? 'border-cyan-400 bg-cyan-400 text-slate-950' : 'border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-600 hover:text-white'}`}>{tab.label}</button>)}
@@ -75,7 +77,7 @@ export function ProjectsShowcase() {
               </header>
               {singleArea && area.overview && <AreaOverview overview={area.overview} projects={area.available} />}
               <div className={`mt-4 grid flex-1 gap-5 ${singleArea ? 'md:grid-cols-2 xl:grid-cols-3' : ''}`}>
-                {area.visible.map((project, index) => <Reveal key={project.id} delay={index * 70} className="h-full"><ProjectCard project={project} /></Reveal>)}
+                {area.visible.map((project, index) => <Reveal key={project.id} delay={index * 70} className="h-full"><ProjectCard project={project} version={version} /></Reveal>)}
               </div>
               {selection === 'featured' && <button type="button" onClick={() => selectArea(area.id, true)} className={`mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm hover:bg-slate-900 ${style.border} ${style.text}`}>Explore {area.label} ({area.available.length})<ArrowRight className="h-4 w-4" aria-hidden="true" /></button>}
             </section>;

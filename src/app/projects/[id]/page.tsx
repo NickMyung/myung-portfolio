@@ -8,6 +8,7 @@ import { ProjectLinks } from '@/components/ProjectLinks';
 import { Reveal } from '@/components/Reveal';
 import { BusinessContext } from '@/components/BusinessContext';
 import { getProject, getCategoryLabel, portfolio } from '@/lib/portfolio';
+import { resolvePortfolioVersion, withPortfolioVersion, type VersionSearchParams } from '@/lib/portfolio-versions';
 
 export function generateStaticParams() {
   return portfolio.projects.map((project) => ({ id: project.id }));
@@ -19,7 +20,8 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   return { title: `${project.title} | ${portfolio.profile.name}`, description: project.summary, openGraph: { title: project.title, description: project.summary, type: 'article', url: `/projects/${project.id}` } };
 }
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+export default function ProjectPage({ params, searchParams }: { params: { id: string }; searchParams: VersionSearchParams }) {
+  const version = resolvePortfolioVersion(searchParams.version);
   const project = getProject(params.id);
   if (!project) notFound();
   const experience = portfolio.experience.filter((item) => project.experienceIds.includes(item.id));
@@ -33,9 +35,9 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     { title: 'Outcome', text: project.results },
   ];
   return <>
-    <Navbar />
-    <main id="main-content" className="mx-auto max-w-7xl px-4 pb-20 pt-32 sm:px-6 sm:pt-40 lg:px-8">
-      <a href={project.business ? `/#projects-${project.category}` : '/#projects'} className="inline-flex items-center gap-2 rounded text-sm text-slate-400 hover:text-cyan-200"><ArrowLeft className="h-4 w-4" aria-hidden="true" />{project.business ? `${getCategoryLabel(project.category)} cases` : 'All projects'}</a>
+    <Navbar version={version} />
+    <main id="main-content" data-portfolio-version={version} className="portfolio-case mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <a href={withPortfolioVersion(project.business ? `/#projects-${project.category}` : '/#projects', version)} className="inline-flex items-center gap-2 rounded text-sm text-slate-400 hover:text-cyan-200"><ArrowLeft className="h-4 w-4" aria-hidden="true" />{project.business ? `${getCategoryLabel(project.category)} cases` : 'All projects'}</a>
       <Reveal className="mb-10 mt-9 max-w-4xl"><header>
         <p className="section-eyebrow">{getCategoryLabel(project.category)} / {project.period}</p>
         <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">{project.title}</h1>
@@ -55,12 +57,12 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           {experience.length > 0 && <div>
             <h2 className="text-sm font-semibold text-white">Related experience</h2>
             {!project.business && <ul className="mt-3 space-y-4">{experience.map((item) => <li key={item.id} className="text-xs"><p className="text-slate-200">{item.organization}{item.client ? ` · Client: ${item.client}` : ''}</p><p className="mt-1 text-slate-500">{item.period}</p></li>)}</ul>}
-            <a href="/#experience" className="mt-4 inline-flex items-center gap-2 text-xs text-cyan-300">Career timeline<ArrowUpRight className="h-3 w-3" aria-hidden="true" /></a>
+            <a href={withPortfolioVersion('/#experience', version)} className="mt-4 inline-flex items-center gap-2 text-xs text-cyan-300">Career timeline<ArrowUpRight className="h-3 w-3" aria-hidden="true" /></a>
           </div>}
           {publications.length > 0 && <div><h2 className="text-sm font-semibold text-white">Related publications</h2>{publications.map((publication) => <a key={publication.id} href={publication.url} target="_blank" rel="noreferrer" className="mt-3 block text-xs leading-relaxed text-cyan-300 hover:text-cyan-100">{publication.title} ({publication.year})<span className="sr-only"> (opens in a new tab)</span></a>)}</div>}
         </aside>
       </div>
     </main>
-    <ContactFooter />
+    <ContactFooter version={version} />
   </>;
 }

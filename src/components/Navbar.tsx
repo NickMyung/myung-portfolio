@@ -3,10 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Menu, X, Github, Linkedin } from 'lucide-react';
 import { portfolio } from '@/lib/portfolio';
+import type { PortfolioVersion } from '@/types';
+import { DEFAULT_PORTFOLIO_VERSION, withPortfolioVersion } from '@/lib/portfolio-versions';
+import { VersionSwitcher } from '@/components/VersionSwitcher';
 
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC<{ version?: PortfolioVersion }> = ({ version = DEFAULT_PORTFOLIO_VERSION }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => setMobileMenuOpen(false), [version]);
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -31,11 +36,11 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Projects', href: '/#projects' },
-    { name: 'Science', href: '/#academic-service' },
+    ...(version === 'rsch' ? [{ name: 'Science', href: '/#academic-service' }] : []),
     { name: 'Experience', href: '/#experience' },
-    { name: 'Robotics', href: '/#research' },
+    { name: version === 'rsch' ? 'Robotics' : 'Research', href: '/#research' },
     { name: 'Profile', href: '/#about' },
-  ];
+  ].map((link) => ({ ...link, href: withPortfolioVersion(link.href, version) }));
 
   return (
     <nav
@@ -50,7 +55,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo / Identity */}
           <a
-            href="/#top"
+            href={withPortfolioVersion('/#top', version)}
             className="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-1"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px] transition-transform group-hover:scale-105">
@@ -102,7 +107,7 @@ export const Navbar: React.FC = () => {
             </a>
 
             <a
-              href="/#contact"
+              href={withPortfolioVersion('/#contact', version)}
               className="flex items-center space-x-1.5 px-4 py-2 rounded-xl font-semibold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-md shadow-cyan-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400"
             >
               <Mail className="w-3.5 h-3.5" />
@@ -171,6 +176,7 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
       )}
+      <VersionSwitcher version={version} />
     </nav>
   );
 };

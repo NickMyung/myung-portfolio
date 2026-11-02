@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import { Briefcase, Calendar, Building2, MapPin, ChevronRight } from 'lucide-react';
 import portfolioData from '../../portfolio_data.json';
 import { portfolio, getCategoryLabel } from '@/lib/portfolio';
+import type { PortfolioVersion } from '@/types';
+import { DEFAULT_PORTFOLIO_VERSION, getPresentation, sectionNumber, withPortfolioVersion } from '@/lib/portfolio-versions';
 
-export const ExperienceTimeline: React.FC = () => {
+export const ExperienceTimeline: React.FC<{ version?: PortfolioVersion }> = ({ version = DEFAULT_PORTFOLIO_VERSION }) => {
   const [activeFilter, setActiveFilter] = useState<'all' | 'data' | 'software' | 'robotics'>('all');
   const { experience } = portfolioData;
 
@@ -19,13 +21,13 @@ export const ExperienceTimeline: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold">
-            03 / Career progression
+            {sectionNumber(version, 'experience')} / Career progression
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
             Professional Experience
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            A trajectory across data and business automation, full-stack software, and robotics research, shaped by research methods and scientific collaboration. Explore every role or follow one area to see its progression.
+            {getPresentation(version).careerDescription}
           </p>
 
           {/* Filter Pills */}
@@ -130,7 +132,7 @@ export const ExperienceTimeline: React.FC = () => {
               </div>
 
               {exp.contributions.length > 2 && <details className="mb-5"><summary className="cursor-pointer rounded text-xs font-medium text-cyan-300">More contributions</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-400">{exp.contributions.slice(2).map((point) => <li key={point}>{point}</li>)}</ul></details>}
-              {portfolio.projects.filter((project) => project.experienceIds.includes(exp.id)).map((project) => <a key={project.id} href={`/projects/${project.id}`} className="mb-5 inline-block rounded text-sm text-cyan-300 hover:text-cyan-100">Related case: {project.title} →</a>)}
+              {portfolio.projects.filter((project) => project.experienceIds.includes(exp.id)).map((project) => <a key={project.id} href={withPortfolioVersion(`/projects/${project.id}`, version)} className="mb-5 inline-block rounded text-sm text-cyan-300 hover:text-cyan-100">Related case: {project.title} →</a>)}
 
               {/* Technologies */}
               <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800">

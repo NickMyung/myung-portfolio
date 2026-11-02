@@ -7,19 +7,21 @@ import { Expertise } from '@/components/Expertise';
 import { ResearchSection } from '@/components/ResearchSection';
 import { About } from '@/components/About';
 import { ContactFooter } from '@/components/ContactFooter';
+import { resolvePortfolioVersion, type VersionSearchParams } from '@/lib/portfolio-versions';
 
-export default function Home() {
+export default function Home({ searchParams }: { searchParams: VersionSearchParams }) {
+  const version = resolvePortfolioVersion(searchParams.version);
   return <>
-    <Navbar />
-    <main id="main-content">
-      <Hero />
-      <ProjectsShowcase />
-      <AcademicService />
-      <ExperienceTimeline />
-      <Expertise />
-      <ResearchSection />
-      <About />
+    <Navbar version={version} />
+    <main id="main-content" data-portfolio-version={version}>
+      <Hero version={version} />
+      <ProjectsShowcase version={version} />
+      {version === 'rsch' && <AcademicService />}
+      <ExperienceTimeline version={version} />
+      <Expertise version={version} />
+      <ResearchSection version={version} />
+      <About version={version} />
     </main>
-    <ContactFooter />
+    <ContactFooter version={version} />
   </>;
 }

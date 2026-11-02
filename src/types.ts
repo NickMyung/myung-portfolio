@@ -1,3 +1,15 @@
+export type PortfolioVersion = 'v3' | 'rsch';
+
+export interface PortfolioPresentation {
+  projectsDescription: string;
+  capabilitiesTitle: string;
+  capabilitiesDescription: string;
+  careerDescription: string;
+  researchDescription: string;
+  aboutPractice: string;
+  about?: Profile['about'];
+}
+
 export interface Profile {
   name: string;
   headline: string;
@@ -164,6 +176,7 @@ export interface TechnicalSkills {
 }
 
 export interface PortfolioData {
+  presentations: Record<PortfolioVersion, PortfolioPresentation>;
   profile: Profile;
   expertise: ExpertiseItem[];
   projects: ProjectItem[];

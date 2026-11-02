@@ -4,12 +4,14 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { portfolio, projectCategories, getAreaStyle } from '@/lib/portfolio';
 import { Reveal } from '@/components/Reveal';
+import type { PortfolioVersion } from '@/types';
+import { DEFAULT_PORTFOLIO_VERSION } from '@/lib/portfolio-versions';
 
-const heroAreaLabel = [...projectCategories.map((area) => area.label), portfolio.scientificContribution.shortTitle].join(' · ');
-
-export const Hero: React.FC = () => {
+export const Hero: React.FC<{ version?: PortfolioVersion }> = ({ version = DEFAULT_PORTFOLIO_VERSION }) => {
+  const research = version === 'rsch';
+  const heroAreaLabel = [...projectCategories.map((area) => area.label), ...(research ? [portfolio.scientificContribution.shortTitle] : [])].join(' · ');
   return (
-    <section id="top" className="relative pt-28 sm:pt-36 pb-20 sm:pb-24 lg:pb-32 overflow-hidden bg-grid-pattern">
+    <section id="top" className="portfolio-hero relative pb-20 sm:pb-24 lg:pb-32 overflow-hidden bg-grid-pattern">
       {/* Background Radial Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none" />
@@ -56,7 +58,7 @@ export const Hero: React.FC = () => {
           </Reveal>
         </div>
 
-          <div className="grid grid-cols-1 gap-3 text-left sm:grid-cols-2 xl:grid-cols-4 md:gap-4" aria-label="Four pillars of professional practice">
+          <div className={`grid grid-cols-1 gap-3 text-left md:gap-4 ${research ? 'sm:grid-cols-2 xl:grid-cols-4' : 'md:grid-cols-3'}`} aria-label={research ? 'Four pillars of professional practice' : 'Three engineering areas'}>
             {projectCategories.map((area, index) => {
               const style = getAreaStyle(area.id);
               const cardColors = area.id === 'robotics' ? 'border-emerald-900/50 bg-emerald-950/[0.12]' : area.id === 'software' ? 'border-violet-900/50 bg-violet-950/[0.12]' : `${style.border} ${style.surface}`;
@@ -65,10 +67,10 @@ export const Hero: React.FC = () => {
                 <div><h2 className="text-sm font-semibold leading-snug text-white">{area.title}</h2><p className="mt-2 text-xs leading-relaxed text-slate-400">{area.description}</p><span className={`mt-3 inline-flex items-center gap-2 text-xs ${style.text}`}>Explore projects<ArrowRight className="h-3 w-3" aria-hidden="true" /></span></div>
               </a></Reveal>;
             })}
-            <Reveal delay={330} className="h-full"><a href="#academic-service" className="hero-area group flex h-full gap-4 rounded-xl border border-[#a67d89]/[0.342] bg-[#a67d89]/[0.0684] p-4 hover:bg-slate-900/80 md:flex-col md:p-5">
+            {research && <Reveal delay={330} className="h-full"><a href="#academic-service" className="hero-area group flex h-full gap-4 rounded-xl border border-[#a67d89]/[0.342] bg-[#a67d89]/[0.0684] p-4 hover:bg-slate-900/80 md:flex-col md:p-5">
               <span className="font-mono text-xs text-[#d1a6b3]/[0.855]">04</span>
               <div><h2 className="text-sm font-semibold leading-snug text-white">{portfolio.scientificContribution.title}</h2><p className="mt-2 text-xs leading-relaxed text-slate-400">{portfolio.scientificContribution.focus}</p><span className="mt-3 inline-flex items-center gap-2 text-xs text-[#d1a6b3]/[0.855]">Explore scientific contribution<ArrowRight className="h-3 w-3" aria-hidden="true" /></span></div>
-            </a></Reveal>
+            </a></Reveal>}
           </div>
       </div>
     </section>

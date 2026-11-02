@@ -15,9 +15,13 @@ The homepage follows: **Projects → Scientific Contribution → Experience → 
 
 Las tres variantes del resumen, la versión activa y el criterio para presentar el grado de bachiller se guardan en [el archivo editorial del perfil](docs/PROFILE_SUMMARY_VARIANTS.md).
 
-### V3 visual presentation
+### Version selector on main
 
-Scientific contribution is a fourth pillar in the introduction. The hero area badge scales proportionally to stay on one line. The compact scientific-review and research-director cards have been removed from the hero and reserved for future placement, with their data preserved in `academicService`; see [the hero presentation record](docs/RSCH_HERO_PRESENTATION.md). Their details appear at `#academic-service`, before professional experience; the Science navigation item and fourth hero card link there. `scientificContribution` supplies the editorial introduction, shared research methods, and their applications to the three engineering disciplines. Official roles, dates, affiliations, and publication metadata remain separate from this first-person narrative. See [the scientific positioning record](docs/SCIENTIFIC_CONTRIBUTION_POSITIONING.md).
+`main` includes both portfolio presentations in one Next.js application. The horizontal **V3 / RSCH** selector in the navigation keeps the selection in the URL, including case-study links, reloads, and browser history. Use `/?version=v3` for the three-area presentation or `/?version=rsch` for the four-pillar research presentation; RSCH is the default. The standalone v3 branch has been aligned with its comparison view. See [the version-selector guide](docs/PORTFOLIO_VERSION_SWITCHER.md) for the content sources and checks.
+
+### RSCH visual presentation
+
+In RSCH, scientific contribution is a fourth pillar in the introduction. The hero area badge scales proportionally to stay on one line. The compact scientific-review and research-director cards have been removed from the hero and reserved for future placement, with their data preserved in `academicService`; see [the hero presentation record](docs/RSCH_HERO_PRESENTATION.md). Their details appear at `#academic-service`, before professional experience; the Science navigation item and fourth hero card link there. `scientificContribution` supplies the editorial introduction, shared research methods, and their applications to the three engineering disciplines. Official roles, dates, affiliations, and publication metadata remain separate from this first-person narrative. See [the scientific positioning record](docs/SCIENTIFIC_CONTRIBUTION_POSITIONING.md).
 
 Project cards use conceptual system maps generated from each project's existing `flow`, with equal layouts and cyan, violet, and emerald accents for the three disciplines. These diagrams are editorial illustrations, not original project screenshots, CAD drawings, or proof of a production architecture. Full project context and evidence remain on the case pages.
 

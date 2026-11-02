@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, Copy, Check, ExternalLink, Linkedin, Github, Send } from 'lucide-react';
 import portfolioData from '../../portfolio_data.json';
+import type { PortfolioVersion } from '@/types';
+import { DEFAULT_PORTFOLIO_VERSION } from '@/lib/portfolio-versions';
 
-export const ContactFooter: React.FC = () => {
+export const ContactFooter: React.FC<{ version?: PortfolioVersion }> = ({ version = DEFAULT_PORTFOLIO_VERSION }) => {
   const [copied, setCopied] = useState(false);
   const { profile } = portfolioData;
 
@@ -30,7 +32,7 @@ export const ContactFooter: React.FC = () => {
               Let’s build across <strong>data engineering and business automation</strong>, <strong>full-stack development</strong>, and <strong>robotics research</strong>. I welcome projects in each area and collaborations connecting business processes, data, software, and physical systems.
             </p>
 
-            <p className="mb-6 max-w-xl text-sm leading-relaxed text-slate-400">My research background also connects this practice with scientific review, research leadership, and academic collaboration.</p>
+            {version === 'rsch' && <p className="mb-6 max-w-xl text-sm leading-relaxed text-slate-400">My research background also connects this practice with scientific review, research leadership, and academic collaboration.</p>}
 
             <div className="flex flex-wrap gap-4 font-mono text-xs sm:text-sm">
               <a

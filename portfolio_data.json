@@ -1012,5 +1012,29 @@
         "description": "Connect literature review, mathematical models, and simulation while keeping model assumptions and limitations visible."
       }
     ]
+  },
+  "presentations": {
+    "v3": {
+      "projectsDescription": "Explore data and business automation, full-stack software, and robotics. Each area brings its own problems, methods, and evidence, connected by a mechatronics foundation.",
+      "capabilitiesTitle": "Different methods. Connected thinking.",
+      "capabilitiesDescription": "Explore the practice behind all three areas: connecting data with business workflows, building software products, and modeling robotic systems.",
+      "careerDescription": "A trajectory across data and business automation, full-stack software, and robotics research. Explore every role or follow one area to see its progression.",
+      "researchDescription": "Robotics research connects kinematic modeling, computational tools, and physical prototypes. Explore the publications, methods, and interactive model behind this area of my work.",
+      "aboutPractice": "A multidisciplinary practice.",
+      "about": {
+        "professionalBackground": "My background combines Mechatronics Engineering at UNI and specialized Big Data studies at UTEC with professional experience in data engineering and business automation, full-stack development, and robotics research. In data, I work with the needs of finance, commercial, and operations teams alongside platform and workflow implementation.",
+        "engineeringApproach": "I solve technical problems using an engineering approach grounded in first principles: integrating mathematical kinematics, robust distributed data processing, and maintainable software architecture. I prioritize building reliable, well-tested, and maintainable systems over fragile complexity.",
+        "researchInterests": "Robotics engineering, lower-limb rehabilitation exoskeletons, forward and inverse kinematic modeling via Denavit–Hartenberg conventions, workspace characterization, and biomedical engineering applications.",
+        "careerFocus": "Building across three engineering areas: data platforms and business automation, full-stack software systems, and robotics research and development. I am interested in projects within each area and in the connections between them."
+      }
+    },
+    "rsch": {
+      "projectsDescription": "Explore data and business automation, full-stack software, and robotics. A research foundation connects how I frame problems, examine assumptions, and document decisions across these disciplines.",
+      "capabilitiesTitle": "Different disciplines. A shared research foundation.",
+      "capabilitiesDescription": "Research shapes how I frame questions, assess evidence, and explain decisions across data, software, and robotic systems.",
+      "careerDescription": "A trajectory across data and business automation, full-stack software, and robotics research, shaped by research methods and scientific collaboration. Explore every role or follow one area to see its progression.",
+      "researchDescription": "Robotics research connects kinematic modeling, computational tools, and physical prototypes. This work is part of the research foundation I bring to data and software engineering. Explore the publications, methods, and interactive model behind it.",
+      "aboutPractice": "A research-informed practice."
+    }
   }
 }
