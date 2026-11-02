@@ -4,25 +4,14 @@
 
 @layer base {
   :root {
-    /* Original #070a12 blended with approximately 10% white. */
-    --portfolio-background: #20232a;
+    /* Original background from main. */
+    --portfolio-background: #070a12;
   }
   body {
     @apply text-slate-100 antialiased overflow-x-hidden;
     background-color: var(--portfolio-background);
     position: relative;
     isolation: isolate;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse at 8% 15%, rgba(196, 181, 253, 0.09), transparent 65%),
-      radial-gradient(ellipse at 95% 48%, rgba(216, 180, 254, 0.075), transparent 65%),
-      radial-gradient(ellipse at 35% 100%, rgba(221, 214, 254, 0.055), transparent 60%);
   }
   section[id], footer[id], div[id="simulator"] {
     scroll-margin-top: 6.5rem;
