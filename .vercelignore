@@ -1,0 +1,9 @@
+# Local review builds and frozen review packages are not application assets.
+.next-review/
+output/
+ultimo_commit.txt
+
+# Local environment files are not needed by this portfolio.
+.env
+.env.*
+!.env.example
