@@ -2,6 +2,11 @@
 
 Fecha: 1 de noviembre de 2026. Rama: `myung-portafolio-v3`.
 
+Actualización de RSCH, 2026-11-02: los dos bloques compactos de cargos académicos
+se retiraron de la portada y quedaron reservados para reutilizarlos. Los datos y
+el detalle de la sección científica se conservan. La barra de áreas se ajusta
+proporcionalmente en una sola línea. Véase [el registro de presentación](RSCH_HERO_PRESENTATION.md).
+
 ## Petición y estructura
 
 El propietario solicitó un cuarto bloque principal de contribución científica,

@@ -5,6 +5,8 @@ import { ArrowRight } from 'lucide-react';
 import { portfolio, projectCategories, getAreaStyle } from '@/lib/portfolio';
 import { Reveal } from '@/components/Reveal';
 
+const heroAreaLabel = [...projectCategories.map((area) => area.label), portfolio.scientificContribution.shortTitle].join(' · ');
+
 export const Hero: React.FC = () => {
   return (
     <section id="top" className="relative pt-28 sm:pt-36 pb-20 sm:pb-24 lg:pb-32 overflow-hidden bg-grid-pattern">
@@ -16,9 +18,11 @@ export const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <Reveal>
           {/* Professional Identity Badge */}
-          <div className="inline-flex max-w-full items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-left text-xs font-mono text-cyan-300 mb-6 backdrop-blur-md">
-            <span className="w-2 h-2 shrink-0 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="min-w-0 leading-relaxed">{[...projectCategories.map((area) => area.label), portfolio.scientificContribution.shortTitle].join(' · ')}</span>
+          <div className="hero-badge-container mb-8 sm:mb-10">
+            <div className="hero-area-badge rounded-full bg-slate-900/90 border border-cyan-500/30 text-left font-mono text-cyan-300 backdrop-blur-md" style={{ '--hero-badge-units': heroAreaLabel.length * 0.6 + 4 } as React.CSSProperties}>
+              <span className="hero-area-badge-dot shrink-0 rounded-full bg-cyan-400 animate-pulse" aria-hidden="true" />
+              <span>{heroAreaLabel}</span>
+            </div>
           </div>
 
           {/* Name */}
@@ -35,10 +39,6 @@ export const Hero: React.FC = () => {
           <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
             {portfolio.profile.professionalSummary}
           </p>
-
-          <ul className="mb-8 grid gap-3 text-left sm:grid-cols-2" aria-label="Scientific review and research leadership">
-            {portfolio.academicService.map((item) => <li key={item.id} className="rounded-xl border border-rose-900/40 bg-slate-950/40 px-4 py-3"><p className="text-xs font-medium leading-relaxed text-rose-200">{item.role}</p><p className="mt-1 text-[11px] text-slate-400">{item.shortOrganization} · {item.period}</p></li>)}
-          </ul>
 
           </Reveal>
           <Reveal delay={80}>
@@ -59,14 +59,15 @@ export const Hero: React.FC = () => {
           <div className="grid grid-cols-1 gap-3 text-left sm:grid-cols-2 xl:grid-cols-4 md:gap-4" aria-label="Four pillars of professional practice">
             {projectCategories.map((area, index) => {
               const style = getAreaStyle(area.id);
-              return <Reveal key={area.id} delay={index * 70 + 120} className="h-full"><a href={`#projects-${area.id}`} className={`hero-area group flex h-full gap-4 rounded-xl border p-4 hover:bg-slate-900/80 md:flex-col md:p-5 ${style.border} ${style.surface}`}>
+              const cardColors = area.id === 'robotics' ? 'border-emerald-900/50 bg-emerald-950/[0.12]' : area.id === 'software' ? 'border-violet-900/50 bg-violet-950/[0.12]' : `${style.border} ${style.surface}`;
+              return <Reveal key={area.id} delay={index * 70 + 120} className="h-full"><a href={`#projects-${area.id}`} className={`hero-area group flex h-full gap-4 rounded-xl border p-4 hover:bg-slate-900/80 md:flex-col md:p-5 ${cardColors}`}>
                 <span className={`font-mono text-xs ${style.text}`}>0{index + 1}</span>
                 <div><h2 className="text-sm font-semibold leading-snug text-white">{area.title}</h2><p className="mt-2 text-xs leading-relaxed text-slate-400">{area.description}</p><span className={`mt-3 inline-flex items-center gap-2 text-xs ${style.text}`}>Explore projects<ArrowRight className="h-3 w-3" aria-hidden="true" /></span></div>
               </a></Reveal>;
             })}
-            <Reveal delay={330} className="h-full"><a href="#academic-service" className="hero-area group flex h-full gap-4 rounded-xl border border-rose-900/70 bg-rose-950/20 p-4 hover:bg-slate-900/80 md:flex-col md:p-5">
-              <span className="font-mono text-xs text-rose-300">04</span>
-              <div><h2 className="text-sm font-semibold leading-snug text-white">{portfolio.scientificContribution.title}</h2><p className="mt-2 text-xs leading-relaxed text-slate-400">{portfolio.scientificContribution.focus}</p><span className="mt-3 inline-flex items-center gap-2 text-xs text-rose-300">Explore scientific contribution<ArrowRight className="h-3 w-3" aria-hidden="true" /></span></div>
+            <Reveal delay={330} className="h-full"><a href="#academic-service" className="hero-area group flex h-full gap-4 rounded-xl border border-[#a67d89]/[0.342] bg-[#a67d89]/[0.0684] p-4 hover:bg-slate-900/80 md:flex-col md:p-5">
+              <span className="font-mono text-xs text-[#d1a6b3]/[0.855]">04</span>
+              <div><h2 className="text-sm font-semibold leading-snug text-white">{portfolio.scientificContribution.title}</h2><p className="mt-2 text-xs leading-relaxed text-slate-400">{portfolio.scientificContribution.focus}</p><span className="mt-3 inline-flex items-center gap-2 text-xs text-[#d1a6b3]/[0.855]">Explore scientific contribution<ArrowRight className="h-3 w-3" aria-hidden="true" /></span></div>
             </a></Reveal>
           </div>
       </div>
