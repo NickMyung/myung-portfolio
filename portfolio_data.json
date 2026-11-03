@@ -207,7 +207,11 @@
           "label": "Workspace",
           "detail": "End-effector positions and point-cloud visualization"
         }
-      ]
+      ],
+      "context": {
+        "industry": "Rehabilitation robotics",
+        "audience": "Robotics & rehabilitation researchers"
+      }
     },
     {
       "id": "santander-data-platform",
@@ -586,7 +590,11 @@
           "label": "Recommendations",
           "detail": "Decision-tree model inference"
         }
-      ]
+      ],
+      "context": {
+        "industry": "Agriculture & distribution",
+        "audience": "Commercial teams & agricultural distributors"
+      }
     },
     {
       "id": "nasa-rover-tharsis",
@@ -636,7 +644,11 @@
           "label": "Telemetry",
           "detail": "Sensor instrumentation with the team"
         }
-      ]
+      ],
+      "context": {
+        "industry": "Space exploration robotics",
+        "audience": "University rover engineering teams"
+      }
     }
   ],
   "experience": [

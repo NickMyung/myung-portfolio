@@ -53,6 +53,10 @@ export interface ProjectItem {
   title: string;
   category: string;
   summary: string;
+  context?: {
+    industry: string;
+    audience: string;
+  };
   preview?: {
     title: string;
     problem: string;
