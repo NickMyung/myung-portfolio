@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, '..');
 const ref = process.argv[2] || 'myung-portafolio-menu';
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
 const commit = git('rev-parse', '--verify', ref + '^{commit}').trim();
-const read = file => git('show', commit + ':' + file);
+const read = file => git('show', commit + ':' + file).replace(/\r\n/g, '\n');
 const sourceData = JSON.parse(read('portfolio_data.json'));
 const sharedData = JSON.parse(fs.readFileSync(path.join(root, 'portfolio_data.json'), 'utf8'));
 for (const key of Object.keys(sourceData)) assert.deepEqual(sharedData[key], sourceData[key], 'Shared editorial data differs: ' + key);

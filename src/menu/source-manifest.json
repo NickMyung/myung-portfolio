@@ -96,8 +96,8 @@
     {
       "source": "src/components/ExoskeletonWorkspace3D.tsx",
       "destination": "src/menu/components/ExoskeletonWorkspace3D.tsx",
-      "sourceSha256": "018a153dc6241ad566ae51247aa1300a92250e6a584607729cd58c217144580d",
-      "sha256": "018a153dc6241ad566ae51247aa1300a92250e6a584607729cd58c217144580d"
+      "sourceSha256": "1c3254c1ac6ab61d7853ad176ee8dec5ed46a0bd00bb840b3e84c85af32e8afb",
+      "sha256": "1c3254c1ac6ab61d7853ad176ee8dec5ed46a0bd00bb840b3e84c85af32e8afb"
     },
     {
       "source": "src/components/ExperienceTimeline.tsx",
@@ -240,7 +240,7 @@
     {
       "source": "src/app/globals.css",
       "destination": "src/menu/menu.css",
-      "sourceSha256": "844fd95f9018aa6f79129f86c9706762ef208e1e0e5df24f290d8fb650070d1b",
+      "sourceSha256": "40e3201d582d23d3444b04943c93a24ccca0009e7c5578c141b33a0d6afa17df",
       "sha256": "a3dc18394692174e0d521ddf06d1cb88069d2971f782b77caef8cb6597238c71"
     }
   ]
