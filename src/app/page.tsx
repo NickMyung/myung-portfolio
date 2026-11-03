@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
+import { PersonalProjects } from '@/components/PersonalProjects';
 import { ProjectsShowcase } from '@/components/ProjectsShowcase';
 import { AcademicService } from '@/components/AcademicService';
 import { ExperienceTimeline } from '@/components/ExperienceTimeline';
@@ -16,6 +17,7 @@ export default function Home({ searchParams }: { searchParams: VersionSearchPara
     <main id="main-content" data-portfolio-version={version}>
       <Hero version={version} />
       <ProjectsShowcase version={version} />
+      <PersonalProjects version={version} />
       {version === 'rsch' && <AcademicService />}
       <ExperienceTimeline version={version} />
       <Expertise version={version} />

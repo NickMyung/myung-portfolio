@@ -31,7 +31,23 @@ for (const [version, pillars] of [['v3', 3], ['rsch', 4]]) {
     assert.ok(html.includes(`href="/?version=${version}#projects"`));
     assert.ok(html.includes(`href="/?version=${version}#experience"`));
   });
+
+  test(`${version}: personal study is discoverable and keeps its concept status and return path`, async () => {
+    const home = await page(`/?version=${version}`);
+    const section = home.split('id="personal-projects"')[1].split('</section>')[0];
+    assert.ok(section.includes('Research concept'));
+    assert.ok(section.includes(`/personal-projects/kpop-role-atlas?version=${version}`));
+    const study = await page(`/personal-projects/kpop-role-atlas?version=${version}`);
+    assert.ok(study.includes(`data-portfolio-version="${version}"`));
+    assert.ok(study.includes(`href="/?version=${version}#personal-projects"`));
+    assert.ok(study.includes('does not report a collected dataset'));
+    assert.ok(study.includes('Interpretation matters'));
+  });
 }
+
+test('unknown personal project returns 404', async () => {
+  assert.equal((await fetch(new URL('/personal-projects/does-not-exist', base))).status, 404);
+});
 
 test('default and unknown version use RSCH', async () => {
   for (const path of ['/', '/?version=unknown']) {
