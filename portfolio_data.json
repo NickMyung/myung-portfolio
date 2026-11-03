@@ -987,5 +987,90 @@
       "location": "Lima, Peru",
       "description": "Designed and simulated a robotic hand prosthesis prototype presented at the FIM 2021-II Engineering Projects Fair (Advisor: Ing. Oliden Martinez)."
     }
+  ],
+  "personalProjects": [
+    {
+      "id": "kpop-role-atlas",
+      "title": "K-pop Role Atlas",
+      "status": "Research concept",
+      "summary": "A proposed data-driven website exploring how member roles and performance participation have evolved across five K-pop generations, from clearly defined positions to more versatile profiles.",
+      "hypothesis": "Have member roles become less specialized across K-pop generations?",
+      "scope": "Compare representative groups across five explicitly documented debut cohorts, then follow changes within each group over its discography. Study vocal, rap and performance participation across title tracks, B-sides and alternative arrangements. Cohort boundaries would be stated as study conventions rather than universal definitions.",
+      "focusAreas": [
+        "Data analysis",
+        "Music & performance",
+        "Interactive storytelling"
+      ],
+      "metrics": [
+        {
+          "label": "Declared positions",
+          "description": "Source-linked role labels and their dates of validity. Keep agency statements separate from fan-assigned labels and inferred performance roles."
+        },
+        {
+          "label": "Vocal & rap participation",
+          "description": "Annotated seconds and shares per member and song, treating vocals and rap separately. Define shared lines, overlaps and instrumental intervals before comparison."
+        },
+        {
+          "label": "Center & camera focus",
+          "description": "Measure choreographic center time separately from screen focus, using comparable performance formats. Neither is a direct measure of stage presence or ability."
+        },
+        {
+          "label": "Solos & endings",
+          "description": "Track solo sections, solo releases and ending close-ups as different opportunities. Compare within equivalent career windows and record duration or counts as appropriate."
+        },
+        {
+          "label": "Title tracks & B-sides",
+          "description": "Tag release type, musical style and arrangement to inspect songs that depart from a group’s usual allocation. Examine exceptions alongside the broader pattern."
+        },
+        {
+          "label": "Distribution & flexibility",
+          "description": "Evaluate concentration of participation within each channel and changes across songs, accounting for group size, lineup changes and missing observations. Do not collapse exposure into an all-rounder talent score."
+        }
+      ],
+      "methodology": [
+        {
+          "title": "Define comparable observations",
+          "description": "Document cohort conventions, sampling rules, group lineups, career age and release selection. Compare groups within cohorts as well as changes within the same group."
+        },
+        {
+          "title": "Build a traceable annotation set",
+          "description": "Record official source URLs, song and performance identifiers, timestamps, role sources and annotation rules. Pilot independent annotation checks before expanding coverage."
+        },
+        {
+          "title": "Test the hypothesis and its exceptions",
+          "description": "Compute comparable participation distributions, examine alternative explanations and show uncertainty. Preserve atypical songs and groups that challenge the expected trend."
+        },
+        {
+          "title": "Connect patterns with documented training context",
+          "description": "Build a dated timeline from agency reports and attributable interviews. Explore possible relationships with training practices without treating changes in performance allocation as proof of causation."
+        }
+      ],
+      "plannedViews": [
+        "Generation and group comparisons with transparent sampling and source coverage.",
+        "Member-by-song participation timelines with separate vocal, rap and performance channels.",
+        "Filters for title tracks, B-sides, arrangement and performance format.",
+        "An outlier view and a source-linked timeline of reported agency training practices."
+      ],
+      "limitations": [
+        "Participation is an allocation decision, not a direct assessment of singing, dancing, rap ability or stage presence.",
+        "Visual would only refer to a sourced role designation or observable camera allocation; the study would not rank appearance.",
+        "Generation, agency, group size, career age, musical style, lineup changes and production choices can overlap. Observed associations cannot establish which factor caused a change.",
+        "Agency training reports describe company-reported practices. Additional dated evidence is needed to assess historical changes or effects on member versatility.",
+        "Published findings would need source coverage, annotation checks and uncertainty. No trend, metric or training effect has been measured for this concept yet."
+      ],
+      "sourceExamples": [
+        {
+          "title": "TWICE / Official JYP profile",
+          "url": "https://twice.jype.com/profile",
+          "note": "A starting point for official member identity records; role assignments would require their own dated sources."
+        },
+        {
+          "title": "JYP / 2024 Sustainability Report",
+          "url": "https://jyplevel1storage01.blob.core.windows.net/jypedoc/2024%20JYP%20Entertainment%20Sustainability%20Report%28ENG%29.pdf",
+          "note": "The artist-training section describes company-reported vocal, rap and dance training. It does not establish a causal link with role allocation."
+        }
+      ],
+      "nextMilestone": "Choose a small cross-cohort pilot, define the annotation codebook and validate one comparable set of performances before building the public explorer."
+    }
   ]
 }

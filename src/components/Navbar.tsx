@@ -31,6 +31,7 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Projects', href: '/#projects' },
+    { name: 'Personal', href: '/#personal-projects' },
     { name: 'Experience', href: '/#experience' },
     { name: 'Research', href: '/#research' },
     { name: 'Profile', href: '/#about' },
@@ -66,7 +67,7 @@ export const Navbar: React.FC = () => {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center space-x-1 font-mono text-xs">
+          <div className="hidden xl:flex items-center space-x-1 font-mono text-xs">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -110,7 +111,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center">
+          <div className="xl:hidden flex items-center">
             <button
               id="navigation-toggle"
               type="button"
@@ -128,7 +129,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div id="mobile-navigation" className="lg:hidden px-4 pt-2 pb-6 bg-[#0b1021] border-b border-slate-800 space-y-1 font-mono text-xs">
+        <div id="mobile-navigation" className="xl:hidden px-4 pt-2 pb-6 bg-[#0b1021] border-b border-slate-800 space-y-1 font-mono text-xs">
           {[...navLinks, { name: 'Contact', href: '/#contact' }].map((link) => (
             <a
               key={link.name}

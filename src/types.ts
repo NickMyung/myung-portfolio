@@ -157,6 +157,7 @@ export interface TechnicalSkills {
 }
 
 export interface PortfolioData {
+  personalProjects: PersonalProject[];
   profile: Profile;
   expertise: ExpertiseItem[];
   projects: ProjectItem[];
@@ -166,4 +167,20 @@ export interface PortfolioData {
   academicProjects: AcademicProjectItem[];
   education: EducationItem[];
   technicalSkills: TechnicalSkills;
+}
+
+export interface PersonalProject {
+  id: string;
+  title: string;
+  status: string;
+  summary: string;
+  hypothesis: string;
+  scope: string;
+  focusAreas: string[];
+  metrics: { label: string; description: string }[];
+  methodology: { title: string; description: string }[];
+  plannedViews: string[];
+  limitations: string[];
+  sourceExamples: { title: string; url: string; note: string }[];
+  nextMilestone: string;
 }
