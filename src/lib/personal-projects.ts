@@ -9,5 +9,5 @@ export function personalProjectHref(id: string, version?: 'v3' | 'rsch') {
 }
 
 export function personalProjectsReturnHref(version?: 'v3' | 'rsch') {
-  return `/${version ? `?version=${version}` : ''}#personal-projects`;
+  return `/personal${version ? `?version=${version}` : ''}#personal-projects`;
 }

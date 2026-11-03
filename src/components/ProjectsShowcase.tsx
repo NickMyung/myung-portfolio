@@ -7,7 +7,8 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { Reveal } from '@/components/Reveal';
 import { AreaOverview } from '@/components/AreaOverview';
 
-export function ProjectsShowcase() {
+export function ProjectsShowcase({ asPage = false }: { asPage?: boolean }) {
+  const Title = asPage ? 'h1' : 'h2';
   const [selection, setSelection] = useState('featured');
   const pendingAreaScroll = useRef(false);
   const tabs = [{ id: 'featured', label: 'Selected work' }, ...projectCategories, { id: 'all', label: 'All projects' }];
@@ -53,11 +54,11 @@ export function ProjectsShowcase() {
   const visibleCount = groups.reduce((count, area) => count + area.visible.length, 0);
   const singleArea = groups.length === 1;
   return (
-    <section id="projects" className="section-spacing border-t border-slate-800/80">
+    <section id="projects" className={`${asPage ? 'menu-page-top pb-16 sm:pb-24' : 'section-spacing'} border-t border-slate-800/80`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-2xl">
-          <p className="section-eyebrow">01 / Selected work</p>
-          <h2 className="section-title">Across disciplines. One engineering perspective.</h2>
+          <p className="section-eyebrow">Professional projects</p>
+          <Title className="section-title">Across disciplines. One engineering perspective.</Title>
           <p className="section-description">Explore data and business automation, full-stack software, and robotics. A research foundation connects how I frame problems, examine assumptions, and document decisions across these disciplines.</p>
         </Reveal>
         <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter projects">

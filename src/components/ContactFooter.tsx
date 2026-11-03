@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, Copy, Check, ExternalLink, Linkedin, Github, Send } from 'lucide-react';
 import portfolioData from '../../portfolio_data.json';
 
-export const ContactFooter: React.FC = () => {
+export const ContactFooter: React.FC<{ asPage?: boolean }> = ({ asPage = false }) => {
+  const Container = asPage ? 'section' : 'footer';
+  const Title = asPage ? 'h1' : 'h2';
   const [copied, setCopied] = useState(false);
   const { profile } = portfolioData;
 
@@ -15,7 +17,7 @@ export const ContactFooter: React.FC = () => {
   };
 
   return (
-    <footer id="contact" className="bg-[#050810] border-t border-slate-800 pt-20 pb-12">
+    <Container id="contact" className={asPage ? 'menu-page-top pb-12' : 'bg-[#050810] border-t border-slate-800 pt-20 pb-12'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pb-16 border-b border-slate-800/80">
           {/* Left Column: Intro & Headline */}
@@ -23,9 +25,9 @@ export const ContactFooter: React.FC = () => {
             <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-mono mb-4">
               <span>Contact &amp; Collaboration</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+            <Title className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
               Get in Touch
-            </h2>
+            </Title>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-light">
               Let’s build across <strong>data engineering and business automation</strong>, <strong>full-stack development</strong>, and <strong>robotics research</strong>. I welcome projects in each area and collaborations connecting business processes, data, software, and physical systems.
             </p>
@@ -138,6 +140,6 @@ export const ContactFooter: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </Container>
   );
 };

@@ -1,10 +1,11 @@
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { MenuLink } from '@/components/MenuEnvironment';
 import type { PersonalProject } from '@/types';
 import { personalProjectsReturnHref } from '@/lib/personal-projects';
 
 export function PersonalProjectStudy({ project, version }: { project: PersonalProject; version?: 'v3' | 'rsch' }) {
   return <>
-    <a href={personalProjectsReturnHref(version)} className="inline-flex items-center gap-2 rounded text-sm text-slate-400 hover:text-violet-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"><ArrowLeft className="h-4 w-4" aria-hidden="true" />Personal projects</a>
+    <MenuLink href={personalProjectsReturnHref(version)} className="inline-flex items-center gap-2 rounded text-sm text-slate-400 hover:text-violet-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"><ArrowLeft className="h-4 w-4" aria-hidden="true" />Personal projects</MenuLink>
     <header className="mb-10 mt-9 max-w-3xl">
       <p className="section-eyebrow">Personal project / {project.status}</p>
       <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-6xl">{project.title}</h1>

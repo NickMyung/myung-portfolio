@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { MenuLink } from '@/components/MenuEnvironment';
 import { BookOpen, Copy, Check, ExternalLink, FileText, Quote } from 'lucide-react';
 import portfolioData from '../../portfolio_data.json';
 
@@ -86,7 +87,7 @@ export const ResearchPublications: React.FC<{ compact?: boolean; onOpenSimulator
               {/* Footer Actions: CRIS Link & Citation Copy Options */}
               <div className="pt-6 border-t border-slate-800 space-y-4">
                 <div className="flex items-center justify-between">
-                  <a
+                  <MenuLink
                     href={pub.url}
                     target="_blank"
                     rel="noreferrer"
@@ -94,7 +95,7 @@ export const ResearchPublications: React.FC<{ compact?: boolean; onOpenSimulator
                   >
                     <span>View in CRIS Repository</span>
                     <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  </MenuLink>
 
                   {pub.id === 'cmaae-2021' && (
                     <a

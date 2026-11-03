@@ -1,177 +1,22 @@
 'use client';
-
-import React, { useState, useEffect } from 'react';
-import { Mail, Menu, X, Github, Linkedin } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { portfolio } from '@/lib/portfolio';
+import { menuNavigation, navigationGroup } from '@/lib/menu-navigation';
+import { MenuLink, useMenuEnvironment } from '@/components/MenuEnvironment';
 
-export const Navbar: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (!mobileMenuOpen) return;
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setMobileMenuOpen(false);
-        document.getElementById('navigation-toggle')?.focus();
-      }
-    };
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [mobileMenuOpen]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: 'Projects', href: '/#projects' },
-    { name: 'Personal', href: '/#personal-projects' },
-    { name: 'Science', href: '/#academic-service' },
-    { name: 'Experience', href: '/#experience' },
-    { name: 'Robotics', href: '/#research' },
-    { name: 'Profile', href: '/#about' },
-  ];
-
-  return (
-    <nav
-      aria-label="Main Navigation"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#070a12]/95 backdrop-blur-md border-b border-slate-800 shadow-xl'
-          : 'bg-[#070a12]/95 backdrop-blur-md border-b border-white/5'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo / Identity */}
-          <a
-            href="/#top"
-            className="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-1"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px] transition-transform group-hover:scale-105">
-              <div className="w-full h-full bg-[#070a12] rounded-[10px] flex items-center justify-center">
-                <span className="font-mono font-bold text-cyan-400 text-sm">NS</span>
-              </div>
-            </div>
-            <div>
-              <div className="font-bold text-slate-100 tracking-tight text-sm sm:text-base flex items-center gap-2">
-                <span>{portfolio.profile.name}</span>
-              </div>
-              <p className="text-[11px] font-mono text-slate-400">{portfolio.profile.headline}</p>
-            </div>
-          </a>
-
-          {/* Desktop Nav Links */}
-          <div className="hidden xl:flex items-center space-x-1 font-mono text-xs">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-3 py-1.5 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-900/60 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Right Action: Social Icons & Contact */}
-          <div className="hidden sm:flex items-center space-x-3 font-mono text-xs">
-            <a
-              href="https://github.com/NickMyung"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub Profile"
-              className="p-2 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            >
-              <Github className="w-4 h-4" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/nick-soto-conde/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn Profile"
-              className="p-2 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
-
-            <a
-              href="/#contact"
-              className="flex items-center space-x-1.5 px-4 py-2 rounded-xl font-semibold bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-md shadow-cyan-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Contact</span>
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="xl:hidden flex items-center">
-            <button
-              id="navigation-toggle"
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? 'Close navigation' : 'Open navigation'}
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-navigation"
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu Dropdown */}
-      {mobileMenuOpen && (
-        <div id="mobile-navigation" className="xl:hidden px-4 pt-2 pb-6 bg-[#0b1021] border-b border-slate-800 space-y-1 font-mono text-xs">
-          {[...navLinks, { name: 'Contact', href: '/#contact' }].map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-900 hover:text-cyan-400"
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
-            <div className="flex space-x-2">
-              <a
-                href="https://github.com/NickMyung"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 rounded-lg bg-slate-900 text-slate-300"
-                aria-label="GitHub"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nick-soto-conde/"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 rounded-lg bg-slate-900 text-slate-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </div>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-4 py-2 rounded-xl font-bold bg-cyan-500 text-black text-xs"
-            >
-              Contact Me
-            </a>
-          </div>
-        </div>
-      )}
-    </nav>
-  );
-};
+export function Navbar() {
+ const pathname=usePathname(), active=navigationGroup(pathname);
+ const [open,setOpen]=useState(false);
+ const {comparison}=useMenuEnvironment();
+ useEffect(()=>setOpen(false),[pathname]);
+ useEffect(()=>{if(!open)return;const escape=(e:KeyboardEvent)=>{if(e.key==='Escape'){setOpen(false);document.getElementById('navigation-toggle')?.focus();}};document.addEventListener('keydown',escape);return()=>document.removeEventListener('keydown',escape);},[open]);
+ const current=(href:string)=>active===href?(pathname===href?'page' as const:'location' as const):undefined;
+ return <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-800 bg-[#070a12]/95 backdrop-blur-md">
+ <nav aria-label="Main navigation" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="flex h-16 items-center justify-between gap-4 sm:h-20">
+ <MenuLink href="/" aria-label={`${portfolio.profile.name}, home`} className="flex min-w-0 items-center gap-3 rounded-lg"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-cyan-500 font-mono text-sm font-bold text-cyan-300">NS</span><span className="min-w-0"><span className="block text-sm font-bold text-slate-100 sm:text-base">{portfolio.profile.name}</span><span className="block truncate font-mono text-[10px] text-slate-400 sm:text-[11px]">{portfolio.profile.headline}</span></span></MenuLink>
+ <div className="hidden items-center gap-1 xl:flex">{menuNavigation.map(item=><MenuLink key={item.href} href={item.href} aria-current={current(item.href)} className={`rounded-lg px-3 py-2 font-mono text-xs ${active===item.href?'bg-cyan-950/40 text-cyan-300':'text-slate-400 hover:bg-slate-900 hover:text-white'}`}>{item.label}</MenuLink>)}</div>
+ <div className="flex shrink-0 items-center gap-3"><div className="hidden items-center gap-2 md:flex"><a href={portfolio.profile.socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub profile" className="rounded-lg border border-slate-800 p-2 text-slate-400 hover:text-white"><Github className="h-4 w-4" /></a><a href={portfolio.profile.socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="rounded-lg border border-slate-800 p-2 text-slate-400 hover:text-white"><Linkedin className="h-4 w-4" /></a></div><MenuLink href="/contact" aria-current={current('/contact')} className="hidden items-center gap-2 rounded-xl bg-cyan-400 px-4 py-2.5 font-mono text-xs font-semibold text-slate-950 hover:bg-cyan-300 sm:inline-flex"><Mail className="h-3.5 w-3.5" aria-hidden="true" />Contact</MenuLink><button id="navigation-toggle" type="button" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open?'Close navigation':'Open navigation'} onClick={()=>setOpen(!open)} className="rounded-lg border border-slate-800 bg-slate-900 p-2 text-slate-300 xl:hidden">{open?<X className="h-5 w-5" />:<Menu className="h-5 w-5" />}</button></div></div>
+ {open&&<div id="mobile-navigation" className="space-y-1 border-t border-slate-800 py-4 xl:hidden">{[...menuNavigation,{href:'/contact',label:'Contact'}].map(item=><MenuLink key={item.href} href={item.href} onClick={()=>setOpen(false)} aria-current={current(item.href)} className={`block rounded-lg px-3 py-3 font-mono text-sm ${active===item.href?'bg-cyan-950/40 text-cyan-300':'text-slate-300 hover:bg-slate-900'}`}>{item.label}</MenuLink>)}</div>}</nav>{comparison}</header>;
+}

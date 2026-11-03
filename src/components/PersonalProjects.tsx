@@ -1,14 +1,16 @@
 import { ArrowUpRight, AudioLines } from 'lucide-react';
+import { MenuLink } from '@/components/MenuEnvironment';
 import { portfolio } from '@/lib/portfolio';
 import { personalProjectHref } from '@/lib/personal-projects';
 import { Reveal } from '@/components/Reveal';
 
-export function PersonalProjects({ version }: { version?: 'v3' | 'rsch' }) {
-  return <section id="personal-projects" aria-labelledby="personal-projects-title" className="section-spacing border-t border-slate-800/80">
+export function PersonalProjects({ version, asPage = false }: { version?: 'v3' | 'rsch'; asPage?: boolean }) {
+  const Title = asPage ? 'h1' : 'h2';
+  return <section id="personal-projects" aria-labelledby="personal-projects-title" className={`${asPage ? 'menu-page-top pb-16 sm:pb-24' : 'section-spacing'} border-t border-slate-800/80`}>
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <Reveal className="max-w-2xl">
         <p className="section-eyebrow">Independent explorations</p>
-        <h2 id="personal-projects-title" className="section-title">Personal projects</h2>
+        <Title id="personal-projects-title" className="section-title">Personal projects</Title>
         <p className="section-description">Questions beyond the workplace, explored through data, research and software.</p>
       </Reveal>
       {portfolio.personalProjects.map((project) => <Reveal key={project.id} className="mt-8">
@@ -22,7 +24,7 @@ export function PersonalProjects({ version }: { version?: 'v3' | 'rsch' }) {
               <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{project.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-300">{project.summary}</p>
               <ul aria-label="Project focus" className="mt-5 flex flex-wrap gap-2">{project.focusAreas.map((area) => <li key={area} className="rounded-md border border-slate-800 px-2.5 py-1 text-xs text-slate-400">{area}</li>)}</ul>
-              <a href={personalProjectHref(project.id, version)} className="mt-7 inline-flex items-center gap-2 rounded-lg text-sm font-medium text-violet-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300">Explore the study plan<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
+              <MenuLink href={personalProjectHref(project.id, version)} className="mt-7 inline-flex items-center gap-2 rounded-lg text-sm font-medium text-violet-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300">Explore the study plan<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></MenuLink>
             </div>
             <div className="flex flex-col justify-center border-t border-slate-800 bg-gradient-to-br from-violet-950/25 to-transparent p-6 sm:p-8 lg:border-l lg:border-t-0">
               <p className="font-mono text-[10px] uppercase tracking-widest text-violet-300">The research question</p>

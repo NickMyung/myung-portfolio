@@ -1,11 +1,12 @@
 import { ArrowUpRight, Database, Code2, Orbit } from 'lucide-react';
+import { MenuLink } from '@/components/MenuEnvironment';
 import { portfolio, getProjectsForArea, getAreaStyle } from '@/lib/portfolio';
 
 const icons: Record<string, typeof Database> = { data: Database, software: Code2, robotics: Orbit };
 export function Expertise() {
   return <section id="expertise" className="section-spacing border-t border-slate-800">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p className="section-eyebrow">04 / Capabilities</p><h2 className="section-title">Different disciplines. A shared research foundation.</h2><p className="section-description max-w-2xl">Research shapes how I frame questions, assess evidence, and explain decisions across data, software, and robotic systems.</p>
+      <p className="section-eyebrow">Capabilities</p><h2 className="section-title">Different disciplines. A shared research foundation.</h2><p className="section-description max-w-2xl">Research shapes how I frame questions, assess evidence, and explain decisions across data, software, and robotic systems.</p>
       <div className="mt-10 grid gap-6 lg:grid-cols-3">
         {portfolio.expertise.map((item) => {
           const Icon = icons[item.categoryId] ?? Database;
@@ -19,7 +20,7 @@ export function Expertise() {
             {researchPerspective && <div className="mt-5 border-l border-rose-900/70 pl-3"><p className="text-[10px] font-medium uppercase tracking-widest text-rose-200">Research perspective</p><p className="mt-2 text-xs leading-relaxed text-slate-400">{researchPerspective.description}</p></div>}
             <ul className="mt-5 flex flex-wrap gap-2">{item.competencies.slice(0, 4).map((skill) => <li key={skill} className="rounded-md border border-slate-800 px-3 py-1.5 text-xs text-slate-300">{skill}</li>)}</ul>
             <p className="mt-4 text-xs leading-relaxed text-slate-400">{item.technologies.slice(0, 5).join(' · ')}</p>
-            <div className="mt-auto pt-6"><p className="mb-3 text-xs font-medium text-slate-400">Related work</p><div className="flex flex-col items-start gap-3">{projects.slice(0, 2).map((project) => <a key={project.id} href={`/projects/${project.id}`} className={`inline-flex items-start gap-2 rounded text-xs leading-relaxed hover:text-white ${style.text}`}>{project.title}<ArrowUpRight className="mt-0.5 h-3 w-3 shrink-0" aria-hidden="true" /></a>)}</div><a href={`#projects-${item.categoryId}`} className={`mt-5 inline-block text-sm font-medium hover:text-white ${style.text}`}>Explore {item.shortTitle} →</a></div>
+            <div className="mt-auto pt-6"><p className="mb-3 text-xs font-medium text-slate-400">Related work</p><div className="flex flex-col items-start gap-3">{projects.slice(0, 2).map((project) => <MenuLink key={project.id} href={`/projects/${project.id}`} className={`inline-flex items-start gap-2 rounded text-xs leading-relaxed hover:text-white ${style.text}`}>{project.title}<ArrowUpRight className="mt-0.5 h-3 w-3 shrink-0" aria-hidden="true" /></MenuLink>)}</div><MenuLink href={`/work#projects-${item.categoryId}`} className={`mt-5 inline-block text-sm font-medium hover:text-white ${style.text}`}>Explore {item.shortTitle} →</MenuLink></div>
           </article>;
         })}
       </div>

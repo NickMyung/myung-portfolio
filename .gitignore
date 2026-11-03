@@ -151,3 +151,7 @@ vite.config.ts.timestamp-*
 
 # Versiones de ultimo commit
 ultimo_commit.txt
+
+# Local review and deployment state
+.next-menu-review/
+.vercel/

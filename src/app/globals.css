@@ -133,3 +133,11 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #0ea5e9;
 }
+
+/* Page offsets also allow the public RSCH / MENU comparison bar. */
+.menu-home-top { padding-top: calc(7rem + var(--menu-nav-offset, 0px)); }
+.menu-page-top { padding-top: calc(8rem + var(--menu-nav-offset, 0px)); }
+@media (min-width: 640px) {
+ .menu-home-top { padding-top: calc(9rem + var(--menu-nav-offset, 0px)); }
+ .menu-page-top { padding-top: calc(10rem + var(--menu-nav-offset, 0px)); }
+}

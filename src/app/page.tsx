@@ -1,27 +1,5 @@
-import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { PersonalProjects } from '@/components/PersonalProjects';
-import { ProjectsShowcase } from '@/components/ProjectsShowcase';
-import { AcademicService } from '@/components/AcademicService';
-import { ExperienceTimeline } from '@/components/ExperienceTimeline';
-import { Expertise } from '@/components/Expertise';
-import { ResearchSection } from '@/components/ResearchSection';
-import { About } from '@/components/About';
-import { ContactFooter } from '@/components/ContactFooter';
-
-export default function Home() {
-  return <>
-    <Navbar />
-    <main id="main-content">
-      <Hero />
-      <ProjectsShowcase />
-      <PersonalProjects />
-      <AcademicService />
-      <ExperienceTimeline />
-      <Expertise />
-      <ResearchSection />
-      <About />
-    </main>
-    <ContactFooter />
-  </>;
-}
+import { HomeHighlights } from '@/components/HomeHighlights';
+import { LegacySectionRedirect } from '@/components/LegacySectionRedirect';
+import { SiteShell } from '@/components/SiteShell';
+export default function Home() { return <SiteShell><LegacySectionRedirect /><Hero /><HomeHighlights /></SiteShell>; }

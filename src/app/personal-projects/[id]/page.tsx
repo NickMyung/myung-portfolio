@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
-import { ContactFooter } from '@/components/ContactFooter';
+import { SiteFooter } from '@/components/SiteFooter';
 import { PersonalProjectStudy } from '@/components/PersonalProjectStudy';
 import { portfolio } from '@/lib/portfolio';
 import { getPersonalProject } from '@/lib/personal-projects';
@@ -20,7 +20,7 @@ export default function PersonalProjectPage({ params }: { params: { id: string }
   if (!project) notFound();
   return <>
     <Navbar />
-    <main id="main-content" className="pt-32 sm:pt-40 mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><PersonalProjectStudy project={project} /></main>
-    <ContactFooter />
+    <main id="main-content" data-portfolio-layout="menu" className="menu-page-top mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><PersonalProjectStudy project={project} /></main>
+    <SiteFooter />
   </>;
 }

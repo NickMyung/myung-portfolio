@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { MenuLink } from '@/components/MenuEnvironment';
 import { Briefcase, Calendar, Building2, MapPin, ChevronRight } from 'lucide-react';
 import portfolioData from '../../portfolio_data.json';
 import { portfolio, getCategoryLabel } from '@/lib/portfolio';
@@ -130,7 +131,7 @@ export const ExperienceTimeline: React.FC = () => {
               </div>
 
               {exp.contributions.length > 2 && <details className="mb-5"><summary className="cursor-pointer rounded text-xs font-medium text-cyan-300">More contributions</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-400">{exp.contributions.slice(2).map((point) => <li key={point}>{point}</li>)}</ul></details>}
-              {portfolio.projects.filter((project) => project.experienceIds.includes(exp.id)).map((project) => <a key={project.id} href={`/projects/${project.id}`} className="mb-5 inline-block rounded text-sm text-cyan-300 hover:text-cyan-100">Related case: {project.title} →</a>)}
+              {portfolio.projects.filter((project) => project.experienceIds.includes(exp.id)).map((project) => <MenuLink key={project.id} href={`/projects/${project.id}`} className="mb-5 inline-block rounded text-sm text-cyan-300 hover:text-cyan-100">Related case: {project.title} →</MenuLink>)}
 
               {/* Technologies */}
               <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800">
