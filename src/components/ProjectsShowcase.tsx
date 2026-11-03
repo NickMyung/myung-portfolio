@@ -72,7 +72,7 @@ export function ProjectsShowcase({ version = DEFAULT_PORTFOLIO_VERSION }: { vers
             return <section key={area.id} id={`projects-${area.id}`} aria-labelledby={`area-title-${area.id}`} className="flex min-w-0 flex-col">
               <header className={`rounded-2xl border p-5 lg:min-h-[140px] ${style.border} ${style.surface}`}>
                 <p className={`font-mono text-[10px] uppercase tracking-widest ${style.text}`}>{area.label}</p>
-                <h3 id={`area-title-${area.id}`} className="mt-2 text-lg font-semibold text-white">{area.title}</h3>
+                <h3 id={`area-title-${area.id}`} className="mt-2 text-lg font-semibold text-white lg:min-h-[3.5rem]">{area.title}</h3>
                 <p className="mt-3 text-xs text-slate-400">{area.available.length} {area.available.length === 1 ? 'case study' : 'case studies'}</p>
               </header>
               {singleArea && area.overview && <AreaOverview overview={area.overview} projects={area.available} />}

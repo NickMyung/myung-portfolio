@@ -71,6 +71,10 @@ export interface ProjectItem {
     contribution: string;
     outcome: string;
   };
+  context?: {
+    industry: string;
+    audience: string;
+  };
   problem: string;
   objective: string;
   approach: string;

@@ -8,16 +8,19 @@ import { DEFAULT_PORTFOLIO_VERSION, withPortfolioVersion } from '@/lib/portfolio
 export function ProjectCard({ project, version = DEFAULT_PORTFOLIO_VERSION }: { project: ProjectItem; version?: PortfolioVersion }) {
   const style = getAreaStyle(project.category);
   const preview = project.preview;
+  const context = project.business ?? project.context;
   return (
     <article className="project-card group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1021]" style={{ '--area-rgb': style.rgb } as CSSProperties}>
       <ProjectVisual project={project} />
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        {project.business && <ul aria-label="Development keywords" className={`mb-3 flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-medium ${style.text}`}>{project.business.keywords.map((keyword) => <li key={keyword}>{keyword}</li>)}</ul>}
+        <div className="mb-3 min-h-6 text-[11px] leading-6">
+          {project.business && <ul aria-label="Development keywords" className={`flex flex-wrap gap-x-3 gap-y-1 font-medium ${style.text}`}>{project.business.keywords.map((keyword) => <li key={keyword}>{keyword}</li>)}</ul>}
+        </div>
         <p className="font-mono text-[11px] text-slate-400">{project.period}</p>
         <h4 className="mt-3 text-xl font-semibold leading-snug tracking-tight text-white lg:min-h-[3.5rem]">
           <a href={withPortfolioVersion(`/projects/${project.id}`, version)} className="rounded transition-colors hover:text-cyan-200">{preview?.title ?? project.title}</a>
         </h4>
-        {project.business && <dl className="mt-4 space-y-2 border-l border-slate-700 pl-3 text-xs leading-relaxed"><div><dt className="inline text-slate-400">Industry: </dt><dd className="inline text-slate-300">{project.business.industry}</dd></div><div><dt className="inline text-slate-400">For: </dt><dd className="inline text-slate-300">{project.business.audience}</dd></div></dl>}
+        {context && <dl aria-label="Project context" className="mt-4 space-y-2 border-l border-slate-700 pl-3 text-xs leading-relaxed lg:min-h-[4.5rem]"><div><dt className="inline text-slate-400">Industry: </dt><dd className="inline text-slate-300">{context.industry}</dd></div><div><dt className="inline text-slate-400">For: </dt><dd className="inline text-slate-300">{context.audience}</dd></div></dl>}
         <dl className="mt-5 space-y-4 text-sm leading-relaxed">
           <div><dt className="mb-1 text-[10px] font-medium uppercase tracking-widest text-slate-400">Problem</dt><dd className="text-slate-300">{preview?.problem ?? project.summary}</dd></div>
           <div><dt className="mb-1 text-[10px] font-medium uppercase tracking-widest text-slate-400">My contribution</dt><dd className="text-slate-300">{preview?.contribution ?? project.contributions}</dd></div>
