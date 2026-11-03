@@ -1,3 +1,5 @@
+import MenuProjectPage from '@/menu/app/projects/[id]/page';
+import { MenuComparison } from '@/components/MenuComparison';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
@@ -21,6 +23,7 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
 }
 
 export default function ProjectPage({ params, searchParams }: { params: { id: string }; searchParams: VersionSearchParams }) {
+  if (searchParams.version === 'menu') return <MenuComparison><MenuProjectPage params={params} /></MenuComparison>;
   const version = resolvePortfolioVersion(searchParams.version);
   const project = getProject(params.id);
   if (!project) notFound();

@@ -1,3 +1,5 @@
+import MenuHome from '@/menu/app/page';
+import { MenuComparison } from '@/components/MenuComparison';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { PersonalProjects } from '@/components/PersonalProjects';
@@ -11,6 +13,7 @@ import { ContactFooter } from '@/components/ContactFooter';
 import { resolvePortfolioVersion, type VersionSearchParams } from '@/lib/portfolio-versions';
 
 export default function Home({ searchParams }: { searchParams: VersionSearchParams }) {
+  if (searchParams.version === 'menu') return <MenuComparison><MenuHome /></MenuComparison>;
   const version = resolvePortfolioVersion(searchParams.version);
   return <>
     <Navbar version={version} />

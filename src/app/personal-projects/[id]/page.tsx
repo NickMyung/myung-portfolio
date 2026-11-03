@@ -1,3 +1,5 @@
+import MenuProjectPage from '@/menu/app/personal-projects/[id]/page';
+import { MenuComparison } from '@/components/MenuComparison';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
@@ -17,6 +19,7 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
 }
 
 export default function PersonalProjectPage({ params, searchParams }: { params: { id: string }; searchParams: VersionSearchParams }) {
+  if (searchParams.version === 'menu') return <MenuComparison><MenuProjectPage params={params} /></MenuComparison>;
   const project = getPersonalProject(params.id);
   if (!project) notFound();
   const version = resolvePortfolioVersion(searchParams.version);

@@ -5,7 +5,7 @@ export const DEFAULT_PORTFOLIO_VERSION: PortfolioVersion = 'rsch';
 export type VersionSearchParams = { version?: string | string[] };
 
 export function resolvePortfolioVersion(value?: string | string[]): PortfolioVersion {
-  return (Array.isArray(value) ? value[0] : value) === 'v3' ? 'v3' : DEFAULT_PORTFOLIO_VERSION;
+  return DEFAULT_PORTFOLIO_VERSION;
 }
 
 export function getPresentation(version: PortfolioVersion) {

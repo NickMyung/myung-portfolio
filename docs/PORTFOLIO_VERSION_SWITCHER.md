@@ -1,44 +1,62 @@
-# Selector V3 / RSCH en main
+# RSCH / MENU public comparison
 
-Actualizado: 2026-11-02.
+The active options on main are RSCH and MENU. RSCH remains the default and
+retains the full single-page portfolio. MENU provides focused pages. The
+standalone V3 branch remains published, but is no longer a comparison option;
+legacy `version=v3` requests fall back to RSCH.
 
-`main` integra las dos presentaciones en una sola aplicación Next.js. El selector
-horizontal de la navegación cambia entre ellas, también desde un caso de estudio.
+## URLs and destinations
 
-- `/?version=v3`: tres áreas principales y servicio académico dentro de Profile.
-- `/?version=rsch`: cuatro pilares y contribución científica antes de Experience.
-- `/`: RSCH por defecto. Un valor de versión desconocido también usa RSCH.
+| Content | RSCH | MENU |
+| --- | --- | --- |
+| Overview | `/?version=rsch` | `/?version=menu` |
+| Professional work | `/?version=rsch#projects` | `/work?version=menu` |
+| Scientific contribution | `/?version=rsch#academic-service` | `/research?version=menu` |
+| Personal projects | `/?version=rsch#personal-projects` | `/personal?version=menu` |
+| Profile / experience | `/?version=rsch#about` | `/about?version=menu` |
+| Contact | `/?version=rsch#contact` | `/contact?version=menu` |
 
-La elección permanece en la URL: se conserva al recargar, compartir, volver con
-el historial y abrir o regresar de un proyecto. El selector usa controles de radio
-nativos con foco visible y admite las flechas del teclado. El indicador horizontal
-respeta la preferencia de movimiento reducido.
+Case URLs are shared and choose the presentation with the version parameter.
+The switch maps a section to its corresponding page, retains valid case paths,
+and supports browser history. Radio controls use the arrow keys and restore
+focus after changing layouts. Every MENU internal link preserves the MENU query.
+The standalone MENU branch uses the same routes without requiring the query or
+showing a comparison bar.
 
-## Fuentes de cada presentación
+## Sources and synchronization
 
-La vista V3 del comparador se ha consolidado en la rama `myung-portafolio-v3`.
-RSCH corresponde a `myung-portafolio-RSCH`. `main` reproduce sus diferencias de
-contenido, jerarquía y ubicación del servicio académico; añade una fila común de
-navegación para el selector y ajusta el espacio superior y los anclajes.
+The original RSCH components remain in `src/components`. MENU is an isolated,
+generated source snapshot under `src/menu`, sourced from the committed
+`myung-portafolio-menu` branch. Both read the single root `portfolio_data.json`.
+The synchronization helper verifies editorial data equality before copying;
+`src/menu/source-manifest.json` records the input commit and content hashes.
+Do not edit generated source files directly. Hashes describe canonical Git source
+text with LF line endings.
 
-Los proyectos, publicaciones, experiencia y datos de contacto se mantienen en
-`portfolio_data.json`. Los textos que varían se guardan en `presentations.v3` y
-`presentations.rsch`; no se mantienen dos catálogos de proyectos. El comportamiento
-de URL y la numeración de secciones están en `src/lib/portfolio-versions.ts`.
-
-No se necesitan los servidores locales del comparador para desplegar `main`.
-En Vercel se utiliza una sola aplicación Next.js desde la raíz del repositorio.
-
-## Comprobación
-
-Compilar con `npm run build`, iniciar con `npm start` y ejecutar desde otra terminal
-`npm run test:versions`. Para probar otro puerto, en PowerShell:
+After committing changes on MENU, run from main:
 
 ```powershell
-$env:PORTFOLIO_TEST_URL = 'http://127.0.0.1:3070'
-npm run test:versions
+node scripts/sync-menu-snapshot.cjs myung-portafolio-menu
+npm run build
 ```
 
-Además, revisar escritorio y móvil: selección con clic y flechas, recarga, atrás
-y adelante, filtros de proyectos y enlaces de ida y vuelta a un caso. La vista
-del simulador conserva su carga dinámica con `ssr: false`.
+`MenuEnvironment` provides the URL adapter and optional comparison control. MENU
+itself has no dependency on the public selector. The public wrapper adds the
+selector and a CSS offset for its extra header row. No iframe or second remote
+site is needed for the published view.
+
+## Checks
+
+With the updated main build running:
+
+```powershell
+$env:PORTFOLIO_TEST_URL='http://127.0.0.1:3072'
+npm run test:versions
+$env:PORTFOLIO_TEST_QUERY='menu'
+npm run test:menu
+```
+
+The MENU suite also runs directly against a standalone MENU server without
+`PORTFOLIO_TEST_QUERY`. Browser checks cover 320, 390, 1024 and 1440 px, active
+navigation, keyboard and Escape, work filters, legacy hashes, simulator opening,
+version changes from interior pages, browser history and branch content parity.

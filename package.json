@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:versions": "node --test tests/portfolio-versions.test.cjs"
+    "test:versions": "node --test tests/portfolio-versions.test.cjs",
+    "test:menu": "node --test tests/menu-routing.test.cjs"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",

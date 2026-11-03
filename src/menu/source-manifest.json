@@ -1,0 +1,247 @@
+{
+  "branch": "myung-portafolio-menu",
+  "commit": "922502d9be578a6787f41371c42274014bf7a245",
+  "sharedData": "portfolio_data.json",
+  "files": [
+    {
+      "source": "src/app/about/page.tsx",
+      "destination": "src/menu/app/about/page.tsx",
+      "sourceSha256": "5f8d34a00a86b5308e6cf82ba2a5bc1481bea55e7e963f00daba1059d77890a8",
+      "sha256": "f5e70ad70e43582feec09e7bf13340c8c96a26c9ad8f487962cdec9e33bdffd2"
+    },
+    {
+      "source": "src/app/contact/page.tsx",
+      "destination": "src/menu/app/contact/page.tsx",
+      "sourceSha256": "379d37374bb98572b09b135982f12725bd445045f5898f42e76ab141eb91d79e",
+      "sha256": "a8ba914b5aa30d519bd8dc7a5a8572e266acc8e79006c5d3f79f0f3dfa44c8e5"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "destination": "src/menu/app/page.tsx",
+      "sourceSha256": "578d857ddeecffe6aa1e8e8a6da26de118de439f1222173bc5e42e803b59e330",
+      "sha256": "9b15931f3c671ce81d6f33e41ce9177a4f59846d384742a24956aac42bb78bd8"
+    },
+    {
+      "source": "src/app/personal-projects/[id]/page.tsx",
+      "destination": "src/menu/app/personal-projects/[id]/page.tsx",
+      "sourceSha256": "0e4e326e04d60b51d3da37d1a2474783dcac63deb2a9fc470a1d3558b5e1121d",
+      "sha256": "8092312eb956b3db4d4b672844d87b2b4bbca5f92ea34c2c36d543006be0251d"
+    },
+    {
+      "source": "src/app/personal/page.tsx",
+      "destination": "src/menu/app/personal/page.tsx",
+      "sourceSha256": "6a4a97e2d88bea81346f71a718bab4261653368c4f19eef2cdef30c571a60781",
+      "sha256": "91fa1340b94298b72ff809b7d53374eeed899df2ceb0b8895febfa3773d860c8"
+    },
+    {
+      "source": "src/app/projects/[id]/not-found.tsx",
+      "destination": "src/menu/app/projects/[id]/not-found.tsx",
+      "sourceSha256": "bc37498b0dbfb8f07225b69e5ddad4e136235dc79fa9f1cfd3cf88f6e5448da3",
+      "sha256": "601e43c38543af47acc6a1e238c2d0f194dde435ae773796d1ccc7adb75538f1"
+    },
+    {
+      "source": "src/app/projects/[id]/page.tsx",
+      "destination": "src/menu/app/projects/[id]/page.tsx",
+      "sourceSha256": "97dcba4636306a0724dd267337806202379d515a3517b5bc53b93f615451ba37",
+      "sha256": "d1f8c72f0037570b2482461144668d8e0f7b36604d2e23dd64fa1f8ebfec8544"
+    },
+    {
+      "source": "src/app/research/page.tsx",
+      "destination": "src/menu/app/research/page.tsx",
+      "sourceSha256": "3ca2716be4a7721fbf04e2dd96fb2a44e5e53798602053729bce425bc3d48562",
+      "sha256": "b5e23e4cc3427b562cb4b202b46bd8257e1ab9a430ffe0f6b46e85c1369654a4"
+    },
+    {
+      "source": "src/app/work/page.tsx",
+      "destination": "src/menu/app/work/page.tsx",
+      "sourceSha256": "22a818e402d51f87da25afca5d6d8d70b665a029d740749c9a6bb3f33d54afba",
+      "sha256": "11b3362d49e83c0c98bbd90edd8fedc550c9e634b78817fcfe8f0da7e63641cf"
+    },
+    {
+      "source": "src/components/About.tsx",
+      "destination": "src/menu/components/About.tsx",
+      "sourceSha256": "8f99b4ea38238a776d91196ee27b33cbd52df9660d46f2818eb7eb624cb8074d",
+      "sha256": "0c490bc742fb0e2658229dc64d95cb880fe06ed223b343cbac423ab839deef8e"
+    },
+    {
+      "source": "src/components/AcademicService.tsx",
+      "destination": "src/menu/components/AcademicService.tsx",
+      "sourceSha256": "f390cc3f6e132392dd545aff8fca9f36050273c0ab144f4498dfbe82f3abf6d0",
+      "sha256": "2029471b5c28be61bcbc45e53e332a553f574c6d64d14b448e0f3b8f9363a1e4"
+    },
+    {
+      "source": "src/components/AreaOverview.tsx",
+      "destination": "src/menu/components/AreaOverview.tsx",
+      "sourceSha256": "18811e672e660ae28cfb2bb62c84e5474157fc8346179ece780096fcd058cbc6",
+      "sha256": "f9bee40f89c8b4604c3500dc1ca2fe7e004328b688821613774217f336741642"
+    },
+    {
+      "source": "src/components/BusinessContext.tsx",
+      "destination": "src/menu/components/BusinessContext.tsx",
+      "sourceSha256": "0edc221d6a655ec2d8fe37ed76e76f25b4c85ae29933a35802c093fa6d6c62f2",
+      "sha256": "35ea4ac15f9bdeaeb0d022e9c7a3a0a72e52501602aef7099012c33824614443"
+    },
+    {
+      "source": "src/components/ContactFooter.tsx",
+      "destination": "src/menu/components/ContactFooter.tsx",
+      "sourceSha256": "904a79384769e8feda4e894716917e8e0f478ad79d17677f26fda41bcba80208",
+      "sha256": "cc804143f3704ef57bb0b45ce486e28269ad59de658f13f736a359c405962ff1"
+    },
+    {
+      "source": "src/components/EducationSection.tsx",
+      "destination": "src/menu/components/EducationSection.tsx",
+      "sourceSha256": "4ceb2a4bf8fa306da743400e54398325f77e65087bce1de123b6aa0746a75706",
+      "sha256": "a680e80c655d8d6b5a0777c6f4cb1893b798044ed4c7048351a7255f1abf5e87"
+    },
+    {
+      "source": "src/components/ExoskeletonWorkspace3D.tsx",
+      "destination": "src/menu/components/ExoskeletonWorkspace3D.tsx",
+      "sourceSha256": "018a153dc6241ad566ae51247aa1300a92250e6a584607729cd58c217144580d",
+      "sha256": "018a153dc6241ad566ae51247aa1300a92250e6a584607729cd58c217144580d"
+    },
+    {
+      "source": "src/components/ExperienceTimeline.tsx",
+      "destination": "src/menu/components/ExperienceTimeline.tsx",
+      "sourceSha256": "380145ca6231edbfdaae9fdd56b4f54fe7afde3580179bd8c8cd48f341bbbf20",
+      "sha256": "e83301dc459e4c3d3a999a030e6d122224f2e3560c08f6c0fd4f4f7dacdaea56"
+    },
+    {
+      "source": "src/components/Expertise.tsx",
+      "destination": "src/menu/components/Expertise.tsx",
+      "sourceSha256": "9349b54bcdec626f72102deb7076f907d34c77aa9a7d679e534a9dace3a9373e",
+      "sha256": "1661aedd1f925213f1cc25ee9d5feac3309d08e0af8fc71faac525f8f4c9ea18"
+    },
+    {
+      "source": "src/components/Hero.tsx",
+      "destination": "src/menu/components/Hero.tsx",
+      "sourceSha256": "e73c208857fedf6be96020b68d4ce5a5a7307545f233d9a32f92e559dbba9fb1",
+      "sha256": "7a5c5817512548d5482dd2e1d615f7cecf1a70ae1f5857a0b21d77df58c39cae"
+    },
+    {
+      "source": "src/components/HomeHighlights.tsx",
+      "destination": "src/menu/components/HomeHighlights.tsx",
+      "sourceSha256": "d73ff4ad14da119757998e473ce57d72275af82d7d00cea8d16a2516b48f3766",
+      "sha256": "ac2574497f37a7683a5d5e9d4ca17bca60cd706a4ef65b1fc574b5d0f344b41c"
+    },
+    {
+      "source": "src/components/LegacySectionRedirect.tsx",
+      "destination": "src/menu/components/LegacySectionRedirect.tsx",
+      "sourceSha256": "300ffe8301fb9c5327023a9028bf6e0ce53dcc8cfb431e79add623455b1937c0",
+      "sha256": "19dae4ba383f5e7fb169fe929bc48339e9b851aad275671b2cf98ddc4d897f31"
+    },
+    {
+      "source": "src/components/MenuEnvironment.tsx",
+      "destination": "src/menu/components/MenuEnvironment.tsx",
+      "sourceSha256": "dd539f89ea14e7ea6df0c908c6d08a4b5b7ebd07586c51d073684a18bca232f9",
+      "sha256": "dd539f89ea14e7ea6df0c908c6d08a4b5b7ebd07586c51d073684a18bca232f9"
+    },
+    {
+      "source": "src/components/Navbar.tsx",
+      "destination": "src/menu/components/Navbar.tsx",
+      "sourceSha256": "43573bed6410c48eacb32b040084dc6fc41a8e4f8d15b2c9c349e62880d68b5c",
+      "sha256": "bd7c77b9168fe00ea1640c7ebc898e523de7983a451a125638397a6615532ce3"
+    },
+    {
+      "source": "src/components/PersonalProjectStudy.tsx",
+      "destination": "src/menu/components/PersonalProjectStudy.tsx",
+      "sourceSha256": "db136fb6820a79a60e41af81101fa44dc2f5768e7f96a26ea6806773802633b5",
+      "sha256": "731ff95dc64769fc587946e7531a7e64cd3673bde591bbc87fdafed9b7a18221"
+    },
+    {
+      "source": "src/components/PersonalProjects.tsx",
+      "destination": "src/menu/components/PersonalProjects.tsx",
+      "sourceSha256": "25cfd30945931a4fdf386393fca40ca51ea1ea5c8dc55d06e71791d143e5f45d",
+      "sha256": "2922854fb5d3ce5be5908b3cc644febe58e11bdbb413b3b2f7dac1cef5b19456"
+    },
+    {
+      "source": "src/components/ProjectCard.tsx",
+      "destination": "src/menu/components/ProjectCard.tsx",
+      "sourceSha256": "6cefa8b6a8e7362380b8c645d1829ffba1031e9b56ed5dd64bc93ca9ded3ae27",
+      "sha256": "e4395683d8ba8ed4e68e330934fa77018a1f34de4b294730e20b8626d38d3f66"
+    },
+    {
+      "source": "src/components/ProjectFlow.tsx",
+      "destination": "src/menu/components/ProjectFlow.tsx",
+      "sourceSha256": "4c3883c541432621ea263310b51c0493ca7b4bd7f9a54cf2538802d7134b7315",
+      "sha256": "6db5c2a90aa60d5bad5d01e470c44085205c76c4c43dabc0602e3b473224fc03"
+    },
+    {
+      "source": "src/components/ProjectLinks.tsx",
+      "destination": "src/menu/components/ProjectLinks.tsx",
+      "sourceSha256": "2c17c1e398903084bd6300ab328f3da20ea27ab5012f08fcc6195c9949fdcae6",
+      "sha256": "0b1a00be695cd4e5ee712ea10915deddbafd1410d1d14393590d04bf25cdc127"
+    },
+    {
+      "source": "src/components/ProjectVisual.tsx",
+      "destination": "src/menu/components/ProjectVisual.tsx",
+      "sourceSha256": "01b7ad7e6c3b7e5b953f6f516ac3e65239e7198e613067feed022e0c2256c326",
+      "sha256": "84eb85235b929a8519b708b7ac3d06ef6ff12700505fc7e3f98f576e18dffd3c"
+    },
+    {
+      "source": "src/components/ProjectsShowcase.tsx",
+      "destination": "src/menu/components/ProjectsShowcase.tsx",
+      "sourceSha256": "44e52a558da5ce89096d3033c1fa81472e10cf2f07f1f310088da45f59c2b8a4",
+      "sha256": "efd644add68bce4cd31727d1c3b7d3c9cdd905f11f7e619cc892efe492b2408e"
+    },
+    {
+      "source": "src/components/ResearchPublications.tsx",
+      "destination": "src/menu/components/ResearchPublications.tsx",
+      "sourceSha256": "42b301c2b47a76c2262912e1e03a4999123499689ad566d3f17326adf35c86b5",
+      "sha256": "c2e469b929d41aa8f4f26993140e1341176abe69988483b8b415fdc93b6b2a41"
+    },
+    {
+      "source": "src/components/ResearchSection.tsx",
+      "destination": "src/menu/components/ResearchSection.tsx",
+      "sourceSha256": "2ee3c644fd59082a94ad9efd51f517bd418d8926e777e61ce0b8f122b45e8db0",
+      "sha256": "f74fce540676207cdcb3ddc3296619acd0021f030359b40f2b1edfb0fe5e7f9b"
+    },
+    {
+      "source": "src/components/Reveal.tsx",
+      "destination": "src/menu/components/Reveal.tsx",
+      "sourceSha256": "46a7a9793ead7dea958a34a90f1c8dca44c88bb1ef29137d6e412cbeb627b36f",
+      "sha256": "46a7a9793ead7dea958a34a90f1c8dca44c88bb1ef29137d6e412cbeb627b36f"
+    },
+    {
+      "source": "src/components/SiteFooter.tsx",
+      "destination": "src/menu/components/SiteFooter.tsx",
+      "sourceSha256": "4ca390177e40b3c746c5e91cd0ad80e75996618b9305a16218b6a595fc5f5bea",
+      "sha256": "03f622bebe9d9a96f1a1dacec5088a94b874cd202fed8e6f8fe33c07595267cb"
+    },
+    {
+      "source": "src/components/SiteShell.tsx",
+      "destination": "src/menu/components/SiteShell.tsx",
+      "sourceSha256": "a118ea1bc6149fb60c3f49d9e44515b7057dc9b026136008bbf46009d2b084e0",
+      "sha256": "1b941635d7dfe89185706327188c319e1751883a6c2cacb281941102349e983c"
+    },
+    {
+      "source": "src/lib/menu-navigation.ts",
+      "destination": "src/menu/lib/menu-navigation.ts",
+      "sourceSha256": "f644f4cc81118d4988ad0d526d3f64b7a1fab3fb7e4047cde3d6e07beab8035f",
+      "sha256": "f644f4cc81118d4988ad0d526d3f64b7a1fab3fb7e4047cde3d6e07beab8035f"
+    },
+    {
+      "source": "src/lib/personal-projects.ts",
+      "destination": "src/menu/lib/personal-projects.ts",
+      "sourceSha256": "8f5709d26e19ab51de6e028c9df002488a19bcede4f74e4509c84fa1d23eec67",
+      "sha256": "1e4c2884520cd2810fc0357501c61a78b2c5aa339a18949c9f3c10af4244c16a"
+    },
+    {
+      "source": "src/lib/portfolio.ts",
+      "destination": "src/menu/lib/portfolio.ts",
+      "sourceSha256": "106deb6ceefbd3522b5b914d457751752476b1ad3dce64d278235607a99cfb8c",
+      "sha256": "fa580c34a3b5ad36a347c592d9e3181df5cba03ef3958ca5edd73d53fa4b2344"
+    },
+    {
+      "source": "src/types.ts",
+      "destination": "src/menu/types.ts",
+      "sourceSha256": "e825b242edd5ef57fbddb75872cd8a5122832d9416f30773d3ceedffa9c036cd",
+      "sha256": "e825b242edd5ef57fbddb75872cd8a5122832d9416f30773d3ceedffa9c036cd"
+    },
+    {
+      "source": "src/app/globals.css",
+      "destination": "src/menu/menu.css",
+      "sourceSha256": "844fd95f9018aa6f79129f86c9706762ef208e1e0e5df24f290d8fb650070d1b",
+      "sha256": "a3dc18394692174e0d521ddf06d1cb88069d2971f782b77caef8cb6597238c71"
+    }
+  ]
+}

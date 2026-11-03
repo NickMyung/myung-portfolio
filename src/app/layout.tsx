@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import '@/menu/menu.css';
 import { portfolio } from '@/lib/portfolio';
 
 export const metadata: Metadata = {

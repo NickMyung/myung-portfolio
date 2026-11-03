@@ -17,7 +17,7 @@ Las tres variantes del resumen, la versión activa y el criterio para presentar 
 
 ### Version selector on main
 
-`main` includes both portfolio presentations in one Next.js application. The horizontal **V3 / RSCH** selector in the navigation keeps the selection in the URL, including case-study links, reloads, and browser history. Use `/?version=v3` for the three-area presentation or `/?version=rsch` for the four-pillar research presentation; RSCH is the default. The standalone v3 branch has been aligned with its comparison view. See [the version-selector guide](docs/PORTFOLIO_VERSION_SWITCHER.md) for the content sources and checks.
+`main` compares **RSCH / MENU** in one Next.js application. Use `/?version=rsch` for the complete single-page presentation (default), or `/?version=menu` for a short home and separate Work, Research, Personal, About and Contact pages. The selector preserves case links, matching sections and browser history. V3 remains a published standalone branch but is no longer an active comparison option. See [the version-selector guide](docs/PORTFOLIO_VERSION_SWITCHER.md) and [the menu structure and references](docs/MENU_INFORMATION_ARCHITECTURE.md).
 
 ### RSCH visual presentation
 

@@ -1,0 +1,33 @@
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+const assert = require('node:assert/strict');
+const { execFileSync } = require('child_process');
+const root = path.resolve(__dirname, '..');
+const ref = process.argv[2] || 'myung-portafolio-menu';
+const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
+const commit = git('rev-parse', '--verify', ref + '^{commit}').trim();
+const read = file => git('show', commit + ':' + file);
+const sourceData = JSON.parse(read('portfolio_data.json'));
+const sharedData = JSON.parse(fs.readFileSync(path.join(root, 'portfolio_data.json'), 'utf8'));
+for (const key of Object.keys(sourceData)) assert.deepEqual(sharedData[key], sourceData[key], 'Shared editorial data differs: ' + key);
+const selected = git('ls-tree', '-r', '--name-only', commit, 'src/').trim().split('\n').filter(file => /^src\/(components|lib)\/.+\.tsx?$/.test(file) || file === 'src/types.ts' || /^src\/app\/(?:page|(?:work|research|personal|about|contact)\/page|(?:projects|personal-projects)\/\[id\]\/(?:page|not-found))\.tsx$/.test(file));
+const hash = content => crypto.createHash('sha256').update(content).digest('hex');
+const files = [];
+for (const source of selected) {
+ const input = read(source);
+ const output = input.replaceAll('@/', '@/menu/').replaceAll('../../portfolio_data.json', '../../../portfolio_data.json');
+ const destination = source.replace(/^src\//, 'src/menu/');
+ const absolute = path.join(root, destination);
+ fs.mkdirSync(path.dirname(absolute), { recursive: true });
+ fs.writeFileSync(absolute, output);
+ files.push({ source, destination, sourceSha256: hash(input), sha256: hash(output) });
+}
+const cssSource = read('src/app/globals.css');
+const marker = '/* Page offsets also allow the public RSCH / MENU comparison bar. */';
+assert.ok(cssSource.includes(marker), 'MENU page offset styles missing');
+const css = cssSource.slice(cssSource.indexOf(marker));
+fs.writeFileSync(path.join(root, 'src/menu/menu.css'), css);
+files.push({ source: 'src/app/globals.css', destination: 'src/menu/menu.css', sourceSha256: hash(cssSource), sha256: hash(css) });
+fs.writeFileSync(path.join(root, 'src/menu/source-manifest.json'), JSON.stringify({ branch: ref, commit, sharedData: 'portfolio_data.json', files }, null, 2) + '\n');
+console.log(JSON.stringify({ branch: ref, commit, files: files.length, editorialDataMatches: true }));
